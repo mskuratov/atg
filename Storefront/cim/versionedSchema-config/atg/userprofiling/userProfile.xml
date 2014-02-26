@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+
+<gsa-template>
+
+  <header>
+    <name>Store Import Profile Changes</name>
+    <author>CIM Team</author>
+    <version>$Id: //hosting-blueprint/B2CBlueprint/version/10.2/Storefront/cim/versionedSchema-config/atg/userprofiling/userProfile.xml#2 $$Change: 789379 $</version>
+  </header>  
+
+  <item-descriptor name="promotionStatus"> 
+    <table name="dcs_usr_promostat" type="primary" id-column-name="status_id">               
+      <property name="promotion" xml-combine="remove">
+      </property>        
+      <property name="promotion" data-type="string" column-name="promotion" required="true" display-name-resource="promotion">
+        <attribute name="propertySortPriority" value="20"/>
+      </property>
+    </table>
+  </item-descriptor>
+
+</gsa-template>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Storefront/cim/versionedSchema-config/atg/userprofiling/userProfile.xml#2 $$Change: 789379 $ -->

@@ -1,0 +1,53 @@
+<ContentItem type="Page" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://endeca.com/schema/content/2008">
+  <TemplateId>MobilePage</TemplateId>
+  <Name>MobilePage</Name>
+  <Property name="SecondaryContent">
+    <ContentItemList type="SecondaryContent">
+      <ContentItem type="SecondaryContent">
+        <TemplateId>Breadcrumbs</TemplateId>
+        <Name>Breadcrumbs</Name>
+        <Property name="displayNamePropertyAlias">
+          <String>displayName</String>
+        </Property>
+      </ContentItem>
+      <ContentItem type="SecondaryContent">
+        <TemplateId>ContentSlot-Secondary</TemplateId>
+        <Name>Guided Navigation</Name>
+        <Property name="contentCollection">
+          <String>/content/Shared/Guided Navigation</String>
+        </Property>
+        <Property name="ruleLimit">
+          <String>1</String>
+        </Property>
+      </ContentItem>
+    </ContentItemList>
+  </Property>
+  <Property name="MainContent">
+    <ContentItemList type="MainContent">
+      <ContentItem type="MainContent">
+        <TemplateId>MediaBanner</TemplateId>
+        <Name>Style By Zhanna Media Banner</Name>
+        <Property name="imageURL">
+          <String>/crsdocroot/content/mobile/images/blp_styleByZhanna.jpg</String>
+        </Property>
+        <Property name="link">
+          <Item class="com.endeca.infront.cartridge.model.LinkBuilder" xmlns="http://endeca.com/schema/xavia/2010">
+            <Property name="path"></Property>
+            <Property name="linkType"></Property>
+            <Property name="queryString"></Property>
+          </Item>
+        </Property>
+      </ContentItem>
+      <ContentItem type="MainContent">
+        <TemplateId>ContentSlot-Main</TemplateId>
+        <Name>Style By Zhanna Result List</Name>
+        <Property name="contentCollection">
+          <String>/content/Shared/Results List</String>
+        </Property>
+        <Property name="ruleLimit">
+          <String>1</String>
+        </Property>
+      </ContentItem>
+    </ContentItemList>
+  </Property>
+</ContentItem>

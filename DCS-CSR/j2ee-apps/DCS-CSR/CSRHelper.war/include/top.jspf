@@ -1,0 +1,40 @@
+<%-- the strange formatting is deliberate, it reduces the amount of junk whitespace JSP emits --%>
+<%@ page errorPage="/error.jsp" contentType="text/html; charset=UTF-8" isELIgnored="false" pageEncoding="UTF-8"
+%><%@ taglib prefix="c"   uri="http://java.sun.com/jsp/jstl/core" 
+%><%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" 
+%><%@ taglib prefix="fn"  uri="http://java.sun.com/jsp/jstl/functions" 
+%><%@ taglib prefix="cfn" uri="http://www.atg.com/taglibs/collectionFunctions" 
+%><%@ taglib prefix="dsp" uri="http://www.atg.com/taglibs/daf/dspjspTaglib1_1" 
+%><%@ taglib prefix="json" uri="http://www.atg.com/taglibs/json" 
+%><%@ taglib prefix="caf" uri="http://www.atg.com/taglibs/caf" 
+%><%@ taglib prefix="svc-ui" uri="http://www.atg.com/taglibs/svc/svc-uiTaglib1_0" 
+%>
+<dsp:page xml="true">
+<dsp:importbean bean="/atg/commerce/custsvc/util/CSRConfigurator" scope="request" var="CSRConfigurator"/>
+<%-- the following might have already been run by agent's top.jspf, so skip if it has --%>
+<c:if test="${not atg_agent_topAlreadyRun }">
+<dsp:importbean bean="/atg/svc/repository/service/StateHolderService" scope="request" var="stateHolder" 
+/>
+<c:set var="windowId" value='${param[stateHolder.windowIdParameterName]}' />
+<dsp:importbean var="UIConfig" bean="/atg/svc/agent/ui/AgentUIConfiguration"
+/><c:choose>
+<c:when test="${empty UIConfig.styleRoot}"
+><c:set var="styleRoot" value="${UIConfig.contextRoot}" 
+/></c:when
+><c:otherwise
+><c:set var="styleRoot" value="${UIConfig.styleRoot}" 
+/></c:otherwise
+></c:choose
+><c:choose
+><c:when test="${empty UIConfig.theme}"
+><c:set var="cssPath" value="${styleRoot}${UIConfig.cssLocation}"
+/><c:set var="imageLocation" value="${styleRoot}${UIConfig.imageLocation}"
+/></c:when
+><c:otherwise
+><c:set var="cssPath" value="${styleRoot}${UIConfig.cssLocation}/${UIConfig.theme}"
+/><c:set var="imageLocation" value="${styleRoot}${UIConfig.imageLocation}/${UIConfig.theme}"
+/></c:otherwise
+></c:choose
+></c:if>
+</dsp:page>
+<%-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/DCS-CSR/j2ee/CSRHelper.war/include/top.jspf#1 $$Change: 735822 $--%>

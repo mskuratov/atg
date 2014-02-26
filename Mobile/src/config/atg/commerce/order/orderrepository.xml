@@ -1,0 +1,18 @@
+<gsa-template>
+  <header>
+    <name>Mobile related Order Additions</name>
+    <version>$Id: //hosting-blueprint/B2CBlueprint/version/10.2/Mobile/config/atg/commerce/order/orderrepository.xml#2 $$Change: 768606 $</version>
+  </header>
+
+  <item-descriptor name="order">
+    <table name="dcspp_order">
+	  <property name="originOfOrder" xml-combine="append">
+        <option value="mobile" code="3"/>
+      </property>
+	  <property name="salesChannel" xml-combine="append">
+        <option value="mobile" code="3"/>
+      </property>
+	</table>
+  </item-descriptor>
+</gsa-template>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Mobile/config/atg/commerce/order/orderrepository.xml#2 $$Change: 768606 $-->

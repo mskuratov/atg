@@ -1,0 +1,986 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gsa-template SYSTEM "dynamosystemresource:/atg/dtds/gsa/gsa_1.0.dtd">
+<gsa-template>
+  <import-items>
+    <!--
+  Store repository text resource definitions.
+  Repository item ids ending with '0' refer to generic text resources
+                                  '1' refer to 'storeSiteUS' text resources
+                                  '2' refer to 'storeSiteDE' text resources
+                                  '3' refer to 'homeSite' text resources
+-->
+    <add-item id="txt10000" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[cart_giftWrapPopup.text]]></set-property>
+      <set-property name="text"><![CDATA[Gift Wrap is available at a flat rate of {price} per order, which is applied during the checkout process. The Gift Wrap option includes a gift message that you can personalize during checkout. <p>Currently, the Gift Wrap option is only available for entire orders. Individual items within an order cannot be gift wrapped separately.]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10011" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[storeSiteUS.company.gadget.customer_service.byPhone]]></set-property>
+      <set-property name="text"><![CDATA[1.555.555.5555 extension .5555<br/>1.888.555.5555 (TDD hearing impaired)]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10021" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[storeSiteUS.company.gadget.customer_service.byFax]]></set-property>
+      <set-property name="text"><![CDATA[1.888.555.5555]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10031" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[storeSiteUS.company.gadget.customer_service.byMail]]></set-property>
+      <set-property name="text"><![CDATA[ATG Store Customer Services<br/>555 Main St.<br/>Any City, MA 5555-5555]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10041" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[storeSiteUS.company.gadget.customer_service.byEmail]]></set-property>
+      <set-property name="text"><![CDATA[To email an ATG Store customer service representative: <a href="mailto:service@atgstore.com">service@atgstore.com</a>.]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10012" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[storeSiteDE.company.gadget.customer_service.byPhone]]></set-property>
+      <set-property name="text"><![CDATA[+49 (0)89 555555-51<br/>+49 (0)89 555555-52 (TDD hearing impaired)]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10022" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[storeSiteDE.company.gadget.customer_service.byFax]]></set-property>
+      <set-property name="text"><![CDATA[+49 (0)89 555555-53]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10032" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[storeSiteDE.company.gadget.customer_service.byMail]]></set-property>
+      <set-property name="text"><![CDATA[ATG Store Customer Services<br/> Platzl 9,<br/>80331 Munich, Germany]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10042" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[storeSiteDE.company.gadget.customer_service.byEmail]]></set-property>
+      <set-property name="text"><![CDATA[To email an ATG Store customer service representative: <a href="mailto:service@atgstore.de">service@atgstore.de</a>.]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10013" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[homeSite.company.gadget.customer_service.byPhone]]></set-property>
+      <set-property name="text"><![CDATA[1.555.555.555 ext.55<br/>1.888.555.5555 (TDD hearing impaired)]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10023" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[homeSite.company.gadget.customer_service.byFax]]></set-property>
+      <set-property name="text"><![CDATA[1.888.555.5555]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10033" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[homeSite.company.gadget.customer_service.byMail]]></set-property>
+      <set-property name="text"><![CDATA[ATG Home Customer Services<br/>555 Main St.<br/>Any City, MA 55555-5555]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10043" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[homeSite.company.gadget.customer_service.byEmail]]></set-property>
+      <set-property name="text"><![CDATA[To email an ATG Home customer service representative: <a href="mailto:service@atghome.com">service@atghome.com</a>.]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10050" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[common.storeName]]></set-property>
+      <set-property name="text"><![CDATA[ATG Store]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10053" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[homeSite.common.storeName]]></set-property>
+      <set-property name="text"><![CDATA[ATG Home]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10060" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_help.question1]]></set-property>
+      <set-property name="text"><![CDATA[Q: Why wasn't the store promotion on the website available at the {storeName} store at my local mall?]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10070" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_help.answer1]]></set-property>
+      <set-property name="text"><![CDATA[A: The promotions posted on our website are offered in most of our stores nationwide. However, as noted when the promotion is posted on our website, each {storeName} store is unique and promotions are not offered at all stores. If you want to make sure your {storeName} store is running a particular promotion, call the store. If they aren't running the promotion, they should be able to tell you which {storeName} store in your area is.]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10080" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_help.question2]]></set-property>
+      <set-property name="text"><![CDATA[Q: What is your return policy?]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10090" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_help.answer2]]></set-property>
+      <set-property name="text"><![CDATA[A: If you have your receipt or packing slip, you can return any unused or defective item <b>within 90 days</b> of the original purchase date for a refund. Returns are not accepted <b>after 90 days</b> from the purchase date.]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10110" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_help.question3]]></set-property>
+      <set-property name="text"><![CDATA[Q: How do I update my email address?]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10120" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_help.answer3]]></set-property>
+      <set-property name="text"><![CDATA[A: You can update your email address by logging in and selecting "My Profile." Make any changes you need to your profile, then scroll to the bottom of the page, and click "Submit" to save those changes.]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10130" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_help.question4]]></set-property>
+      <set-property name="text"><![CDATA[Q: I created a Wish List on my last visit to the site. Where is it now?]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10140" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_help.answer4]]></set-property>
+      <set-property name="text"><![CDATA[A: You must be a registered member of {storeName} to save a Wish List for future access. Registered members can retrieve their Wish Lists by logging into their accounts and clicking Wish List at the top of any page on the website.]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10150" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_help.question5]]></set-property>
+      <set-property name="text"><![CDATA[Q: How can I unsubscribe from your email list?]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10160" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_help.answer5]]></set-property>
+      <set-property name="text"><![CDATA[A: You can unsubscribe from {storeName} email by clicking the link at the bottom of marketing emails you receive from {storeName}. Please note, even if you elect not to receive email, or subsequently ask to be removed from the {storeName} email marketing list, you may still receive email confirmations for Gift Card purchases made on our website, confirmations of our receipt of questions submitted, and other operational emails. You can also login and edit your profile, then deselect the box for "Send me emails."]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10271" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[storeSiteUS.company_shipping.text]]></set-property>
+      <set-property name="text"><![CDATA[<h3>Ground Shipping</h3><p>UPS will deliver items that are available for immediate shipment<br/>in 3-5 business days at the rates described below. Please note<br/>that delivery of merchandise that requires special handling<br/>will take approximately two additional weeks.<br/></p><p>For Orders up to $14.99 US the Shipping Rate is $4.75 US.<br/>For Orders from $15 - $49.99 US the Shipping Rate is $5.95 US.<br/>For Orders $50.00 US and up the Shipping Rate is $6.50 US.</p><p><h3>Two Day Shipping</h3></p><p>UPS will deliver items that are available for immediate shipment<br/>in two business days at a flat rate of $9.50 US.</p><p><h3>Next Day Shipping</h3></p><p>UPS will deliver items that are available for immediate shipment<br/>overnight at a flat rate of $18.95 US.</p>]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10272" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[storeSiteDE.company_shipping.text]]></set-property>
+      <set-property name="text"><![CDATA[<h3>Ground Shipping</h3><p>UPS will deliver items that are available for immediate shipment<br/>in 3-5 business days at the rates described below. Please note<br/>that delivery of merchandise that requires any special handling<br/>will take approximately two additional weeks.<br/></p><p>For Orders up to 14.99 &euro; the Shipping Rate is 4.75 &euro;.<br/>For Orders from 15 &euro;- 49.99 &euro; the Shipping Rate is 5.95 &euro;.<br/>For Orders 50.00 &euro; and up the Shipping Rate is 6.50 &euro;.</p><p><h3>Two Day Shipping</h3></p><p>UPS will deliver items that are available for immediate shipment<br/>in two business days at a flat rate of 9.50 &euro;.</p><p><h3>Next Day Shipping</h3></p><p>UPS will deliver items that are available for immediate shipment<br/>overnight at a flat rate of 18.95 &euro;.</p>]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10273" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[homeSite.company_shipping.text]]></set-property>
+      <set-property name="text"><![CDATA[<h3>Ground Shipping</h3><p>UPS will deliver items that are available for immediate shipment<br/>in 3-5 business days at the rates described below. Please note<br/>that delivery of merchandise that requires any special handling<br/>will take approximately two additional weeks.<br/></p><p>For Orders up to $14.99 US the Shipping Rate is $4.75 US.<br/>For Orders from $15- $49.99 the Shipping Rate is $5.95 US.<br/>For Orders $50.00 US and up the Shipping Rate is $6.50 US.</p><p><h3>Two Day Shipping</h3></p><p>UPS will deliver items that are available for immediate shipment<br/>in two business days at a flat rate of $9.50 US.</p><p><h3>Next Day Shipping</h3></p><p>UPS will deliver items that are available for immediate shipment<br/>overnight at a flat rate of $18.95 US.</p>]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10180" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_returnPolicyPopup.text]]></set-property>
+      <set-property name="text"><![CDATA[<p>If you have your receipt or packing slip, you can return any unused or defective item <b>within 90 days</b> of the original purchase date for a refund. Returns are not accepted <b>after 90 days</b> from the purchase date.</p>]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10190" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_aboutUs.title]]></set-property>
+      <set-property name="text"><![CDATA[About Us]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10200" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_aboutUs.aboutUs]]></set-property>
+      <set-property name="text"><![CDATA[{storeName} is the premier stylish, fashion brand for women and men, completely driven by original design. Each season, {storeName} develops carefully edited collections of high quality fashion, wear-to-work and casual wear for young men and women. From the product to the store experience, the {storeName} brand is a fashion leader.]]></set-property>
+      
+    </add-item>
+    <add-item id="txt10203" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[homeSite.company_aboutUs.aboutUs]]></set-property>
+      <set-property name="text"><![CDATA[{storeName} is the premier source for quality home furniture and related products, completely driven by functional design. Each season, {storeName} carefully evaluates furniture manufacturers seeking the highest quality products available. From the kitchen to the living room, {storeName} is a leader in quality and exceptional value.]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10210" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_emptyNewsRenderer.item1Header]]></set-property>
+      <set-property name="text"><![CDATA[Introducing HOME!]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10220" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_emptyNewsRenderer.item1Details]]></set-property>
+      <set-property name="text"><![CDATA[Be the First to shop our new Home Collection, featuring the {storeName} styles you love, designed to fit your lifestyle perfectly! Make sure to sign up for our Email Newsletter to be informed of this and other new offerings and promotions!]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10230" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_emptyNewsRenderer.item2Header]]></set-property>
+      <set-property name="text"><![CDATA[{storeName} Names Jessica Zakszewski as Chief Marketing Officer]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10250" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company.corp_site.clickToGoToCorpSite]]></set-property>
+      <set-property name="text"><![CDATA[<a href="http://{corporateSiteLink}">Click here</a> to visit our corporate site.]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10260" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_employment.welcome]]></set-property>
+      <set-property name="text"><![CDATA[Welcome to the {storeName} Career Center!]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10270" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_employment.purpose]]></set-property>
+      <set-property name="text"><![CDATA[{storeName} is looking for individuals to join our team. We want people like you: genuine, hard-working, and passionate about the {storeName} brand. {storeName} is an Equal Opportunity Employer.]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10280" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_employment.purpose2]]></set-property>
+      <set-property name="text"><![CDATA[{storeName} takes a people-first approach to our benefits program. We are proud to offer one of the most competitive benefits packages in the retail industry. Here's a quick overview of the benefits {storeName} employees receive:]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10290" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_employment.medicalInsurance]]></set-property>
+      <set-property name="text"><![CDATA[Medical and dental insurance]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10300" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_employment.lifeInsurance]]></set-property>
+      <set-property name="text"><![CDATA[Life insurance]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10310" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_employment.termDisability]]></set-property>
+      <set-property name="text"><![CDATA[Short and long term disability]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10320" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_employment.paidTimeOff]]></set-property>
+      <set-property name="text"><![CDATA[Paid time off program]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10330" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_employment.paidHolidays]]></set-property>
+      <set-property name="text"><![CDATA[Six paid holidays]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10340" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_employment.merchandiseDiscount]]></set-property>
+      <set-property name="text"><![CDATA[Great merchandise discount]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10350" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_employment.matching401k]]></set-property>
+      <set-property name="text"><![CDATA[401(k) with company match]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10360" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_employment.profitSharing]]></set-property>
+      <set-property name="text"><![CDATA[Profit sharing]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10370" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_employment.employeeStockPurchasePlan]]></set-property>
+      <set-property name="text"><![CDATA[Employee stock purchase plan]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10380" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_employment.benefitClosing]]></set-property>
+      <set-property name="text"><![CDATA[All this, and countless other benefits, await you in your career with {storeName}!]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10390" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_employment.EOE]]></set-property>
+      <set-property name="text"><![CDATA[EOE - M/F/V/D]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10400" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_terms.welcomeNote]]></set-property>
+      <set-property name="text"><![CDATA[Welcome to the {storeName} Web Site ("Site"). Please review the following basic terms that govern your use of our Site. Please note that your use of our Site constitutes your agreement to follow and be bound by those terms (the "Agreement").]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10410" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_terms.siteContents]]></set-property>
+      <set-property name="text"><![CDATA[Site Contents]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10420" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_terms.siteContentsInfo1]]></set-property>
+      <set-property name="text"><![CDATA[Unless otherwise noted, all materials, including images, illustrations, designs, icons, photographs, video clips, and written and other materials that appear as part of this Site (collectively, the "Contents") are copyrights, trademarks, trade dress and/or other intellectual properties owned, controlled or licensed by {storeName}, and its subsidiaries and/or affiliates. The Site as a whole is protected by copyright and trade dress, all worldwide rights, titles and interests in and to which are owned by {storeName}, {storeName} Foundation and all other trademarks appearing at this Site are trademarks of {storeName}. and its subsidiaries.]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10430" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_terms.siteContentsInfo2]]></set-property>
+      <set-property name="text"><![CDATA[The Contents of our Site, and the Site as a whole, are intended solely for personal, noncommercial use by the users of our Site. You may download or copy the Contents and other downloadable materials displayed on the Site for your personal use only. No right, title or interest in any downloaded materials or software is transferred to you as a result of any such downloading or copying. You may not reproduce (except as noted above), publish, transmit, distribute, display, modify, create derivative works from, sell or participate in any sale of, or exploit in any way, in whole or in part, any of the Contents, the Site, or any related software.]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10440" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_terms.userComment]]></set-property>
+      <set-property name="text"><![CDATA[User Comments, Feedback, Postcards and Other Submissions]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10450" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_terms.userCommentInfo1]]></set-property>
+      <set-property name="text"><![CDATA[All comments, feedback, postcards, suggestions, ideas, and other submissions disclosed, submitted or offered to {storeName} on or by this Site or otherwise disclosed, submitted or offered in connection with your use of this Site (collectively, "Comments") shall be and remain {storeName}''s property. Such disclosure, submission or offer of any Comments shall constitute an assignment to {storeName} of all worldwide rights, titles and interests in all copyrights and other intellectual properties in the Comments. Thus, {storeName} will own exclusively all such rights, titles and interests and shall not be limited in any way in its use, commercial or otherwise, of any Comments. {storeName} is and shall be under no obligation (1) to maintain any Comments in confidence; (2) to pay to user any compensation for any Comments; or (3) to respond to any user Comments.]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10460" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_terms.userCommentInfo2]]></set-property>
+      <set-property name="text"><![CDATA[You agree that no Comments submitted by you to the Site will violate any right of any third party, including copyright, trademark, privacy or other personal or proprietary right(s). You further agree that no Comments submitted by you to the Site will be or contain libelous or otherwise unlawful, abusive or obscene material. You are and shall remain solely responsible for the content of any Comments you make.]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10470" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_terms.revisions]]></set-property>
+      <set-property name="text"><![CDATA[Revisions]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10480" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_terms.revisionInfo]]></set-property>
+      <set-property name="text"><![CDATA[We may from time to time change the terms that govern your use of our Site. Your use of our Site following any such change constitutes your agreement to follow and be bound by the terms as changed.]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10490" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_terms.revisionInfo1]]></set-property>
+      <set-property name="text"><![CDATA[We may change, move or delete portions of, or may add to, our Site from time to time.]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10500" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_terms.inaccuracyDisclaimerInfo]]></set-property>
+      <set-property name="text"><![CDATA[From time to time there may be information on {storeName} that contains typographical errors, inaccuracies, or omissions. We reserve the right to correct any errors, inaccuracies or omissions and to change or update information at any time without prior notice. We apologize for any inconvenience this may cause you.]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10510" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_terms.linkToOtherWebSitesInfo]]></set-property>
+      <set-property name="text"><![CDATA[To the extent that this Site contains links to outside services and resources, the availability and content of which {storeName} does not control, any concerns regarding any such service or resource, or any link thereto, should be directed to the particular outside service or resource.]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10520" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_terms.disclaimerInfo]]></set-property>
+      <set-property name="text"><![CDATA[This site and all contents of the site are provided on an "as is" basis without warranties of any kind, either expressed or implied, including without limitation warranties of title or implied warranties of merchantability or fitness for a particular purpose. You acknowledge, by your use of the site, that your use of the site is at your sole risk, that you assume full responsibility for all costs associated with all necessary servicing or repairs of any equipment you use in connection with your use of our site, and that {storeName} shall not be liable for any damages of any kind related to your use of this site.]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10530" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_terms.jurisdictionInfo]]></set-property>
+      <set-property name="text"><![CDATA[This Site is controlled and operated by {storeName} from its offices in Seattle, WA. This Agreement shall be construed in accordance with the laws of the State of Washington, without regard to any conflict of law provisions. Any dispute arising under this Agreement shall be resolved exclusively by the state and federal courts of the State of Washington.]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10540" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_terms.terminationInfo]]></set-property>
+      <set-property name="text"><![CDATA[This Agreement is effective unless and until terminated by either you or {storeName}. You may terminate this Agreement at any time. {storeName} also may terminate this Agreement at any time and may do so immediately without notice, and accordingly deny you access to the Site, if in {storeName}''s sole discretion you fail to comply with any term or provision of this Agreement. Upon any termination of this Agreement by either you or {storeName}, you must promptly destroy all materials downloaded or otherwise obtained from this Site, as well as all copies of such materials, whether made under the terms of this Agreement or otherwise.]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10550" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_privacy.privacyPolicyInfo1]]></set-property>
+      <set-property name="text"><![CDATA[At {storeName}, we respect the privacy of all visitors who access and use our Web site. The information we collect on this site is used to understand how we can enhance our site and improve your experience. This policy describes the limited circumstances in which we collect personal information, why we collect it, and how we use it. Our policy also describes the choices you can make about how we collect and use your information.]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10560" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_privacy.privacyPolicyInfo2]]></set-property>
+      <set-property name="text"><![CDATA[If our information practices change in the future, we will post an updated policy on this Web site. You can tell if the policy has changed by checking the revision date that appears at the end of this policy.]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10570" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_privacy.privacyPolicyDate]]></set-property>
+      <set-property name="text"><![CDATA[Revised - March, 2012]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10581" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[storeSiteUS.newsItem1]]></set-property>
+      <set-property name="tag" add="false" remove="false"><![CDATA[storeSiteUS.news]]></set-property>
+      <set-property name="text"><![CDATA[<h3>{storeName} Introduces Men's Apparel</h3><p>{storeName} announced that it has introduced a Men's Apparel category to its site. Be the first to shop the new Men's Apparel category, featuring the {storeName} styles you love, designed to fit your lifestyle perfectly!</p>]]></set-property>
+      
+    </add-item>
+    <add-item id="txt10582" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[storeSiteDE.newsItem1]]></set-property>
+      <set-property name="tag" add="false" remove="false"><![CDATA[storeSiteDE.news]]></set-property>
+      <set-property name="text"><![CDATA[<h3>{storeName} Introduces Men's Apparel</h3><p>{storeName} announced that it has introduced a Men's Apparel category to its site. Be the first to shop the new Men's Apparel Category, featuring the {storeName} styles you love, designed to fit your lifestyle perfectly!</p>]]></set-property>
+      
+    </add-item>
+    <add-item id="txt10583" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[homeSite.newsItem1]]></set-property>
+      <set-property name="tag" add="false" remove="false"><![CDATA[homeSite.news]]></set-property>
+      <set-property name="text"><![CDATA[<h3>Introducing Gift Ideas category!</h3><p>{storeName} announced that it has introduced a Gift Ideas category to its site. Be the first to shop the new Gift Ideas Category, featuring choice Electronics and Glassware products in the styles you love, designed to fit your lifestyle perfectly!</p>]]></set-property>
+      
+    </add-item>
+    
+    
+    
+    <add-item id="txt10591" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[storeSiteUS.newsItem2]]></set-property>
+      <set-property name="tag" add="false" remove="false"><![CDATA[storeSiteUS.news]]></set-property>
+      <set-property name="text"><![CDATA[<h3>{storeName} Names Jessica Zakszewski Chief Marketing Officer</h3><p>{storeName} announces the appointment of Jessica Zakszewski as Chief Marketing Officer. Zakszewski joins {storeName} with more than 18 years of marketing experience with various retailers.</p>]]></set-property>
+      
+    </add-item>
+    <add-item id="txt10592" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[storeSiteDE.newsItem2]]></set-property>
+      <set-property name="tag" add="false" remove="false"><![CDATA[storeSiteDE.news]]></set-property>
+      <set-property name="text"><![CDATA[<h3>{storeName} Names Jessica Zakszewski Chief Marketing Officer</h3><p>{storeName} announces the appointment of Jessica Zakszewski as Chief Marketing Officer. Zakszewski joins {storeName} with more than 18 years of marketing experience with various retailers.</p>]]></set-property>
+      
+    </add-item>
+    
+    
+    <add-item id="txt10600" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company.news.noNews]]></set-property>
+      <set-property name="text"><![CDATA[Please check back in the future for the latest news.]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10610" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[common.corporateSiteLink]]></set-property>
+      <set-property name="text"><![CDATA[www.oracle.com/us/corporate/Acquisitions/atg/index.html]]></set-property>
+      
+    </add-item>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <add-item id="txt210617" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="text"><![CDATA[Benefits]]></set-property>
+      
+      <set-property name="key" add="false" remove="false"><![CDATA[myaccount_registration.benefits]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[shortText]]></set-property>
+    </add-item>
+    <add-item id="txt210633" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="text"><![CDATA[Create Gift Lists]]></set-property>
+      
+      <set-property name="key" add="false" remove="false"><![CDATA[myaccount_registration.benefitGiftList]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[shortText]]></set-property>
+    </add-item>
+    <add-item id="txt210631" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="text"><![CDATA[Create Wish Lists]]></set-property>
+      
+      <set-property name="key" add="false" remove="false"><![CDATA[myaccount_registration.benefitWishList]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[shortText]]></set-property>
+    </add-item>
+    <add-item id="txt210625" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="text"><![CDATA[Faster Checkout]]></set-property>
+      
+      <set-property name="key" add="false" remove="false"><![CDATA[myaccount_registration.benefitCheckout]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[shortText]]></set-property>
+    </add-item>
+    <add-item id="txt210619" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="text"><![CDATA[Get Special Promotions]]></set-property>
+      
+      <set-property name="key" add="false" remove="false"><![CDATA[myaccount_registration.benefitPromo]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[shortText]]></set-property>
+    </add-item>
+    <add-item id="txt210623" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="text"><![CDATA[Re-Use Saved Address]]></set-property>
+      
+      <set-property name="key" add="false" remove="false"><![CDATA[myaccount_registration.benefitAddress]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[shortText]]></set-property>
+    </add-item>
+    <add-item id="txt210621" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="text"><![CDATA[Re-Use Saved Credit Cards]]></set-property>
+      
+      <set-property name="key" add="false" remove="false"><![CDATA[myaccount_registration.benefitCard]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[shortText]]></set-property>
+    </add-item>
+    <add-item id="txt210635" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="text"><![CDATA[Save your Shopping Cart]]></set-property>
+      
+      <set-property name="key" add="false" remove="false"><![CDATA[myaccount_registration.benefitShoppingCart]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[shortText]]></set-property>
+    </add-item>
+    <add-item id="txt210627" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="text"><![CDATA[Track Orders]]></set-property>
+      
+      <set-property name="key" add="false" remove="false"><![CDATA[myaccount_registration.benefitTrackOrder]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[shortText]]></set-property>
+    </add-item>
+    <add-item id="txt210629" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="text"><![CDATA[View Order History]]></set-property>
+      
+      <set-property name="key" add="false" remove="false"><![CDATA[myaccount_registration.benefitOrderHistory]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[shortText]]></set-property>
+    </add-item>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <add-item id="txt310612" item-descriptor="storeTextList" no-checkin="false">
+      <set-property name="tag" add="false" remove="false"><![CDATA[benefits-list]]></set-property>
+      <set-property name="key" add="false" remove="false"><![CDATA[benefitsList]]></set-property>
+      <set-property name="list" add="false" remove="false"><![CDATA[txt210619,txt210621,txt210623,txt210625,txt210627,txt210629,txt210631,txt210633,txt210635]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[textList]]></set-property>
+    </add-item>
+    <add-item id="txt310614" item-descriptor="storeTextList" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[faq1]]></set-property>
+      <set-property name="list" add="false" remove="false"><![CDATA[txt10060,txt10070]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[textList]]></set-property>
+    </add-item>
+    <add-item id="txt310616" item-descriptor="storeTextList" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[faq2]]></set-property>
+      <set-property name="list" add="false" remove="false"><![CDATA[txt10080,txt10090]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[textList]]></set-property>
+    </add-item>
+    <add-item id="txt310618" item-descriptor="storeTextList" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[faq3]]></set-property>
+      <set-property name="list" add="false" remove="false"><![CDATA[txt10110,txt10120]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[textList]]></set-property>
+    </add-item>
+    <add-item id="txt310620" item-descriptor="storeTextList" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[faq4]]></set-property>
+      <set-property name="list" add="false" remove="false"><![CDATA[txt10130,txt10140]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[textList]]></set-property>
+    </add-item>
+    <add-item id="txt310622" item-descriptor="storeTextList" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[faq5]]></set-property>
+      <set-property name="list" add="false" remove="false"><![CDATA[txt10150,txt10160]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[textList]]></set-property>
+    </add-item>
+    <add-item id="txt310624" item-descriptor="storeTextList" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[faq-list]]></set-property>
+      <set-property name="list" add="false" remove="false"><![CDATA[txt310614,txt310616,txt310618,txt310620,txt310622]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[textList]]></set-property>
+    </add-item>
+    <add-item id="txt310626" item-descriptor="storeTextList" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[privacyPolicy]]></set-property>
+      <set-property name="list" add="false" remove="false"><![CDATA[txt10550,txt10560,txt10570]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[textList]]></set-property>
+    </add-item>
+    <add-item id="txt310629" item-descriptor="storeTextList" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[homeSite.news]]></set-property>
+      <set-property name="list" add="false" remove="false"><![CDATA[txt10583]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[textList]]></set-property>
+    </add-item>
+    <add-item id="txt310633" item-descriptor="storeTextList" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[storeSiteUS.news]]></set-property>
+      <set-property name="list" add="false" remove="false"><![CDATA[txt10581,txt10591]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[textList]]></set-property>
+    </add-item>
+    <add-item id="txt310631" item-descriptor="storeTextList" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[storeSiteDE.news]]></set-property>
+      <set-property name="list" add="false" remove="false"><![CDATA[txt10582,txt10592]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[textList]]></set-property>
+    </add-item>
+    <add-item id="txt510643" item-descriptor="storeTextList" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[companyTermsList]]></set-property>
+      <set-property name="list" add="false" remove="false"><![CDATA[txt510636,txt510638,txt510640,txt510648,txt510653,txt510658,txt510660,txt510668]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[textList]]></set-property>
+    </add-item>
+    <add-item id="txt510668" item-descriptor="storeTextList" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_terms8]]></set-property>
+      <set-property name="list" add="false" remove="false"><![CDATA[txt510667,txt10540]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[textList]]></set-property>
+    </add-item>
+    <add-item id="txt510653" item-descriptor="storeTextList" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_terms5]]></set-property>
+      <set-property name="list" add="false" remove="false"><![CDATA[txt510652,txt10510]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[textList]]></set-property>
+    </add-item>
+    <add-item id="txt510658" item-descriptor="storeTextList" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_terms6]]></set-property>
+      <set-property name="list" add="false" remove="false"><![CDATA[txt510657,txt10520]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[textList]]></set-property>
+    </add-item>
+    <add-item id="txt510648" item-descriptor="storeTextList" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_terms4]]></set-property>
+      <set-property name="list" add="false" remove="false"><![CDATA[txt510647,txt10500]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[textList]]></set-property>
+    </add-item>
+    <add-item id="txt510660" item-descriptor="storeTextList" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_terms7]]></set-property>
+      <set-property name="list" add="false" remove="false"><![CDATA[txt510663,txt10530]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[textList]]></set-property>
+    </add-item>
+    <add-item id="txt510636" item-descriptor="storeTextList" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_terms1]]></set-property>
+      <set-property name="list" add="false" remove="false"><![CDATA[txt10410,txt10420,txt10430]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[textList]]></set-property>
+    </add-item>
+    <add-item id="txt510640" item-descriptor="storeTextList" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_terms3]]></set-property>
+      <set-property name="list" add="false" remove="false"><![CDATA[txt10470,txt10480,txt10490]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[textList]]></set-property>
+    </add-item>
+    <add-item id="txt510638" item-descriptor="storeTextList" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_terms2]]></set-property>
+      <set-property name="list" add="false" remove="false"><![CDATA[txt10440,txt10450,txt10460]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[textList]]></set-property>
+    </add-item>
+    <add-item id="txt510679" item-descriptor="storeTextList" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[employmentPurpose]]></set-property>
+      <set-property name="list" add="false" remove="false"><![CDATA[txt10270,txt510676,txt10380,txt10390]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[textList]]></set-property>
+    </add-item>
+    <add-item id="txt510676" item-descriptor="storeTextList" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[employeeBenefits]]></set-property>
+      <set-property name="list" add="false" remove="false"><![CDATA[txt10280,txt10290,txt10300,txt10310,txt10320,txt10330,txt10340,txt10350,txt10360,txt10370]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[textList]]></set-property>
+    </add-item>
+    <add-item id="txt510682" item-descriptor="storeTextList" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[storeSiteUS.customerService]]></set-property>
+      <set-property name="list" add="false" remove="false"><![CDATA[txt510708,txt510711,txt510713,txt510715]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[textList]]></set-property>
+    </add-item>
+    <add-item id="txt510694" item-descriptor="storeTextList" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[storeSiteDE.customerService]]></set-property>
+      <set-property name="list" add="false" remove="false"><![CDATA[txt510717,txt510719,txt510721,txt510723]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[textList]]></set-property>
+    </add-item>
+    <add-item id="txt510698" item-descriptor="storeTextList" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[homeSite.customerService]]></set-property>
+      <set-property name="list" add="false" remove="false"><![CDATA[txt510700,txt510702,txt510704,txt510706]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[textList]]></set-property>
+    </add-item>
+    <add-item id="txt510708" item-descriptor="storeTextList" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[storeSiteUS.phone]]></set-property>
+      <set-property name="list" add="false" remove="false"><![CDATA[txt510672,txt10011]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[textList]]></set-property>
+    </add-item>
+    <add-item id="txt510711" item-descriptor="storeTextList" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[storeSiteUS.fax]]></set-property>
+      <set-property name="list" add="false" remove="false"><![CDATA[txt510685,txt10021]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[textList]]></set-property>
+    </add-item>
+    <add-item id="txt510713" item-descriptor="storeTextList" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[storeSiteUS.mail]]></set-property>
+      <set-property name="list" add="false" remove="false"><![CDATA[txt510688,txt10031]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[textList]]></set-property>
+    </add-item>
+    <add-item id="txt510715" item-descriptor="storeTextList" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[storeSiteUS.email]]></set-property>
+      <set-property name="list" add="false" remove="false"><![CDATA[txt510691,txt10041]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[textList]]></set-property>
+    </add-item>
+    <add-item id="txt510717" item-descriptor="storeTextList" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[storeSiteDE.phone]]></set-property>
+      <set-property name="list" add="false" remove="false"><![CDATA[txt510672,txt10012]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[textList]]></set-property>
+    </add-item>
+    <add-item id="txt510719" item-descriptor="storeTextList" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[storeSiteDE.fax]]></set-property>
+      <set-property name="list" add="false" remove="false"><![CDATA[txt510685,txt10022]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[textList]]></set-property>
+    </add-item>
+    <add-item id="txt510721" item-descriptor="storeTextList" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[storeSiteDE.mail]]></set-property>
+      <set-property name="list" add="false" remove="false"><![CDATA[txt510688,txt10032]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[textList]]></set-property>
+    </add-item>
+    <add-item id="txt510723" item-descriptor="storeTextList" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[storeSiteDE.email]]></set-property>
+      <set-property name="list" add="false" remove="false"><![CDATA[txt510691,txt10042]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[textList]]></set-property>
+    </add-item>
+    <add-item id="txt510700" item-descriptor="storeTextList" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[homeSite.phone]]></set-property>
+      <set-property name="list" add="false" remove="false"><![CDATA[txt510672,txt10013]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[textList]]></set-property>
+    </add-item>
+    <add-item id="txt510702" item-descriptor="storeTextList" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[homeSite.fax]]></set-property>
+      <set-property name="list" add="false" remove="false"><![CDATA[txt510685,txt10023]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[textList]]></set-property>
+    </add-item>
+    <add-item id="txt510704" item-descriptor="storeTextList" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[homeSite.mail]]></set-property>
+      <set-property name="list" add="false" remove="false"><![CDATA[txt510688,txt10033]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[textList]]></set-property>
+    </add-item>
+    <add-item id="txt510706" item-descriptor="storeTextList" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[homeSite.email]]></set-property>
+      <set-property name="list" add="false" remove="false"><![CDATA[txt510691,txt10043]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[textList]]></set-property>
+    </add-item>
+    <add-item id="txt510667" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="text"><![CDATA[Termination]]></set-property>
+      
+      <set-property name="key" add="false" remove="false"><![CDATA[company_terms.termination]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[shortText]]></set-property>
+    </add-item>
+    <add-item id="txt510652" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="text"><![CDATA[Links to Other Web Sites and Services]]></set-property>
+      
+      <set-property name="key" add="false" remove="false"><![CDATA[company_terms.linkToOtherWebSites]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[shortText]]></set-property>
+    </add-item>
+    <add-item id="txt510657" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="text"><![CDATA[Disclaimer]]></set-property>
+      
+      <set-property name="key" add="false" remove="false"><![CDATA[company_terms.disclaimer]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[shortText]]></set-property>
+    </add-item>
+    <add-item id="txt510647" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="text"><![CDATA[Inaccuracy Disclaimer]]></set-property>
+      
+      <set-property name="key" add="false" remove="false"><![CDATA[company_terms.inaccuracyDisclaimer]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[shortText]]></set-property>
+    </add-item>
+    <add-item id="txt510663" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="text"><![CDATA[Jurisdiction]]></set-property>
+      
+      <set-property name="key" add="false" remove="false"><![CDATA[company_terms.jurisdiction]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[shortText]]></set-property>
+    </add-item>
+    <add-item id="txt510672" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="text"><![CDATA[Phone]]></set-property>
+      
+      <set-property name="key" add="false" remove="false"><![CDATA[company.gadget.customer_service.byPhoneTitle]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[shortText]]></set-property>
+    </add-item>
+    <add-item id="txt510685" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="text"><![CDATA[Fax]]></set-property>
+      
+      <set-property name="key" add="false" remove="false"><![CDATA[company.gadget.customer_service.byFaxTitle]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[shortText]]></set-property>
+    </add-item>
+    <add-item id="txt510688" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="text"><![CDATA[Mail]]></set-property>
+      
+      <set-property name="key" add="false" remove="false"><![CDATA[company.gadget.customer_service.byMailTitle]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[shortText]]></set-property>
+    </add-item>
+    <add-item id="txt510691" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="text"><![CDATA[Email]]></set-property>
+      
+      <set-property name="key" add="false" remove="false"><![CDATA[company.gadget.customer_service.byEmailTitle]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[shortText]]></set-property>
+    </add-item>
+    <add-item id="txt510692" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="text"><![CDATA[Featured Items]]></set-property>
+      
+      <set-property name="key" add="false" remove="false"><![CDATA[horizontal_record_spotlightTitle]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[shortText]]></set-property>
+    </add-item>
+    <add-item id="txt510693" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="text"><![CDATA[Related Items]]></set-property>
+      
+      <set-property name="key" add="false" remove="false"><![CDATA[product_spotlight_categoryRelatedProductsTitle]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[shortText]]></set-property>
+    </add-item>
+    <add-item id="txt520694" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="text"><![CDATA[Recommended Items]]></set-property>
+      
+      <set-property name="key" add="false" remove="false"><![CDATA[product_spotlight_categoryRecommendedProductsTitle]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[shortText]]></set-property>
+    </add-item>
+    <add-item id="txt510695" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="text"><![CDATA[See All]]></set-property>
+      
+      <set-property name="key" add="false" remove="false"><![CDATA[horizontal_record_spotlightSeeAllText]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[shortText]]></set-property>
+    </add-item>
+    <add-item id="txt510696" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="text"><![CDATA[Featured Items]]></set-property>
+      
+      <set-property name="key" add="false" remove="false"><![CDATA[productTargeter_spotlightTitle]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[shortText]]></set-property>
+    </add-item>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <add-item id="txt510800" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="text"><![CDATA[<b>Find answers</b> in our Knowledge Base.]]></set-property>
+      
+      <set-property name="key" add="false" remove="false"><![CDATA[knowledgeBase.linkText]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[shortText]]></set-property>
+    </add-item>
+        
+    
+    <add-item id="txt510801" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="text"><![CDATA[Did You Mean:]]></set-property>
+      
+      <set-property name="key" add="false" remove="false"><![CDATA[knowledgeBase.labelCorrection]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[shortText]]></set-property>
+    </add-item>
+        
+    
+    <add-item id="txt510802" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="text"><![CDATA[Recommended Documents]]></set-property>
+      
+      <set-property name="key" add="false" remove="false"><![CDATA[knowledgeBase.labelDocuments]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[shortText]]></set-property>
+    </add-item>
+        
+    
+    <add-item id="txt510803" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="text"><![CDATA[More Results]]></set-property>
+      
+      <set-property name="key" add="false" remove="false"><![CDATA[knowledgeBase.labelMoreResults]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[shortText]]></set-property>
+    </add-item>
+        
+    
+    <add-item id="txt510804" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="text"><![CDATA[No Results Found]]></set-property>
+      
+      <set-property name="key" add="false" remove="false"><![CDATA[knowledgeBase.labelNoResults]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[shortText]]></set-property>
+    </add-item>
+    
+    
+    <add-item id="txt510805" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="text"><![CDATA[Other Suggested Searches:]]></set-property>
+      
+      <set-property name="key" add="false" remove="false"><![CDATA[knowledgeBase.labelRelated]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[shortText]]></set-property>
+    </add-item>
+    
+    
+    <add-item id="txt510806" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="text"><![CDATA[Find]]></set-property>
+      
+      <set-property name="key" add="false" remove="false"><![CDATA[knowledgeBase.labelSearch]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[shortText]]></set-property>
+    </add-item>
+    
+    
+    <add-item id="txt510807" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="text"><![CDATA[Find in KnowledgeBase?]]></set-property>
+      
+      <set-property name="key" add="false" remove="false"><![CDATA[knowledgeBase.labelQuery]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[shortText]]></set-property>
+    </add-item>
+    
+    
+  </import-items>
+</gsa-template>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Storefront/data/storetext-i18n.xml#6 $$Change: 797502 $-->

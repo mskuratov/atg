@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE database-initializer SYSTEM "http://www.atg.com/dtds/dbinit_1_0.dtd">
+<database-initializer>
+  <schema id="multiSiteRightNowSchema">
+    <sql>
+      <path>
+        <create>
+          sql/db_components/${database}/knowledgebase_multisite_ddl.sql
+        </create>
+        <drop>
+          sql/uninstall/${database}/drop_knowledgebase_multisite_ddl.sql
+      </drop>
+      </path>
+    </sql>
+  </schema>
+
+  <schema id="versionedMultiSiteRightNowSchema">
+    <sql>
+      <path>
+        <create>
+          sql/db_components/${database}/versioned_knowledgebase_multisite_ddl.sql
+        </create>
+        <drop>
+          sql/uninstall/${database}/drop_versioned_knowledgebase_multisite_ddl.sql
+      </drop>
+      </path>
+    </sql>
+  </schema>
+
+  <schema id="rightNowViewmappingSchema">
+    <data-import start-up-module="Store.KnowledgeBase">
+      <repository-path>/atg/web/viewmapping/ViewMappingRepository</repository-path>
+      <import-file-path>/CommerceReferenceStore/Store/KnowledgeBase/install/data/viewmapping.xml</import-file-path>
+    </data-import>
+  </schema>
+
+  <server-instance-type id="production">
+    
+    <datasource id="nonswitchingCore">
+      <schema id="multiSiteRightNowSchema" />
+    </datasource>
+
+    <datasource id="switchingA">
+      <schema id="multiSiteRightNowSchema" />
+    </datasource>
+
+    <datasource id="switchingB">
+      <schema id="multiSiteRightNowSchema" />
+    </datasource>
+
+  </server-instance-type>
+
+  <server-instance-type id="staging">
+
+    <datasource id="stagingnonswitchingCore">
+      <schema id="multiSiteRightNowSchema" />
+    </datasource>
+
+    <datasource id="stagingswitchingA">
+      <schema id="multiSiteRightNowSchema" />
+    </datasource>
+
+    <datasource id="stagingswitchingB">
+      <schema id="multiSiteRightNowSchema" />
+    </datasource>
+
+  </server-instance-type>
+
+
+  <server-instance-type id="management">
+
+    <datasource id="management">
+      <schema id="versionedMultiSiteRightNowSchema" />
+      <schema id="rightNowViewmappingSchema" />
+    </datasource>
+
+  </server-instance-type>
+
+</database-initializer>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/KnowledgeBase/cim/dbinit.xml#1 $$Change: 788278 $-->
+
+
+  

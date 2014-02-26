@@ -1,0 +1,454 @@
+/* Global Styles
+-----------------------------------------*/
+input[type="text"]{
+  padding:3px 0px 0 0;
+}
+input[type="password"]{
+  padding:3px 0px 0px 0px;
+}
+input[type="email"]{
+  padding:3px 0px 0px 0px;
+}
+input[type="tel"]{
+  padding:3px 0px 0px 0px;
+}
+.atg_store_infoList dd{
+  float:none;
+}
+.atg_store_basicForm li.option input{
+  float:left;
+}
+/* Button Styles */
+.atg_store_basicButton input{
+  font-size:1.3em !important;
+  padding-top:3px;
+}
+/* Fixes excess left and right space on input background images */
+.atg_store_basicButton input{
+  overflow:visible;
+}
+.cartActions ul li input.atg_store_actionDelete{
+  padding-right:20px !important;
+}
+
+/* Page Container
+-----------------------------------------*/
+#atg_store_locale{
+  margin-top:0;
+  padding-top:30px;
+}
+
+/* Header
+-----------------------------------------*/
+#atg_store_header{
+  z-index:1500;
+}
+#atg_store_mainHeader{
+  z-index:1400;
+}
+#atg_store_personalNav{
+  z-index:1200;
+}
+/* Search */
+#atg_store_searchStoreSelect{
+  white-space:nowrap;
+  font-size:.95em !important;
+  position:relative;
+  top:-2px;
+  left:-4px;
+}
+#atg_store_search #atg_store_searchStoreSelect{
+  margin-top:0;
+}
+#atg_store_search span.atg_store_smallButton input#atg_store_searchSubmit{
+  padding-left:2px !important; 
+}
+#atg_store_header #atg_store_personalNav{
+  float:none;
+}
+#atg_store_header #atg_store_personalNav #atg_store_personalNavItems{
+  float:right;
+}
+
+/* Cart Links */
+#atg_store_userAccountNav ul li.atg_store_welcomeMessage{
+  float:left;
+  padding-top:3px !important;
+  padding-bottom:0 !important;  
+  top:-1px;
+  position:relative;
+}
+#atg_store_personalNav ul#atg_store_personalNavItems > li a{
+  display:inline-block;
+  padding-top:4px;
+  padding-bottom:5px;
+}
+#atg_store_header #atg_store_userAccountNav ul > li{
+  padding-top:2px;
+  padding-bottom:2px;
+  display:inline-block;
+  float:left;
+}
+.atg_store_richCartButton {
+  background-position: 0 -3px;
+}
+
+#atg_store_itemTable td.item{
+  width:140px;
+}
+
+#atg_store_itemTable td.item .propertyContainer .propertyLabel{
+display: block;
+float: left;
+clear: left;
+}
+
+#atg_store_itemTable td.item .propertyContainer .propertyValue{
+float: left;
+display: block;
+word-wrap: break-word;
+}
+
+/* Gift List Drop Down */
+#atg_store_personalNav ul#atg_store_personalNavItems li.atg_store_giftListsNav div.atg_store_dropDownChild{
+  top:23px !important;
+}
+/* Category Navigation */
+#atg_store_catNavContainer .atg_store_dropDownChild {
+  top:39px;
+}
+#atg_store_catNavContainer ul#atg_store_catNav > li{
+  margin-right:5px;
+  float:left;
+
+}
+#atg_store_catNavContainer ul#atg_store_catNav > li > a{
+  padding-left:37px;
+  white-space:nowrap;
+}
+
+/* Home Page Promotions - For IE Only because IE7 does not supprt rgba colors with opacity
+-----------------------------------------*/
+
+#atg_store_homePromotionalItems ul.atg_store_product li{
+  background:url(/crsdocroot/content/images/storefront/hero_promo_bg.png) repeat-x 0 0
+}
+#atg_store_homePromotionalItems ul.atg_store_product li:hover{
+    background:url(/crsdocroot/content/images/storefront/hero_promo_bg.png) repeat-x 0 -80px;
+}
+
+
+/* Category Page 
+-----------------------------------------*/
+.category .atg_store_categoryPromotion span.atg_store_promoCopy{
+  margin-top:-2px !important;
+}
+
+/* Product Detail 
+-----------------------------------------*/
+
+/* No JavaScript */
+#no_js_picker_contents div.atg_store_pickerContainer select{
+  width:180px;
+}
+.atg_store_productSingleSkuWide .atg_store_addQty{
+  padding-top:10px;
+}
+/* More Actions */
+ul#moreactions{
+  padding-bottom:10px;
+}
+ul#moreactions li{
+  display:inline;
+}
+div.atg_store_pickerContainer div.atg_store_colorPicker,
+div.atg_store_pickerContainer div.atg_store_woodFinishPicker {
+  clear:both;
+  height:40px;
+  padding-bottom:0;
+}
+div.atg_store_pickerContainer div.atg_store_colorPicker span.selector,
+div.atg_store_pickerContainer div.atg_store_woodFinishPicker span.selector {
+  display:block;
+}
+div.atg_store_pickerContainer div.atg_store_colorPicker span.selector img,
+div.atg_store_pickerContainer div.atg_store_woodFinishPicker span.selector img{
+  vertical-align:middle;
+}
+ul#moreactions li.atg_store_giftListsActions .atg_store_giftListMenuContainer{
+  top:18px !important;
+}
+div.atg_store_pickerContainer div.atg_store_sizePicker span.selector, 
+div.atg_store_pickerContainer div.atg_store_colorPicker span.selector, 
+div.atg_store_pickerContainer div.atg_store_woodFinishPicker span.selector{
+  width:160px;
+}
+
+/* Product Comparisons */
+#atg_store_productComparisons{
+  padding-bottom:20px;
+}
+
+/* ATG Recommendations 
+-----------------------------------------*/
+#atg_store_recommendedProducts li span.siteIndicator{
+  background: url(/crsdocroot/content/images/storefront/ie_white_transparency.png) repeat;
+  cursor:pointer;
+}
+#atg_store_recommendedProducts li.even{
+  border-left:1px solid #ccc;
+}
+
+#atg_store_recommendedProducts li span.siteIndicator{
+  display:none !important;
+}
+#atg_store_recommendedProducts li:hover span.siteIndicator{
+  display:block !important;
+}
+/* When 1 item on bottom line */
+#atg_store_recommendedProducts li.odd.last{
+  border-right:1px solid #ccc;
+  border-bottom:none;
+}
+/* When 2 Items on bottom line */
+#atg_store_recommendedProducts li.even.last{
+  border-right:none;
+  border-bottom:none;
+}
+/* Gift List Search
+-----------------------------------------*/
+.atg_store_giftListSearchResults .atg_store_giftListSearch{
+  bottom:30px;
+}
+.atg_store_giftListSearchResults .atg_store_giftListSearch ul.atg_store_basicForm{
+  float:right;
+}
+
+/* My Account
+-----------------------------------------*/
+/* Checkout Preferences */
+#atg_store_checkoutPrefs ul li span.atg_store_curentPrefLabel{
+  width:113px;
+}
+#atg_store_checkoutPrefs ul li span.atg_store_curentPrefItem{
+  float:right;
+  clear:right;
+  width:95px;
+}
+
+/* Payment Info*/
+.atg_store_existingAddresses ul.atg_store_addNewCreditCard li{
+  margin-right:28px;
+}
+.atg_store_addCardInfo ul.atg_store_addNewCreditCard li.option{
+  width:110px;
+  margin-top:28px;
+  margin-right:18px;
+}
+.atg_store_addCardInfo ul.atg_store_addNewCreditCard li.atg_store_saveCC{
+  width:120px;
+}
+/* Add Gift List */
+#atg_store_addGiftList .atg_store_basicForm li {
+  float:none;
+  margin-bottom:20px;
+}
+
+/* Order Details */
+#atg_store_shipmentInfoContainer dl dd{
+}
+.atg_store_orderDetails #atg_store_shipmentInfoContainer dl.atg_store_groupPayment{
+  clear:none;
+}
+.atg_store_orderDetails #atg_store_shipmentInfoContainer dl.atg_store_groupPayment dd.atg_store_groupPaymentCardExp{
+  margin-left:100px;
+  white-space:nowrap;
+}
+.atg_store_orderDetails .atg_store_groupPayment dt{
+  padding-bottom:10px;
+}
+.atg_store_orderDetails .atg_store_groupPayment dd{
+  margin-top:3px;
+}
+
+/* Checkout
+-----------------------------------------*/
+/* Shopping Cart */
+#atg_store_gwpContainer #atg_store_gwpSelector{
+  overflow-x:hidden;
+  overflow-y:auto;
+}
+
+#atg_store_itemTable td.cartActions{
+  padding-right:8px;
+}
+
+/* Checkout Progress */
+.atg_store_checkout .atg_store_checkoutProgress li span.atg_store_stageNumber{
+  line-height:33px;
+}
+/* Order Summary */
+.atg_store_orderSummary ul.atg_store_orderSubTotals li{
+  clear:both;
+}
+.atg_store_orderSummary ul.atg_store_orderSubTotals li span.atg_store_orderSummaryItem{
+  float:right;
+  clear:none;
+}
+.atg_store_cartActions{
+  margin-top:-2px;
+}
+.atg_store_orderSummary ul.atg_store_orderSubTotals li span.atg_store_couponCode input[type="text"]{
+  float:none;
+}
+#atg_store_itemTable td.total{
+  padding:60px 5px 0px 0px;
+}
+
+/* Shipping & Billing */
+.atg_store_existingAddresses #atg_store_createNewShippingAddress,
+.atg_store_existingAddresses #atg_store_enterNewBillingAddress{
+  float:none;
+}
+#atg_store_paymentInfoAddNewCard .atg_store_existingAddresses #atg_store_enterNewBillingAddress{
+  width:49%;
+}
+.atg_store_addCardInfo ul.atg_store_addNewCreditCard li{
+  margin-right:26px;
+}
+.atg_store_addCardInfo ul.atg_store_addNewCreditCard li:first-child{
+  margin-left:0;
+  padding-left:20px;
+}
+.atg_store_addCardInfo ul.atg_store_addNewCreditCard li.atg_store_ccCsvCode a.atg_store_help{
+  margin-top:25px;
+  margin-left:-20px;
+  float:left;
+}
+
+.atg_store_addCardInfo ul.atg_store_addNewCreditCard li.option label,
+.atg_store_editCreditCard ul li.option label{
+  float:right;
+  margin-top:3px;
+}
+.atg_store_existingAddresses ul.atg_store_addNewAddress li.option label,
+.atg_store_myAccount ul.atg_store_basicForm li.default label,
+.atg_store_register ul.atg_store_basicForm li.option label{
+  margin-top:3px;
+}
+
+
+#atg_store_storedCreditCards .atg_store_paymentInfoGroup{
+  display:inline;
+}
+
+/* Confirmation */
+#atg_store_shipmentInfoContainer dl dd.atg_store_groupPaymentCardCSV label{
+  position:relative;
+  top:-3px;
+}
+
+/* Fixes for Nested Table Layout */
+.atg_store_orderConfirmation #atg_store_itemTable th.quantity,
+.atg_store_orderConfirmation #atg_store_itemTable th.prce,
+.atg_store_orderDetails #atg_store_itemTable th.quantity,
+.atg_store_orderDetails #atg_store_itemTable th.price{
+  padding-left:0 !important;
+  padding-right:0 !important;
+}
+.atg_store_orderConfirmation #atg_store_itemTable td.atg_store_quantityPrice span.quantity,
+.atg_store_orderDetails #atg_store_itemTable td.atg_store_quantityPrice span.quantity{
+ width:55px !important;
+}
+.atg_store_orderConfirmation #atg_store_itemTable td.atg_store_quantityPrice .atg_store_discountNote,
+.atg_store_orderConfirmation #atg_store_itemTable td.atg_store_quantityPrice .atg_store_oldPrice,
+.atg_store_orderDetails #atg_store_itemTable td.atg_store_quantityPrice .atg_store_discountNote,
+.atg_store_orderDetails #atg_store_itemTable td.atg_store_quantityPrice .atg_store_oldPrice{
+  margin-left:55px !important;
+}
+.atg_store_orderConfirmation #atg_store_itemTable td.atg_store_quantityPrice .atg_store_itemQty,
+.atg_store_orderDetails #atg_store_itemTable td.atg_store_quantityPrice .atg_store_itemQty{
+  width:130px !important;
+}
+.atg_store_orderConfirmation #atg_store_itemTable th.quantity,
+.atg_store_orderDetails #atg_store_itemTable th.quantity{
+  width:auto !important;
+}
+
+/* Promotions Page 
+-----------------------------------------*/
+.atg_store_promoCopy{
+  display:inline-block;
+  margin-top: 35px;
+}
+.atg_store_promo img{
+  display:inline-block;
+}
+.atg_store_promo span.atg_store_promoCopy{
+  width:auto;
+  height:auto;
+}
+.atg_store_promo a span.atg_store_promoCopy{
+  cursor:pointer;
+}
+
+/* Dimension Refinements / Breadcrumbs 
+-----------------------------------------*/
+#atg_store_refinementAncestorsLinks a,
+#atg_store_refinementAncestorsLinks .divider{
+display:inline-block;
+line-height:1.1em;
+}
+
+#atg_store_dimensionRefinements #atg_store_refinementAncestorsLastLink{
+margin:0;
+}
+
+/* Self Clearing Floats
+-----------------------------------------*/
+#atg_store_content,
+.atg_store_product,
+.atg_store_pickerContainer,
+.atg_store_colorPicker,
+.atg_store_woodFinishPicker,
+.atg_store_sizePicker,
+.atg_store_addQty,
+#atg_store_prodList,
+#atg_store_productCore,
+.atg_store_productSummary,
+#atg_store_checkoutProgressContainer,
+.atg_store_orderSubTotals,
+.atg_store_orderTotal,
+.atg_store_multiShipHeader,
+.atg_store_orderSummary ul li,
+.atg_store_storedAddressActions ul,
+.atg_store_emailProduct,
+#atg_store_popup .atg_store_basicForm,
+#atg_store_recommendedProducts ul,
+#atg_store_product_relatedProducts,
+#atg_store_storedCreditCards,
+.atg_store_registrationBenefits ul {
+  zoom:1;
+}
+
+#atg_store_header .endeca-slot{
+    width:auto;
+ }
+
+/* Number Spinner
+-----------------------------------------*/
+.dijitTextBox INPUT{
+  line-height: normal;
+  overflow-y:visible;
+  font-size: 100%;
+}
+.dijitButton{
+  zoom:1;
+}
+.dijitSpinner .dijitArrowButtonInner .dijitInputField{
+  zoom:50%;
+}
+.dijitInlineTable {
+  zoom: 1; 
+  display:inline; 
+}

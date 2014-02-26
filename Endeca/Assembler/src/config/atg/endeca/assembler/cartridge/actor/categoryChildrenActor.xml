@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<actor-template default-chain-id="categoryChildren"
+  xsi:noNamespaceSchemaLocation="http://www.atg.com/xsds/actorChain_1.0.xsd"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <actor-chain id="categoryChildren" transaction="TX_SUPPORTS">
+      <actor id="getCategory" chain-id="getCategory" name="/atg/commerce/catalog/ProductCatalogActor" return-model-var="getCategory">
+        <input name="categoryId" value="${currentContentItem.category.id}"/>
+        <input name="filterBySite" value="true"/>
+        <input name="filterByCatalog" value="true"/>
+        <input name="howMany" value="${currentContentItem.recsPerPage}"/>
+        <output id="getCategory" value="${getCategory}" add-map-children="true"/>
+      </actor>          
+  </actor-chain> 
+
+</actor-template>
+<!-- @version $Id: //hosting-blueprint/MobileCommerce/dev/10.2/server/MobileCommerce/config/atg/store/mobile/rest/actors/profile.xml#1 
+  $$Change: 794592 $ -->

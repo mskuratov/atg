@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gsa-template SYSTEM "dynamosystemresource:/atg/dtds/gsa/gsa_1.0.dtd">
+<gsa-template>
+  <update-item id="promo20004" item-descriptor="Shipping Discount">
+    <set-property name="sites"><![CDATA[homeSite,mobileHomeSite,storeSiteUS,mobileStoreSiteUS]]></set-property>
+  </update-item>
+  <update-item id="promo20011" item-descriptor="Order Discount">
+    <set-property name="sites"><![CDATA[homeSite,mobileHomeSite,storeSiteUS,mobileStoreSiteUS]]></set-property>
+  </update-item>
+  <update-item id="promo10003" item-descriptor="Shipping Discount">
+    <set-property name="sites"><![CDATA[homeSite,mobileHomeSite]]></set-property>
+  </update-item>
+  <update-item id="promo20009" item-descriptor="Item Discount">
+    <set-property name="sites"><![CDATA[homeSite,mobileHomeSite,storeSiteUS,mobileStoreSiteUS]]></set-property>
+  </update-item>
+  <update-item id="promo20010" item-descriptor="Item Discount">
+    <set-property name="sites"><![CDATA[homeSite,mobileHomeSite,storeSiteUS,mobileStoreSiteUS]]></set-property>
+  </update-item>
+  <update-item id="se-promo230003" item-descriptor="Item Discount">
+    <set-property name="media"><![CDATA[targetLink=xmHomeAccentsLink,homeSite=xmHomeAccentsLinkHome,mobileHomeSite=xmHomeAccentsLinkHome,storeSiteUS=xmHomeAccentsLinkStoreUS,mobileStoreSiteUS=xmHomeAccentsLinkStoreUS,large=se-m1150427]]></set-property>
+  </update-item>
+  <update-item id="se-promo240001" item-descriptor="Item Discount">
+    <set-property name="media"><![CDATA[targetLink=xmWomenApparelLink,storeSiteUS=xmWomenApparelLinkUS,mobileStoreSiteUS=xmWomenApparelLinkUS,large=se-m1160427]]></set-property>
+  </update-item>
+  <import-items>
+    <!-- promotions -->
+    <add-item id="promo30004" item-descriptor="Shipping Discount" no-checkin="false">
+      <set-property name="uses" add="false" remove="false"><![CDATA[1]]></set-property>
+      <set-property name="allowMultiple" add="false" remove="false"><![CDATA[false]]></set-property>
+      <set-property name="sites" add="false" remove="false"><![CDATA[mobileHomeSite,mobileStoreSiteUS]]></set-property>
+      <!-- export is false   <set-property name="version"><![CDATA[4]]></set-property>  -->
+      <set-property name="pmdlVersion" add="false" remove="false"><![CDATA[2]]></set-property>
+      <set-property name="creationDate" add="false" remove="false"><![CDATA[4/1/2010 15:57:00]]></set-property>
+      <set-property name="template" add="false" remove="false"><![CDATA[/shipping/getShippingDiscount.pmdt]]></set-property>
+      <set-property name="displayName" add="false" remove="false"><![CDATA[MOBILEFREESHIPPING Coupon - Free Shipping]]></set-property>
+      <!-- set-property name="media" add="false" remove="false"><![CDATA[large=promoCouponFreeShipping]]></set-property -->
+      <set-property name="description" add="false" remove="false"><![CDATA[<span class="atg_store_promoTitle">Free shipping</span> with <span>MOBILEFREESHIPPING</span> coupon code]]></set-property>
+      <set-property name="type" add="false" remove="false"><![CDATA[Shipping Discount]]></set-property>
+      <set-property name="pmdlRule" add="false" remove="false"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+          <!DOCTYPE pricing-model  SYSTEM "dynamosystemresource:/atg/dtds/pmdl/pmdl_1.0.dtd">
+          <pricing-model>
+            <qualifier/>
+            <offer>
+              <discount-structure calculator-type="standard" 
+                                  discount-type="fixedPrice" 
+                                  adjuster="0"/>
+            </offer>
+          </pricing-model>]]></set-property>
+      <set-property name="templateValues" add="false" remove="false"><![CDATA[display-name-L3NoaXBwaW5nL2dldFNoaXBwaW=Get Shipping Discount,discount_type_value=fixedPrice,discount_value=0]]></set-property>
+      <!-- set-property name="stackingRule" add="false" remove="false"><![CDATA[100002]]></set-property -->
+    </add-item>
+  </import-items>
+</gsa-template>

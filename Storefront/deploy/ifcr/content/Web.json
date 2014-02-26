@@ -1,0 +1,4 @@
+{
+"sling:resourceType": "endeca/orgFolder",
+"jcr:primaryType": "endeca:unstructured"
+}

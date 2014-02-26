@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+ATG-Product: Store store - Versioned Repository and Merchandising Extensions
+ATG-Client-Class-Path: lib/classes.jar
+ATG-Class-Path: lib/classes.jar
+ATG-Config-Path: config/config.jar
+ATG-StagingConfig-Path: configlayers/stagingandprod
+ATG-Required: DCS.Versioned DCS.DynamicCustomCatalogs.Versioned DAS.Versioned Store.EStore
+ATG-Required-If-Present: DCS-UI DCS-UI.Search SiteAdmin.Versioned
+ATG-PreviewConfig-Path: configlayers/preview/
+Name: lib/classes.jar
+ATG-Client-Update-File: true
+ATG-Web-Module: j2ee-apps/Versioned/store-merchandising.war

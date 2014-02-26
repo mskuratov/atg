@@ -1,0 +1,31 @@
+<%--
+  This page fragment generates a series of <dsp:option> tags,
+  one for each country we want to let the user select as part of shipping address.
+
+  NOTE: This page must be included using "@include" JSP directive, so that
+        any parent page variables are automatically visible in the "countryListPicker.jspf".
+
+  Page includes:
+    None
+
+  Required parameters:
+    countryRestrictionDroplet (JSTL variable)
+      Checks for the various droplets used while choosing the "Country" and "State".
+      "/atg/store/droplet/ShippingRestrictionsDroplet" is used for most of the cases
+    requestLocale (JSTL variable)
+      Locale used as "userLocale" parameter of the "countryRestrictionDroplet" droplet.
+
+  Optional parameters:
+    None
+--%>
+<dsp:option iclass="default" value="" role="option"><fmt:message key="mobile.profile.country"/></dsp:option>
+<dsp:droplet name="${countryRestrictionDroplet}">
+  <dsp:param name="userLocale" value="${requestLocale.locale}"/>
+  <dsp:oparam name="output">
+    <dsp:getvalueof var="countries" param="countries"/>
+    <c:forEach var="country" items="${countries}">
+      <dsp:option value="${country.code}" role="option"><c:out value="${country.displayName}"/></dsp:option>
+    </c:forEach>
+  </dsp:oparam>
+</dsp:droplet>
+<%-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Storefront/j2ee/store.war/mobile/global/util/countryListPicker.jspf#2 $$Change: 742374 $--%>

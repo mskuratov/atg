@@ -1,0 +1,17 @@
+<%--
+  This form is submitted from javascript to refresh the color size picker (by requesting
+  this page again) after the user has selected something new. See picker.js.
+
+  This gadget is included directly into the outer page, no parameters.
+--%>
+<dsp:getvalueof var="skuType" vartype="java.lang.String" param="skuType"/>
+<dsp:form formid="colorsizerefreshform" id="colorsizerefreshform" method="post"
+          action="${pageContext.request.contextPath}/browse/gadgets/${skuType == 'clothing' ? 'pickerContents.jsp' : 'pickerWoodFinishContents.jsp'}">
+  <input name="productId" type="hidden" value='<dsp:valueof param="productId"/>'/>
+  <input name="categoryId" type="hidden" value='<dsp:valueof param="categoryId"/>'/>
+  <input name="selectedColor" type="hidden" value='<dsp:valueof param="selectedColor"/>'/>
+  <input name="selectedSize" type="hidden" value='<dsp:valueof param="selectedSize"/>'/>
+  <input name="savedquantity" type="hidden" value='<dsp:valueof param="savedquantity"/>'/>
+  <input name="savedgiftlist" type="hidden" value='<dsp:valueof param="savedgiftlist"/>'/>
+</dsp:form>
+<%-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Storefront/j2ee/store.war/browse/gadgets/pickerRefreshForm.jspf#1 $$Change: 735822 $--%>

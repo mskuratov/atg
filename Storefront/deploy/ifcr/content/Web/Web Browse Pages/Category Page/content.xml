@@ -1,0 +1,91 @@
+<ContentItem type="Page" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://endeca.com/schema/content/2008">
+  <TemplateId>TwoColumnPage</TemplateId>
+  <Name>Two-Column Page</Name>
+  <Property name="HeaderContent">
+    <ContentItemList type="HeaderContent">
+      <ContentItem type="HeaderContent">
+        <TemplateId>HeaderBanner-ATGCategory</TemplateId>
+        <Name>Category Header Banner</Name>
+        <Property name="headerTitle">
+          <String/>
+        </Property>
+        <Property name="backgroundBannerURL">
+          <String/>
+        </Property>
+        <Property name="promotionalContentId">
+          <String/>
+        </Property>
+      </ContentItem>
+    </ContentItemList>
+  </Property>
+  <Property name="SecondaryContent">
+    <ContentItemList type="SecondaryContent">
+      <ContentItem type="SecondaryContent">
+        <TemplateId>Breadcrumbs</TemplateId>
+        <Name>Breadcrumbs</Name>
+        <Property name="displayNamePropertyAlias">
+            <String>displayName</String>
+        </Property>
+      </ContentItem>
+      <ContentItem type="SecondaryContent">
+        <TemplateId>ContentSlot-Secondary</TemplateId>
+        <Name>Guided Navigation</Name>
+        <Property name="contentCollection">
+          <String>/content/Shared/Guided Navigation</String>
+        </Property>
+        <Property name="ruleLimit">
+          <String>1</String>
+        </Property>
+      </ContentItem>
+      <ContentItem type="SecondaryContent">
+        <TemplateId>PromotionalContent-ATGSlot</TemplateId>
+        <Name>Promotional Content 1</Name>
+        <Property name="componentPath">
+          <String>CategoryPromotionContent1</String>
+        </Property>
+        <Property name="itemCount">
+          <String>1</String>
+        </Property>
+      </ContentItem>
+      <ContentItem type="SecondaryContent">
+        <TemplateId>PromotionalContent-ATGSlot</TemplateId>
+        <Name>Promotional Content 2</Name>
+        <Property name="componentPath">
+          <String>CategoryPromotionContent2</String>
+        </Property>
+        <Property name="itemCount">
+          <String>1</String>
+        </Property>
+      </ContentItem>
+    </ContentItemList>
+  </Property>
+  <Property name="MainContent">
+    <ContentItemList type="MainContent">
+      <ContentItem type="MainContent">
+        <TemplateId>ProductList-ATGCategoryChildren</TemplateId>
+        <Name>Category Products Grid</Name>
+        <Property name="recordsPerPage">
+          <String>12</String>
+        </Property>
+      </ContentItem>
+      <ContentItem type="MainContent">
+        <TemplateId>ContentSlot-Main</TemplateId>
+        <Name>Featured Items</Name>
+        <Property name="contentCollection">
+          <String>/content/Shared/Spotlights</String>
+        </Property>
+        <Property name="ruleLimit">
+          <String>1</String>
+        </Property>
+      </ContentItem>
+      <ContentItem type="MainContent">
+        <TemplateId>ProductSpotlight-ATGCategoryRecommendations</TemplateId>
+        <Name>Recommendations</Name>
+        <Property name="numberOfRecords">
+          <String>4</String>
+        </Property>
+      </ContentItem>
+    </ContentItemList>
+  </Property>  
+</ContentItem>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Storefront/deploy/ifcr/content/Web/Web Browse Pages/Category Page/content.xml#2 $$Change: 768606 $-->

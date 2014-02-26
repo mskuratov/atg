@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actor-template default-chain-id="message"
+                xsi:noNamespaceSchemaLocation="http://www.atg.com/xsds/actorChain_1.0.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <actor-chain id="message" transaction="TX_SUPPORTS">
+    <droplet id="storeText" name="/atg/store/droplet/StoreText" var="storeText">
+      <input name="key" value="${key}"/>
+      <input name="storeName" value="${storeName}"/>
+      <oparam name="output">
+        <output id="message" name="message" value="${storeText.message}"/>
+      </oparam>
+    </droplet>
+  </actor-chain>
+  <actor-chain id="contentList" transaction="TX_SUPPORTS">
+    <droplet id="storeText" name="/atg/store/droplet/StoreText" var="storeText">
+      <input name="key" value="${key}"/>
+      <input name="storeName" value="${storeName}"/>
+      <oparam name="output">
+        <droplet id="switch" name="/atg/dynamo/droplet/Switch">
+          <input name="value" value="${storeText.item.itemDescriptor.itemDescriptorName}"/>
+          <oparam name="storeTextList">
+            <droplet id="innerStoreText" name="/atg/store/droplet/StoreText" var="innerStoreText">
+              <input name="key" value="${storeText.item.key}"/>
+              <input name="storeName" value="${storeName}"/>
+              <oparam name="output">
+                <droplet id="switch" name="/atg/dynamo/droplet/Switch">
+                  <input name="value" value="${innerStoreText.size > 1 and innerStoreText.index == 0}"/>
+                  <oparam name="true">
+                    <output id="output" name="content${storeText.count}.title" value="${innerStoreText.message}"/>
+                  </oparam>
+                  <oparam name="false">
+                    <output id="output" name="content${storeText.count}.content${innerStoreText.index}" value="${innerStoreText.message}"/>
+                  </oparam>
+                </droplet>
+              </oparam>
+            </droplet>
+          </oparam>
+          <oparam name="default">
+            <output id="output" name="content${storeText.count}.content${storeText.index}" value="${storeText.message}"/>
+          </oparam>
+        </droplet>
+      </oparam>
+    </droplet>
+  </actor-chain>
+  <actor-chain id="shippingAndReturns" transaction="TX_SUPPORTS">
+    <actor id="storeName" name="/atg/store/droplet/StoreTextActor" return-model-var="storeName">
+      <input name="key" value="common.storeName"/>
+      <output id="storeName" name="storeName" value="${storeName.message}"/>
+    </actor>
+    <actor id="title" name="/atg/store/droplet/StoreTextActor" return-model-var="title">
+      <input name="key" value="mobile.company_shippingAndReturns.pageTitle"/>
+      <output id="title" name="title" value="${title.message}"/>
+    </actor>
+    <actor id="shippingTitle" name="/atg/store/droplet/StoreTextActor" return-model-var="shippingTitle">
+      <input name="key" value="mobile.company_shipping.title"/>
+      <output id="shippingTitle" name="shipping.title" value="${shippingTitle.message}"/>
+    </actor>
+    <actor id="shippingContent" name="/atg/store/droplet/StoreTextActor" return-model-var="shippingContent">
+      <input name="key" value="company_shipping.text"/>
+      <output id="shippingContent" name="shipping.content0.content" value="${shippingContent.message}"/>
+    </actor>
+    <actor id="returnTitle" name="/atg/store/droplet/StoreTextActor" return-model-var="returnTitle">
+      <input name="key" value="mobile.company_return.title"/>
+      <output id="returnTitle" name="return.title" value="${returnTitle.message}"/>
+    </actor>
+    <actor id="returnContent" name="/atg/store/droplet/StoreTextActor" return-model-var="returnContent">
+      <input name="key" value="company_returnPolicyPopup.text"/>
+      <output id="returnContent" name="return.content0.content" value="${returnContent.message}"/>
+    </actor>
+  </actor-chain>
+  <actor-chain id="aboutUs" transaction="TX_SUPPORTS">
+    <actor id="storeName" name="/atg/store/droplet/StoreTextActor" return-model-var="storeName">
+      <input name="key" value="common.storeName"/>
+      <output id="storeName" name="storeName" value="${storeName.message}"/>
+    </actor>
+    <actor id="title" name="/atg/store/droplet/StoreTextActor" return-model-var="title">
+      <input name="key" value="company_aboutUs.title"/>
+      <output id="title" name="title" value="${title.message}"/>
+    </actor>
+    <actor id="content" name="/atg/store/droplet/StoreTextActor" chain-id="contentList" return-model-var="content">
+      <input name="key" value="company_aboutUs.aboutUs"/>
+      <input name="storeName" value="${storeName.message}"/>
+      <output id="content" name="content" value="${content}"/>
+    </actor>
+    <actor id="subtitle" name="/atg/store/droplet/StoreTextActor" return-model-var="subtitle">
+      <input name="key" value="company_aboutUs.ourHistory"/>
+      <output id="subtitle" name="content.title" value="${subtitle.message}"/>
+    </actor>
+  </actor-chain>
+  <actor-chain id="privacyAndTerms" transaction="TX_SUPPORTS">
+    <actor id="storeName" name="/atg/store/droplet/StoreTextActor" return-model-var="storeName">
+      <input name="key" value="common.storeName"/>
+      <output id="storeName" name="storeName" value="${storeName.message}"/>
+    </actor>
+    <actor id="title" name="/atg/store/droplet/StoreTextActor" return-model-var="title">
+      <input name="key" value="mobile.company_privacyAndTerms.pageTitle"/>
+      <output id="title" name="title" value="${title.message}"/>
+    </actor>
+    <actor id="privacy" name="/atg/store/droplet/StoreTextActor" chain-id="contentList" return-model-var="privacy">
+      <input name="key" value="privacyPolicy"/>
+      <input name="storeName" value="${storeName.message}"/>
+      <output id="privacy" name="privacy" value="${privacy}"/>
+    </actor>
+    <actor id="privacyTitle" name="/atg/store/droplet/StoreTextActor" return-model-var="privacyTitle">
+      <input name="key" value="company_privacy.title"/>
+      <output id="privacyTitle" name="privacy.title" value="${privacyTitle.message}"/>
+    </actor>
+    <actor id="terms" name="/atg/store/droplet/StoreTextActor" chain-id="contentList" return-model-var="terms">
+      <input name="key" value="companyTermsList"/>
+      <input name="storeName" value="${storeName.message}"/>
+      <output id="terms" name="terms" value="${terms}"/>
+    </actor>
+    <actor id="termsTitle" name="/atg/store/droplet/StoreTextActor" return-model-var="termsTitle">
+      <input name="key" value="company_terms.title"/>
+      <output id="termsTitle" name="terms.content0.title" value="${termsTitle.message}"/>
+    </actor>
+    <actor id="additionalTermsContent" name="/atg/store/droplet/StoreTextActor" return-model-var="additionalTermsContent">
+      <input name="key" value="company_terms.welcomeNote"/>
+      <input name="storeName" value="${storeName.message}"/>
+      <output id="additionalTermsContent" name="terms.content0.content" value="${additionalTermsContent.message}"/>
+    </actor>
+  </actor-chain>
+</actor-template>
+<!-- @version $Id: //hosting-blueprint/MobileCommerce/version/10.2/server/MobileCommerce/config/atg/store/droplet/storeTextActor.xml#1 $$Change: 788278 $ -->

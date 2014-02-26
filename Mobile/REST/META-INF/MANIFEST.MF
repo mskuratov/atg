@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+ATG-Client-Class-Path: lib/classes.jar
+ATG-Class-Path: lib/classes.jar
+ATG-Config-Path: config/config.jar
+ATG-Required: Store.Mobile REST
+
+Name: lib/classes.jar
+ATG-Client-Update-File: true

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- CRS customizations for merchandising find configuration -->
+
+<find-configuration site-filtering="true">
+  <!-- Catalogs Custom Find view -->
+  <asset-family id="catalogs">
+    <asset-type
+      id="furniture-sku"
+      site-filtering="true">
+      <repository-path>/atg/commerce/catalog/MerchandisingProductCatalog</repository-path>
+      <repository-item-type>furniture-sku</repository-item-type>
+    </asset-type>
+
+    <asset-type
+      id="clothing-sku"
+      site-filtering="true">
+      <repository-path>/atg/commerce/catalog/MerchandisingProductCatalog</repository-path>
+      <repository-item-type>clothing-sku</repository-item-type>
+    </asset-type>
+  </asset-family>
+
+  <!-- Promotional Content Find View -->
+  <asset-family id="media" site-filtering="false">
+
+    <asset-type id="promotionalContent" site-filtering="false">
+      <repository-path>/atg/commerce/catalog/ProductCatalog</repository-path>
+      <repository-item-type>promotionalContent</repository-item-type>
+    </asset-type>
+
+  </asset-family>
+
+  <!-- Site Content Find View -->
+  <asset-family id="siteContent" site-filtering="false">
+
+    <display-name-resource>node.siteContent.label</display-name-resource>
+    <result-list page-size="100"/>
+    <default-asset-type>storeText</default-asset-type>
+
+    <asset-type id="storeText" site-filtering="false">
+      <repository-path>/atg/store/stores/StoreTextRepository</repository-path>
+      <repository-item-type>storeText</repository-item-type>
+    </asset-type>
+
+    <asset-type id="storeLongText" site-filtering="false">
+      <repository-path>/atg/store/stores/StoreTextRepository</repository-path>
+      <repository-item-type>storeLongText</repository-item-type>
+    </asset-type>
+
+  </asset-family>
+
+</find-configuration>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/Versioned/config/atg/remote/commerce/find/MerchandisingFindConfiguration.xml#2 $$Change: 788278 $-->

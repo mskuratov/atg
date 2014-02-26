@@ -1,0 +1,41 @@
+<%--
+  This jsp fragment renders the redirect prompt to the full CRS site.
+
+  NOTE: This page must be included using "@include" JSP directive, so that
+        any parent page variables are automatically visible in the "crsRedirect.jspf".
+
+  Required parameters:
+    topString (JSTL variable)
+      The string to be displayed in the top row of the redirect prompt.
+    bottomString (JSTL variable)
+      The string to be displayed in the bottom row of the redirect prompt.
+
+  Optional parameters:
+    successURL (JSTL variable)
+      Specifies the URL to redirect the user to on the full CRS site
+--%>
+<dsp:importbean bean="/atg/dynamo/servlet/dafpipeline/MobileDetectionInterceptor"/>
+
+<%-- Set "successURL", if not set --%>
+<c:if test="${empty successURL}">
+  <c:set var="successURL" value="../index.jsp"/>
+</c:if>
+
+<ul class="dataList">
+  <li>
+    <div class="content">
+      <p>${topString}</p>
+    </div>
+  </li>
+  <li>
+    <div class="content">
+      <dsp:getvalueof var="enableFullSiteParam" bean="MobileDetectionInterceptor.enableFullSiteParam"/>
+      <dsp:a page="${successURL}" class="icon-ArrowRight">
+        <dsp:param name="${enableFullSiteParam}" value="true"/>
+        <dsp:param name="orderId" value="${redirectOrderId}"/>
+        ${bottomString}
+      </dsp:a>
+    </div>
+  </li>
+</ul>
+<%-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Storefront/j2ee/store.war/mobile/includes/crsRedirect.jspf#3 $$Change: 793006 $--%>

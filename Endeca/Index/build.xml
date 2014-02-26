@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="endeca.index" default="all" basedir=".">
+
+  <property name="global.dir" value="${basedir}/../.."/>
+  <import file="${global.dir}/buildtools/common.xml"/> 
+  
+  <macrodef name="search-to-endeca-ioc-file">
+      <attribute name="source"/>
+      <attribute name="target"/>
+      <sequential>
+        <java classname="atg.endeca.index.util.SearchXMLToEndecaXML" failonerror="true">
+          <arg value="-o"/>
+          <arg file="@{target}"/>
+          <arg value="@{source}"/>
+          <classpath refid="daf.endeca.classpath"/>
+        </java>
+      </sequential>
+    </macrodef>
+ 
+  <macrodef name="search-to-endeca-ioc">
+     <attribute name="src-config-dir"/>
+     <attribute name="src-ioc-path"/>
+     <attribute name="dst-config-dir"/>
+     <attribute name="dst-ioc-path"/>
+     <sequential>
+       <dirname file="@{dst-config-dir}/@{dst-ioc-path}" property="dst-ioc-path-dir-property"/>
+       <mkdir dir="${dst-ioc-path-dir-property}"/>
+       <search-to-endeca-ioc-file
+          source="@{src-config-dir}/@{src-ioc-path}" 
+          target="@{dst-config-dir}/@{dst-ioc-path}"/>
+     </sequential>
+   </macrodef>
+  
+  <target name="transform-config-atg-search-to-endeca"
+    depends="check-atgconfigconfig.jar-uptodate"
+    unless="atgsearchconfig.jar.uptodate">
+    <delete dir="${build.dir}/atgsearchconfig"/>
+    <mkdir dir="${build.dir}/atgsearchconfig"/>
+        <!-- copy configuration files -->
+    <unjar dest="${build.dir}/atgsearchconfig" 
+      src="${dynamo.root.dir}/${install.unit}/${module.root.parent}/Search/Index/config/config.jar">
+      <patternset>
+        <include name="**/*.properties"/>
+        <include name="atg/commerce/search/product-catalog-output-config.xml"/>
+      </patternset>
+    </unjar>
+
+    <search-to-endeca-ioc 
+            src-config-dir="${build.dir}/atgsearchconfig"
+            dst-config-dir="${build.dir}/atgsearchconfig"
+            src-ioc-path="atg/commerce/search/product-catalog-output-config.xml"
+            dst-ioc-path="atg/commerce/endeca/index/product-sku-output-config.xml"/>
+    
+    <delete file="${build.dir}/atgsearchconfig/atg/commerce/search/product-catalog-output-config.xml"/>
+    
+    <jar jarfile="${install.dir}/config/atgsearchconfig.jar" basedir="${build.dir}/atgsearchconfig/" includes="**"/>
+  </target>
+  
+  <target name="check-atgconfigconfig.jar-uptodate">
+    <uptodate property="atgsearchconfig.jar.uptodate" targetfile="${install.dir}/config/atgsearchconfig.jar">
+      <srcfiles file="${dynamo.root.dir}/${install.unit}/${module.root.parent}/Search/Index/config/config.jar"/>
+    </uptodate>
+  </target>
+
+
+</project>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Endeca/Index/build-base.xml#4 $$Change: 799011 $-->

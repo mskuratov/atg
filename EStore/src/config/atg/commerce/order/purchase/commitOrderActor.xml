@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<actor-template
+  xsi:noNamespaceSchemaLocation="http://www.atg.com/xsds/actorChain_1.0.xsd"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+  <actor-chain id="commitOrder">
+    <form id="commitOrderFormHandler">
+      <input name="confirmEmailAddress" value="${confirmEmailAddress == null ? param.confirmEmailAddress : confirmEmailAddress}"/>
+      <input name="couponCode" value="${couponCode == null ? param.couponCode : couponCode}"/>
+      <input name="creditCardVerificationNumber" value="${creditCardVerificationNumber == null ? param.creditCardVerificationNumber : creditCardVerificationNumber}"/>
+    </form>
+  </actor-chain>
+</actor-template>
+
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/config/atg/commerce/order/purchase/commitOrderActor.xml#1 $$Change: 788278 $-->

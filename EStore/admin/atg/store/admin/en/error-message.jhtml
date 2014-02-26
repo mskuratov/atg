@@ -1,0 +1,28 @@
+<importbean bean="/atg/store/email/TemplateTesterFormHandler"/>
+<importbean bean="/atg/dynamo/droplet/ErrorMessageForEach">
+<importbean bean="/atg/commerce/order/OrderLookup"/>
+<importbean bean="/atg/dynamo/droplet/IsEmpty"/>
+
+<div class="templateTesterError">
+
+  <!-- display error information if order not found for the given orderId -->
+  <droplet bean="IsEmpty">
+    <param name="value" value="bean:TemplateTesterFormHandler.orderId"/>            
+    <oparam name="false">
+      <droplet name="OrderLookup">
+        <param name="orderId" value="bean:TemplateTesterFormHandler.orderId"/>
+        <oparam name="error">
+          <p class="emailTemplateError"><valueof param="errorMsg"/></p>
+        </oparam>
+      </droplet>  
+    </oparam>
+  </droplet>
+          
+  <droplet name="ErrorMessageForEach">
+    <param name="exceptions" value="bean:TemplateTesterFormHandler.formExceptions">
+    <oparam name="output">
+      <p class="emailTemplateError"><valueof param="message"></valueof></p>
+    </oparam>
+  </droplet>
+</div>
+<java>/* @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/admin/atg/store/admin/en/error-message.jhtml#1 $$Change: 735822 $*/</java>

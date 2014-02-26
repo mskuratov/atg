@@ -1,0 +1,23 @@
+<%-- 
+    This file is used to display items quantity of given SKU to include into the order, 
+  and it is included in the pickerLayout.jspf file directly.
+--%>
+
+<c:set var="qty_input_id" value="atg_store_enterQty"/>
+<%-- If status parameter is not empty, generate input id using status.count --%>
+<c:if test="${not empty status.count}">
+  <c:set var="qty_input_id" value="atg_store_enterQty_${status.count}"/>
+</c:if>
+
+<label class="atg_store_pickerLabel" for="${qty_input_id}">
+    <fmt:message key="common.qty"/><fmt:message key="common.labelSeparator"/>
+</label>
+
+<%--
+  This is where we preserve the quantity entered on the form during a refresh. The
+  refresh form will send up the current quantity entered in the form and we set it here.
+--%>
+  <dsp:input bean="CartModifierFormHandler.items[0].quantity" id="${qty_input_id}"
+           size="2" type="text" iclass="atg_store_numericInput" paramvalue="quantity" maxlength="5" dojoType="atg.store.widget.enterSubmit" targetButton="atg_behavior_addItemToCart" />
+           
+<%-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Storefront/j2ee/store.war/browse/gadgets/pickerQuantityAttribute.jspf#2 $$Change: 788278 $--%>

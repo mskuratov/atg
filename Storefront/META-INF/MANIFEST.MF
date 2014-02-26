@@ -1,0 +1,9 @@
+ATG-Product: Storefront Fashion Commerce
+Manifest-Version: 1.0
+ATG-Client-Class-Path: lib/classes.jar
+ATG-Class-Path: lib/classes.jar
+ATG-Required: Store.Endeca.Assembler DCS.AbandonedOrderServices Store.EStore
+ATG-Web-Module: j2ee-apps/Storefront/store.war j2ee-apps/Storefront/storedocroot.war
+
+Name: lib/classes.jar
+ATG-Client-Update-File: true

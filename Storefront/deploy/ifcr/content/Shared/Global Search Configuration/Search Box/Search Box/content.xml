@@ -1,0 +1,17 @@
+<ContentItem type="SearchBox" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://endeca.com/schema/content/2008">
+  <TemplateId>SearchBox</TemplateId>
+  <Name>Search Box</Name>
+  <Property name="autoSuggestEnabled">
+    <Boolean>true</Boolean>
+  </Property>
+  <Property name="contentCollection">
+    <String>/content/Shared/Auto-Suggest Panels</String>
+  </Property>
+  <Property name="minAutoSuggestInputLength">
+    <String>3</String>
+  </Property>
+  <Property name="ruleLimit">
+    <String>1</String>
+  </Property>
+</ContentItem>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Storefront/deploy/ifcr/content/Shared/Global Search Configuration/Search Box/Search Box/content.xml#4 $$Change: 791340 $-->

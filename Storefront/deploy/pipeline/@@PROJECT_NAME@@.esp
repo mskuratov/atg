@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE STUDIO_PROJECT SYSTEM "studio_project.dtd">
+<STUDIO_PROJECT APP_VERSION="6.1" NAME="Commerce Reference Store" VERSION="600">
+
+  <PROJECT_MANAGER_CONFIG APPLICATION="@@PROJECT_NAME@@" PORT="8006" URL="localhost"/>
+
+  <PROJECT_PIPELINE URL="pipeline.epx"/>
+
+  <PROJECT_PIPELINE TYPE="PARTIAL" URL="partial_pipeline.epx"/>
+
+  <PROJECT_FILE TYPE="ANALYTICS_CONFIG" URL="@@PROJECT_NAME@@.analytics_config.xml"/>
+
+  <PROJECT_FILE TYPE="DERIVED_PROPS" URL="@@PROJECT_NAME@@.derived_props.xml"/>
+
+  <PROJECT_FILE TYPE="DIMENSION_GROUPS" URL="@@PROJECT_NAME@@.dimension_groups.xml"/>
+
+  <PROJECT_FILE TYPE="DIMENSION_REFS" URL="@@PROJECT_NAME@@.dimension_refs.xml"/>
+
+  <PROJECT_FILE TYPE="DIMSEARCH_CONFIG" URL="@@PROJECT_NAME@@.dimsearch_config.xml"/>
+
+  <PROJECT_FILE TYPE="DIMSEARCH_INDEX" URL="@@PROJECT_NAME@@.dimsearch_index.xml"/>
+
+  <PROJECT_FILE TYPE="DVAL_RANKS" URL="@@PROJECT_NAME@@.dval_ranks.xml"/>
+
+  <PROJECT_FILE TYPE="DVAL_REFS" URL="@@PROJECT_NAME@@.dval_refs.xml"/>
+
+  <PROJECT_FILE HIGHEST_ID="18" TYPE="MERCH_RULES" URL="@@PROJECT_NAME@@.merch_rules.xml"/>
+
+  <PROJECT_FILE TYPE="MERCHSTYLES" URL="@@PROJECT_NAME@@.merchstyles.xml"/>
+
+  <PROJECT_FILE TYPE="MERCHZONES" URL="@@PROJECT_NAME@@.merchzones.xml"/>
+
+  <PROJECT_FILE TYPE="PRECEDENCE_RULES" URL="@@PROJECT_NAME@@.precedence_rules.xml"/>
+
+  <PROJECT_FILE TYPE="PROP_REFS" URL="@@PROJECT_NAME@@.prop_refs.xml"/>
+
+  <PROJECT_FILE TYPE="RECORD_FILTER" URL="@@PROJECT_NAME@@.record_filter.xml"/>
+
+  <PROJECT_FILE TYPE="RECORD_SORT_CONFIG" URL="@@PROJECT_NAME@@.record_sort_config.xml"/>
+
+  <PROJECT_FILE TYPE="RECORD_SPEC" URL="@@PROJECT_NAME@@.record_spec.xml"/>
+
+  <PROJECT_FILE TYPE="RECSEARCH_CONFIG" URL="@@PROJECT_NAME@@.recsearch_config.xml"/>
+
+  <PROJECT_FILE TYPE="RECSEARCH_INDEXES" URL="@@PROJECT_NAME@@.recsearch_indexes.xml"/>
+
+  <PROJECT_FILE TYPE="REFINEMENTS_CONFIG" URL="@@PROJECT_NAME@@.refinement_config.xml"/>
+
+  <PROJECT_FILE TYPE="RELRANK_STRATEGIES" URL="@@PROJECT_NAME@@.relrank_strategies.xml"/>
+
+  <PROJECT_FILE TYPE="RENDER_CONFIG" URL="@@PROJECT_NAME@@.render_config.xml"/>
+
+  <PROJECT_FILE TYPE="ROLLUPS" URL="@@PROJECT_NAME@@.rollups.xml"/>
+
+  <PROJECT_FILE TYPE="SEARCH_CHARS" URL="@@PROJECT_NAME@@.search_chars.xml"/>
+
+  <PROJECT_FILE TYPE="STOP_WORDS" URL="@@PROJECT_NAME@@.stop_words.xml"/>
+
+  <PROJECT_FILE TYPE="THESAURUS" URL="@@PROJECT_NAME@@.thesaurus.xml"/>
+
+  <PROJECT_FILE TYPE="STEMMING" URL="@@PROJECT_NAME@@.stemming.xml"/>
+
+  <PROJECT_FILE TYPE="PROFILES" URL="@@PROJECT_NAME@@.profiles.xml"/>
+
+  <PROJECT_FILE TYPE="PHRASES" URL="@@PROJECT_NAME@@.phrases.xml"/>
+
+  <PROJECT_FILE TYPE="KEY_PROPS" URL="@@PROJECT_NAME@@.key_props.xml"/>
+
+  <PROJECT_FILE TYPE="LANGUAGES" URL="@@PROJECT_NAME@@.languages.xml"/>
+
+  <PROJECT_FILE TYPE="CRAWLER_GLOBAL_CONFIG" URL="@@PROJECT_NAME@@.crawler_global_config.xml"/>
+
+  <PROJECT_FILE TYPE="CRAWLER_DEFAULTS" URL="@@PROJECT_NAME@@.crawler_defaults.properties"/>
+
+  <PROJECT_FILE TYPE="CRAWL_PROFILES" URL="@@PROJECT_NAME@@.crawl_profiles.xml"/>
+
+  <PROJECT_FILE TYPE="CRAWL_PROFILE" URL="crawl_profile_1.xml"/>
+
+</STUDIO_PROJECT>

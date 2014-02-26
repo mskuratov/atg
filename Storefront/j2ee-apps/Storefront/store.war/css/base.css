@@ -1,0 +1,1628 @@
+/**********************************************************************************************
+
+Title: CRS - Dupont Base Grid
+Date: October 2010
+
+***********************************************************************************************
+
+1. Reset
+
+2. GLOBAL STRUCTURE
+2.1  Accessibility Navigation
+2.2  Page Container
+2.3  2-Column Left Layout
+2.4  2-Column Right Layout
+2.5  3-Column Layout
+2.6  Header
+2.7  Category Navigation
+2.8  Footer
+
+3.  GLOBAL SITE COMPONENTS
+3.1  Drop Down Menu Functionality
+3.2  Item Listing Layout
+3.3  Basic Form
+3.4  Rich Cart
+3.5  Button Types
+3.6  Item Listing Table
+3.7  Pagination
+
+4.  HOME PAGE
+4.1  Home Page Featured Products
+
+5.  CATEGORY, SUBCATEGORY, & SEACH RESULTS PAGES
+5.1  Side Promotions
+5.2  Sort By
+5.3  Ajax Spinner
+
+6.  PRODUCT DETAIL PAGE
+6.1  Product Image
+6.2  Product Info
+6.3  Product Color/Wood Finish & Size Pickers
+6.4  Recommended Products
+6.5  Size Chart
+6.6  JavaScript Disabled
+
+7.  LOGIN PAGES
+7.1  Login
+7.2  Checkout Login
+7.3  Forgot Password
+
+8.  REGISTRATION
+8.1  Regular Registration
+8.2  Checkout Registration
+
+
+9.  CHECKOUT & RETURN ITEM PAGES
+9.1  Order Summary
+9.2  Checkout Progress / Return Item Progress
+9.3  Shopping Cart / Return Item Selection
+9.4  Shipping
+
+10.  POPUPS
+10.1  Email A Friend
+
+
+11. DOJO POPOVER AND LIGHTBOX
+11.1  Popover
+11.2  Lightbox
+11.3  dojox.widget.Dialog
+
+12.  SELF CLEARING FLOATS
+
+**********************************************************************************************
+
+1. Reset                                                                                    
+============================================================================================*/
+body{
+  font-size:62.5%;
+  font-family: Verdana,Geneva,sans-serif;
+  height:100%;
+}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
+  margin:0;
+  padding:0;
+}
+table {
+  border-collapse:collapse;
+  border-spacing:0;
+}
+fieldset,img { 
+  border:0;
+}
+address,caption,cite,code,dfn,em,th,var {
+  font-style:normal; 
+  font-weight:normal;
+}
+ol,ul {
+  list-style:none;
+}
+caption,th {
+  text-align:left;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-weight:normal;
+}
+q:before,q:after {
+  content:'';
+}
+abbr,acronym { 
+  border:0;
+}
+a{text-decoration:none;}
+
+iframe{
+  border:none;
+}
+
+/* 2. Global Structure
+============================================================================================*/ 
+
+/* 2.1 -  Accessibility navigation
+----------------------------------------------------------*/
+#atg_store_accessibility_nav a, #atg_store_accessibility_nav a:hover, #atg_store_accessibility_nav a:visited 
+{
+  position: absolute;
+  left: -1000em;
+  text-align: left;
+}
+
+#atg_store_accessibility_nav a:active, #atg_store_accessibility_nav a:focus 
+{ 
+  position:static; 
+  width:auto; 
+  height:auto; 
+  font-family: Verdana,Geneva,sans-serif;
+}
+/* 2.2 - Page Container
+----------------------------------------------------------*/ 
+body{
+  background-color: #eee;
+}
+hr{
+  display:none;
+}
+#atg_store_container{
+  width: 981px;
+  margin: 0 auto;
+  position:relative;
+}
+#atg_store_content{
+  min-height:496px;
+}
+#atg_store_main{
+  background-color: #fff;
+}
+
+/* 2.3 - 2-Column Left Layout
+----------------------------------------------------------*/
+.atg_store_leftCol #atg_store_content .aside{
+  float:left;
+  width:183px;
+}
+.atg_store_leftCol #atg_store_content .atg_store_main{
+  float:right;
+  width: 797px;
+  padding-top:40px;
+}
+
+/* 2.4 - 2-Column Right Layout
+----------------------------------------------------------
+Note:  All pages use "atg_store_rightCol" on bodyClass if a right column is shown on the page.  
+The only exception to this is the Confirm Order Response page, which has a right column ONLY when accessed from an anonymous user.
+Because anonymous and registered confirmation response pages use the same JSP, we are using the page name bodyClass instead of
+"atg_store_rightCol" for this page ONLY.
+
+*/
+.atg_store_rightCol #atg_store_content .aside,
+.atg_store_confirmResponseRegister #atg_store_content .aside{
+  float:right;
+  width:183px;
+}
+.atg_store_rightCol #atg_store_content .atg_store_main,
+.atg_store_confirmResponseRegister #atg_store_content .atg_store_main{
+  float:left;
+  width: 798px;
+}
+
+/* 2.5 - 3-Column Layout
+----------------------------------------------------------*/
+.atg_store_threeCol #atg_store_content .aside{
+  float:left;
+  width:183px;
+}
+
+/* 2.6 - Header 
+----------------------------------------------------------*/
+
+/* Country, Region, Language 
+-----------------------------*/
+#atg_store_locale dt,
+#atg_store_locale dd{
+  display:inline;
+}
+#atg_store_locale dd{
+  margin-right:10px;
+}
+#atg_store_sites,
+#atg_store_regions,
+#atg_store_languages{
+  display:inline;
+  margin-right:40px;
+}
+
+/* Header Navigation
+---------------------*/
+#atg_store_header #atg_store_userAccountNav ul > li,
+#atg_store_header #atg_store_personalNav ul#atg_store_personalNavItems > li{
+  display:inline;
+  margin-right:10px;
+}
+#atg_store_header #atg_store_userAccountNav ul > li:first-child,
+#atg_store_header #atg_store_personalNav ul#atg_store_personalNavItems > li:first-child{
+  margin-left:0;
+}
+#atg_store_header #atg_store_userAccountNav ul > li:first-child{
+  float:left;
+}
+#atg_store_userAccountNav ul li.atg_store_welcomeMessage{
+  max-width:325px;
+}
+#atg_store_userAccountNav ul li.atg_store_welcomeMessage .atg_store_welcome{
+  float:left;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  width:225px;
+  margin-right: 8px;
+  text-align: right;
+  white-space:nowrap;
+}
+#atg_store_userAccountNav ul li.atg_store_welcomeMessage .atg_store_loggedInUserName{
+  font-weight:bold;
+}
+
+#atg_store_userAccountNav ul li.atg_store_welcomeMessage a{
+  white-space:nowrap;
+  float:left;
+}
+
+/* 2.7 Category Navigation 
+----------------------------------------------------------*/
+#atg_store_catNavContainer{
+  clear:both;
+}
+#atg_store_catNav {
+  width: 100%;
+}
+#atg_store_header #atg_store_catNav > li{
+  display:inline-block;
+}
+#atg_store_header #atg_store_catNav >  li a{
+  display:block;
+}
+#atg_store_header #atg_store_catNav >  li > a{
+  margin-left:10px;
+}
+
+/* 2.8 Footer 
+----------------------------------------------------------*/
+#atg_store_tertiaryNavigation ul li{
+  display: inline;
+  margin-left:10px;
+}
+#atg_store_tertiaryNavigation ul li:first-child{
+  margin-left:0;
+}
+
+/* 3. GLOBAL SITE COMPONENTS
+============================================================================================*/
+
+/* 3.1 - Drop Down Menu Functionality-
+----------------------------------------------------------
+   Note:  These styles are used for Gift List drop down menu, Product Detail Gift List Menu,
+          and main Category Navigation */
+
+.atg_store_dropDownParent{
+  position:relative;
+  z-index:800;
+}
+.atg_store_dropDownParent .atg_store_dropDownChild{
+  display:none;
+  background:#fff;
+  position:absolute;
+  left:0;
+  z-index:1000;
+  border:1px solid #333333;
+  width:150px;
+}
+.atg_store_dropDownParent:hover .atg_store_dropDownChild{
+  display:block;
+}
+.atg_store_dropDownChild ul li{
+  margin:0;
+  padding:0;
+  border:none;
+}
+
+/* 3.2 Item Product Listing Layout 
+----------------------------------------------------------*/
+ul.atg_store_product li{
+  float: left;
+  width:25%;
+}
+ul.atg_store_product li a{
+  display: block;
+  text-decoration:none;
+  height:225px;
+  position:relative;
+}
+ul.atg_store_product li a span{
+  display:block;
+}
+ul.atg_store_product li a span.atg_store_productImage{
+  text-align:center;
+}
+ul.atg_store_product li a span.atg_store_productPrice span.atg_store_oldPrice{
+  display:inline;
+}
+/* Cross-Site Indicator */
+ul.atg_store_product li span.siteIndicator{
+  white-space:nowrap;
+}
+ul.atg_store_product li span.siteIndicator span{
+  display:inline ;
+}
+
+/* 3.3 Basic Form
+----------------------------------------------------------
+Note:  CRS marks all required form fields with an asterisk and
+       has an explantation of what the asterisk means.  These are
+       hidden by default.  */
+span.required,
+span.require,
+p.required,
+.atg_store_formKey{
+  display:none !important;
+}
+input[type="radio"]{
+  vertical-align:middle;
+}
+textarea{
+  height:100px;
+  width:285px;
+  max-width:285px;   /* Prevents textarea from being expanded in Safari */
+  max-height:100px;  /* Prevents textarea from being expanded in Safari */
+}
+.atg_store_basicForm li{
+  margin-bottom:15px;
+}
+ul.atg_store_basicForm li label{
+  width:130px;
+  float:left;
+  clear:left;
+}
+ul.atg_store_basicForm label span{
+  display:block;
+  font-weight:normal;
+}
+ul.atg_store_basicForm li input[type="text"],
+ul.atg_store_basicForm li input[type="password"],
+ul.atg_store_basicForm li input[type="email"],
+ul.atg_store_basicForm li input[type="tel"]{
+  width:280px;
+  height:20px;
+}
+ul.atg_store_basicForm li select{
+  width:280px;
+}
+ul.atg_store_basicForm li select#atg_store_paymentInfoAddNewCardMonth,
+ul.atg_store_basicForm li select#atg_store_expirationDateMonthSelect{
+  width:75px;
+}
+ul.atg_store_basicForm li select#atg_store_paymentInfoAddNewCardYear, 
+ul.atg_store_basicForm li select#atg_store_expirationDateYearSelect {
+  width:60px
+}
+ul.atg_store_basicForm li.option label,
+ul.atg_store_basicForm li.default label{
+  text-align:right;
+  width:145px;
+}
+span.example{
+  display:block;
+  margin-left:130px; /* Matches width of label */
+}
+
+/* 3.4 Rich Cart 
+----------------------------------------------------------
+
+/* Hide Rich Cart - javascript.js has style to show rich cart when JS is enabled*/
+#atg_store_header #atg_store_personalNav ul#atg_store_personalNavItems li.atg_store_viewCart{
+  display:none;
+}
+
+/* Note:  Exact positioning of Rich Cart is found in store.js */
+#atg_store_richCart{
+  position: absolute;
+  text-align: left;
+  z-index: 1000;
+  background: #fff;
+  border: 1px solid #343434;
+  width: 285px;
+}
+#atg_store_richCart a.atg_store_csClose {
+  position:absolute;
+  top:2px;
+  right:2px;
+  background:#000;
+}
+#atg_store_richCart #atg_store_richCartHeader h3{
+  display:inline;
+}
+#atg_store_richCart > ul {
+  /* To Invoke Scroll Bars after 450px */
+  max-height: 425px;
+  overflow: auto;
+  overflow-x: hidden;
+  position:relative;
+}
+#atg_store_richCart li{
+  float:left;
+  clear:left;
+  width:100%;
+}
+#atg_store_richCart li img,
+#atg_store_richCart li .atg_store_richCartImage,
+#atg_store_richCart div.atg_store_richCartItem{
+  float:left;
+}
+#atg_store_richCart div.atg_store_richCartItem a.atg_store_richCartItemDescription{
+  display:block;
+  max-width:120px; /* Temp style for grid.css layout */
+}
+#atg_store_richCart div.atg_store_richCartItem dt{
+  float:left;
+}
+#atg_store_csFooter .atg_store_csSubtotal{
+  white-space:nowrap;
+}
+#atg_store_richCart a.atg_store_richCartCart{
+  margin-right:5px;
+}
+
+/* 3.5 Button Types 
+----------------------------------------------------------*/
+
+/* This button class will style a submit butotn like a link */
+input.atg_store_textButton{
+    background:none;
+    border:none;
+    cursor:pointer;
+    color:#0000FF;
+    font-size:1em;
+    overflow:visible; /* To fix extra left and right padding in IE */
+    font-family:Verdana,Geneva,sans-serif; /* Must repeat same font-family as on body */
+}
+
+/* 3.6 Item Listing Table
+----------------------------------------------------------*/
+#atg_store_itemTable{
+  width:100%;
+}
+
+/* 3.7 Pagination
+----------------------------------------------------------*/
+.atg_store_pagination ul li{
+  display:inline;
+  margin-right:5px;
+}
+
+.disabledLink{
+  color: #333 !important;
+  cursor: default;
+}
+
+/* 3.8 Info List
+----------------------------------------------------------*/
+.atg_store_infoList dt {
+    clear: left;
+}
+
+/* 4. HOME PAGE
+============================================================================================*/
+
+/* 4.1 Home Page Featured Products
+----------------------------------------------------------*/
+.atg_store_homepage_products ul.atg_store_product li{
+  width:20%;
+}
+
+/* 5. CATEGORY, SUB CATEGORY PAGES, & SEARCH RESULTS
+============================================================================================*/
+#atg_store_prodList,
+#atg_store_featured_prodList{
+  clear:both;
+}
+
+/* 5.1 Category Side Promotions
+----------------------------------------------------------*/
+.category .atg_store_categoryPromotion .atg_store_promoCopy,
+.category .atg_store_categoryPromotion .atg_store_promotionItem{
+  display:block;
+} 
+
+/* 5.2 Sort By
+----------------------------------------------------------*/
+dl.atg_store_filter label{
+  float:left;
+}
+
+/* 5.3 AJAX spinner image
+----------------------------------------------------------*/
+#ajaxSpinner {
+  display:none;
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:100px;
+  height:100px;
+  margin-top:-50px;
+  margin-left:-50px;
+}
+#transparentLayer{
+  display:none;
+  position:absolute;
+  left:0;
+  top:0;  
+  width:100%;
+  height:100%;
+}
+#transparentLayer.active{
+  display:block;
+  background:#FFFFFF;
+  opacity:0.8;
+  filter:alpha(opacity=80);
+}
+#ajaxSpinner.active{
+  display:block;
+  background: url('/crsdocroot/content/images/storefront/ajax-loader.gif') no-repeat;
+}
+#ajaxContainer {
+  position:relative;
+  min-height: 500px;
+}
+/* 5.4 What's New
+----------------------------------------------------------*/
+.atg_store_whatsNewProducts{
+  clear: left;
+  float: left;
+  width: 100%;
+}
+
+
+/* 6. Product Detail Page
+============================================================================================*/
+
+/* 6.1 Product Image 
+----------------------------------------------------------*/
+#atg_store_productCore .atg_store_productImage{
+  float:left;
+  text-align:center;
+  padding:0 10px 0 0;
+  width:420px;
+}
+#atg_store_productCore .atg_store_productImage a{
+  display:block;
+}
+
+/* 6.2 Product Info 
+----------------------------------------------------------*/
+/* Hiding DIV which contains error messages for ajax form validation */
+.promptSelectDIV {
+  display: none;
+}
+#productInfoContainer{
+  float:left;
+}
+.atg_store_productSummary,
+#atg_store_productAsSeenIn{
+  width:350px;
+}
+.atg_store_productDescription{
+  clear:right;
+  width:350px;
+}
+
+.atg_store_productDescription div{
+  margin-bottom: 15px;
+}
+
+div.atg_store_productDescription em{
+  font-style: italic;
+}
+
+div.atg_store_productDescription #description ul,
+div.atg_store_productDescription #description ol{
+  padding-left: 15px;
+  padding-top: 5px;
+}
+div.atg_store_productDescription #description ul{
+  list-style-type: disc;
+}
+div.atg_store_productDescription #description ol{
+  list-style-type: decimal;
+}
+
+.atg_store_quantity{
+  padding-bottom:15px;
+  position:relative;
+  float:left;
+}
+.atg_store_addQty{
+  clear:both;
+}
+.atg_store_itemID{
+  position:absolute;
+  bottom:0;
+  right:0;
+ }
+.atg_store_productAvailability{
+  float:left;
+  clear:left;
+}
+
+/* More Actions */
+.atg_store_pickerActions{
+  float:left;
+  clear:left;
+  width:100%;
+}
+ul#moreactions > li {
+  display:inline-block;
+}
+
+/* 
+  MulitSKU 'Wide' Layout. Used when the product displays multiple SKUs.
+*/
+.atg_store_productMultiSkuWide .atg_store_multisku_imageLayout,
+.atg_store_productMultiSkuWide .atg_store_productDescription{
+  float:left;
+  clear:both;
+  width:420px;
+  text-align:center;
+}
+.atg_store_productMultiSkuWide .knowledgebase{
+  width:370px;
+  text-align: left;
+}
+.atg_store_productMultiSkuWide .atg_store_productSummaryContainer{
+  clear:right;
+}
+.atg_store_productMultiSkuWide .atg_store_productSummary .atg_store_item_name {
+    float: left;
+}
+.atg_store_productMultiSkuWide .atg_store_productPrice {
+    float: right;
+}
+/* 
+  MulitSKU 'Normal' Layout. Used when the product displays a single SKU.
+*/
+.atg_store_productMultiSku .atg_store_multisku_imageLayout,
+.atg_store_productMultiSku .atg_store_productDescription{
+  float:left;
+  clear:both;
+  width:350px;
+  text-align:left;
+}
+
+
+/* 6.3 Product Color, Wood Finish, Size Pickers 
+----------------------------------------------------------*/
+div.atg_store_pickerContainer{
+  clear:both;
+}
+
+/* Padding to display color name, which is absolutely positioned
+   below picker */
+div.atg_store_pickerContainer .atg_store_colorPicker,
+div.atg_store_pickerContainer .atg_store_woodFinishPicker{
+  padding-bottom:10px;
+}
+
+/* Placement of Color/Wood Finish beneath picker */
+div.atg_store_pickerContainer div.atg_store_colorPicker span.selector span.active,
+div.atg_store_pickerContainer div.atg_store_woodFinishPicker span.selector span.active{
+  border:none;
+  width:225px;
+  float:left;
+  clear:left;
+  height:15px;
+}
+div.atg_store_pickerContainer label.atg_store_pickerLabel,
+.atg_store_quantity .atg_store_pickerLabel{
+  float:left;
+}
+div.atg_store_pickerContainer div.atg_store_sizePicker span.selector,
+div.atg_store_pickerContainer div.atg_store_colorPicker span.selector,
+div.atg_store_pickerContainer div.atg_store_woodFinishPicker span.selector{
+  float:left;
+  max-width:230px;
+  zoom:1;
+}
+
+/* GWP popup modal specific selector attributes */
+#atg_store_gwpSelector div.atg_store_pickerContainer div.atg_store_sizePicker span.selector,
+#atg_store_gwpSelector div.atg_store_pickerContainer div.atg_store_colorPicker span.selector,
+#atg_store_gwpSelector div.atg_store_pickerContainer div.atg_store_woodFinishPicker span.selector{
+  float:left;
+  max-width:145px;
+  zoom:1;
+}
+
+/* The remaining styles in this picker section space and style selected and unselected
+   colors, wood finishes, and sizes */
+div.atg_store_pickerContainer div.atg_store_sizePicker span.selector a,
+div.atg_store_pickerContainer div.atg_store_sizePicker span.selector span {
+  border:1px solid #666666;
+  color:#666666;
+  float:left;
+  height:10px;
+  line-height:10px;
+  margin-bottom:4px;
+  margin-right:2px;
+  margin-top:2px;
+  text-align:center;
+  min-width:10px;
+  padding:3px;
+}
+div.atg_store_pickerContainer div.atg_store_sizePicker span.selector .atg_store_pickerAttribute {
+  border:3px solid #B75A00;
+  margin-bottom:0;
+  margin-right:2px;
+  margin-top:0;
+  color:#000;
+}
+div.atg_store_pickerContainer div.atg_store_colorPicker span.selector a,
+div.atg_store_pickerContainer div.atg_store_woodFinishPicker span.selector a{
+  float:left;
+  border:1px solid #666666;
+  margin-top:2px;
+  margin-bottom:2px;
+  margin-right:2px;
+}
+
+div.atg_store_pickerContainer div.atg_store_colorPicker span.selector a img,
+div.atg_store_pickerContainer div.atg_store_woodFinishPicker span.selector a img{
+  width:16px;
+  height:16px;
+}
+
+div.atg_store_pickerContainer div.atg_store_colorPicker span.selector a.atg_store_pickerAttribute,
+div.atg_store_pickerContainer div.atg_store_woodFinishPicker span.selector a.atg_store_pickerAttribute{
+  cursor:default;
+  margin-right:2px;
+  padding:0;
+  border:3px solid #B75A00;
+  margin-top:0;
+  margin-bottom:0;
+}
+
+
+div.atg_store_pickerContainer div.atg_store_sizePicker span.selector a.atg_store_help{
+  border:none;
+  overflow:hidden;
+}
+
+/* 6.4  Recently Viewed Products
+----------------------------------------------------------*/
+#atg_store_recentlyViewedProducts{
+  clear:both;
+}
+#atg_store_recentlyViewedProducts ul.atg_store_product li{
+  width: 20%;
+}
+/* 6.4  Recommended Products Products
+----------------------------------------------------------*/
+#atg_store_recommendedProducts{
+  clear:none;
+  float:right;
+  max-width:183px;
+}
+/* 6.5 Size Chart
+----------------------------------------------------------*/
+
+#atg_store_sizeChartTable th,
+#atg_store_sizeChartTable td{
+  border:1px solid #000;
+  width:60px;
+}
+#atg_store_sizeChartTable{
+  vertical-align:middle;
+}
+
+
+/* 6.6 No JavaScript
+----------------------------------------------------------*/
+/* Hide Javascript Size and Color Picker if Javascript is Disabled */
+#picker_contents{
+  display:none;
+}
+/* Display Non-Javascript Size and Color Picker if Javascript is Disabled */
+#no_js_picker_contents{
+  display:block;
+}
+
+/* Don't display Close button in popup window if Javascript is Disabled */
+#atg_store_popupCloseButton{
+  display:none;
+}
+
+/* Email Me When In Stock */
+#atg_store_notifyMeRequestForm .atg_store_formActions,
+#atg_store_noJsNotifyMeRequest .atg_store_basicForm{
+  text-align:left;
+  width:auto;
+}
+
+/* Hide char counter if Javascript disabled*/
+#atg_store_emailAFriendJSCharCounter{
+  display:none;
+}
+
+/* Show max char available message if Javascript disabled*/
+#atg_store_emailAFriendNoJSCharCounter{
+  display:block;
+}
+
+/* Hide rightnow knowledgebase link if javascript is disabled */
+#atg_store_rightnowKnowledgebaseContainer{
+  display:none;
+}
+
+/* Styling for the rightnow knowledgebase link text */
+.linkToKnowledgeBase{
+letter-spacing: -0.5px;
+font-family:Verdana-Narrow, Geneva, sans-serif;
+font-size:13px;
+padding-top: 3px;
+height:17px;
+background: url(/crsdocroot/content/images/find-answers.png) no-repeat left center;
+vertical-align: middle;
+}
+
+.linkToKnowledgeBase a{
+  padding-left: 24px;
+}
+
+.linkToKnowledgeBase,
+.linkToKnowledgeBase a:link,
+.linkToKnowledgeBase a:active,
+.linkToKnowledgeBase a:visited{
+color:#0066ff;
+}
+
+/* 7. LOGIN PAGES
+============================================================================================*/
+/* 7.1 Login
+----------------------------------------------------------*/
+/* 7.2 Checkout Login
+----------------------------------------------------------*/
+/* 7.3 Forgot Password
+----------------------------------------------------------*/
+
+/* 8. REGISTRATION
+============================================================================================*/
+/* 8.1 - Regular Registratoin
+-----------------------------------------------------------------*/
+/* 8.2 - Checkout Registratoin (Order Success Page)
+-----------------------------------------------------------------*/
+/* 9. CHECKOUT PAGES
+============================================================================================*/
+
+/* 9.1 Order Summary
+----------------------------------------------------------*/
+.atg_store_orderSummary ul.atg_store_orderSubTotals li .atg_store_orderSummaryLabel{
+  float:left;
+  clear:left;
+  width:90px;
+}
+.atg_store_orderSummary ul.atg_store_orderSubTotals li span.atg_store_orderSummaryItem{
+  float:right;
+  text-align:right;
+}
+.atg_store_orderSummary ul.atg_store_orderSubTotals li span.atg_store_couponCode input[type="text"]{
+  width:60px;
+  float:right;
+}
+.atg_store_orderSummary ul.atg_store_orderSubTotals li span.atg_store_couponCode input#atg_store_applyCoupon{
+  float:right;
+  clear:both;
+  position:relative;
+  right:-3px;
+}
+.atg_store_appliedCouponCode span,
+.atg_store_appliedCouponCode a{
+  float:right;
+  font-weight:normal;
+}
+.atg_store_appliedOrderDiscounts,
+.atg_store_appliedCouponCode a{
+  clear:both;
+}
+
+/* 9.2 Checkout / Return Item Progress
+----------------------------------------------------------*/
+.atg_store_checkout ol li,
+.atg_store_returnItem ol li{
+  float:left;
+  margin-right:15px;
+  color:#999999;
+}
+.atg_store_checkout ol li.current,
+.atg_store_returnItem ol li.current{
+  color:#000000;
+}
+/* 9.3 Shopping Cart / Return Item Selection
+----------------------------------------------------------*/
+#atg_store_itemTable td.quantity input.qty,
+#atg_store_itemTable td.returnQuantity input.qty{
+  width:40px;
+  text-align:center;
+}
+#atg_store_itemTable input.atg_store_updateCart{
+  display:block;
+  width:100%;
+  font-size:.9em;
+  text-align:left;
+}
+.atg_store_closenessQualifier{
+  width:270px;
+}
+
+/* Gift With Purchase Pop-Over */
+#atg_store_gwpContainer {
+  width: 400px;
+}
+#atg_store_gwpContainer #atg_store_gwpSelector{
+  max-height:500px;
+  overflow:auto;
+}
+
+#atg_store_gwpContainer #atg_store_itemTable td.image {
+  width: 125px;
+}
+#atg_store_gwpContainer #atg_store_itemTable td.item {
+  width: 205px;
+}
+.atg_store_gwpSelect input {
+  margin-top: 20px;
+}
+
+.atg_store_gwpSelectButton{
+  display:none !important;
+}
+.atg_store_gwpSelectButtonNoJs{
+  display:inline-block;
+}
+.atg_store_giftSelectionTableHeader{
+  display:none !important;
+}
+
+#atg_store_itemTable td.giftItemName .atg_store_basicButton{
+  margin-left:-6px;
+}
+
+.atg_store_euroAmount{
+white-space:nowrap;
+}
+
+/* 9.4 Shipping
+----------------------------------------------------------*/
+/* User Narrower Address Form 
+   Note:  This Narrower Address form is also used on the Billing page */
+
+/* 10. POPUPS
+============================================================================================*/
+#atg_store_popup{
+  padding:15px;
+  background:none;
+}
+
+/* 10.1 Notify Me When In Stock
+----------------------------------------------------------*/
+#atg_store_notifyMeRequestForm ul li label{
+  width:auto;
+}
+#atg_store_notifyMeRequestForm ul li label span{
+  display:inline;
+}
+#atg_store_notifyMeRequestForm ul li input{
+  float:left;
+  clear:left;
+}  
+/* 10.2 Email a Friend
+----------------------------------------------------------*/
+.atg_store_emailAFriend{
+  width:auto;
+}
+.atg_store_emailAFriend .charCounter{
+    margin-left:15px;
+  }
+
+/* 11. Dojo Pop-Over and Lightbox
+============================================================================================*/
+
+/* 11.1 Popover
+----------------------------------------------------------*/
+body.appletKiller {
+  /* overflow: hidden; */
+}
+.dijitDialogFixed div.dijitDialogTitleBar {
+  cursor: default;
+}
+.dijitDialogUnderlayWrapper {
+  background: transparent none repeat scroll 0 0 !important;
+  display: none;
+  left: 0;
+  position: absolute;
+  top: 0;
+  z-index:998;
+}
+.dijitDialogUnderlay {
+  background: #3F3F3F none repeat scroll 0 0;
+  filter: alpha(opacity=70);
+  -moz-opacity: 0.7;
+  opacity: 0.7;
+}
+.dj_ie .dijitDialogUnderlay {
+}
+.dijit_a11y .dijitInputLayoutContainer,
+.dijit_a11y .dijitDialog {
+  background-color: white !important;
+  opacity: 1 !important;
+}
+.dijitDialog .closeText {
+  display: none;
+  position: absolute;
+}
+.dijit_a11y .dijitDialog .closeText {
+  display: inline;
+}
+
+/* 11.2 Lightbox 
+----------------------------------------------------------*/
+.dijitDialogUnderlay {
+  background-color: #000;
+  z-index:1900 !important;
+  position:absolute
+  
+}
+.dojoxLightbox {
+  position: absolute;
+  z-index: 2000 !important;
+  overflow: hidden;
+  width: 600px;
+  height: 100px;
+  padding:20px;
+  background: #fff url('/dojo-1/dojox/image/resources/images/loading.gif') no-repeat center center;
+  -webkit-box-shadow: 0px 6px 10px #636363;
+  -moz-box-shadow:0px 6px 10px #636363;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  text-align:center;
+}
+.dojoxLightboxContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width:100%;
+  z-index:2100 !important;
+}
+
+.dojoxLightboxFooter {
+  text-align: center;
+  color: #333;
+  z-index: 2100 !important;
+  font-size: 1.4em;
+  margin-top:10px;
+}
+.dojoxLightboxGroupText {
+  color: #666;
+}
+.LightboxNext,
+.LightboxPrev,
+.LightboxClose {
+  float: right;
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+  display: block;
+  position: absolute;
+  top: 8px;
+  right: 10px;
+}
+.LightboxClose {
+  background: url('/crsdocroot/content/images/storefront/close.png') no-repeat center center;
+}
+.di_ie6 .LightboxClose {
+  background: url('/crsdocroot/content/images/storefront/close.png') no-repeat center center;
+}
+
+/* 11.3 dojox.widget.Dialog
+----------------------------------------------------------*/
+.dojoxDialog {
+  position: absolute;
+  z-index: 999;
+  outline:0;
+}
+
+.dojoxDialog .closeText {
+  display:none; 
+  position:absolute;
+}
+
+.dojoxDialogFixed div.dojoxDialogTitleBar {
+  cursor:default; 
+}
+.dojoxDialogWrapper {
+  left: 0;
+  top: 0;
+}
+.dojoxDialog {
+  background: #fff;
+  -webkit-box-shadow: 0px 6px 10px #636363;
+  -moz-box-shadow:0px 6px 10px #636363;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  border:1px solid #b7b7b7;
+  padding:1.5em 3px 3px 3px;
+}
+.dojoxDialogFocused {
+  border:1px solid #ccc;
+}
+.dojoxDialog .dojoxDialogPaneContent {
+  border:none;
+  padding:0;
+}
+
+.dojoxDialogNoTitle .dojoxDialogTitleBar {
+  display:none;
+}
+.dojoxDialogContent {
+  padding: 3px;
+  margin-top:1.2em;
+}
+
+div.dojoxDialogNoTitle {
+  padding-top:9px;
+}
+.dojoxDialogCloseIcon {
+  background : url("/crsdocroot/content/images/storefront/close.png") no-repeat top right;
+  background-position:0 0;
+  position: absolute;
+  vertical-align: middle;
+  right: 25px;
+  top: 20px;
+  height: 10px;
+  width: 10px;
+  cursor: pointer;
+  z-index: 999;
+}
+
+/* Self Clearing Floats
+----------------------------------------------------------------------------------------------- */
+#atg_store_content:after,
+.atg_store_pickerContainer:after,
+.atg_store_colorPicker:after,
+.atg_store_woodFinishPicker:after,
+.atg_store_sizePicker:after,
+#atg_store_prodList:after,
+#atg_store_productCore:after,
+#atg_store_checkoutProgressContainer:after,
+.atg_store_orderSubTotals:after,
+.atg_store_orderTotal:after,
+.atg_store_orderSummary ul li:after,
+#atg_store_recommendedProducts ul:after,
+#atg_store_returnItemSelectionProgressContainer:after,
+#atg_store_spotlight:after,
+#featured_products:after,
+#atg_store_featured_prodList:after,
+.atg_store_pagination:after{
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/* price slider
+----------------------------------------------------------------------------------------------- */
+.dojoxRangeSliderBarContainer {
+    position: relative;
+}
+.dojoxRangeSlider .dijitSliderProgressBar {
+    cursor: pointer;
+    overflow: hidden;
+}
+.dijitReset { 
+  margin:0;
+  border:0;
+  padding:0;
+  line-height:normal;
+  font: inherit;
+  color: inherit;
+}
+.dijitSliderDecoration {
+  text-align:center;
+}
+.dijitSliderDecorationH {
+  width: 100%;
+}
+.dijitSliderButtonContainer {
+  text-align:center;
+  height:0; 
+}
+.dijitSliderButtonContainerH {
+  padding: 1px 3px 1px 2px;
+}
+.dijitSliderButtonContainer * {
+  cursor: pointer;
+}
+.dijitSliderBumper {
+  overflow:hidden;
+  z-index:1;
+}
+.dijitSliderBumperH {
+  width:8px;
+  height:5px;
+}
+.dijitSliderMoveable {
+  z-index:99;
+  position:absolute !important;
+  display:block;
+  vertical-align:middle;
+}
+.dijitSliderMoveableH {
+  right: auto !important;
+  margin-left: -7px;
+  top:-6px;
+}
+.dijitSliderBarH {
+  height:5px;
+}
+.dijitSliderProgressBar {
+  z-index:1;
+}
+.dijitSliderProgressBarH {
+  right: auto !important;
+  position:absolute !important;
+  width:0;
+  vertical-align:middle;
+  overflow:visible;
+  background-image: url('/crsdocroot/content/images/storefront/sliderHorizontal.png');
+  background-repeat: repeat-x;
+  background-color: #8AC2F2;
+}
+.dijit_a11y DIV.dijitSliderImageHandle,
+.dijitSliderImageHandle {
+  margin:0;
+  padding:0;
+  position:relative !important;
+  border:8px solid gray;
+  width:0;
+  height:0;
+  cursor: pointer;
+}
+.dijitSliderImageHandleH {
+  left:0;
+  top:0;
+  vertical-align:top;
+  border: 0;
+  width: 14px;
+  height: 16px;
+  background-image: url('/crsdocroot/content/images/storefront/sliderThumbs.png');
+  background-repeat: no-repeat;
+  background-position: -2px 0;
+}
+.dijitSliderImageHandleHRight{
+  background-position: -19px 0;
+}
+.dijitSliderRemainingBar {
+  overflow:hidden;
+  background-color:transparent;
+  z-index:1;
+}
+.dijitSliderRemainingBarH {
+  width:100% !important;
+  background-image: url('/crsdocroot/content/images/storefront/sliderSlot.png');
+  background-repeat: repeat-x;
+  background-color: #8B8B8B;
+}
+.dijitSliderTopBumper{
+  background-color:transparent;
+}
+.dijitSliderRightBumper{
+background-image: url('/crsdocroot/content/images/storefront/sliderSlotRightBumper.png');
+}
+.dijitSliderLeftBumper{
+background-image: url('/crsdocroot/content/images/storefront/sliderSlotLeftBumper.png');
+}
+.dijitSliderDecoration {
+  text-align:center;
+}
+.dijitSliderDecorationH {
+  width: 100%;
+}
+.dijitSliderButtonInner {
+  visibility: hidden;
+}
+.dj_ie7 .dijitSliderImageHandle {
+  overflow: hidden; 
+}
+.dj_ie7 .dijit_a11y .dijitSliderImageHandle {
+  overflow: visible; 
+}
+
+/* cartridges
+----------------------------------------------------------------------------------------------- */
+#atg_store_two_column_main {
+  clear: both;
+}
+
+/* endeca preview overrides.
+----------------------------------------------------------------------------------------------- */
+.endeca-slot {
+  display:block !important;
+}
+/*
+Dijit Number Spinner
+----------------------------------------------------------------------------------------------- */
+.dijitButtonNode {
+    transition-duration: 0.3s;
+    transition-property: background-color;
+    border: 1px solid gray;
+    line-height: normal;
+    margin: 0;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+.dijitButtonNode * {
+    vertical-align: middle;
+}
+.dijitButtonNode .dijitArrowButtonInner {
+    background: none no-repeat scroll center center transparent;
+    direction: ltr;
+    height: 12px;
+    width: 12px;
+}
+.dijitButtonNode, .dijitButtonNode * {
+    cursor: pointer;
+}
+.dijitComboBox .dijitButtonNode,
+.dijitSpinnerButtonContainer .dijitButtonNode {
+    border-width: 0;
+}
+.dijitInlineTable {
+  display:inline-table;
+  display:inline-block;
+  box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  border:0;
+  padding:0;
+}
+.dijitInputContainer {
+    float: none !important;
+    overflow: hidden;
+    position: relative;
+    vertical-align: middle;
+}
+.dijitInputInner {
+    background-color: transparent !important;
+    border: 0 none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    vertical-align: middle !important;
+    width: 100% !important;
+}
+.dijitLeft {
+    background-position: left top;
+    background-repeat: no-repeat;
+}
+.dijitSpinner .dijitArrowButton {
+    background-color: #EFEFEF;
+    background-position: 0 0;
+    background-repeat: repeat-x;
+    overflow: hidden;
+    width: auto;
+}
+.dijitSpinner .dijitArrowButtonInner {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-image: url("/crsdocroot/content/images/storefront/commonFormArrows.png");
+    background-position: -142px center;
+    background-repeat: no-repeat;
+    border-color: #FFFFFF;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px 1px 0;
+    display: block;
+    height: 100%;
+    margin: -1px 0;
+    padding-left: 1px;
+    padding-right: 1px;
+    width: 15px;
+    overflow-x: hidden;
+}
+.dijitSpinner .dijitArrowButtonInner .dijitInputField {
+   padding: 0;
+   visibility: hidden;
+    padding: 0;
+    transform: scale(0.5);
+    transform-origin: left top;
+    width: 100%;
+}
+.dijitSpinner .dijitDownArrowButton .dijitArrowButtonInner {
+    background-position: -37px center;
+}
+.dijitSpinner .dijitSpinnerButtonContainer .dijitArrowButton {
+    bottom: auto;
+    float: none;
+    height: 50%;
+    left: 0;
+    padding: 0;
+    position: absolute !important;
+    right: auto;
+    width: 100%;
+}
+.dijitSpinner .dijitSpinnerButtonContainer .dijitArrowButtonInner {
+    overflow: hidden;
+}
+.dijitSpinner .dijitSpinnerButtonContainer .dijitButtonNode {
+    border-width: 0;
+}
+.dijitSpinner .dijitSpinnerButtonContainer .dijitDownArrowButton {
+    border-top-width: 1px !important;
+    top: 50%;
+}
+.dijitSpinner .dijitSpinnerButtonContainer .dijitUpArrowButton {
+    top: 0;
+}
+.dijitSpinner .dijitSpinnerButtonContainer,
+.dijitComboBox .dijitArrowButtonContainer {
+    border-width: 0 0 0 1px !important;
+}
+.dijitSpinner DIV.dijitArrowButtonInner {
+    display: block;
+}
+.dijitSpinner .dijitSpinnerButtonInner {
+    width: 15px;
+    overflow-x: hidden;
+    visibility: hidden !important;
+    width: 1em;
+}
+.dijitSpinnerButtonContainer {
+    overflow: hidden;
+    padding: 0 2px;
+    position: relative;
+    width: auto;
+}
+.dijitSpinnerButtonContainer .dijitSpinnerButtonInner {
+    border-style: solid none;
+    border-width: 1px 0;
+}
+.dijitTextBox {
+    background-color: #FFFFFF;
+    border: 1px solid #B5BCC7;
+    vertical-align: middle;
+    width: 40px;
+}
+.dijitTextBox,
+.dijitTextBox .dijitButtonNode {
+    border-color: #B5BCC7;
+    transition-duration: 0.35s;
+    transition-property: background-color, border;
+}
+.dijitTextBox .dijitButtonNode {
+    border-width: 0;
+}
+.dijitTextBox INPUT {
+    float: left;
+}
+.dijitTextBox INPUT.dijitInputField {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.dijitTextBox .dijitInputField {
+    padding: 1px 2px;
+}
+.dijitTextBox .dijitInputInner,
+.dijitTextBox .dijitValidationContainer {
+    padding: 1px 0;
+}
+.dijitTextBox .dijitSpinnerButtonContainer {
+    overflow: hidden;
+    position: relative !important;
+    width: 1em;
+}
+.dijitTextBox .dijitSpinnerButtonContainer,
+.dijitTextBox .dijitArrowButtonContainer,
+.dijitTextBox .dijitValidationContainer {
+    float: right;
+    text-align: center;
+}
+.dijitTextBox .dijitValidationContainer {
+    display: none;
+}
+.dijitTextBoxHover, 
+.dijitTextBoxHover .dijitButtonNode {
+    border-color: #769DC0;
+    transition-duration: 0.25s;
+}
+.dijitTooltip {
+    display: block;
+    left: 0;
+    overflow: visible;
+    position: absolute;
+    top: -10000px;
+    z-index: 2000;
+}
+.dijitTooltip,
+.dijitTooltipDialog {
+    background: none repeat scroll 0 0 transparent;
+}
+.dijitTooltipConnector {
+    background-image: url("images/tooltip.png");
+    background-repeat: no-repeat;
+    border: 0 none;
+    height: 14px;
+    width: 16px;
+    z-index: 2;
+    position: absolute;
+}
+.dijitTooltipContainer {
+    background: none repeat scroll 0 0 #B8B5B5;
+    border: 2px solid black;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+    font-size: small;
+    padding: 6px 8px;
+    color: black;
+}
+.dijitTooltipLeft {
+    padding-right: 14px;
+}
+.dijitTooltipLeft .dijitTooltipConnector {
+    background-position: 0 0;
+    height: 14px;
+    right: 0;
+    width: 16px;
+}
+.dijitBackgroundIframe {
+    border: 0 none;
+    height: 100%;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+}
+DIV.dijitArrowButton {
+    float: right;
+}
+.dj_gecko .dijitTextBox .dijitInputInner, .dj_webkit .dijitTextBox .dijitInputInner {
+    padding: 1px;
+}
+
+.dijitUpArrowButtonActive, .dijitDownArrowButtonActive {
+  background-color: #abd6ff;
+}
+.dijitSpinner .dijitUpArrowButtonHover, 
+.dijitSpinner .dijitDownArrowButtonHover,
+.dijitSpinnerFocused .dijitArrowButton {
+  background-color: #abd6ff;
+}
+.dijitSpinner .dijitUpArrowButtonHover .dijitArrowButtonInner {
+  background-position: -177px;
+}
+.dijitSpinner .dijitDownArrowButtonHover .dijitArrowButtonInner {
+  background-position: -72px;
+}
+.dijitSpinnerFocused {
+  background-color: #ffffff;
+  background-image: none;
+}
+.dijitSpinner .dijitDownArrowButtonActive,
+.dijitSpinner .dijitUpArrowButtonActive {
+  background-color: #7dbefa;
+  background-position: 0 -180px;
+}
+.dijitSpinner .dijitUpArrowButtonActive .dijitArrowButtonInner,
+.dijitSpinner .dijitDownArrowButtonActive .dijitArrowButtonInner {
+  border: 0;
+  padding: 1px;
+  margin-right: 2px;
+  margin-bottom: 1px;
+}
+.dijitSpinner .dijitUpArrowButtonActive .dijitArrowButtonInner {
+  background-position: -176px;
+}
+.dijitSpinner .dijitDownArrowButtonActive .dijitArrowButtonInner {
+  background-position: -71px;
+}
+.dijitSpinnerDisabled .dijitArrowButtonInner {
+  background-color: #efefef;
+}
+.dijitSpinnerDisabled .dijitUpArrowButton .dijitArrowButtonInner {
+  background-position: -107px;
+}
+.dijitSpinnerDisabled .dijitDownArrowButton .dijitArrowButtonInner {
+  background-position: 1px;
+}

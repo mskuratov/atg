@@ -1,0 +1,75 @@
+<%--
+  This page fragment generates a series of <dsp:select> tags containing states as <dsp:option> tags,
+  one for each country and one for all countries we want to let the user select as part of shipping address.
+
+  Page includes:
+    None
+
+  Required parameters:
+    countryRestrictionDroplet (JSTL variable)
+      Checks for the various droplets used while choosing the "Country" and "State".
+      "/atg/store/droplet/ShippingRestrictionsDroplet" is used for most of the cases
+    requestLocale (JSTL variable)
+      Locale used as "userLocale" parameter of the "StateListDroplet" droplet.
+
+  Optional parameters:
+    countryCode (JSTL variable)
+      Country code (usually from FormHandler component)
+--%>
+<dsp:droplet name="${countryRestrictionDroplet}">
+  <dsp:oparam name="output">
+    <dsp:getvalueof var="countries" param="countries"/>
+    <%-- Iterate over the list of countries and retrieve all available states for each one --%>
+    <c:set var="numOfCountries" value="${fn:length(countries)}"/>
+
+    <%-- All states select --%>
+    <dsp:select iclass="selectForm${labelStyle} ${empty countryCode ? 'show' : ''} state" required="true"
+                bean="${formHandlerComponent}.state" onchange="CRSMA.myaccount.selectState(event);" data-country="" role="listbox" aria-describedby="selectMessageId">
+      <dsp:option value=""><fmt:message key="mobile.profile.state"/></dsp:option>
+
+      <c:forEach var="country" items="${countries}" varStatus="countryStatus">
+        <dsp:droplet name="/atg/commerce/util/StateListDroplet">
+          <dsp:param name="userLocale" value="${requestLocale.locale}"/>
+          <dsp:param name="countryCode" value="${country.code}"/>
+          <dsp:oparam name="output">
+            <dsp:getvalueof var="states" param="states"/>
+            <%-- Check if selected country has states --%>
+            <c:set var="numOfStates" value="${fn:length(states)}"/>
+            <c:if test="${numOfStates > 0}">
+              <c:forEach var="state" items="${states}">
+                <dsp:option value="${state.code}" data-country="${country.code}" role="option"><c:out value="${state.displayName}"/></dsp:option>
+              </c:forEach>
+              <%-- Add delimiter between states from different countries --%>
+              <c:if test="${countryStatus.count < numOfCountries}">
+                <dsp:option value="delim"><fmt:message key="mobile.common.listDelimeter"/></dsp:option>
+              </c:if>
+            </c:if>
+          </dsp:oparam>
+        </dsp:droplet>
+      </c:forEach>
+    </dsp:select>
+
+    <%-- Iterate over the list of countries, retrieve all available states for each one and put them into separate selects --%>
+    <c:forEach var="country" items="${countries}">
+      <dsp:select iclass="selectForm${labelStyle} ${country.code == countryCode ? 'show' : ''} state" required="true"
+                  bean="${formHandlerComponent}.state" onchange="CRSMA.myaccount.selectState(event);" data-country="${country.code}" role="listbox" aria-describedby="selectMessageId">
+        <dsp:option value="" role="option"><fmt:message key="mobile.profile.state"/></dsp:option>
+        <dsp:droplet name="/atg/commerce/util/StateListDroplet">
+          <dsp:param name="userLocale" value="${requestLocale.locale}"/>
+          <dsp:param name="countryCode" value="${country.code}"/>
+          <dsp:oparam name="output">
+            <dsp:getvalueof var="states" param="states"/>
+            <%-- Check if selected country has states --%>
+            <c:set var="numOfStates" value="${fn:length(states)}"/>
+            <c:if test="${numOfStates > 0}">
+              <c:forEach var="state" items="${states}">
+                <dsp:option value="${state.code}" role="option"><c:out value="${state.displayName}"/></dsp:option>
+              </c:forEach>
+            </c:if>
+          </dsp:oparam>
+        </dsp:droplet>
+      </dsp:select>
+    </c:forEach>
+  </dsp:oparam>
+</dsp:droplet>
+<%-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Storefront/j2ee/store.war/mobile/global/util/countryStatePicker.jspf#2 $$Change: 742374 $--%>

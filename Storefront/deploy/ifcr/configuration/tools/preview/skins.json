@@ -1,0 +1,38 @@
+{
+    "sling:resourceType": "endeca/preview/skins",
+    "none":{
+        "sling:resourceType":"endeca/skin",
+        "displayName":"None",
+        "thumbnailPath":""
+    },
+    "iphone-portrait":{
+        "sling:resourceType":"endeca/skin",
+        "displayName":"iPhone (Portrait)",
+        "thumbnailPath":"/apps/endeca/preview/img/shell-iphone-portrait-thumb.png"
+     },
+    "iphone-landscape":{
+        "sling:resourceType":"endeca/skin",
+        "displayName":"iPhone (Landscape)",
+        "thumbnailPath":"/apps/endeca/preview/img/shell-iphone-landscape-thumb.png"
+    },
+    "droid":{
+        "sling:resourceType":"endeca/skin",
+        "displayName":"Droid",
+        "thumbnailPath":"/apps/endeca/preview/img/shell-droid-portrait-thumb.png"
+    },
+    "blackberry-bold":{
+        "sling:resourceType":"endeca/skin",
+        "displayName":"Blackberry Bold",
+        "thumbnailPath":"/apps/endeca/preview/img/shell-blackberry-bold-portrait-thumb.png"
+    },
+    "ipad-portrait":{
+        "sling:resourceType":"endeca/skin",
+        "displayName":"iPad (Portrait)",
+        "thumbnailPath":"/apps/endeca/preview/img/shell-ipad-portrait-thumb.png"
+    },
+    "ipad-landscape":{
+        "sling:resourceType":"endeca/skin",
+        "displayName":"iPad (Landscape)",
+        "thumbnailPath":"/apps/endeca/preview/img/shell-ipad-landscape-thumb.png"
+    },
+}

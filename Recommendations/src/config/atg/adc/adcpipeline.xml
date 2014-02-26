@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE pipelinemanager
+  PUBLIC "-//Art Technology Group, Inc.//DTD Dynamo Pipeline Manager//EN"
+  'http://www.atg.com/dtds/pipelinemanager/pipelinemanager_1.0.dtd'>
+
+<pipelinemanager>
+
+<!-- This chain is invoked by the ADCDataReporter to process a -->
+<!-- request data and generate data to insert into the response -->
+
+<!--
+  Transition values:
+    1 = NO_CHANGE
+    2 = CHANGE_MADE
+-->
+
+ <pipelinechain name="recsProcessADCHeadData" headlink="recsCheckForNoInsertHead">
+    <pipelinelink name="recsCheckForNoInsertHead" transaction="TX_SUPPORTS">
+      <processor jndi="/atg/adc/CheckForNoInsertProcessor"/>
+      <transition returnvalue="1" link="recsImportJSLibrary"/>
+    </pipelinelink>             
+    <pipelinelink name="recsImportJSLibrary" transaction="TX_SUPPORTS">
+      <processor jndi="/atg/store/recommendations/processor/ImportRecommendationsJSLibrary"/>
+      <transition returnvalue="1" link="recsImportStoreRecsJS"/>
+      <transition returnvalue="2" link="recsImportStoreRecsJS"/>
+    </pipelinelink>
+    <pipelinelink name="recsImportStoreRecsJS" transaction="TX_SUPPORTS">
+      <processor jndi="/atg/store/recommendations/processor/ImportStoreRecommendationsJavaScript"/>
+      <transition returnvalue="1" link="recsHeadSimulation"/>
+      <transition returnvalue="2" link="recsHeadSimulation"/>
+    </pipelinelink>
+    <pipelinelink name="recsHeadSimulation" transaction="TX_SUPPORTS">
+      <processor jndi="/atg/adc/SimulationProcessor"/>
+    </pipelinelink>
+  </pipelinechain>
+  
+  <pipelinechain name="recsProcessADCBodyData" headlink="recsCheckForNoInsertBody">
+    <pipelinelink name="recsCheckForNoInsertBody" transaction="TX_SUPPORTS">
+      <processor jndi="/atg/adc/CheckForNoInsertProcessor"/>
+      <transition returnvalue="1" link="recsSetProduct"/>
+    </pipelinelink>
+    
+    <pipelinelink name="recsSetProduct" transaction="TX_SUPPORTS">
+     <processor jndi="/atg/commerce/adc/processor/SetProduct"/>
+      <transition returnvalue="1" link="recsProductTrackingCode"/>
+      <transition returnvalue="2" link="recsProductTrackingCode"/>
+    </pipelinelink>
+    
+    <pipelinelink name="recsProductTrackingCode" transaction="TX_SUPPORTS">
+     <processor jndi="/atg/store/recommendations/processor/ProductTrackingCodeProcessor"/>
+      <transition returnvalue="1" link="recsSetCategory"/>
+      <transition returnvalue="2" link="recsSimulation"/>
+    </pipelinelink>
+    
+     <pipelinelink name="recsSetCategory" transaction="TX_SUPPORTS">
+     <processor jndi="/atg/store/recommendations/processor/SetCategoryFromEvent"/>
+      <transition returnvalue="1" link="recsCategoryTrackingCode"/>
+      <transition returnvalue="2" link="recsCategoryTrackingCode"/>
+    </pipelinelink>
+    
+    <pipelinelink name="recsCategoryTrackingCode" transaction="TX_SUPPORTS">
+     <processor jndi="/atg/store/recommendations/processor/CategoryTrackingCodeProcessor"/>
+      <transition returnvalue="1" link="recsSetSearchTerm"/>
+      <transition returnvalue="2" link="recsSimulation"/>
+    </pipelinelink>
+    
+    <pipelinelink name="recsSetSearchTerm" transaction="TX_SUPPORTS">
+      <processor jndi="/atg/store/recommendations/processor/SetSearchTermProcessor"/>
+      <transition returnvalue="1" link="recsSearchResults"/>
+      <transition returnvalue="2" link="recsSearchResults"/>
+    </pipelinelink> 
+        
+    <pipelinelink name="recsSearchResults" transaction="TX_SUPPORTS">
+      <processor jndi="/atg/store/recommendations/processor/SearchResultsProcessor"/>
+      <transition returnvalue="1" link="recsSetOrder"/>
+      <transition returnvalue="2" link="recsSimulation"/>
+    </pipelinelink>
+    
+    <pipelinelink name="recsSetOrder" transaction="TX_SUPPORTS">
+      <processor jndi="/atg/store/recommendations/processor/SetOrderProcessor"/>
+      <transition returnvalue="1" link="recsOrderSubmit"/>
+      <transition returnvalue="2" link="recsOrderSubmit"/>
+    </pipelinelink>
+    
+    <pipelinelink name="recsOrderSubmit" transaction="TX_SUPPORTS">
+     <processor jndi="/atg/store/recommendations/processor/OrderSubmitProcessor"/>
+      <transition returnvalue="1" link="recsBaseTrackingCode"/>
+      <transition returnvalue="2" link="recsSimulation"/>
+    </pipelinelink>
+    
+    <pipelinelink name="recsBaseTrackingCode" transaction="TX_SUPPORTS">
+     <processor jndi="/atg/store/recommendations/processor/TrackingCodeProcessor"/>
+      <transition returnvalue="1" link="recsSimulation"/>
+      <transition returnvalue="2" link="recsSimulation"/>
+    </pipelinelink>    
+
+    <pipelinelink name="recsSimulation" transaction="TX_SUPPORTS">
+      <processor jndi="/atg/adc/SimulationProcessor"/>
+    </pipelinelink>
+  </pipelinechain>
+
+</pipelinemanager>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Recommendations/config/atg/adc/adcpipeline.xml#1 $$Change: 735822 $-->

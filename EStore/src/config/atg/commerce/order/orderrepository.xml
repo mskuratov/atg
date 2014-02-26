@@ -1,0 +1,171 @@
+<gsa-template>
+
+  <header>
+    <name>Store Related Order Additions</name>
+    <author>ATG</author>
+  </header>
+
+  <!--///////////////////////////////-->
+  <!--           order               -->
+  <!--///////////////////////////////-->
+
+  <item-descriptor name="order" cache-mode="simple" item-cache-timeout="300000" query-expire-timeout="300000" xml-combine="append">
+    <attribute name="isolationLevel" value="serializable"/>
+
+    <attribute name="trackingInfoPriority" value="55"/>
+    <attribute name="couponPriority" value="58"/>
+    
+    <property name="giftWrapped" data-type="boolean" writable="false" category="Gift" property-type="atg.projects.store.order.descriptors.GiftWrappedPropertyDescriptor"/>
+
+    <table name="dcspp_order" type="primary" id-column-name="order_id">
+      <property name="state" column-name="state" data-type="string" default="INCOMPLETE" category-resource="categoryBasics" 
+                display-name-resource="state" cache-mode="disabled" xml-combine="replace">
+        <attribute name="resourceBundle" value="atg.commerce.OrderRepositoryTemplateResources"/>
+        <attribute name="propertySortPriority" value="20"/>
+      </property>
+    </table>
+    
+    <table name="crs_order" type="auxiliary" id-column-name="order_id">
+      <property name="omsOrderId" data-type="string" column-name="oms_order_id"
+                display-name-resource="omsOrderId" category-resource="trackingInfo">
+        <attribute name="resourceBundle" value="atg.projects.store.order.OrderRepositoryTemplateResources"/>
+      </property>
+      <property name="statusChangeDate" data-type="timestamp" column-name="status_change_date" writable="true"
+                display-name-resource="statusChangeDate" category-resource="trackingInfo">
+        <attribute name="resourceBundle" value="atg.projects.store.order.OrderRepositoryTemplateResources"/>
+      </property>
+      <property name="processingDate" data-type="timestamp" column-name="processing_date" queryable="true"
+                readable="true" writable="true" display-name-resource="processingDate" category-resource="trackingInfo">
+        <attribute name="resourceBundle" value="atg.projects.store.order.OrderRepositoryTemplateResources"/>
+      </property>
+    </table>
+    <table name="crs_oms_segments" type="multi" multi-column-name="sequence_num" id-column-name="order_id">
+      <property name="omsSegments" column-name="oms_segment" data-type="list" component-data-type="string"
+                display-name-resource="omsSegments" category-resource="trackingInfo">
+        <attribute name="resourceBundle" value="atg.projects.store.order.OrderRepositoryTemplateResources"/>
+      </property>
+    </table>
+  </item-descriptor>  
+
+  <!--///////////////////////////////-->
+  <!--     hardgoodShippingGroup     -->
+  <!--///////////////////////////////-->
+
+  <item-descriptor name="hardgoodShippingGroup" xml-combine="append">
+    <table name="crs_hrd_ship_group" type="auxiliary" id-column-name="shipping_group_id">
+      <property name="carrierCode" data-type="string" column-name="carrier_code" category-resource="trackingInfo"
+                display-name-resource="carrierCode">
+        <attribute name="resourceBundle" value="atg.projects.store.order.OrderRepositoryTemplateResources"/>
+      </property>
+      <property name="weight" data-type="double" column-name="weight" category-resource="trackingInfo"
+                display-name-resource="weight">  
+        <attribute name="resourceBundle" value="atg.projects.store.order.OrderRepositoryTemplateResources"/>
+      </property>
+    </table>
+  </item-descriptor>
+
+  <!--///////////////////////////////-->
+  <!--      orderSubmitRequest       -->
+  <!--///////////////////////////////-->
+
+  <item-descriptor name="orderSubmitRequest" cache-mode="simple" item-cache-timeout="180000">
+    <table name="crs_order_sub_req" type="primary" id-column-name="order_sub_req_id">
+      <property name="orderAckTimeOut" data-type="int" column-name="order_ack_time_out" category-resource="OrderSubmitRequest"/>
+      <property name="maxOrderSubmits" data-type="int" column-name="max_order_submits" category-resource="OrderSubmitRequest"/>
+      <property name="clientId" data-type="string" column-name="client_id" category-resource="OrderSubmitRequest"/>
+    </table>
+  </item-descriptor>
+
+
+  <!--///////////////////////////////-->
+  <!--        paymentGroup           -->
+  <!--///////////////////////////////-->
+
+  <item-descriptor name="paymentGroup" cache-mode="simple" item-cache-timeout="300000" query-expire-timeout="300000" xml-combine="append">
+  <attribute name="isolationLevel" value="serializable"/>
+  </item-descriptor>
+
+  <!--///////////////////////////////-->
+  <!--        commerceItem           -->
+  <!--///////////////////////////////-->
+
+  <item-descriptor name="commerceItem" cache-mode="simple" item-cache-timeout="300000" query-expire-timeout="300000" xml-combine="append">
+    <attribute name="isolationLevel" value="serializable"/>
+    <table name="dcspp_item">
+      <property name="type" xml-combine="append">
+        <option code="1" value="giftWrapCommerceItem"/>
+      </property>
+    </table>
+  </item-descriptor>
+
+  <!--///////////////////////////////-->
+  <!--     giftWrapCommerceItem      -->
+  <!--///////////////////////////////-->
+
+  <item-descriptor name="giftWrapCommerceItem" super-type="commerceItem" sub-type-value="giftWrapCommerceItem">
+  </item-descriptor>
+
+  <!--///////////////////////////////-->
+  <!--       itemPriceInfo           -->
+  <!--///////////////////////////////-->
+
+  <item-descriptor name="itemPriceInfo" cache-mode="simple" item-cache-timeout="300000" query-expire-timeout="300000" xml-combine="append">
+    <attribute name="isolationLevel" value="serializable"/>
+    <table name="crs_item_price" type="auxiliary" id-column-name="item_price_info_id">
+       <property name="taxPriceInfo" display-name-resource="taxPriceInfo" queryable="true" readable="true" column-name="tax_price_info_id" item-type="taxPriceInfo" hidden="false" category-resource="categoryPrice" expert="false" cascade="insert,update,delete" required="false" cache-mode="inherit" writable="true">
+        <attribute name="resourceBundle" value="atg.commerce.OrderRepositoryTemplateResources"/>
+        <attribute name="propertySortPriority" value="20"/>
+      </property>
+    </table>
+  </item-descriptor>
+
+  <!--///////////////////////////////-->
+  <!--        taxPriceInfo           -->
+  <!--///////////////////////////////-->
+
+  <item-descriptor name="taxPriceInfo" cache-mode="simple" item-cache-timeout="300000" query-expire-timeout="300000" xml-combine="append">
+    <attribute name="isolationLevel" value="serializable"/>
+    <table name="crs_tax_price" type="auxiliary" id-column-name="amount_info_id">
+      <property name="districtTax" display-name-resource="District Tax" data-type="double" queryable="true" readable="true" column-name="district_tax" hidden="false" category-resource="categoryTax" expert="false" required="false" cache-mode="inherit" writable="true">
+        <attribute name="propertySortPriority" value="25"/>
+      </property>
+    </table>
+  </item-descriptor>
+  
+  <!--///////////////////////////////-->
+  <!--       shippingPriceInfo           -->
+  <!--///////////////////////////////-->
+
+  <item-descriptor name="shippingPriceInfo" cache-mode="simple" item-cache-timeout="300000" query-expire-timeout="300000" xml-combine="append">
+    <attribute name="isolationLevel" value="serializable"/>
+    <table name="crs_ship_price" type="auxiliary" id-column-name="ship_price_info_id">
+       <property name="taxPriceInfo" display-name-resource="taxPriceInfo" queryable="true" readable="true" column-name="tax_price_info_id" item-type="taxPriceInfo" hidden="false" category-resource="categoryPrice" expert="false" cascade="insert,update,delete" required="false" cache-mode="inherit" writable="true">
+        <attribute name="resourceBundle" value="atg.commerce.OrderRepositoryTemplateResources"/>
+        <attribute name="propertySortPriority" value="20"/>
+      </property>
+    </table>
+  </item-descriptor>
+
+  <!--///////////////////////////////-->
+  <!--        storeCredit            -->
+  <!--///////////////////////////////-->
+
+  <item-descriptor name="storeCredit" cache-mode="simple" item-cache-timeout="300000" query-expire-timeout="300000" xml-combine="append">
+    <attribute name="isolationLevel" value="serializable"/>
+    <property name="amountAppliedToOrder" data-type="double"/>
+  </item-descriptor>
+  
+  <!--///////////////////////////////-->
+  <!--        creditCard            -->
+  <!--///////////////////////////////-->
+
+  <item-descriptor name="creditCard">
+    <table name="dcspp_credit_card">
+      <property name="creditCardNumber" property-type="atg.projects.store.repository.EncryptionPropertyDescriptor">
+        <attribute name="cipher" value="/atg/store/security/crypto/CreditCardCipher"/>
+      </property>
+    </table>
+  </item-descriptor> 
+
+</gsa-template>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/config/atg/commerce/order/orderrepository.xml#2 $$Change: 788278 $-->

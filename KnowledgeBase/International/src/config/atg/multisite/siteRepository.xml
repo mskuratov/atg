@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	
+<gsa-template xml-combine="append">
+
+  <item-descriptor name="siteConfiguration" xml-combine="append">
+   
+    <table name="crs_rnow_url" type="auxiliary" id-column-name="id">
+      <attribute name="categoryRightNowPriority" value="550"/>
+      <property name="rightNowUrl" xml-combine="remove"/>
+      
+      <property name="rightNowUrlDefault" 
+                data-type="string"
+                column-name="crs_rnow_url"
+                required="false"
+                category-resource="categoryRightNow"
+                display-name-resource="rightNowUrlDefault" 
+                queryable="true">
+                <attribute name="resourceBundle"
+                     value="atg.projects.store.multisite.StoreSiteRepositoryTemplateResources"/>
+                <attribute name="propertySortPriority" value="160"/>
+      </property>
+    </table>
+    
+    <property name="rightNowUrl" 
+              data-type="string"
+              writable="false"
+              hidden="true"
+              queryable="true">
+              <derivation user-method="atg.repository.dp.LanguageTranslation">
+                <expression>rightNowUrlDefault</expression>   
+              </derivation>        	
+      <attribute name="defaultProperty" value="rightNowUrlDefault"/>
+      <attribute name="defaultLocale" value="en_US"/>
+       
+    </property>
+    
+    <table name="crs_rnow_url_xlate" type="multi" multi-column-name="locale" id-column-names="id">
+      <property name="translations"
+                column-name="translation_id" 
+                data-type="map"
+                component-item-type="siteUrlTranslation"
+                display-name-resource="rightNowUrl" 
+                category-resource="categoryRightNow">
+         <attribute name="resourceBundle"
+                    value="atg.projects.store.multisite.StoreSiteRepositoryTemplateResources"/>
+         <attribute name="propertySortPriority" value="160"/>
+      </property>
+    </table>
+    
+  </item-descriptor>
+  
+  <!--///////////////////////////////-->
+  <!--     siteUrlTranslation      -->
+  <!--///////////////////////////////-->
+
+  <item-descriptor name="siteUrlTranslation" 
+                   id-space-name="siteUrlTranslation"
+                   display-name-resource="itemDescriptorSiteUrlTranslation" 
+                   display-property="rightNowUrl"
+                   item-cache-size="1000"
+                   query-cache-size="1000" 
+                   cache-mode="simple">
+
+    <attribute name="resourceBundle"
+               value="atg.projects.store.multisite.StoreSiteRepositoryTemplateResources"/>
+
+    <table name="crs_rnow_xlate" 
+           type="primary" 
+           id-column-name="translation_id">
+      <property name="rightNowUrl"
+                column-names="url"
+                data-types="string"
+                category-resource="categoryRightNow"
+                display-name-resource="rightNowUrl"/>
+    </table>
+  </item-descriptor>
+  
+</gsa-template>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/KnowledgeBase/International/config/atg/multisite/siteRepository.xml#2 $$Change: 789379 $-->
+
+
+ 
+
+   
+

@@ -1,0 +1,24 @@
+<!-- Displays form fields for Email a Friend email templates. -->
+<importbean bean="/atg/store/email/TemplateTesterFormHandler"/>
+
+<input type="hidden" bean="TemplateTesterFormHandler.templateUrl" value="/crs/emailtemplates/emailAFriend.jsp"/>
+<h3>Email a Friend</h3>
+<droplet src="error-message.jhtml"/>
+
+<ul class="emailTemplateFields">
+  <droplet src="email-base-inputs.jhtml"/>
+  <!-- Display Email a Friend template specific form fields. -->
+  <li>
+    <label>Product Id:</label>
+    
+    <input type="text" bean="TemplateTesterFormHandler.productId" required="true"/>
+    
+  </li>
+  <li>
+    <label>Message:</label>
+    
+    <input type="text" bean="TemplateTesterFormHandler.emailAFriendMessage" maxlength="254" />
+    
+  </li>
+</ul>
+<java>/* @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/admin/atg/store/admin/en/email-friend.jhtml#1 $$Change: 735822 $*/</java>

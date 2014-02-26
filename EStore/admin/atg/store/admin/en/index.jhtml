@@ -1,0 +1,27 @@
+<HTML>
+<HEAD>
+<TITLE>Store Administration</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#00214A"  VLINK="#637DA6" LINK="#E87F02">
+<!--IMG SRC="images/dcsadminbanner.gif" ALT="" ALIGN=TOP WIDTH="585" HEIGHT="37" BORDER="0"-->
+
+<a href="/">admin</a>/Store
+
+<h2>Store Administration</h2>
+<br>
+
+<blockquote>
+  <a href="email.jhtml"><b>Email Template Tester</b></a>
+  <blockquote>
+    Testing email templates.
+  </blockquote>
+</blockquote>
+<br>
+
+<img src="../images/bluedot.gif" width=505 height=1>
+
+</BODY>
+</HTML>
+<java>/* @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/admin/atg/store/admin/en/index.jhtml#1 $$Change: 735822 $*/</java>
+

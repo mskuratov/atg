@@ -1,0 +1,5 @@
+ATG-Product: The Commerce Reference Store International Endeca Assembler
+Manifest-Version: 1.0
+ATG-Required: Store.Endeca.Assembler Store.EStore.International Store.Endeca.International.Base
+ATG-Config-Path: config/config.jar
+

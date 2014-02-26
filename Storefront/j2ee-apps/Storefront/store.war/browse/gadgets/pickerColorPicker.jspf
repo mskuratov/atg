@@ -1,0 +1,57 @@
+<%-- 
+  This gadget displays the color picker.
+
+  This gadget is directly included into the outer page, no parameters.
+--%>
+
+<dsp:getvalueof var="colors" param="availableColors"/>
+<%-- If colors are not provided for SKUs then color picker is not shown. --%>
+<c:if test="${fn:length(colors) > 0}">
+  <div class="atg_store_colorPicker">
+    <label class="atg_store_pickerLabel">
+      <dsp:getvalueof var="skuType" vartype="java.lang.String" param="skuType"/>
+      <fmt:message key="common.${skuType == 'clothing' ? 'color' : 'woodFinish'}"/><fmt:message key="common.labelSeparator"/>
+    </label>
+
+    <span class="selector">
+      <%-- Iterate over all available colors and display them. --%>
+      <c:forEach var="color" items="${colors}">
+        <dsp:param name="color" value="${color}"/>
+        <dsp:getvalueof var="imageurl" vartype="java.lang.String" param="color.swatch.url"/>
+
+        <%-- Encode item's properties as these can have special characters. --%>
+        <c:set var="colorName" value="${fn:escapeXml(fn:replace(color.name, '\\'', '\\\\\\''))}"/>
+        <fmt:message var="colorTitle" key="browse_picker.${color.status}">
+          <fmt:param value="${colorName}"/>
+        </fmt:message>
+        <%-- Display button for the current color. --%>
+        <c:choose>
+          <c:when test="${color.status == 'notoffered'}">
+            <a href="javascript:void(0)" title="${colorTitle}">
+              <dsp:img src="${imageurl}" alt="${colorName}"/>
+            </a>
+          </c:when>
+          <c:when test="${color.status == 'selected'}">
+            <a class="atg_store_pickerAttribute" href="javascript:void(0)" title="${colorTitle}"
+               onclick="atg.store.picker.clickColor(this,'${colorName}');">
+              <dsp:img src="${imageurl}" alt="${colorName}"/>
+            </a>
+          </c:when>
+          <c:otherwise>
+            <a href="javascript:void(0)" title="${colorTitle}" onclick="atg.store.picker.clickColor(this,'${colorName}');">
+              <dsp:img src="${imageurl}" alt="${colorName}"/>
+            </a>
+          </c:otherwise>
+        </c:choose>
+      </c:forEach>
+      <%-- display selected color name --%>
+      <span class="active">
+        <dsp:getvalueof var="selectedColor" vartype="java.lang.String" param="selectedColor"/>
+        <c:if test="${not empty selectedColor}">
+          <c:out value="${selectedColor}" escapeXml="true"/>
+        </c:if>
+      </span>
+    </span>
+  </div>
+</c:if>
+<%-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Storefront/j2ee/store.war/browse/gadgets/pickerColorPicker.jspf#1 $$Change: 735822 $--%>

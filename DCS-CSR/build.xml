@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="CSRHelper" default="all" basedir=".">
+
+  <property name="global.dir" value="${basedir}/.."/>
+  <import file="${global.dir}/buildtools/common.xml"/>
+
+  <!--
+    Executes common's all target for the current project in the case
+    when CSC is installed in the platform
+  -->
+  <target name="all" if="csc.installed" depends="-check-csc-installed"
+          description="Cleans, builds, and installs the project." >
+    <antcall target="common.all"/>
+  </target>
+
+  <!--
+    Executes common's install target for the current project in the case
+    when CSC is installed in the platform
+  -->
+  <target name="install" if="csc.installed" depends="-check-csc-installed"
+          description="Installs the codebase to the install directory.">
+    <antcall target="common.install"/>
+  </target>
+    
+  <!--
+    Executes common's build target for the current project in the case
+    when CSC is installed in the platform
+  -->
+  <target name="build" if="csc.installed" depends="-check-csc-installed"
+          description="Installs the codebase to the install directory.">
+    <antcall target="common.build"/>
+  </target>
+
+</project>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/DCS-CSR/build-base.xml#1 $$Change: 788278 $-->

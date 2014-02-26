@@ -1,0 +1,345 @@
+/* Placeholder for Styles sheet */
+
+body{
+  color:#000;
+  margin:0;
+  font-family: Helvetica Neue,Helvetica,Verdana,Geneva,sans-serif;
+  font-size:62.5%;
+  letter-spacing:.06em;
+}
+
+a{
+  color:#000;
+}
+
+ul{
+  padding:0;
+  margin:0;
+  list-style-type:none;
+}
+
+/* Page Header 
+------------------------------------*/
+
+/* Breadcrumbs */
+
+#templateTesterBreadcrumbs{
+  margin:25px 10px 10px 55px;
+  font-size:1.4em;
+  text-transform:lowercase;
+}
+#templateTesterBreadcrumbs a{
+  color:#666666;
+  text-transform:lowercase;
+}
+
+/* Template Header */
+h2.templateTesterHeader{
+  font-size:2.4em;
+  background:#c9dee5;
+  padding:10px 15px 10px 55px;
+  margin-bottom:45px;
+  float:left;
+  clear:both;
+  -webkit-border-radius: 0 7px 7px 0; 
+  -moz-border-radius: 0 7px 7px 0; 
+  border-radius: 0 7px 7px 0;
+}
+
+/* Success Message */
+#emailTemplateResult{
+  color:#006600;
+  font-size:1.8em;
+  margin:15px;
+  padding:10px;
+  display:block;
+  float:left;
+  font-weight:bold;
+
+  
+}
+#emailTemplateResult span{
+  display:block;
+  font-size:.77em;
+  font-weight:normal;
+}
+
+
+/* Page Content 
+------------------------------------*/
+
+.emailTemplateTesterContainer{
+  clear:both;
+  margin-bottom:20px;
+}
+
+/* Navigation */
+#emailTemplateType{
+  float:left;
+  clear:left;
+  width:250px;
+  margin-left:45px;
+  margin-top:10px;
+}
+#emailTemplateType h3{
+  padding-left:10px;
+}
+#emailTemplateType h3,
+#recentlySent h3{
+  color:#000;
+  margin:0;
+  font-size:1.8em;
+  padding-bottom:5px;
+}
+
+#emailTemplateType li{
+  font-size:1.4em;
+  margin:8px 0;
+}
+#emailTemplateType a{
+  text-decoration:none;
+  color:#666666;
+  display:inline-block;
+  padding-left:10px;
+}
+#emailTemplateType a:hover,
+#emailTemplateType a:active{
+  color:#000;
+}
+#emailTemplateType li.currentTemplate a{
+   background:#c9dee5 url('images/active_template_arrow.gif') right center no-repeat;
+   color:#000;
+   font-weight:bold;
+  -webkit-border-radius: 5px 0px 0px 5px; 
+  -moz-border-radius: 5px 0px 0px 5px; 
+  border-radius: 5px 0 0px 5px; 
+  padding:4px 20px 5px 10px;
+} 
+
+
+/* Recently Sent */
+#recentlySent{
+  float:left;
+}
+
+#recentlySent{
+  margin-left:45px;
+  padding-left:35;
+  padding-top:10px;
+  border-left:1px solid #ccc;
+}
+#recentlySent ul li{
+  padding:10px 0;
+  font-size:1.2em;
+  color:#666666;
+}
+#recentlySent ul li a{
+  display:block;
+  text-decoration:none;
+  color:#666666;
+}
+#recentlySent ul li a:hover,
+#recentlySent ul li a:active{
+  color:#000;
+}
+#recentlySent ul li span{
+  display:block;
+  padding:2px;
+}
+#recentlySent ul li span strong{
+  font-weight:bold;
+}
+
+/* Template Tester Form */
+
+div#emailTemplateFormContainer {    
+  position: relative;
+  float:left;
+  padding-bottom:25px;
+  background: #e9e9e9 url('images/form_bg.png') bottom center repeat-x;
+  max-height:633px;
+  width:380px;
+}
+
+#emailTemplateForm {
+  -webkit-border-radius: 4px;  
+  -moz-border-radius: 4px; 
+  border-radius: 4px;
+  display: block;
+  text-align:center;
+}
+
+/* CSS3 Drop Shadow for Form Container */
+#emailTemplateForm:before, 
+#emailTemplateForm:after {
+  -webkit-box-shadow: 0 15px 10px rgba(0,0,0, .7);   
+  -moz-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);	    
+  box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);	
+  position: absolute; 
+  bottom: 15px; 
+  z-index: -1; 
+  width: 50%; 
+  height: 20%; 
+  content: "";       
+  background: rgba(0, 0, 0, 0.7); 
+}
+#emailTemplateForm:after {                      
+  -webkit-transform: rotate(3deg);    
+  -moz-transform: rotate(3deg);   
+  -o-transform: rotate(3deg);
+  right: 10px; 
+  left: auto;
+}
+#emailTemplateForm:before {                 
+  -webkit-transform: rotate(-3deg);   
+  -moz-transform: rotate(-3deg);  
+  -o-transform: rotate(-3deg);
+  right: auto;
+  left: 10px; 
+}
+
+#emailTemplateForm h3{
+  font-size:1.8em;
+  padding:10px 35px;
+  margin:0;
+  background:#cccccc;
+  text-align:left;
+  background:rgb(199, 199, 199);
+  background:rgba(199, 199, 199, 0.2);
+  
+}
+
+/* Form Layout */
+
+ul.emailTemplateFields{
+  padding:0 35px 35px;
+  text-align:left;
+}
+ul.emailTemplateFields li{
+  margin:10px 0;
+  font-size:1.4em;
+}
+ul.emailTemplateFields li label{
+  width:140px;
+  float:left;
+  clear:left;
+  margin-top:3px;
+}
+ul.emailTemplateFields li label.returnItem{
+  width:230px;
+}
+
+ul.emailTemplateFields li label.templateTesterStore,
+ul.emailTemplateFields li label.templateTesterLanguage{
+  margin-top:0;
+}
+
+ul.emailTemplateFields li select{
+  width:170px;
+}
+ul.emailTemplateFields li.templateTesterShippingGroup select{
+  margin-top:4px;
+}
+ul.emailTemplateFields li input[type="text"]{
+  width:170px;
+  padding:5px;
+  -webkit-border-radius: 7px; 
+  -moz-border-radius: 7px; 
+  border-radius: 7px;
+  border-top:1px solid #ccc;
+  border-left:1px solid #E9E9E9;
+  border-right:1px solid #E9E9E9;
+  border-bottom:1px solid #E9E9E9;
+  background: #f3f3f3 url('images/input.png') repeat-x;
+  float:left;
+  height:25px;
+}
+ul.emailTemplateFields li input[type="text"].returnItemQuantity{
+  width:50px;
+}
+/* Change Styles on focosy */
+ul.emailTemplateFields li input:focus[type="text"]{
+  border:1px solid #adc0c6;
+  background: #f3f3f3 url('images/input_focused.png') repeat-x;
+}
+
+/* Changes for Order Shipped > Order ID field */
+ul.emailTemplateFields li.templateTesterOrderId input[type="text"]{
+  width:115px;
+}
+ul.emailTemplateFields li.templateTesterOrderId input[type="submit"]{
+  color:#525252;
+  font-family: Helvetica Neue,Helvetica,Verdana,Geneva,sans-serif;
+  font-size:.8em;
+  font-weight:bold;
+  margin-left:4px;
+  padding-bottom:3px;
+  height:25px;
+  -webkit-border-radius: 5px; 
+  -moz-border-radius: 5px; 
+  border-radius: 5px;
+  border: 1px solid #a6c7c7;
+  background: -moz-linear-gradient(100% 100% 90deg, #a1bcc5, #d4def1);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#d4def1), to(#a1bcc5));
+  cursor:pointer;
+}
+
+
+ul.emailTemplateFields li.templateTesterOrderId input:hover[type="submit"]{
+  background: -moz-linear-gradient(100% 100% 90deg, #c6d7dc, #e5ebf6);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e5ebf6), to(#c6d7dc));
+}
+
+/* Form Submit */
+input.emailTemplateSubmit{
+  text-align:center;
+  height:30px;
+  -webkit-border-radius: 15px; 
+  -moz-border-radius: 15px; 
+  border-radius: 15px;
+  background-color: #a1bcc5;
+  background: -moz-linear-gradient(100% 100% 90deg, #a1bcc5, #d4def1);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#d4def1), to(#a1bcc5));
+  font-size:1.4em;
+  font-weight:bold;
+  border:none;
+  -webkit-box-shadow: 0 1px 5px rgba(0,0,0, .5);   
+  -moz-box-shadow:0 1px 5px rgba(0, 0, 0, 0.5);    
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+  color:#525252;
+  font-family: Helvetica Neue,Helvetica,Verdana,Geneva,sans-serif;
+  padding:0 20px 1px;
+  cursor:pointer;
+}
+
+ input.emailTemplateSubmit:hover{
+  background-color: #c6d7dc;
+  background: -moz-linear-gradient(100% 100% 90deg, #c6d7dc, #e5ebf6);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e5ebf6), to(#c6d7dc));
+}
+
+
+/* Error Messages */
+div.templateTesterError{
+  background:#660000 url('images/error_exclamation.png') no-repeat 12px center;
+  padding-left:35px;
+}
+p.emailTemplateError{
+  margin:0;
+  padding:5px;
+  font-size:1.2em;
+  background:#990000;
+  color:#fff;
+  font-weight:bold;
+}
+
+/* Self Clearing Floats */
+#emailTemplateTesterContainer:after,
+div#emailTemplateFormContainer:after,
+ul.emailTemplateFields li:after{
+content: ".";
+display: block;
+height: 0;
+clear: both;
+visibility: hidden;
+}z

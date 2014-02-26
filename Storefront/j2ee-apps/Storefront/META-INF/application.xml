@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+
+<application
+   xmlns="http://java.sun.com/xml/ns/j2ee"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+   http://java.sun.com/xml/ns/j2ee/application_1_4.xsd"
+   version="1.4">
+
+  <display-name>
+    ATG Commerce Reference Store
+  </display-name>
+
+  <module>
+    <web>
+      <web-uri>
+        store.war
+      </web-uri>
+      <context-root>
+        crs
+      </context-root>
+    </web>
+    <web>
+      <web-uri>
+        storedocroot.war
+      </web-uri>
+      <context-root>
+        crsdocroot
+      </context-root>
+    </web>
+  </module>
+
+</application>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Storefront/j2ee/META-INF/application.xml#2 $$Change: 742374 $-->

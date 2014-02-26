@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE process SYSTEM "dynamosystemresource:/atg/dtds/pdl/pdl_1.0.dtd">
+<process author="admin" creation-time="0" enabled="true" last-modified-by="admin" modification-time="1280309981263">
+  <segment migrate-from="1280307326451,1280309601510,1280309795699,1280309825087" migrate-subjects="true">
+    <segment-name>OrderFinished</segment-name>
+    <!--================================-->
+    <!--== Shipping group changes shippingGroup's state is 6  -->
+    <!--================================-->
+    <event id="1">
+      <event-name>atg.commerce.fulfillment.scenario.ShippingGroupModified</event-name>
+      <filter construct="event-property-filter" operator="eq">
+        <event-property construct="event-property">
+          <property-name>shippingGroup</property-name>
+          <property-name>state</property-name>
+        </event-property>
+        <constant type="java.lang.Integer">6</constant>
+      </filter>
+    </event>
+    <fork id="2">
+      <branch id="2.1">
+        <!--================================-->
+        <!--== Email address is   -->
+        <!--================================-->
+        <condition construct="people-element" id="2.1.1">
+          <filter construct="profile-property-filter" operator="eq">
+            <subject-property>
+              <property-name>email</property-name>
+            </subject-property>
+            <constant/>
+          </filter>
+        </condition>
+        <stop id="2.1.2"/>
+      </branch>
+      <branch id="2.2">
+        <!--================================-->
+        <!--== Email address is undefined  -->
+        <!--================================-->
+        <condition construct="people-element" id="2.2.1">
+          <filter construct="profile-property-filter" operator="isNull">
+            <subject-property>
+              <property-name>email</property-name>
+            </subject-property>
+          </filter>
+        </condition>
+        <stop id="2.2.2"/>
+      </branch>
+      <branch id="2.3"/>
+    </fork>
+    <!--================================-->
+    <!--== Set variable orderSiteId of type string to Event's order's siteId  -->
+    <!--================================-->
+    <action id="3">
+      <action-name construct="variable-declaration-action">modify</action-name>
+      <action-param name="modified">
+        <variable type="java.lang.String">orderSiteId</variable>
+      </action-param>
+      <action-param name="operator">
+        <constant>assign</constant>
+      </action-param>
+      <action-param name="modifier">
+        <event-property construct="event-property">
+          <property-name>order</property-name>
+          <property-name>siteId</property-name>
+        </event-property>
+      </action-param>
+    </action>
+    <!--================================-->
+    <!--== Send email with path ATG Commerce Reference Store:/emailtemplates/orderShipped.jsp with site variable orderSiteId  -->
+    <!--================================-->
+    <action id="4">
+      <action-name>sendEmail</action-name>
+      <action-param name="scenarioPathInfo">
+        <constant>ATG Commerce Reference Store:/emailtemplates/orderShipped.jsp</constant>
+      </action-param>
+      <action-param name="site">
+        <variable type="java.lang.String">orderSiteId</variable>
+      </action-param>
+    </action>
+  </segment>
+</process>

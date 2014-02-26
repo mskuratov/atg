@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gsa-template SYSTEM "dynamosystemresource:/atg/dtds/gsa/gsa_1.0.dtd">
+<gsa-template>
+  <import-items>
+    <!--
+  Store repository text resource definitions.
+  Repository item ids ending with '5' refer to 'mobileHomeSite' text resources
+                                  '6' refer to 'mobileStoreSiteUS' text resources
+                                  '7' refer to 'mobileStoreSiteDE' text resources
+                                  '8' refer to generic mobile text resources
+-->
+
+    
+    <add-item id="txt10055" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[mobileHomeSite.common.storeName]]></set-property>
+      <set-property name="text"><![CDATA[ATG Home]]></set-property>
+      
+    </add-item>
+    
+    <add-item id="txt10278" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_shipping.text]]></set-property>
+      <set-property name="text"><![CDATA[<h3>Ground Shipping</h3><p>UPS will deliver items that are available for immediate shipment<br/>in 3-5 business days at the rates described below. Please note<br/>that delivery of merchandise that requires any special handling<br/>will take approximately two additional weeks.<br/></p><p>For Orders up to $14.99 US the Shipping Rate is $4.75 US.<br/>For Orders from $15- $49.99 the Shipping Rate is $5.95 US.<br/>For Orders $50.00 US and up the Shipping Rate is $6.50 US.</p><p><h3>Two Day Shipping</h3></p><p>UPS will deliver items that are available for immediate shipment<br/>in two business days at a flat rate of $9.50 US.</p><p><h3>Next Day Shipping</h3></p><p>UPS will deliver items that are available for immediate shipment<br/>overnight at a flat rate of $18.95 US.</p>]]></set-property>
+      
+    </add-item>
+
+    <add-item id="txt11008" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[mobile.company_shippingAndReturns.pageTitle]]></set-property>
+      <set-property name="text"><![CDATA[Shipping & Returns]]></set-property>
+    </add-item>
+    <add-item id="txt11018" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[mobile.company_shipping.title]]></set-property>
+      <set-property name="text"><![CDATA[Shipping & Handling]]></set-property>
+    </add-item>
+    <add-item id="txt11028" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[mobile.company_return.title]]></set-property>
+      <set-property name="text"><![CDATA[Return Policy]]></set-property>
+    </add-item>
+    <add-item id="txt11038" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_aboutUs.ourHistory]]></set-property>
+      <set-property name="text"><![CDATA[Our History & Values]]></set-property>
+    </add-item>
+    <add-item id="txt11048" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[mobile.company_privacyAndTerms.pageTitle]]></set-property>
+      <set-property name="text"><![CDATA[Privacy & Terms]]></set-property>
+    </add-item>
+    <add-item id="txt11058" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_privacy.title]]></set-property>
+      <set-property name="text"><![CDATA[Privacy Policy]]></set-property>
+    </add-item>
+    <add-item id="txt11068" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_terms.title]]></set-property>
+      <set-property name="text"><![CDATA[Terms & Conditions]]></set-property>
+    </add-item>
+    
+  </import-items>
+</gsa-template>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Mobile/data/storetext.xml#3 $$Change: 788278 $-->

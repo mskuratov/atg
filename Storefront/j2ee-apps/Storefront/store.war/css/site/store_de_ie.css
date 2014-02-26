@@ -1,0 +1,31 @@
+/* Header
+-----------------------------------------*/
+/* Category Navigation */
+#atg_store_catNavContainer ul#atg_store_catNav > li > a{
+  padding: 0 27.5px;
+}
+/* Checkout
+-----------------------------------------*/
+/* Shopping Cart */
+#atg_store_itemTable td.atg_store_actionItems{
+  width:110px;
+}
+/* Billing */
+.atg_store_wrapOptions li{
+  width:100%;
+}
+.atg_store_addCardInfo ul.atg_store_addNewCreditCard li.option{
+  width:120px;
+}
+.atg_store_addCardInfo ul.atg_store_addNewCreditCard li.atg_store_saveCC{
+  width:140px;
+}
+.atg_store_addCardInfo ul.atg_store_addNewCreditCard li.atg_store_saveCC label{
+  width:115px;
+}
+ul.atg_store_addNewCreditCard li.atg_store_cardType label,
+ul.atg_store_addNewCreditCard li.atg_store_expiration label,
+ul.atg_store_addNewCreditCard li.atg_store_ccNumber label,
+ul.atg_store_addNewCreditCard li.atg_store_ccCsvCode label{
+  margin-top:14px;
+}

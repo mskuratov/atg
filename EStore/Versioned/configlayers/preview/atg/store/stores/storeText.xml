@@ -1,0 +1,5 @@
+<gsa-template xml-combine="append">
+  <item-descriptor name="storeText" cache-mode="distributed"/>
+  <item-descriptor name="storeShortText" cache-mode="distributed"/>
+</gsa-template>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/Versioned/configlayers/preview/atg/store/stores/storeText.xml#1 $$Change: 788278 $-->

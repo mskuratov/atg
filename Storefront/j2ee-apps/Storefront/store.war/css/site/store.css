@@ -1,0 +1,2237 @@
+/* 
+1. GLOBAL STYLES
+1.1  Page Container
+1.2  Header
+1.3  Category Navigation
+1.4  Footer
+
+2.  GLOBAL SITE COMPONENTS
+2.1  Button Styles
+2.2  Page Title Header, Category/NonCategory Hero
+2.2  Item Listing Layout
+2.3  Basic Form
+2.4  Rich Cart
+2.5  Error Messages
+2.6  Content Header
+
+3.  HOMEPAGE
+3.1  Hero Promotions
+3.2  Featured Items
+
+4.  CATEGORY PAGES
+4.1  Left Category & Facet Navigation
+4.2  Item Listing
+
+5.  PRODUCT DETAIL PAGES
+
+6.  LOGIN PAGES
+
+7.  REGISTRATION
+7.1  Regular Registration
+7.2  Checkout Registration
+*/
+
+/* 1. GLOBAL STYLES
+============================================================================================*/
+body {
+  background: #486677 url(/crsdocroot/content/images/atgstore/body_bg.png) repeat-x;
+  color:#333333;
+}
+a:link,
+a:visited{
+  text-decoration:none;
+  color:#004BF9;
+}
+
+a:hover,
+a:active{
+  color:#663399;
+  text-decoration:none;
+}
+
+/* 1.1 - Page Container 
+----------------------------------------------------------*/
+#atg_store_container{
+  width: 1070px;
+}
+#atg_store_main{
+  background: transparent;
+}
+#atg_store_contentContainer{
+  padding: 0px 30px 30px 30px;
+  margin: 0 15px 0 15px;
+  background: #FFF;
+}
+#atg_store_content{
+  background: #fff url(/crsdocroot/content/images/atgstore/content_gradient_bg.gif) repeat-x bottom center;
+}
+
+/* 2 Col Left Style */
+.atg_store_leftCol #atg_store_contentContainer{
+  background: #fff url(/crsdocroot/content/images/atgstore/content_left_sidebar_gradient_bg.gif) no-repeat bottom left;
+  padding-bottom:155px;
+}
+.atg_store_leftCol #atg_store_content{
+  background: url(/crsdocroot/content/images/atgstore/main_bg_left_sidebar.png) repeat-y left center;
+}
+.atg_store_leftCol .aside{
+  background:url(/crsdocroot/content/images/storefront/cat_firstcat.png) no-repeat top left;
+  padding-top:15px;
+}
+
+.atg_store_searchResults.atg_store_leftCol #atg_store_content,
+.atg_store_leftCol #atg_store_content.category{
+  background: url(/crsdocroot/content/images/atgstore/main_bg_left_sidebar_drkgrey.png) repeat-y left center;
+}
+
+.atg_store_searchResults.atg_store_leftCol #atg_store_content .aside,
+.atg_store_leftCol #atg_store_content.category .aside{
+  background: none;
+  color:#fff;
+  padding-top:0;
+}
+
+.atg_store_searchResults.atg_store_leftCol #atg_store_contentContainer,
+.category.atg_store_leftCol #atg_store_contentContainer{
+  background: #fff url(/crsdocroot/content/images/atgstore/content_left_sidebar_gradient_bg_drkgrey.gif) no-repeat bottom left;
+  padding-bottom:155px;
+}
+
+/* 2 Col Right Style 
+Note:  All pages use "atg_store_rightCol" on bodyClass if a right column is shown on the page.  
+The only exception to this is the Confirm Order Response page, which has a right column ONLY when accessed from an anonymous user.
+Because anonymous and registered confirmation response pages use the same JSP, we are using the page name bodyClass instead of
+"atg_store_rightCol" for this page ONLY.
+*/
+.atg_store_rightCol #atg_store_contentContainer,
+.atg_store_confirmResponseRegister #atg_store_contentContainer{
+  background: #fff url(/crsdocroot/content/images/atgstore/main_bg_right_sidebar.png) repeat-y center center;
+  padding-bottom:0;
+}
+.atg_store_rightCol #atg_store_content,
+.atg_store_confirmResponseRegister #atg_store_content{
+  background: url(/crsdocroot/content/images/atgstore/content_right_sidebar_gradient_bg.gif) no-repeat bottom right;
+  padding-bottom:30px;
+}
+.atg_store_rightCol #atg_store_content .aside,
+.atg_store_confirmResponseRegister #atg_store_content .aside{
+  width:214px;
+}
+.atg_store_rightCol #atg_store_content .atg_store_main,
+.atg_store_confirmResponseRegister #atg_store_content .atg_store_main {
+  width:766px;
+  min-height:245px;
+  padding-bottom:60px;
+}
+.atg_store_pageCart #atg_store_content .atg_store_main,
+.atg_store_pageCart #atg_store_content{
+  padding-bottom:0;
+}
+
+/* 3 Col Style 
+Note:  3 Column Layout is only used on Order Details Page.
+*/
+.atg_store_orderDetails #atg_store_contentContainer{
+  background: #fff url(/crsdocroot/content/images/atgstore/order_details_bottom_bg.png) no-repeat bottom left;
+  padding-bottom:155px;
+}
+.atg_store_orderDetails #atg_store_content{
+  background: url(/crsdocroot/content/images/atgstore/order_details_bg.png) repeat-y left center;
+}
+.atg_store_orderDetails .atg_store_orderSummary,
+.atg_store_returnItem .atg_store_orderSummary,
+.atg_store_returnActions{
+  float:right !important;
+  width:213px !important;
+}
+.atg_store_orderDetails .atg_store_main{
+  float:left !important;
+  width:584px !important;
+}
+.atg_store_returnItem.atg_store_leftCol #atg_store_content .atg_store_main{
+  padding-top:0;
+}
+.atg_store_orderDetails .atg_store_orderSummary,
+.atg_store_returnItem .atg_store_orderSummary{
+  background:url(/crsdocroot/content/images/atgstore/confirm_summary_bg.gif) no-repeat top right;
+}
+
+/* 1.2 - Header 
+----------------------------------------------------------*/
+
+/* Locale */
+#atg_store_locale{
+  padding-right: 20px;
+  height: 2em;
+  color:#fff;
+}
+#atg_store_locale dl dd{
+  border-right:1px solid #fff;
+}
+#atg_store_locale dl dd a:link,
+#atg_store_locale dl dd a:visited{
+  color:#ccccff;
+}
+#atg_store_locale dl dd a:hover,
+#atg_store_locale dl dd a:active{
+  color:#ccffff;
+}
+
+/* Header */
+#atg_store_header{
+  background: #fff url(/crsdocroot/content/images/atgstore/header_bg.png) no-repeat top left;
+  padding: 20px 30px 10px 30px;
+  height: 77px;
+  left:-8px;
+}
+
+/* Logo */
+#atg_store_logo{
+  width: 167px;
+  height: 68px;
+}
+#atg_store_logo a{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Store Search */
+#atg_store_search{
+  background: #f0f1f1 url(/crsdocroot/content/images/atgstore/search_area_bg.png) no-repeat scroll right top;
+}
+.atg_store_searchInput{
+  margin: 20px 0 0 20px;
+}
+#atg_store_search #atg_store_searchStoreSelect{;
+  margin-left:20px;
+}
+#atg_store_search span.atg_store_smallButton input#atg_store_searchSubmit:hover{
+  background:url(/crsdocroot/content/images/atgstore/search_button.png) no-repeat scroll right bottom transparent;
+}
+/* Header Links */
+
+#atg_store_userAccountNav,
+#atg_store_personalNav{
+  position:absolute;
+  right:30px;
+}
+#atg_store_userAccountNav{
+  bottom:52px;
+}
+#atg_store_personalNav{
+  bottom:10px;
+}
+
+#atg_store_userAccountNav ul li,
+#atg_store_personalNav ul#atg_store_personalNavItems > li{
+  border-left:1px solid #b3b3b3;
+  padding-left:10px;
+}
+
+#atg_store_userAccountNav ul li:first-child,
+#atg_store_personalNav ul#atg_store_personalNavItems > li:first-child,
+#atg_store_userAccountNav ul li.atg_store_accountLink{
+  border-left:none;
+}
+#atg_store_userAccountNav ul li.active a, 
+#atg_store_personalNav ul li.active a {
+    color: #663399;
+}
+
+/* Gift List Drop Down */
+#atg_store_header #atg_store_personalNav ul#atg_store_personalNavItems li.atg_store_giftListsNav:hover{
+  background-color:#004BF9;
+  border-top:1px solid #333333;
+  border-left:1px solid #333333;
+  border-right:1px solid #333333;
+  -webkit-box-shadow: 0px 5px 8px rgba(0, 0, 0, .5);
+  -moz-box-shadow: 0px 5px 8px rgba(0, 0, 0, .5);
+  box-shadow: 0px 5px 8px rgba(0, 0, 0, .5);
+  right:-1px;
+  margin-right:0;
+  padding-right:9px;
+  padding-top:3px;
+  margin-top:-3px;
+  padding-bottom:3px;
+}
+#atg_store_personalNav ul#atg_store_personalNavItems > li.atg_store_giftListsNav:hover > a{
+  color:#ffffff;
+}
+#atg_store_personalNav ul#atg_store_personalNavItems li.atg_store_giftListsNav div.atg_store_dropDownChild a {
+  color:#333333;
+}
+#atg_store_personalNav ul#atg_store_personalNavItems li.atg_store_giftListsNav div.atg_store_dropDownChild{
+  -webkit-box-shadow: 0px 5px 8px rgba(0, 0, 0, .5);
+  -moz-box-shadow: 0px 5px 8px rgba(0, 0, 0, .5);
+  box-shadow: 0px 5px 8px rgba(0, 0, 0, .5);
+  left:-1px;
+  top:19px;
+}
+.dj_osx #atg_store_personalNav ul#atg_store_personalNavItems li.atg_store_giftListsNav div.atg_store_dropDownChild{
+  top:19px;
+}
+
+/* 1.3 - Category Navigation
+----------------------------------------------------------*/
+#atg_store_catNavContainer{
+  background: #555C58 url(/crsdocroot/content/images/atgstore/cat_nav_bg.png) repeat-x top center;
+  bottom:-40px;
+  left:53px;
+  position:absolute;
+  width:980px;
+  z-index:100;
+}
+#atg_store_catNav > li{
+  background:transparent url(/crsdocroot/content/images/atgstore/main_nav_border.png) no-repeat left center;
+}
+#atg_store_catNav li:first-child{
+  background-image:none;
+}
+#atg_store_catNav > li > a {
+  line-height: 39px;
+  color: #FFF;
+}
+#atg_store_catNav li > a:hover,
+#atg_store_catNav li:hover > a,
+#atg_store_catNav li.currentCat > a {
+  background: #B75A00;
+}
+
+/* Sub Category Navigation */
+#atg_store_catNav .atg_store_catSubNv {
+  left:9px;
+  background: transparent url(/crsdocroot/content/images/atgstore/menu_dropdown_bg.png) repeat-y top left;
+  -webkit-box-shadow: 0px 5px 8px rgba(0, 0, 0, .5);
+  -moz-box-shadow: 0px 5px 8px rgba(0, 0, 0, .5);
+  box-shadow: 0px 5px 8px rgba(0, 0, 0, .5);
+}
+#atg_store_catNav .atg_store_catSubNv ul li a:link,
+#atg_store_catNav .atg_store_catSubNv ul li a:visited{
+  color:#000; 
+}
+#atg_store_catNav .atg_store_catSubNv ul li a:hover,
+#atg_store_catNav .atg_store_catSubNv ul li a:active {
+  background: #f7e8d9;
+}
+#atg_store_catNav ul.atg_store_featureProducts li.atg_store_featureProductsTitle{
+  color: #333;
+  font-weight:bold;
+  padding: 5px 0 5px 10px;
+  background: rgb(106, 146, 176);
+  background: rgba(106, 146, 176, 0.5);
+  font-size:.75em;
+}
+#atg_store_catNav ul.atg_store_featureProducts li a{
+  color:#333 !important;
+}
+#atg_store_catNav ul.atg_store_featureProducts li a:hover,
+#atg_store_catNav ul.atg_store_featureProducts li a:active {
+  background: rgb(255, 255, 255);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* 1.4 - Footer
+-----------------------------------------------------------------*/
+#atg_store_footer{
+  padding: 25px 0 25px 0px;
+  background: url(/crsdocroot/content/images/atgstore/footer_bg.png) no-repeat center top;
+  padding-bottom:225px;
+}
+#atg_store_tertiaryNavigation ul li{
+  border-left: 1px solid #fff;
+  padding-left:15px;
+}
+#atg_store_tertiaryNavigation ul li:first-child{
+  border:none;
+  padding-left:0;
+}
+#atg_store_tertiaryNavigation ul li a:link,
+#atg_store_tertiaryNavigation ul li a:visited{
+  color:#fff;
+}
+#atg_store_tertiaryNavigation ul li a:hover,
+#atg_store_tertiaryNavigation ul li a:active{
+  color:#99ccff;
+}
+#atg_store_copyright{
+  color:#A2E9FF;
+}
+
+/* 2. GLOBAL SITE COMPONENTS
+============================================================================================*/
+
+/* 2.1 - Item Listing Style
+----------------------------------------------------------*/
+
+ul.atg_store_product li a span.atg_store_productPrice{
+  font-weight:bold;
+}
+ul.atg_store_product li a span.atg_store_productPrice span.atg_store_oldPrice{
+  font-weight:normal;
+}
+
+/* Site Indicator */
+span.siteIndicator{
+  color:#555555;
+}
+span.siteIndicator span{
+  color:#333333;
+  font-size:1.1em;
+  background:url(/crsdocroot/content/images/atgstore/doublearrow.png) no-repeat center right;
+  padding-right:20px;
+}
+ul.atg_store_product li span.siteIndicator{
+  position:absolute;
+  right:10px;
+  bottom:10px;
+}
+
+/* Recently Viewed Products */
+#atg_store_recentlyViewedProducts h3,
+#atg_store_product_relatedProducts h3{
+  background:url(/crsdocroot/content/images/storefront/recommended_products_gradient_bg.gif) repeat-x top center;
+  height:22px;
+  margin-top:20px;
+  border-top:1px solid #ccc;
+  color:#003366;
+}
+#atg_store_product_relatedProducts h3{
+  margin-top:0;
+  border-top:none;
+}
+
+/* 2.2 - Rich Cart Styles
+----------------------------------------------------------*/
+.atg_store_richCartButton {
+  background: url(/crsdocroot/content/images/atgstore/icon_cart.png) no-repeat 0 0;
+  border: medium none !important;
+  padding-bottom: 4px;
+  padding-left: 24px;
+  padding-right: 0 !important;
+  padding-top: 5px;
+}
+.atg_store_richCartButton:hover {
+  background: url(/crsdocroot/content/images/atgstore/icon_cart.png) no-repeat 0 -24px;
+}
+#atg_store_richCart #atg_store_richCartHeader{
+  background:#333333;
+  color: #FFF;
+}
+#atg_store_richCart #atg_store_richCartHeader h3{
+  background: url(/crsdocroot/content/images/storefront/icon_rich_cart.png) no-repeat left center;
+  padding-left:25px;
+}
+#atg_store_richCart a.atg_store_csClose{
+  background:transparent;
+}
+#atg_store_richCart ul#atg_store_csContent > li{
+  border-bottom: 1px solid rgb(51, 51, 51);
+  border-bottom: 1px solid rgba(51, 51, 51, .2);
+  background: url(/crsdocroot/content/images/storefront/richcart_itembg.gif) repeat-y;
+}
+#atg_store_richCart ul#atg_store_csContent > li:hover{
+  background: url(/crsdocroot/content/images/storefront/richcart_itembg_hover.gif) repeat-y;
+}
+#atg_store_richCart div.atg_store_richCartItem{
+  padding-left:15px;
+  padding-top:15px;
+  padding-bottom:15px;
+  position:relative;
+}
+#atg_store_richCart div.atg_store_richCartItem a{
+  color:#333333;
+}
+#atg_store_richCart div.atg_store_richCartItem p.itemName{
+  font-weight:bold;
+}
+
+#atg_store_richCart #atg_store_csFooter{
+  background:#333333;
+  color:#ffffff;
+}
+#atg_store_richCart ul#atg_store_csContent > li.atg_store_emptyRichCart{
+  background:none;
+}
+#atg_store_richCart span.siteIndicator{
+  bottom:0;
+}
+
+/* Rich Cart Side Indicator Variation */
+#atg_store_richCart span.siteIndicator{
+  font-size:1em;
+}
+
+#atg_store_richCart #atg_store_csFooter .atg_store_richCartMessage,
+#atg_store_richCart #atg_store_csFooter .atg_store_richCartMessage:hover{
+   background: #b8c9da url(/crsdocroot/content/images/storefront/richcart_messagebg.gif) left top repeat-y;
+   border-top:1px solid #000;
+   color:#333333;
+}
+#atg_store_richCart #atg_store_csFooter .atg_store_richCartMessage span{
+  font-weight:bold;
+}
+/* 2.3 - Content Header
+----------------------------------------------------------*/
+#atg_store_contentHeader h2{
+  color:#1E3A58;
+}
+
+/* Breadcrumbs */
+#atg_store_breadcrumbs,
+#atg_store_breadcrumbs a:link,
+#atg_store_breadcrumbs a:visited{
+  color:#0033cc;
+}
+#atg_store_breadcrumbs a:hover,
+#atg_store_breadcrumbs a:active{
+  color:#663399;
+  text-decoration:underline;
+}
+
+/* 2.4 - Buttons Styles
+----------------------------------------------------------*/
+
+/* Basic Buttons 
+-----------------*/
+.atg_store_basicButton{
+  background:url(/crsdocroot/content/images/atgstore/basicButton_right.png) no-repeat right 0;
+  cursor:pointer;
+  display:inline-block;
+  font-weight:bold;
+  margin-left:5px;
+  overflow:hidden;
+  padding-right:32px;
+  text-align:center;
+  text-decoration:none;
+}
+.atg_store_basicButton span{
+  display: inline-block;
+  background: url(/crsdocroot/content/images/atgstore/basicButton_left.png) no-repeat left 0;
+  padding: 18px 0px 17px 30px;
+  white-space:nowrap;
+  text-shadow:0px -1px 1px #5959ff;
+  letter-spacing:.05em;
+  font-size:1.2em;
+  font-family:Verdana,Tahoma,Arial,Helvetica,sans-serif;
+  color:#FFFFFF !important;
+}
+.atg_store_basicButton input{
+  background:url(/crsdocroot/content/images/atgstore/basicButton_left.png) no-repeat left 0;
+  border:0 none;
+  color:#FFFFFF;
+  cursor:pointer;
+  font-weight:bold;
+  height:50px;
+  padding:0px 0px 0px 32px;
+  width:auto;
+  text-shadow:0px -1px 1px #5959ff;
+  font-size:1.2em;
+  font-family:Verdana,Tahoma,Arial,Helvetica,sans-serif;
+}
+
+/* Basic Button Hover 
+---------------------*/
+.atg_store_basicButton:hover{
+  background:url(/crsdocroot/content/images/atgstore/basicButton_right.png) no-repeat right -56px;
+}
+.atg_store_basicButton:hover span{
+  background: url(/crsdocroot/content/images/atgstore/basicButton_left.png) no-repeat left -56px;
+}
+.atg_store_basicButton:hover input{
+  background:url(/crsdocroot/content/images/atgstore/basicButton_left.png) no-repeat left -56px;
+}
+
+/* Basic Button with Icons 
+--------------------------*/
+
+/* Add To Cart */
+.add_to_cart_link{
+  background:url(/crsdocroot/content/images/atgstore/basicButton_right_cart.png) no-repeat right 0;
+  padding-right:40px;
+}
+.add_to_cart_link:hover{
+    background:url(/crsdocroot/content/images/atgstore/basicButton_right_cart.png) no-repeat right -56px;
+}
+.add_to_cart_link input{
+  padding-left:30px;
+  padding-right:5px;
+}
+
+/* Email Me */
+.atg_store_emailMe{
+  background:url(/crsdocroot/content/images/atgstore/basicButton_right_email.png) no-repeat right 0;
+  padding-right:50px;
+}
+.atg_store_emailMe:hover{
+    background:url(/crsdocroot/content/images/atgstore/basicButton_right_email.png) no-repeat right -56px;
+}
+.atg_store_emailMe span{
+  padding-right:5px;
+}
+
+/* Chevron Arrows */
+.atg_store_chevron{
+  background:url(/crsdocroot/content/images/atgstore/basicButton_right_chevron.png) no-repeat right 0;
+  padding-right:50px;
+}
+.atg_store_chevron:hover{
+    background:url(/crsdocroot/content/images/atgstore/basicButton_right_chevron.png) no-repeat right -56px;
+}
+
+/* Secondary Buttons 
+--------------------------*/
+.secondary{
+  background:url(/crsdocroot/content/images/atgstore/basicButton_secondary_right.png) no-repeat right 0;
+  padding-right:29px;
+}
+.secondary span{
+  background: url(/crsdocroot/content/images/atgstore/basicButton_secondary_left.png) no-repeat left 0;
+  padding:7px 0 13px 30px;
+}
+.secondary input{
+  background:url(/crsdocroot/content/images/atgstore/basicButton_secondary_left.png) no-repeat left 0;
+  height:35px;
+  padding:0 0 9px 30px;
+}
+/* Secondary Button Hover 
+--------------------------*/
+.secondary:hover{
+  background:url(/crsdocroot/content/images/atgstore/basicButton_secondary_right.png) no-repeat right -35px;
+}
+.secondary:hover span{
+  background: url(/crsdocroot/content/images/atgstore/basicButton_secondary_left.png) no-repeat left -35px;
+}
+.secondary:hover input{
+  background:url(/crsdocroot/content/images/atgstore/basicButton_secondary_left.png) no-repeat left -35px;
+}
+
+/* Tertiary Buttons
+--------------------------*/
+.tertiary{
+  background:url(/crsdocroot/content/images/atgstore/basicButton_tertiary_right.png) no-repeat right 0;
+  padding-right:29px;
+}
+.tertiary span{
+  background: url(/crsdocroot/content/images/atgstore/basicButton_tertiary_left.png) no-repeat left 0;
+  padding:7px 0 13px 30px;
+}
+.tertiary input{
+  background:url(/crsdocroot/content/images/atgstore/basicButton_tertiary_left.png) no-repeat left 0;
+  height:35px;
+  padding:0 0 9px 35px;
+}
+/* Tertiary Buttons Hover*/
+.tertiary:hover{
+  background:url(/crsdocroot/content/images/atgstore/basicButton_tertiary_right.png) no-repeat right -35px;
+}
+.tertiary:hover span{
+  background: url(/crsdocroot/content/images/atgstore/basicButton_tertiary_left.png) no-repeat left -35px;
+}
+.tertiary:hover input{
+  background:url(/crsdocroot/content/images/atgstore/basicButton_tertiary_left.png) no-repeat left -35px;
+}
+
+/* Search Button
+--------------------------*/
+#atg_store_search span.atg_store_smallButton input#atg_store_searchSubmit{
+  padding: 0 0 0 5px;
+  margin:18px 10px 0 10px;
+  display: block;
+  width: 35px;
+  height: 35px;
+  background:url(/crsdocroot/content/images/atgstore/search_button.png) no-repeat scroll right top transparent;
+  color:transparent;
+  border:0 none;
+  cursor:pointer !important;
+  display:inline-block;
+  overflow:hidden;
+}
+
+/* No JS Sort Filter
+--------------------------*/
+span.atg_store_sortButton input{
+  padding: 0;
+  margin:0 0 0 10px;
+  display: block;
+  width: 28px;
+  height: 28px;
+  background:url(/crsdocroot/content/images/atgstore/small_search_button.png) no-repeat scroll right top transparent;
+  text-indent: -9999px;
+  border:0 none;
+  cursor:pointer !important;
+  display:inline-block;
+  overflow:hidden;
+}
+
+span.atg_store_sortButton input:hover{
+  background:url(/crsdocroot/content/images/atgstore/small_search_button.png) no-repeat scroll right bottom transparent;
+}
+
+
+
+/* Button Displayed As a Link */
+input.atg_store_textButton{
+  color:#004BF9;
+}
+input.atg_store_textButton:hover{
+  color:#663399;
+}
+
+/* Help Button */
+.atg_store_help{
+  background:url(/crsdocroot/content/images/atgstore/icon_help.png) no-repeat;
+  text-indent:-9999px;
+  height:18px !important;
+  width:18px !important;
+  display:inline-block;
+  position:relative;
+  margin-top:2px;
+  margin-left:4px;
+  padding:0 !important;
+  overflow:hidden;
+}  
+.atg_store_help:hover{
+    background:url(/crsdocroot/content/images/atgstore/icon_help_hover.png) no-repeat;
+}
+
+/* 2.5 - Pagination 
+----------------------------------------------------------*/
+.atg_store_pagination .active{
+  color:#ff6600;
+}
+
+/* 2.6 - Error Messages
+----------------------------------------------------------*/
+/* Error Message */
+.promptSelectDIV,
+.errorMessage{
+  background-color:#B75A00;
+  color:#ffffff;
+}
+
+/* 2.7 - General Box Styles
+----------------------------------------------------------*/
+.atg_store_generalMessage h3{
+  color:#72770B;
+}
+.atg_store_generalMessage,
+.atg_store_productSummary,
+.atg_store_loginMethod,
+#atg_store_checkoutPrefs,
+.atg_store_changePassword{
+  border:1px solid #ccc;
+  -moz-border-radius:20px;
+  -webkit-border-radius:20px;
+  border-radius:20px;
+  -moz-box-shadow:0 2px 15px #ccc;
+  -webkit-box-shadow:0 2px 15px #ccc;
+  box-shadow:0 2px 15px #ccc;
+}
+
+/* 2.7 -knowledgebase widget display
+----------------------------------------------------------*/
+.findanswers {
+background-image: url(/crsdocroot/content/images/find-answers.png);
+background-position: left center;
+background-repeat: no-repeat;
+/* left center no-repeat;
+padding-left: 60px; */
+color:#0066ff;
+font-family:Verdana, Geneva, sans-serif;
+font-size:12px;
+padding: 8px 0 8px 25px;
+}
+
+.knowledgebaseholder{
+  border:1px solid #ccc;
+  -moz-border-radius:20px;
+  -webkit-border-radius:20px;
+  border-radius:20px;
+  -moz-box-shadow:0 2px 15px #ccc;
+  -webkit-box-shadow:0 2px 15px #ccc;
+  box-shadow:0 2px 15px #ccc;
+    -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  padding:20px 10px 10px;
+  width:500px; margin-top:15px;
+  /*display:none;*/
+}
+
+.knowledgebaseholder:hover{
+  border:1px solid #bbb;
+  -moz-box-shadow:0 2px 15px #bbb;
+  -webkit-box-shadow:0 2px 15px #bbb;
+  box-shadow:0 2px 15px #bbb;
+  
+}
+
+/* 2.8 - Basic Form
+----------------------------------------------------------*/
+ul.atg_store_basicForm li.option label, 
+ul.atg_store_basicForm li.default label {
+  color:#333333;
+}
+span.example{
+  color:#666666;
+}
+.atg_store_optionalHeader{
+  color:#B75A00;
+}
+
+/* 2.9 - Data Table
+----------------------------------------------------------*/
+.atg_store_dataTable tr:first-child td{
+  background: url(/crsdocroot/content/images/storefront/table_row_gradient.gif) repeat-x top center;
+}
+.atg_store_dataTable td.atg_store_orderState{
+  color:#72770B;
+}
+/* 3. HOMEPAGE
+============================================================================================*/
+
+/* 3.1 - Hero Promotions
+----------------------------------------------------------*/
+#atg_store_homePromotionalItems ul.atg_store_product li{
+  background:rgba(255,255,255,.65);
+  -webkit-transition: background 0.3s ease-in;
+  -moz-transition: background 0.3s ease-in;
+  transition: background 0.3s ease-in;
+}
+#atg_store_homePromotionalItems ul.atg_store_product li:hover{
+    background:rgba(255,255,255,.9);
+}
+#atg_store_homePromotionalItems ul.atg_store_product li a:link,
+#atg_store_homePromotionalItems ul.atg_store_product li a:visited,
+#atg_store_homePromotionalItems ul.atg_store_product li a:hover,
+#atg_store_homePromotionalItems ul.atg_store_product li a:active{
+  margin:0;
+  border:none;
+  background:none;
+}
+/* 3.2 - Featured Items
+----------------------------------------------------------*/
+.atg_store_homepage_products{
+  margin-top:15px;
+}
+.atg_store_homepage_products ul.atg_store_product li a,
+#atg_store_recentlyViewedProducts ul.atg_store_product li a,
+#atg_store_product_relatedProducts ul.atg_store_product li a{
+  margin:0;
+  border: 1px solid #fff;
+  -webkit-transition: background 0.3s ease-in;
+  -moz-transition: background 0.3s ease-in;
+  transition: background 0.3s ease-in;
+}
+.atg_store_homepage_products ul.atg_store_product li a:hover,
+.atg_store_homepage_products ul.atg_store_product li a:active,
+#atg_store_recentlyViewedProducts ul.atg_store_product li a:hover,
+#atg_store_recentlyViewedProducts ul.atg_store_product li a:active,
+#atg_store_product_relatedProducts ul.atg_store_product li a:hover,
+#atg_store_product_relatedProducts ul.atg_store_product li a:active{
+  background:#fff;
+  border:1px solid #ffffff;
+}
+#atg_store_product_relatedProducts ul.atg_store_product li a{
+  padding-bottom: 60px;
+}
+
+/* 4. CATEGORY, SUB CATEGORY PAGES, & SEARCH RESULTS
+============================================================================================*/
+
+/* 4.1 - Sort By & Search Results
+----------------------------------------------------------*/
+/* Sort By */
+.atg_store_filter label{
+  color:#666;
+}
+/* Search Results */
+.atg_store_searchResultsCount{
+  color:#b75a00;
+}
+.atg_store_searchResultsCount span.searchTerm{
+  color:#333333;
+}
+
+/* 4.2 - Category Product Listing
+----------------------------------------------------------*/
+ul.atg_store_product li a {
+  border: solid 1px transparent;
+}
+ul.atg_store_product li a:hover{
+  background:url(/crsdocroot/content/images/atgstore/bg_cat_hover.png) repeat-x bottom center;
+  /* 150px color-stop denotes the height of the product image, which is where #FFFFFF should end and #F1F1FF should start */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFFFFF), color-stop(150px,#FFFFFF), color-stop(100%,#F1F1FF));
+  background: -moz-linear-gradient(top, #ffffff 150px, #f1f1ff);
+  border:1px solid #dcdcff;
+}
+
+/* 4.3 - Category Side Promotions
+----------------------------------------------------------*/
+.category .atg_store_promoCopy{
+  background:#663366;                                                                                                                                                                                                                                                                       
+  color:#fff;
+  padding:5px;
+}
+
+/* 4.4 - Facet & Category Navigation
+----------------------------------------------------------*/
+#atg_store_dimensionRefinements{
+background:#395871;
+border-bottom: solid 1px #4f6a81;
+padding-top:5px;
+margin-top:40px;
+}
+#atg_store_categories .atg_store_facetsGroup_options_catsub li, 
+#atg_store_facets .atg_store_facetsGroup_options_catsub li{
+  color:#999;
+}
+#atg_store_categories h3.atg_store_categoryCurrentLeaf{
+  background:url(/crsdocroot/content/images/storefront/cat_currentcat.png) repeat-y top left;
+}
+#atg_store_categories .atg_store_categoryCurrentLeaf:hover{
+   background:url(/crsdocroot/content/images/storefront/cat_hovercat.png) repeat-y top left;
+}
+#atg_store_categories .atg_store_categoryCurrent a,
+#atg_store_categories .atg_store_categoryCurrentLeaf a{
+  color: #000;
+}
+#atg_store_categories .atg_store_categoryCurrent a:hover,
+#atg_store_categories .atg_store_categoryCurrent a:active,
+#atg_store_categories .atg_store_categoryCurrentLeaf a:hover,
+#atg_store_categories .atg_store_categoryCurrentLeaf a:active,
+#atg_store_categories .atg_store_categoryParent a:hover,
+#atg_store_categories .atg_store_categoryParent a:active{
+  background:url(/crsdocroot/content/images/storefront/facet_single_arrow_left.png) no-repeat center left;
+}
+#atg_store_dimensionRefinements h5,
+.atg_store_facetsGroup_options_catsub h5{
+  color:#ccc;
+}
+#atg_store_dimensionRefinements h5{
+  border-bottom: solid 1px #999;
+  margin-bottom:5px;
+  padding-top:17px;
+}
+.atg_store_facetsGroup_options_catsub h5{
+  border-bottom: solid 1px #666;
+}
+.atg_store_facetsGroup_options_catsub li:hover{
+    background: #35424c;
+}
+#atg_store_dimensionRefinements a,
+.atg_store_facetsGroup_options_catsub a{
+  color:#fff;
+  word-break: word-wrap;
+}
+#atg_store_dimensionRefinements a .productCount,
+.atg_store_facetsGroup_options_catsub a .productCount{
+  color:#999;
+}
+.atg_store_facetsGroup_options_catsub a{
+  border-top:solid 1px transparent;
+  border-bottom:solid 1px transparent;
+}
+.atg_store_facetsGroup_options_catsub a:hover,
+.atg_store_facetsGroup_options_catsub a:active{
+  color:#99CCFF;
+  border-top:solid 1px #4a555e;
+  border-bottom:solid 1px #4a555e;
+}
+.atg_store_facetsGroup_options_catsub a:hover .productCount,
+.atg_store_facetsGroup_options_catsub a:active .productCount{
+  font-weight: normal;
+}
+.atg_store_facetsGroup li.remove{
+background:url(/crsdocroot/content/images/storefront/cat_currentcat.png) repeat-y scroll left top transparent;
+}
+.atg_store_facetsGroup li.remove a:hover,
+.atg_store_facetsGroup li.remove a:active{
+background:url(/crsdocroot/content/images/storefront/facet_single_arrow_left.png) no-repeat 10px center;
+}
+#atg_store_categories h3 a,
+#atg_store_categories h3.atg_store_categoryRoot{
+  color:#425162;
+}
+.atg_store_facetsGroup li.atg_store_facetMore a:hover{
+  background:url(/crsdocroot/content/images/storefront/facet_single_arrow_more.png) no-repeat 10px center;
+}
+
+.atg_store_facetsGroup li.atg_store_facetLess a:hover{
+  background:url(/crsdocroot/content/images/storefront/facet_single_arrow_less.png) no-repeat 10px center;
+}
+/* 4.5 - What's New
+----------------------------------------------------------*/
+
+.atg_store_whatsNew h3 {
+  color: #72770B;
+}
+
+/* 5. PRODUCT DETAIL PAGES
+============================================================================================*/
+#atg_store_productCore{
+  background-color:#fff
+}
+/* 5.1 - Product Summary
+-----------------------------------------------------------------*/
+.atg_store_productSummary{
+  padding:20px 10px 10px;
+  width:320px;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+.atg_store_productSummary:hover{
+  border:1px solid #bbb;
+  -moz-box-shadow:0 2px 15px #bbb;
+  -webkit-box-shadow:0 2px 15px #bbb;
+  box-shadow:0 2px 15px #bbb;
+  
+}
+.atg_store_productSummary .atg_store_productPrice{
+  color:#B75A00;
+}
+.atg_store_productSummary .atg_store_oldPrice{
+  color:#666666;
+}
+.atg_store_addQty .atg_store_quantity span.atg_store_itemID{
+    color:#666666;
+}
+.atg_store_productMultiSkuWide .atg_store_productSummary .atg_store_item_name {
+  color: #003366;
+}
+/* Placement of Availability over Add to Cart Button */
+.atg_store_productAvailability{
+  margin-top:-25px;
+}
+.atg_store_productAvailability .atg_store_productID{
+  height:15px;
+  position:relative;
+  top:10px;
+}
+
+/* Placement of "When Available" message below Add to Cart button */
+.atg_store_emailMeMessage{
+  color:#72770B;
+}
+
+/* Size Chart */
+#atg_store_sizeChartTable tr.atg_store_sizeChartType{
+  color:#FFFFFF;
+  font-weight:bold;
+}
+#atg_store_sizeChartTable tr.atg_store_sizeChartType td{
+  background:#B75A00;
+}
+#atg_store_sizeChartTable th{
+  font-weight:bold;
+  text-align:center;
+  background:#CCCCCC;
+  padding:3px;
+  border:1px solid #fff;
+}
+#atg_store_sizeChartTable td{
+  border:1px solid #fff;
+  background:#ECECEC;
+  font-family:verdana;
+}
+#atg_store_sizeChartTable th.atg_store_sizeChartRowTitle,
+#atg_store_sizeChartTable td.atg_store_sizeChartRowTitle{
+  background:#ccc;
+  font-weight:bold;
+  padding-left:10px;
+}
+
+/* 5.2 - More Actions
+-----------------------------------------------------------------*/
+.atg_store_pickerActions ul#moreactions{
+  margin-top:15px;
+}
+.atg_store_pickerActions ul#moreactions > li{
+  padding:3px 3px 3px 18px;
+}
+.atg_store_pickerActions ul#moreactions > li > a{
+}
+.atg_store_pickerActions ul#moreactions li.atg_store_giftListsActions,
+.atg_store_pickerActions ul#moreactions li.atg_store_wishListsActions,
+.atg_store_pickerActions ul#moreactions li.atg_store_compareActions{
+  background:url(/crsdocroot/content/images/atgstore/icon_add_to.png) no-repeat scroll left center;
+}
+.atg_store_pickerActions ul#moreactions li.atg_store_emailActions{
+  background:url(/crsdocroot/content/images/atgstore/icon_email_item.gif) no-repeat scroll left center;
+}
+ .atg_store_pickerActions ul#moreactions li.atg_store_viewGiftlist{
+  background:url(/crsdocroot/content/images/atgstore/icon_added.png) no-repeat scroll left center !important;
+}
+.atg_store_pickerActions ul#moreactions li.atg_store_giftListsActions{
+  background:url(/crsdocroot/content/images/atgstore/icon_add_to.png) no-repeat scroll left center;
+} 
+.atg_store_pickerActions ul#moreactions li.atg_store_giftListsActions:hover{
+  background:url(/crsdocroot/content/images/atgstore/icon_add_to_hover.png) no-repeat scroll left center;
+}
+.atg_store_pickerActions ul#moreactions li.atg_store_viewComparisons,
+.atg_store_pickerActions ul#moreactions li.atg_store_viewWishlist{
+  background:url(/crsdocroot/content/images/atgstore/icon_added.png) no-repeat scroll left center;
+}
+.atg_store_pickerActions ul#moreactions li.atg_store_viewGiftlist:hover{
+  background:#B0D0FF url(/crsdocroot/content/images/atgstore/icon_added_in_hover.png) no-repeat scroll left center !important;
+}
+.atg_store_pickerActions ul#moreactions li.atg_store_wishListsActions:hover,
+.atg_store_pickerActions ul#moreactions li.atg_store_compareActions:hover{
+  background:url(/crsdocroot/content/images/atgstore/icon_add_to_hover.png) no-repeat scroll left center;
+}
+.atg_store_pickerActions ul#moreactions li.atg_store_emailActions:hover{
+  background:url(/crsdocroot/content/images/atgstore/icon_email_item_hover.gif) no-repeat scroll left center;
+}
+.atg_store_pickerActions ul#moreactions li.atg_store_viewComparisons:hover,
+.atg_store_pickerActions ul#moreactions li.atg_store_viewWishlist:hover{
+  background:url(/crsdocroot/content/images/atgstore/icon_added_in_hover.png) no-repeat scroll left center;
+}
+
+/* Gift List Drop Down Styles */
+.atg_store_pickerActions ul#moreactions li.atg_store_giftListsActions div.atg_store_dropDownChild{
+  -webkit-box-shadow: 0px 5px 8px rgba(0, 0, 0, .5);
+  -moz-box-shadow: 0px 5px 8px rgba(0, 0, 0, .5);
+  box-shadow: 0px 5px 8px rgba(0, 0, 0, .5);
+  left:-1px;
+  top:18px;
+}
+.dj_osx .atg_store_pickerActions ul#moreactions li.atg_store_giftListsActions div.atg_store_dropDownChild{
+  top:20px;
+}
+.atg_store_pickerActions ul#moreactions li.atg_store_giftListsActions:hover{
+  background:#B0D0FF url(/crsdocroot/content/images/atgstore/icon_add_to_hover.png) no-repeat scroll left center;
+  border-top:1px solid #333333;
+  border-left:1px solid #333333;
+  border-right:1px solid #333333;
+  padding:2px 2px 3px 17px;
+  -webkit-box-shadow: 0px 5px 8px rgba(0, 0, 0, .5);
+  -moz-box-shadow: 0px 5px 8px rgba(0, 0, 0, .5);
+  box-shadow: 0px 5px 8px rgba(0, 0, 0, .5);
+}
+.atg_store_pickerActions ul#moreactions li.atg_store_giftListsActions ul li{
+  border-top:solid 1px transparent;
+}
+.atg_store_pickerActions ul#moreactions li.atg_store_giftListsActions ul li:hover{
+  border-left: 0;
+  border-right: 0;
+  padding:0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.atg_store_pickerActions ul#moreactions li.atg_store_giftListsActions.atg_store_dropDownParent:hover {
+    background:#004BF9 url(/crsdocroot/content/images/atghome/icon_add_to_hover.png) no-repeat scroll left center !important;
+}
+.atg_store_pickerActions ul#moreactions li.atg_store_giftListsActions:hover a{
+  color:#fff;
+}
+.atg_store_giftListsActions div.atg_store_dropDownChild h4{
+  color:#72770B;
+  padding:10px 12px;
+}
+.atg_store_giftListMenu li:hover{
+background:#b0d0ff;
+} 
+.atg_store_giftListMenu li input,
+.atg_store_giftListMenu li input:hover{
+  color:#333333;
+  padding:10px 12px 10px 20px;
+}
+
+
+/* 5.3 ATG Recommendations and Recommended Products
+----------------------------------------------------------*/
+#atg_store_recommendedProducts h3{
+  color:#003366;
+}
+#atg_store_recommendedProducts ul{
+  border:1px solid #ccc;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  display: table;
+}
+#atg_store_recommendedProducts li{
+  border-bottom:1px solid #ccc;
+}
+/* When there is 1 item on bottom row */
+#atg_store_recommendedProducts li.odd:last-child{ 
+  border-bottom:none;
+}
+/* Remove bottom border when there are item on bottom row */
+#atg_store_recommendedProducts li.even:last-child,
+#atg_store_recommendedProducts li.odd:nth-last-child(2){
+  border-bottom:none
+}
+
+
+/* Add left border to all even LIs */
+#atg_store_recommendedProducts li:nth-child(2n+1){ 
+  border-right:1px solid #ccc;
+}
+/* When there is only 1 item listed */
+#atg_store_recommendedProducts li.first:last-child{ 
+  border-right:none;
+  float: none;
+}
+
+#atg_store_recommendedProducts li span.siteIndicator{
+  display:block;
+  opacity:0;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+#atg_store_recommendedProducts li:hover span.siteIndicator{
+  opacity:1;
+  background-color:rgba(255,255,255,.8);
+}
+
+#atg_store_recommendedProducts li a:focus span.siteIndicator {
+  opacity:1;
+  background-color:rgba(255,255,255,.8);
+}
+
+#atg_store_recommendedProducts li span.siteIndicator span{
+  padding-right:18px;
+}
+
+/* 5.4 Email a Friend/Email Me When In Stock Popups
+----------------------------------------------------------*/
+#atg_store_popup h2.title{
+  border-bottom: 1px solid #CCCCCC;
+  color: #004479;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+}
+#atg_store_popup p{
+  color:#666666;
+}
+#atg_store_popup h3{
+  font-weight:bold;
+}
+#atg_store_noJsNotifyMeRequest h2{
+  color: #004479;
+}
+
+
+/* Email a Friend *
+---------------------------*/
+.atg_store_emailProduct  {
+    border-bottom: 1px solid #CCCCCC;
+    padding-bottom: 15px;
+}
+.atg_store_emailProduct .atg_store_productInfo p{
+    color:#797979;
+}
+.atg_store_emailProduct .atg_store_productInfo .atg_store_productTitle{
+  color:#004479;
+  font-weight:bold;
+}
+.atg_store_emailProduct .atg_store_productInfo .atg_store_emailProductPrice {
+    color: #b75a00;
+}
+
+#atg_store_popup #atg_store_copyright {
+    color: #666666;
+}
+/* Promo Details Popup
+---------------------------*/
+ul.promoList li{
+  border-top:1px solid #ccc;
+}
+ul.promoList li:first-child{
+  border:none;
+}
+/* 6. LOGIN PAGES
+============================================================================================*/
+
+/* 6.1 - Account Login 
+-----------------------------------------------------------------*/
+.atg_store_loginMethod h2{
+  color:#72770B;
+}
+
+/* 6.2 - Checkout Login
+-----------------------------------------------------------------*/
+
+/* 7. REGISTRATION
+============================================================================================*/
+/* 7.1 - Regular Registratoin
+-----------------------------------------------------------------*/
+/* 7.2 - Checkout Registratoin (Order Success Page)
+-----------------------------------------------------------------*/
+/* 7.3 -Registration Benefits
+-----------------------------------------------------------------*/
+.atg_store_registrationBenefits ul{
+  background: url(/crsdocroot/content/images/atgstore/right_sidebar_top_gradient.png) repeat-y left center;
+  padding: 10px 0 25px 0;
+}
+.atg_store_registrationBenefits ul li{
+  list-style-image:url(/crsdocroot/content/images/storefront/bullet.gif);
+}
+.atg_store_registrationBenefits a.atg_store_benefitsPopUp{
+  margin-left:30px;
+  margin-top:25px;
+}
+.atg_store_register h4{
+  color:#b75a00;
+}
+p.atg_store_registrationMessage  {
+  color:#333333;
+}
+
+/* 8. CHECKOUT
+============================================================================================*/
+/* 8.1 - Order Summary
+-----------------------------------------------------------------*/
+.atg_store_orderSummary ul li{
+  padding: 0 20px;
+  color:#000000;
+}
+.atg_store_orderSummary ul.atg_store_orderSubTotals li.atg_store_orderTotal{
+  padding-top:20px;
+  padding-bottom:20px;
+}
+.atg_store_orderSummary ul li.atg_store_appliedOrderDiscounts{
+  color:#666666;
+  padding-top:10px;
+}
+.atg_store_orderSummary ul li.atg_store_stackingMessage{
+  text-align:center;
+}
+li.atg_store_orderTotal, .atg_store_cartActions,
+.atg_store_orderSummary .atg_store_formActions,
+#atg_store_confirmEmail{
+  background:url(/crsdocroot/content/images/storefront/checkout_totals_gradient_bg.gif) repeat-y left center;
+  padding:10px 0px; 
+  min-height:25px; 
+}
+li.atg_store_orderTotal span.atg_store_orderSummaryItem{
+   color:#B75A00;
+}
+#atg_store_confirmCancel{
+  padding-top:25px;
+  padding-bottom:10px;
+  background:url(/crsdocroot/content/images/storefront/checkout_totals_gradient_bg.gif) repeat-y left center;
+}
+
+/* 8.2 - Checkout Progress
+-----------------------------------------------------------------*/
+.atg_store_checkoutProgress{
+  left:240px;
+}
+.atg_store_returnItemSelectionProgress{
+  left:325px;
+}
+
+.atg_store_checkoutProgress li.login span,
+.atg_store_checkoutProgress li.register span{
+  font-size:4.1em !important;
+  position:relative;
+  top:3px;
+}
+.atg_store_checkoutProgress li span.atg_store_stageNumber,
+.atg_store_returnItemSelectionProgress li span.atg_store_stageNumber{
+  background:url(/crsdocroot/content/images/storefront/checkout_progress_inactive.png) no-repeat center center;
+  color:#fff;
+  text-align:center;
+  font-size:1.77em;
+  line-height:35px;
+  height:35px;
+  width:35px;
+}
+.atg_store_checkoutProgress li.current span.atg_store_stageNumber,
+.atg_store_returnItemSelectionProgress li.current span.atg_store_stageNumber{
+  background:url(/crsdocroot/content/images/storefront/checkout_progress_active.png) no-repeat center center;
+  color:#fff;
+}
+.atg_store_checkoutProgress li span.atg_store_checkoutStageName,
+.atg_store_returnItemSelectionProgress li span.atg_store_checkoutStageName{
+  color:#b2c1d1;
+    font-size:2.8em;
+}
+.atg_store_checkoutProgress li.current span.atg_store_checkoutStageName,
+.atg_store_returnItemSelectionProgress li.current span.atg_store_checkoutStageName{
+  color:#003366;
+}
+
+/* 8.3 - Shopping Cart
+-----------------------------------------------------------------*/
+
+/* Closeness Qualifier */
+.atg_store_closenessQualifier{
+  color:#72770B;
+}
+
+/* Item Table */
+#atg_store_itemTable th{
+  color:#003366;
+}
+#atg_store_itemTable td{
+  background: #fff url(/crsdocroot/content/images/storefront/table_row_gradient.gif) repeat-x top center;
+}
+#atg_store_itemTable table td{ /* reset for nested table */
+  background:none;
+}
+#atg_store_itemTable td.price span.atg_store_discountNote,
+#atg_store_itemTable td.price span.atg_store_oldPrice{
+  color:#666666;
+}
+#atg_store_itemTable td.item a.atg_store_productTitle,
+#atg_store_itemTable td.item span.itemName{
+  color:#72770B;
+}
+#atg_store_itemTable td.item .propertyContainer .propertyLabel{
+  color:#666666;
+  border:none;
+  font-size:1em;
+  text-align:left;
+}
+
+/* Cart Item Actios */
+.cartActions ul li a,
+.cartActions ul li input{
+  padding-right:18px;
+}
+.cartActions ul li input.atg_store_actionDelete{
+  padding-right:15px;
+}
+/* Fix for more accurate placement of "Remove" link */
+.dj_ie9 .cartActions ul li input.atg_store_actionDelete{
+  margin-right:3px;
+  padding-right:18px;
+  /* ie9 fix - creating a larger target area for mouseover on remove button*/
+  border:solid 3px transparent;
+  border-right:0;
+  margin-top:-3px;
+  margin-bottom:-3px;
+}
+.cartActions ul li a.atg_store_actionDelete,
+.cartActions ul li input.atg_store_actionDelete{
+  background:url(/crsdocroot/content/images/atgstore/icon_remove.png) no-repeat right bottom;
+}
+.cartActions ul li a.atg_store_actionDelete:hover,
+.cartActions ul li input.atg_store_actionDelete:hover{
+  background:url(/crsdocroot/content/images/atgstore/icon_remove_hover.png) no-repeat right bottom;
+}
+
+.cartActions ul li a.atg_store_actionAddToWishList,
+.cartActions ul li a.atg_store_actionAddToComparisons{
+  background:url(/crsdocroot/content/images/atgstore/icon_add_to_small.png) no-repeat right bottom;  
+}
+.cartActions ul li a.atg_store_actionAddToWishList:hover,
+.cartActions ul li a.atg_store_actionAddToComparisons:hover{
+  background:url(/crsdocroot/content/images/atgstore/icon_add_to_small_hover.png) no-repeat right bottom;  
+}
+.cartActions ul li a.atg_store_viewWishlist,
+.cartActions ul li a.atg_store_viewComparisons{
+  background:url(/crsdocroot/content/images/atgstore/icon_added.png) no-repeat right bottom;
+}
+.cartActions ul li a.atg_store_viewWishlist:hover,
+.cartActions ul li a.atg_store_viewComparisons:hover{
+  background:url(/crsdocroot/content/images/atgstore/icon_added_in_small_hover.png) no-repeat right bottom;
+}
+
+/* Gift Wrap Section */
+.atg_store_giftWrap{
+  background:url(/crsdocroot/content/images/storefront/cart_footer_bg.gif) repeat-x;  
+}
+.atg_store_giftWrap h4{
+  color:#72770B;
+}
+
+/* Recommended Products */
+#atg_store_shoppingCart #atg_store_recommendedProducts h3{
+  margin-top:0;
+  border-top:none;
+  background:none;
+}
+
+/* Gift With Purchase Pop-Over */
+#atg_store_gwpContainer{
+  -webkit-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5);;
+  border-radius: 20px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  background: #fff;
+  border: 1px solid #ccc;
+}
+#atg_store_gwpContainer h3 {
+  border-radius: 20px 20px 0px 0px;
+  -moz-border-radius: 20px 20px 0px 0px;
+  -webkit-border-radius: 20px 20px 0px 0px;
+  background: #f3f3f3;
+  border-bottom: 1px solid #ccc;
+  color: #006595;
+  font-weight: bold;
+}
+#atg_store_gwpContainer #atg_store_itemTable td.item a,
+#atg_store_gwpContainer #atg_store_itemTable td.item span.itemName{
+  width: auto;
+}
+
+#atg_store_gwpContainer div.atg_store_pickerContainer div.atg_store_colorPicker span.selector span.active,
+#atg_store_gwpContainer div.atg_store_pickerContainer div.atg_store_woodFinishPicker span.selector span.active{
+  width: 150px;
+}
+
+#atg_store_gwpContainer div.atg_store_pickerContainer div.atg_store_colorPicker label.atg_store_pickerLabel,
+#atg_store_gwpContainer div.atg_store_pickerContainer div.atg_store_sizePicker label.atg_store_pickerLabel{
+  width: 45px;
+}
+
+#atg_store_gwpContainer #atg_store_gwpFooter {
+  border-radius: 0 0 20px 20px;
+  -moz-border-radius: 0 0 20px 20px;
+  -webkit-border-radius: 0 0 20px 20px;
+  background: #f3f3f3;
+}
+.atg_store_gwpClose{
+  background: url('/crsdocroot/content/images/storefront/close.png') no-repeat center center;
+}
+/* Gift With Purchase No JS*/
+.atg_store_gwpNoJS #atg_store_itemTable th{
+    color: #006595;
+}
+
+/* 8.3 - Shipping:  Single Ship
+-----------------------------------------------------------------*/
+.atg_store_existingAddresses{
+    background:url(/crsdocroot/content/images/storefront/or_seperator_en.png) no-repeat top center;
+    padding-bottom:125px;
+    margin-top:25px;
+}
+
+/* Choose Existing Address */
+.atg_store_existingAddresses .atg_store_addressGroup.selected{
+  background:#fae3bf;
+}
+.atg_store_existingAddresses #atg_store_savedAddresses .atg_store_storedAddressActions{
+  margin-top:5px;
+}
+.atg_store_existingAddresses #atg_store_savedAddresses .atg_store_storedAddressActions li{
+  border-right:1px solid #666666;
+}
+.atg_store_existingAddresses #atg_store_savedAddresses .atg_store_storedAddressActions li.last{
+  border:none;
+  margin-left:0;
+}
+/* Create New Address */
+.atg_store_existingAddresses #atg_store_createNewShippingAddress h3{
+  width:325px;
+  margin-left:25px;
+}
+
+/* Ship to Mulitple Links */
+.atg_store_existingAddresses .atg_store_shipToMultipleLink{
+  background:url(/crsdocroot/content/images/storefront/checkout_footer_bg.gif) repeat-x;
+  border-top:1px solid #ccc;
+  margin-top:35px;
+  height:84px;
+  width:100%;
+  float:left;
+  clear:both;
+}
+.atg_store_existingAddresses .atg_store_shipToMultipleLink .atg_store_basicButton{
+  margin-top:15px;
+}
+
+/* 8.4 - Shipping:  Multi Ship
+-----------------------------------------------------------------*/
+#atg_store_checkoutMultiShippingAddress .atg_store_checkoutOption {
+  padding-right:30px;
+}
+.atg_store_shippingMultiple .atg_store_formActions{
+  padding-bottom:125px;
+}
+/* MultiShip Header */
+.atg_store_multiShipHeader{
+  margin-top:25px;
+}
+
+/* MultiShip Options */
+.atg_store_multiShipAdderessLinks li:first-child {
+  border-right:1px solid #CCCCCC;
+}
+.atg_store_multishipOptions ul li label{
+  color:#b75a00;
+}  
+/* Edit Address */
+.atg_store_checkoutEditAddresses h3{
+  color:#72770B;
+}
+
+/* 8.4 - Shipping:  Gift Note
+-----------------------------------------------------------------*/
+.atg_store_enterGiftMessage h3{
+  color:#72770B;
+}
+
+/* 8.5 - Shipping:  Shipping Options
+-----------------------------------------------------------------*/
+.atg_store_addCardInfo ul.atg_store_addNewCreditCard{
+  background: #fff url(/crsdocroot/content/images/storefront/table_row_gradient.gif) repeat-x top center;
+  border-top:1px solid #ccc;
+  padding-top:35px;
+}
+
+/* 8.6 - Billing:  Existing Credit Cards
+-----------------------------------------------------------------*/
+.atg_store_checkoutOption h3{
+  color:#72770B;
+}
+#atg_store_chooseCardAddress{
+  padding-top:10px;
+}
+#atg_store_chooseCardAddress #atg_store_selectAddress h4,
+#atg_store_chooseCardAddress #atg_store_enterNewBillingAddress h4{
+  color:#B75A00;
+}
+.atg_store_existingCreditCards .atg_store_savedCreditCard{
+  background:url(/crsdocroot/content/images/storefront/saved_cc_bg.gif) no-repeat;
+  border-bottom:1px solid #CCCCCC;
+  margin-bottom:50px;
+}
+.atg_store_existingCreditCards h3.atg_store_usedSavedCardHeader{
+  border-bottom:1px solid #CCCCCC;
+}
+#atg_store_storedCreditCards .atg_store_paymentInfoGroup dt{
+    font-weight:bold;
+    margin-bottom:10px;
+    margin-top:3px;
+}
+#atg_store_storedCreditCards .atg_store_paymentInfoGroup dt.atg_store_defaultCreditCard {
+  color:#b75a00;
+  font-weight:normal;
+  margin-top:0;
+}
+
+.dj_osx #atg_store_storedCreditCards .atg_store_paymentInfoGroup dt{
+  padding-top:2px;
+  margin-top:0;
+}
+.dj_osx #atg_store_storedCreditCards .atg_store_paymentInfoGroup dt.atg_store_defaultCreditCard{
+  padding-top:0;
+  margin-top:0;
+}
+
+
+#atg_store_storedCreditCards .atg_store_paymentInfoGroup dt.atg_store_defaultCreditCard span{
+  color:#004BF9;
+}
+.atg_store_existingAddresses ul.atg_store_addNewCreditCard li:first-child{
+  padding-left:20px;
+}
+
+.atg_store_checkoutEditAddresses .atg_store_generalMessage h3{
+  margin-bottom:25px;
+  font-size:1.6em;
+}
+.atg_store_checkoutEditAddresses .atg_store_formActions a{
+  margin-top:25px;
+}
+.atg_store_AvailableShippingMethods ul li{
+  font-size:1.2em;
+  color:#333333;
+  font-weight:bold;
+  margin-bottom:15px;
+}
+.atg_store_AvailableShippingMethods ul li label{
+  margin-right:5px;
+}
+
+/* 8.6 - Billing:  Existing Credit Cards
+-----------------------------------------------------------------*/
+.atg_store_buttonMessage span,
+.atg_store_saveSelectAddress p span,
+.atg_store_saveNewBillingAddress p span{
+  color:#B75A00;
+}
+
+.atg_store_appliedStoreCredit{
+  color:#B75A00;
+}
+
+/* 8.7 - Confirmation
+-----------------------------------------------------------------*/
+.atg_store_orderConfirmation .atg_store_orderSummary{
+  background:url(/crsdocroot/content/images/atgstore/confirm_summary_bg.gif) no-repeat top right;
+}
+.atg_store_orderConfirmation .atg_store_main{
+  padding-bottom:170px !important;
+}
+
+#atg_store_shipmentInfoContainer .street-address {
+  word-wrap: break-word;
+}
+
+#atg_store_shipmentInfoContainer{
+  background:#ebf0f7 url(/crsdocroot/content/images/storefront/confirm_order_info_bg.gif) no-repeat right top;
+}
+#atg_store_shipmentInfoContainer dl dd.atg_store_groupPaymentCardCSV label{
+  font-weight:bold;
+  word-wrap: break-word;
+}
+.atg_store_shipmentInfo{
+  height:100%;
+  background:url(/crsdocroot/content/images/atgstore/confirm_order_info_table_shadow.png) no-repeat right bottom;
+}
+#atg_store_shipmentInfoContainer dl dt,
+#atg_store_multishipGroupInfoContainer dl dt{
+  color:#6A6A6A;
+}
+#atg_store_shipmentInfoContainer dl .vcard .fn{
+  font-weight:bold;
+  word-wrap: break-word;
+}
+#atg_store_multishipGroupInfoContainer dl .vcard .fn,
+#atg_store_multishipGroupInfoContainer dl.atg_store_groupPaymentShipMethod dd span{
+  color:#72770B;
+}
+#atg_store_multishipGroupInfoContainer dl dd{
+  color:#666666;
+}
+#atg_store_multishipGroupInfoContainer dl.atg_store_groupPaymentMethod dd{
+  color:#72770B;
+}
+
+/* Item Table */
+.atg_store_orderConfirmation #atg_store_itemTable th{
+  border-top:1px solid #cccccc;
+}
+
+/* Modify Cart Links */
+.atg_store_confirmFooterLink{
+  background: url("/crsdocroot/content/images/storefront/cart_footer_bg.gif") repeat-x scroll 0 0 transparent;
+  border-bottom: 1px solid #CCCCCC;
+  height: 47px;
+}
+.atg_store_confirmFooterLink a{
+  margin-top: 15px;
+  display:inline-block;
+}
+
+/* Order Extras */
+#atg_store_itemTable th.atg_store_orderExtraHeader{
+  background: #fff url(/crsdocroot/content/images/storefront/table_row_gradient.gif) repeat-x top center;
+  border-top:0;
+  color:#B75A00;
+}
+.atg_store_confirmGiftMessage ul li span.atg_store_giftNoteLabel{
+  color: #B75A00;
+}
+.atg_store_confirmGiftMessage ul li span.atg_store_giftNoteInfo {
+    color: #666666;
+}
+
+/* Confirmation Response */
+#atg_store_confirmResponse h3{
+  font-size:2.2em;
+}
+#atg_store_confirmResponse p {
+  text-align:left;
+  margin-bottom:15px;
+  word-wrap:break-word;
+}
+#atg_store_confirmResponse p span{
+  font-weight:bold;
+}
+
+/* 9. TERTIARY PAGES
+============================================================================================*/
+
+/* 9.1 - Left Navigation
+-----------------------------------------------------------------*/
+
+.atg_store_companyNavigation ul li:first-child{
+  background:url(/crsdocroot/content/images/storefront/cat_firstcat.png) no-repeat top left;
+}
+.atg_store_companyNavigation ul li.current{
+  background:url(/crsdocroot/content/images/storefront/cat_currentcat.png) repeat-y top left;
+}
+.atg_store_companyNavigation ul li.current a{
+  color:#000;
+}
+.atg_store_companyNavigation ul li:hover{
+  background:url(/crsdocroot/content/images/storefront/cat_hovercat.png) repeat-y top left;
+}
+.atg_store_companyNavigation ul li a:hover,
+.atg_store_companyNavigation ul li a:active{
+  background:url(/crsdocroot/content/images/storefront/facet_single_arrow_right.png) no-repeat center right;
+}
+
+/* 9.2 - General Page Layout
+-----------------------------------------------------------------*/  
+.atg_store_company .atg_store_main h3{
+  color:#72770B;
+  margin-left:30px;
+}
+.atg_store_company .atg_store_main h4{
+  color:#b75a00;
+  font-weight:bold;
+}
+.atg_store_company .atg_store_main p{
+  color:#333;
+}
+/* 9.3 - Store Locator Layout
+-----------------------------------------------------------------*/
+.atg_store_locator .vcard .org{
+  color: #72770B;
+}
+/* 9.4 - As Seen In
+-----------------------------------------------------------------*/
+.atg_store_featureOrigin{
+  color: #72770B;
+  margin:1px 0;
+}
+/* 9.5 - Careers
+-----------------------------------------------------------------*/
+.atg_store_careers .atg_store_main ul li{
+  font-weight:bold;
+}
+/* 10. MY ACCOUNT PAGES
+============================================================================================*/
+.atg_store_myAccount h3{
+  color:#72770B;
+}
+.atg_store_myAccount h4{
+  color:#B75A00;
+}
+/* 10.1 - Left Navigation
+-----------------------------------------------------------------*/
+#atg_store_myAccountNav ul li:first-child{
+  background:url(/crsdocroot/content/images/storefront/cat_firstcat.png) no-repeat top left;
+}
+#atg_store_myAccountNav ul li.current{
+  background:url(/crsdocroot/content/images/storefront/cat_currentcat.png) repeat-y top left;
+}
+#atg_store_myAccountNav ul li.current a{
+  color:#000;
+}
+#atg_store_myAccountNav ul li:hover{
+  background:url(/crsdocroot/content/images/storefront/cat_hovercat.png) repeat-y top left;
+}
+#atg_store_myAccountNav ul li a:hover,
+#atg_store_myAccountNav ul li a:active{
+  background:url(/crsdocroot/content/images/storefront/facet_single_arrow_right.png) no-repeat center right;
+}
+
+/* 10.2 - My Profile
+-----------------------------------------------------------------*/
+
+/* Change Password */
+.atg_store_changePassword .atg_store_formActions{
+    height:75px;
+}
+.atg_store_changePassword .atg_store_formActions .atg_store_basicButton{
+  margin-top:10px;
+}
+
+/* Checkout Preferences */
+#atg_store_checkoutPrefs{
+  padding-bottom: 20px;
+}
+
+/* 10.3 - Payment Info
+-----------------------------------------------------------------*/
+
+/* Add New Credit Card */
+
+#atg_store_paymentInfoAddNewCard #atg_store_enterNewBillingAddress h3, 
+#atg_store_paymentInfoAddNewCard #atg_store_selectAddress h3{
+  text-align:center;
+}
+#atg_store_onlineCredits  {
+    color: #b75a00;
+}
+/* 10.3 - Address Book
+-----------------------------------------------------------------*/
+.atg_store_savedAddresses .atg_store_addressGroup dt{
+  font-weight: bold;
+  margin-top:3px;
+}
+.atg_store_addressGroup dt.atg_store_defaultShippingAddress{
+  color:#B75A00;
+  font-weight:normal;
+  margin-top:0;
+}
+
+.dj_osx .atg_store_savedAddresses .atg_store_addressGroup dt{
+  padding-top:2px;
+  margin-top:0;
+}
+.dj_osx .atg_store_addressGroup  dt.atg_store_defaultShippingAddress{
+  padding-top:0;
+  margin-top:0;
+}
+
+
+
+
+/* 10.4 - Wish List
+-----------------------------------------------------------------*/
+.atg_store_wishListDelete input{
+  padding-left:13px;
+  background:url(/crsdocroot/content/images/atgstore/icon_remove.png) no-repeat left center;
+}
+.atg_store_myWishListTable td.atg_store_productPrice .atg_store_oldPrice{
+  color:#666666;
+}
+.atg_store_wishList #atg_store_itemTable td.price {
+  color:#CC6600;
+}
+/* 10.5 - Gift Lists
+-----------------------------------------------------------------*/
+/* Gift List List */
+a.atg_store_giftListRemove{
+  background: url(/crsdocroot/content/images/atgstore/icon_remove.png) no-repeat left center;
+  padding-left:15px;
+}
+a.atg_store_giftListRemove:hover{
+  background: url(/crsdocroot/content/images/atgstore/icon_remove_hover.png) no-repeat left center;
+  padding-left:15px;
+}
+a.atg_store_giftListEdit{
+  background: url(/crsdocroot/content/images/atgstore/icon_edit.png) no-repeat left center;
+  padding-left:15px;
+}
+a.atg_store_giftListEdit:hover{
+  background: url(/crsdocroot/content/images/atgstore/icon_edit_hover.png) no-repeat left center;
+}
+.charCounter em{
+  font-weight:bold;
+}
+#atg_store_giftListList .atg_store_dataTable .atg_store_giftListName{
+  font-weight:bold;
+}
+/* Add Gift List Form */
+#atg_store_addGiftList h3{
+  text-align:center;
+  border-bottom: 1px solid #CCCCCC;
+  padding-bottom: 3px;
+}
+#atg_store_addGiftList ul.atg_store_basicForm li label span.subLabel{
+  color:#b75a00;
+}
+
+/* Edit Gift List Table */
+#atg_store_giftListManage #atg_store_itemTable th{
+  border-top:1px solid #CCCCCC;
+}
+#atg_store_giftListManage #atg_store_itemTable table th{
+  border-top:none;
+}
+
+#atg_store_giftListManage #atg_store_itemTable td.atg_store_productPrice,
+#atg_store_giftListShop #atg_store_itemTable td.atg_store_productPrice {
+  color: #CC6600;
+}
+
+/* 11. COMPARISONS
+============================================================================================*/
+input.atg_store_compareRemove{
+  background:url(/crsdocroot/content/images/atgstore/icon_remove.png) no-repeat left center;
+  padding-left:15px; 
+}
+input.atg_store_compareRemove:hover{
+  background:url(/crsdocroot/content/images/atgstore/icon_remove_hover.png) no-repeat left center;
+  padding-left:15px; 
+}
+#atg_store_productComparisons table td{
+  background:url(/crsdocroot/content/images/storefront/vertical_border.png) repeat-y left top;
+}
+#atg_store_productComparisons td.image{
+  background: url(/crsdocroot/content/images/storefront/faded_border.png) no-repeat left top;
+}
+#atg_store_productComparisons table td:first-child{
+  background:none;
+}
+#atg_store_productComparisons td.atg_store_productPrice{
+  color: #B75A00;    
+  height: 40px;
+}
+#atg_store_productComparisons td.atg_store_productPrice span.atg_store_oldPrice {
+  color: #666666;
+}
+#atg_store_productComparisons td.atg_store_tableLine {
+  border-bottom: 1px solid #CCCCCC;
+}
+#atg_store_productComparisons td.atg_store_comparisonActions {
+  height: 90px;
+}
+#atg_store_productComparisons td.atg_store_compareItemDetails dl dt{
+  background: url(/crsdocroot/content/images/storefront/faded_underline.png) no-repeat  left bottom;
+}
+
+/* 12. GIFT LISTS
+============================================================================================*/
+
+/* 12.1- Gift List Search
+-----------------------------------------------------------------*/
+#atg_store_giftListSearchContainer .atg_store_giftListSearch{
+  background:url(/crsdocroot/content/images/storefront/chevron_large.png) no-repeat left top;
+  padding-left:115px;
+  padding-top:10px;
+  padding-bottom:55px;
+  width:645px;
+}
+.atg_store_giftListSearch h3 {
+  color: #72770B;
+}
+
+/* Gift List Shop */
+#atg_store_giftListShopHeader{
+background:#fbfcfe url(/crsdocroot/content/images/storefront/giftList_header_bg.gif) repeat-x bottom center;
+}
+
+#atg_store_giftListShop #atg_store_giftListShopHeader dt{
+  color:#72770B;
+  font-weight:bold;
+}
+#atg_store_giftListShop #atg_store_giftListShopHeader dd{
+  color:#6A6A6A;
+}
+
+/* 13. PROMOTIONS PAGE
+============================================================================================*/
+.atg_store_promo{
+  background:url(/crsdocroot/content/images/storefront/promo_bg.png) no-repeat left center;
+  width:439px;
+  height:152px;
+}
+.atg_store_promo a{
+  background:url(/crsdocroot/content/images/storefront/promo_button.png) no-repeat 400px 111px;
+  color:#666666;
+  height:143px;
+}
+.atg_store_promo img{
+  margin-left:5px;
+  margin-top:2px;
+  height:143px;
+}
+.atg_store_promo a span.atg_store_promoCopy{
+  height:143px;
+}
+.atg_store_promo strong{
+  color:#ff9900;
+}
+#atg_store_promotions li.atg_store_promo .atg_store_promoCopy span{
+  color:#72770B;
+  font-weight:bold;
+}
+
+/* 14. RETURNS
+============================================================================================*/
+.atg_store_returnDetailsHeader,
+.atg_store_returnItem #atg_store_shipmentInfoContainer,
+.atg_store_returnItem .atg_store_shipmentInfo{
+  background:#F9FAFE;
+}
+.atg_store_returnItem .atg_store_shipmentInfo{
+  padding-left:15px;
+}
+
+.atg_store_returnDetailsHeader .value,
+.atg_store_returnItem #atg_store_shipmentInfoContainer .fn,
+.atg_store_returnItem #atg_store_shipmentInfoContainer .atg_store_orderDate,
+#atg_store_returnReviewSummary h4,
+.atg_store_myReturnItemSelection h4,
+.atg_store_returnItem #atg_store_itemTable span.returnReason{
+  color:#72770B;
+}
+.atg_store_returnItem #atg_store_shipmentInfoContainer dl .vcard .fn{
+  font-weight: normal;
+}
+.atg_store_returnItem #atg_store_itemTable .price{
+  font-size:1.2em;
+  font-weight:bold;
+  white-space: nowrap;
+}
+
+.atg_store_returnItem #atg_store_itemTable span.returnReason{
+  font-size:1.3em;
+  font-weight:bold;
+  padding:1px 0;
+}
+
+/* Non Category Hero Images
+---------------------------------------------------------------------------*/
+
+/* Secondary Page Hero Images 
+-----------------------------*/
+/* My Account */
+.atg_store_myAccountPage #atg_store_content #atg_store_contentHeader,
+.atg_store_pageLogin #atg_store_content #atg_store_contentHeader,
+.atg_store_pageRegistration #atg_store_content #atg_store_contentHeader,
+.atg_store_forgotPassword #atg_store_content #atg_store_contentHeader,
+.atg_store_tempPasswordSent #atg_store_content #atg_store_contentHeader{
+   background:url(/crsdocroot/content/images/hero_toplevel_myaccount.png) no-repeat;
+}
+/* Cart */
+.atg_store_pageCart #atg_store_content #atg_store_contentHeader,
+.atg_store_checkout #atg_store_content #atg_store_contentHeader,
+.atg_store_pageEmptyCart #atg_store_content #atg_store_contentHeader,
+.atg_store_orderNotPlaced #atg_store_content #atg_store_contentHeader{
+  background:url(/crsdocroot/content/images/hero_toplevel_checkout.png) no-repeat;
+}
+/* Comparisons */
+.atg_store_comparison #atg_store_content #atg_store_contentHeader{
+   background:url(/crsdocroot/content/images/hero_toplevel_comparison.png) no-repeat;
+}
+/* Promotions */
+.atg_store_promotions #atg_store_content #atg_store_contentHeader{
+   background:url(/crsdocroot/content/images/hero_toplevel_promotions.png) no-repeat;
+}
+/* Gift Lists */
+.atg_store_pageGiftList #atg_store_content #atg_store_contentHeader{
+   background:url(/crsdocroot/content/images/hero_toplevel_giftlist.png) no-repeat;
+}
+/* Gift Lists Search Results */
+.atg_store_giftListSearchResults #atg_store_content #atg_store_contentHeader{
+   background:url(/crsdocroot/content/images/hero_toplevel_giftlistsearchresults.png) no-repeat;
+}
+/* product Does Not Exist, Page not found, Internal Server Error, Session Expired */
+.atg_store_productNotAvailable #atg_store_content #atg_store_contentHeader,
+.atg_store_pageNotFound #atg_store_content #atg_store_contentHeader,
+.atg_store_internalServerError #atg_store_content #atg_store_contentHeader,
+.atg_store_sessionExpired #atg_store_content #atg_store_contentHeader{
+   background:url(/crsdocroot/content/images/hero_toplevel_errorMessage.png) no-repeat;
+}
+/* What's New */
+.atg_store_newItem #atg_store_content #atg_store_contentHeader{
+   background:url(/crsdocroot/content/images/hero_toplevel_newitems.png) no-repeat;
+}
+
+/* Tertiary Page Hero Images 
+-----------------------------*/
+
+/* About Us */
+.atg_store_aboutUs #atg_store_content #atg_store_contentHeader{
+   background:url(/crsdocroot/content/images/hero_toplevel_aboutus.png) no-repeat;
+}
+/*Stores */
+.atg_store_stores #atg_store_content #atg_store_contentHeader{
+   background:url(/crsdocroot/content/images/hero_toplevel_stores.png) no-repeat;
+}
+/* Corporate Site */
+.atg_store_corporate #atg_store_content #atg_store_contentHeader{
+   background:url(/crsdocroot/content/images/hero_toplevel_corporatesite.png) no-repeat;
+}
+/* Careers */
+.atg_store_careers #atg_store_content #atg_store_contentHeader{
+   background:url(/crsdocroot/content/images/hero_toplevel_employment.png) no-repeat;
+}
+/* News */
+.atg_store_news #atg_store_content #atg_store_contentHeader{
+   background:url(/crsdocroot/content/images/hero_toplevel_news.png) no-repeat;
+}
+/* As Seen In */
+.atg_store_asSeenIn #atg_store_content #atg_store_contentHeader{
+   background:url(/crsdocroot/content/images/hero_toplevel_asseenin.png) no-repeat;
+}
+/* FAQ/Help */
+.atg_store_faq #atg_store_content #atg_store_contentHeader,
+.atg_store_pageHelp #atg_store_content #atg_store_contentHeader{
+   background:url(/crsdocroot/content/images/hero_toplevel_faq.png) no-repeat;
+}
+/* Privacy */
+.atg_store_privacy #atg_store_content #atg_store_contentHeader{
+   background:url(/crsdocroot/content/images/hero_toplevel_privacy.png) no-repeat;
+}
+/* Terms */
+.atg_store_terms #atg_store_content #atg_store_contentHeader{
+   background:url(/crsdocroot/content/images/hero_toplevel_terms.png) no-repeat;
+}
+/* Shipping */
+.atg_store_shipping #atg_store_content #atg_store_contentHeader{
+   background:url(/crsdocroot/content/images/hero_toplevel_shipping.png) no-repeat;
+}
+/* Returns */
+.atg_store_returns #atg_store_content #atg_store_contentHeader{
+   background:url(/crsdocroot/content/images/hero_toplevel_returns.png) no-repeat;
+}
+/* Contact */
+.atg_store_contact #atg_store_content #atg_store_contentHeader{
+   background:url(/crsdocroot/content/images/hero_toplevel_contact.png) no-repeat;
+}
+
+/* Self Clearing Floats */
+.atg_store_productSummary:after,
+#picker_contents:after,
+#atg_store_picker:after,
+.atg_store_checkoutProgress:after,
+.atg_store_existingAddresses:after,
+.atg_store_shipToMultipleLink:after,
+.atg_store_returnItemSelectionProgress:after{
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/* Click to call styling */
+#atg_store_c2c_contactUs{
+  padding-left: 30px;
+  padding-bottom: 15px;
+}
+
+#atg_store_c2c_cartSummary{
+  padding-top:10px;
+  padding-bottom:40px;
+}
+
+/* Accessibility navigation */
+#atg_store_accessibility_nav a:active, #atg_store_accessibility_nav a:focus 
+{ 
+  color: #CCCCFF;
+}
+
+/* Dimension Refinements / Breadcrumbs */
+#atg_store_dimensionRefinements a.atg_store_actionBreadcrumbDelete{
+  text-decoration: none;
+}
+
+#atg_store_dimensionRefinements .atg_store_refinements a,
+#atg_store_dimensionRefinements #atg_store_refinementAncestors{
+  text-decoration: none;
+  background: url(/crsdocroot/content/images/storefront/breadcrumb_X_off.png) no-repeat 150px 2px;
+  border-top:solid 1px #395871;
+  border-bottom:solid 1px #395871;
+}
+
+#atg_store_dimensionRefinements .atg_store_refinements a:hover,
+#atg_store_dimensionRefinements #atg_store_refinementAncestors:hover{
+  background: #35434c url(/crsdocroot/content/images/storefront/breadcrumb_X_on.png) no-repeat 150px 2px;
+  border-top:solid 1px #4a5553;
+  border-bottom:solid 1px #4a5553;
+  cursor: pointer;
+  color:#99CCFF;
+}
+
+#atg_store_dimensionRefinements #atg_store_refinementAncestors:hover a,
+#atg_store_dimensionRefinements #atg_store_refinementAncestorsLinks .highlight,
+.atg_store_priceSliderSelectedRange .highlight{
+ color:#99CCFF; 
+}
+
+#atg_store_dimensionRefinements #atg_store_refinementAncestorsLinks a:hover{
+  text-decoration: underline;
+}
+
+#atg_store_dimensionRefinements #atg_store_refinementAncestors.noBackgroundImage{
+  background-image: none;
+  cursor: auto !important;
+}
+
+#atg_store_dimensionRefinements #atg_store_refinementAncestorsLinks .fade{
+  color: #ccc !important;
+}

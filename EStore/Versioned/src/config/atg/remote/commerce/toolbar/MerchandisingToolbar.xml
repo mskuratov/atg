@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<toolbar xml-combine="append">
+
+  <!-- Toolbar customisations for the CRS-defined items in Merchandising -->
+
+  <!-- ===================== -->
+  <!-- Browse operation menu -->
+  <!-- ===================== -->
+
+  <operation-menu id="storeTextOperationMenu">
+      <toolbar-scope asset-area="storeText"
+                     pane-id="browse"/>
+      <operation-menu-item id="edit" />
+      <operation-menu-item divider="true" />
+      <operation-menu-item id="move"/>
+      <operation-menu-item id="duplicate" />
+      <operation-menu-item id="delete" />
+      <operation-menu-item divider="true" />
+      <operation-menu-item id="addToProject" />
+      <operation-menu-item id="export" />
+    </operation-menu>
+
+    <!-- =================== -->
+    <!-- Find operation menu -->
+    <!-- =================== -->
+
+  <operation-menu id="findStoreTextOperationMenu">
+      <toolbar-scope asset-area="siteContent"
+                     pane-id="find"/>
+      <operation-menu-item id="edit" />
+      <operation-menu-item divider="true" />
+      <operation-menu-item id="duplicate" />
+      <operation-menu-item divider="true" />
+      <operation-menu-item id="addToProject" />
+      <operation-menu-item id="addToWorkbench" />
+      <operation-menu-item id="export" />
+    </operation-menu>
+
+  <!-- ========================== -->
+  <!-- Operation menu adjustments -->
+  <!-- ========================== -->
+  
+  <operation-menu-adjustments id="findStoreTextOperationMenuAdjustments"
+        asset-type="/atg/store/stores/StoreTextRepository:storeText">
+    <disable-menu-item menu-item-id="addToWorkbench"/>
+  </operation-menu-adjustments>
+
+  <operation-menu-adjustments id="findStoreLongTextOperationMenuAdjustments"
+        asset-type="/atg/store/stores/StoreTextRepository:storeLongText">
+    <disable-menu-item menu-item-id="addToWorkbench"/>
+  </operation-menu-adjustments>
+
+  <operation-menu-adjustments id="promoContentMediaOpMenuAdjustments"
+        asset-type="/atg/commerce/catalog/MerchandisingProductCatalog:promotionalContent">
+    <disable-menu-item menu-item-id="viewChildren"/>
+  </operation-menu-adjustments>
+
+</toolbar>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/Versioned/config/atg/remote/commerce/toolbar/MerchandisingToolbar.xml#3 $$Change: 789379 $-->

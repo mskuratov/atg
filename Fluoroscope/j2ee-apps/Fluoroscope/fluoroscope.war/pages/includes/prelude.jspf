@@ -1,0 +1,22 @@
+<%-- 
+  This file is included in all *.jsp files. It is specified by an include-prelude 
+  option in web.xml.
+  NOTE: Do not set a contentType directive in this file as some JSPs will render
+  text/html, whereas others will render other mime types, including application/json.
+--%>
+<%-- JSTL --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
+<%-- DSP --%>
+<%@ taglib prefix="dsp" uri="http://www.atg.com/taglibs/daf/dspjspTaglib1_1" %>
+
+<%-- JSON Rendering Taglib --%>
+<%@ taglib prefix="json" uri="http://www.atg.com/taglibs/json" %>
+
+<dsp:page>
+  <%-- Set the default value for the xml="..." attribute on the dsp:page tags. --%>
+  <dsp:setxml value="true"/>
+</dsp:page>
+<%-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Fluoroscope/j2ee/fluoroscope.war/pages/includes/prelude.jspf#1 $$Change: 735822 $--%>

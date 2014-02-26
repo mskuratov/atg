@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.7.0
+Created-By: 11.3-b02 (Sun Microsystems Inc.)
+ATG-Client-Class-Path: lib/classes.jar
+ATG-Class-Path: lib/classes.jar
+ATG-Config-Path: config/config.jar
+ATG-Required: DCS.ADC
+ATG-Required-If-Present: DCS.ClickToConnect
+
+Name: lib/classes.jar
+ATG-Client-Update-File: true
+
+Name: admin
+ATG-Assembler-Import-File: true
+

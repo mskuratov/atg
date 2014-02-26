@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actor-template>
+  <actor-chain id="moveToPurchaseInfo">
+    <form id="cartModifierFormHandler">
+      <input name="shippingInfoURL" value="/model/atg/commerce/order/purchase/CartModifierActor/moveToPurchaseInfoByCommerceId-success"/>
+      <input name="loginDuringCheckoutURL" value="/rest/model/atg/userprofiling/securityStatusActor/authenticationRequired"/>
+    </form>
+  </actor-chain>
+
+  <actor-chain id="moveToPurchaseInfoByCommerceId">
+    <form id="cartModifierFormHandler">
+      <input name="shippingInfoURL" value="/model/atg/commerce/order/purchase/CartModifierActor/moveToPurchaseInfoByCommerceId-success"/>
+      <input name="loginDuringCheckoutURL" value="/rest/model/atg/userprofiling/securityStatusActor/authenticationRequired"/>
+    </form>
+  </actor-chain>
+
+  <actor-chain id="moveToPurchaseInfoByRelId" transaction="TX_SUPPORTS">
+    <form id="cartModifierFormHandler">
+      <input name="shippingInfoURL" value="/model/atg/commerce/order/purchase/CartModifierActor/moveToPurchaseInfoByCommerceId-success"/>
+      <input name="loginDuringCheckoutURL" value="/rest/model/atg/userprofiling/securityStatusActor/authenticationRequired"/>
+    </form>
+  </actor-chain>
+  
+  <actor-chain id="removeItemFromOrder">
+    <form id="cartModifierFormHandler">
+      <input name="removeItemFromOrder" value="${param.removalCommerceIds}"/>
+    </form>
+  </actor-chain>
+  
+</actor-template>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/config/atg/commerce/order/purchase/cartModifierActor.xml#2 $$Change: 792878 $ -->

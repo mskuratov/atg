@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE gsa-template SYSTEM "dynamosystemresource:/atg/dtds/gsa/gsa_1.0.dtd">
+<gsa-template>
+  <update-item item-descriptor="siteConfiguration" id="mobileHomeSite">
+    <set-property name="siteTemplate"><![CDATA[sa_default_category]]></set-property>
+  </update-item>
+  <update-item item-descriptor="siteConfiguration" id="mobileStoreSiteUS">
+    <set-property name="siteTemplate"><![CDATA[sa_default_category]]></set-property>
+  </update-item>
+</gsa-template>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Mobile/Versioned/install/data/sites-templates.xml#2 $$Change: 768606 $-->

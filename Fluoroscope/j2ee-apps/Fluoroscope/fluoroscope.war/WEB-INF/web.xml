@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+  <display-name>Fluoroscope Web Application</display-name>
+  
+  <context-param>
+    <param-name>atg.session.parentContextName</param-name>
+    <param-value>/dyn</param-value>
+  </context-param>
+  <context-param>
+    <param-name>atg.dafear.bootstrapContextName</param-name>
+    <param-value>/dyn</param-value>
+  </context-param>
+  
+  <servlet>
+    <servlet-name>NucleusServlet</servlet-name>
+    <servlet-class>
+      atg.nucleus.servlet.NucleusServlet
+    </servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NucleusServlet</servlet-name>
+    <url-pattern>/nucleus/*</url-pattern>
+  </servlet-mapping>
+  
+  <filter>
+    <filter-name>PageFilter</filter-name>
+    <filter-class>atg.filter.dspjsp.PageFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>PageFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+  </filter-mapping>
+
+  <jsp-config>
+    <jsp-property-group>
+      <url-pattern>*.jsp</url-pattern>
+      <page-encoding>UTF-8</page-encoding>
+      <scripting-invalid>true</scripting-invalid>
+      <include-prelude>/pages/includes/prelude.jspf</include-prelude>
+    </jsp-property-group>
+  </jsp-config>
+
+  <welcome-file-list>
+    <welcome-file>/pages/index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Fluoroscope/j2ee/fluoroscope.war/WEB-INF/web.xml#1 $$Change: 735822 $-->

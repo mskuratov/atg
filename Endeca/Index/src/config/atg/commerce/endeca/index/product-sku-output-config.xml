@@ -1,0 +1,98 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+
+<!--
+  Indexing Dependency Schema for Commerce Catalogs
+  
+  @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Endeca/Index/config/atg/commerce/endeca/index/product-sku-output-config.xml#5 $
+  @updated $DateTime: 2013/02/11 06:38:40 $ 
+-->
+
+<item item-descriptor-name="product">
+
+  <properties>
+    <property name="averageCustomerRating" filter="unique" type="integer" default-value="0"/>
+    <property default-value="0" name="startDate" type="date" xml-combine="replace"/>
+    <!-- 
+      The default end date is set to 1/1/3000. This is necessary as we can only use the Endeca RangeFilter 
+      once per property. For example, it's not possible to create a RangeFilter to do the following:
+                          
+      if endDate == 0 OR endDate >= currentDate
+                             
+      Defining a fake future date allows us to only check if the endDate >= currentDate.
+    -->
+    <property default-value="32506394714894" name="endDate" type="date" xml-combine="replace"/>
+    <property name="displayName" type="string"/>
+    <property name="briefDescription" text-searchable="true"/>
+    <property name="listPrice" text-searchable="true" xml-combine="remove"/>
+    <property name="$repositoryId" text-searchable="true"/>
+    <property name="brand" text-searchable="true" filter="unique" is-dimension="true" multiselect-type="multi-or" type="string"/>
+  </properties>
+  
+  <item property-name="childSKUs">
+    <properties>
+      <!-- New properties for price list handling -->
+      <property is-non-repository-property="true" name="price" output-name="sku.activePrice"
+        property-accessor="/atg/commerce/endeca/index/accessor/ActivePriceAccessor" type="float"/>      
+      <property name="color" subtype="clothing-sku" filter="unique"
+          text-searchable="true" is-dimension="true" multiselect-type="multi-or" type="string"/>
+      <property name="listPrice" property-accessor="pricePropertyAccessor" type="float" xml-combine="remove"/>
+      <property subtype="furniture-sku" name="woodFinish" filter="unique"
+          text-searchable="true" is-dimension="true" multiselect-type="multi-or" type="string"/>
+      <property name="size" subtype="clothing-sku" filter="unique"
+          text-searchable="true" is-dimension="true" multiselect-type="multi-or" type="string" />
+      <property name="$repositoryId" text-searchable="true"/>
+
+      <!-- For the textual version, use a different property name. -->
+      <property name="onSale" output-name="sku.onSaleText" filter="unique" text-searchable="true"/>
+      
+      <property name="margin" filter="unique" type="float" default-value="0"/>
+      
+      <property default-value="0" name="startDate" type="date" xml-combine="replace"/>
+      <!-- 
+        The default end date is set to 1/1/3000. This is necessary as we can only use the Endeca RangeFilter 
+        once per property. For example, it's not possible to create a RangeFilter to do the following:
+                            
+        if endDate == 0 OR endDate >= currentDate
+                               
+        Defining a fake future date allows us to only check if the endDate >= currentDate.
+      -->
+      <property default-value="32506394714894" name="endDate" type="date" xml-combine="replace"/>
+      <property name="manufacturer_part_number" type="string" filter="unique" text-searchable="true"/>
+    </properties>
+  </item>
+  
+
+  <item is-multi="true" property-name="features">
+    <properties>
+      <property name="$itemDescriptor.itemDescriptorName" suppress="true"/>
+      <property name="$repository.repositoryName" suppress="true"/>
+      <property name="$repositoryId" type="string"/>
+      <property name="displayName" subtype="feature" filter="unique" 
+          text-searchable="true" is-dimension="true" multiselect-type="multi-or" type="string"/>
+    </properties>
+    
+  </item>
+
+
+  <item parent-property="childProducts" property-name="parentCategories">    
+    <properties>      
+      <property name="keywords" text-searchable="true" xml-combine="remove"/>
+    </properties>
+  </item>
+  
+  <item property-name="mediumImage">
+    <properties>
+      <property name="url" subtype="media" text-searchable="false" type="string"/>
+      <property name="$repository.repositoryName" suppress="true"/>
+      <property name="$repositoryId" suppress="true"/>
+    </properties>
+  </item>
+  <item property-name="largeImage">
+    <properties>
+      <property name="url" subtype="media" text-searchable="false" type="string"/>
+      <property name="$repository.repositoryName" suppress="true"/>
+      <property name="$repositoryId" suppress="true"/>
+    </properties>
+  </item>
+</item>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Endeca/Index/config/atg/commerce/endeca/index/product-sku-output-config.xml#5 $$Change: 789379 $-->

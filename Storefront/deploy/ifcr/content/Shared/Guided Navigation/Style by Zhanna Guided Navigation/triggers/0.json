@@ -1,0 +1,6 @@
+{
+  "jcr:primaryType": "endeca:unstructured",
+  "dvalIDs": [4294967041],
+  "inherit": "FALSE",
+  "sling:resourceType": "endeca/trigger"
+}

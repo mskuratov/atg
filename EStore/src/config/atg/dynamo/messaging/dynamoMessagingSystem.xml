@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<dynamo-message-system>
+  <!-- Register ProductViewedEventListener as message sink -->
+  <patchbay>
+    <message-sink>
+      <nucleus-name>
+        /atg/userprofiling/RecentlyViewedHistoryCollector
+      </nucleus-name>
+      <input-port>
+        <port-name>
+          ViewItem
+        </port-name>
+        <input-destination>
+          <provider-name>
+            local
+          </provider-name>
+          <destination-name>
+            localdms:/local/DPSTopic/ViewItemEvents
+          </destination-name>
+          <destination-type>
+            Topic
+          </destination-type>
+        </input-destination>
+      </input-port>
+    </message-sink>
+</patchbay>
+</dynamo-message-system>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/config/atg/dynamo/messaging/dynamoMessagingSystem.xml#1 $$Change: 735822 $ -->

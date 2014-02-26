@@ -1,0 +1,18 @@
+<!DOCTYPE secured-repository-template
+  PUBLIC "-//Art Technology Group, Inc.//DTD Dynamo Security//EN"
+  "http://www.atg.com/dtds/security/secured_repository_template_1.0.dtd">
+
+<secured-repository-template>
+
+  <item-descriptor name="SEOTranslation">
+    
+    <!-- The ACL that applies to the item view/descriptor -->
+    <descriptor-acl value="Admin$role$administrators-group:read,write,create,delete;Admin$role$everyone-group:read;Profile$role$epubSuperAdmin:read,write,create,delete;Profile$role$epubAdmin:read,write,create,delete;Profile$role$epubManager:read,write,create,delete;Profile$accessRight$seotagsread:read;Profile$accessRight$seotagsfull:read,write,create,delete"/>
+
+    <!-- An ACL fragment that is assigned to all new items -->
+   <creation-base-acl value="Admin$role$administrators-group:read,write,list,destroy,read_owner,write_owner,read_acl,write_acl;Admin$role$everyone-group:read,list;Profile$role$epubSuperAdmin:read,write,list,destroy,read_owner,write_owner,read_acl,write_acl;Profile$role$epubAdmin:read,write,list,destroy,read_owner,write_owner,read_acl,write_acl;Profile$role$epubManager:read,write,list,destroy,read_owner,write_owner,read_acl,write_acl;Profile$accessRight$seotagsread:read,list;Profile$accessRight$seotagsfull:read,write,list,destroy,read_owner,write_owner,read_acl,write_acl"/>
+
+  </item-descriptor>
+
+</secured-repository-template>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/International/Versioned/config/atg/seo/secureSEORepository.xml#1 $$Change: 788278 $-->

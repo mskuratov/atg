@@ -1,0 +1,5 @@
+{
+"sling:resourceType" : "endeca/page",
+"contentType": "Page",
+"jcr:primaryType" : "endeca:unstructured"
+}

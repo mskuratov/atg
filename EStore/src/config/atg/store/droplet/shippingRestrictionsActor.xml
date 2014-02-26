@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actor-template default-chain-id="countries"
+                xsi:noNamespaceSchemaLocation="http://www.atg.com/xsds/actorChain_1.0.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <actor-chain id="countries" transaction="TX_SUPPORTS">
+    <droplet id="shippingRestrictionsDroplet" name="/atg/store/droplet/ShippingRestrictionsDroplet" var="result">
+      <oparam name="output">
+        <output id="countries" name="countries" value="${result.countries}"/>
+      </oparam>
+    </droplet>
+  </actor-chain>
+</actor-template>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/config/atg/store/droplet/shippingRestrictionsActor.xml#2 $$Change: 791340 $-->

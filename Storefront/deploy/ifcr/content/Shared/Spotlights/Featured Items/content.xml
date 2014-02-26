@@ -1,0 +1,39 @@
+<ContentItem type="MainContent" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://endeca.com/schema/content/2008">
+  <TemplateId>HorizontalRecordSpotlight</TemplateId>
+  <Name>Featured Items</Name>
+  <Property name="title">
+    <String/>
+  </Property>
+  <Property name="maxNumRecords">
+    <String>4</String>
+  </Property>
+  <Property name="recordSelection">
+    <Item class="com.endeca.infront.cartridge.RecordSpotlightSelection" xmlns="http://endeca.com/schema/xavia/2010">
+      <Property name="sortOption">
+        <Item class="com.endeca.infront.navigation.model.SortOption">
+          <Property name="label">sku.margin | Ascending</Property>
+          <Property name="sorts">
+            <List>
+              <Item class="com.endeca.infront.navigation.model.SortSpec">
+                <Property name="key">sku.margin</Property>
+                <Property name="descending">false</Property>
+              </Item>
+            </List>
+          </Property>
+        </Item>
+      </Property>
+      <Property name="augment">true</Property>
+      <Property name="filterState">
+        <Item class="com.endeca.infront.cartridge.support.SpotlightFilterState"/>
+      </Property>
+      <Property name="recordLimit">4</Property>
+    </Item>
+  </Property>
+  <Property name="showSeeAllLink">
+    <Boolean>false</Boolean>
+  </Property>
+  <Property name="seeAllLinkText">
+    <String>See All</String>
+  </Property>
+</ContentItem>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Storefront/deploy/ifcr/content/Shared/Spotlights/Featured Items/content.xml#2 $$Change: 768606 $-->

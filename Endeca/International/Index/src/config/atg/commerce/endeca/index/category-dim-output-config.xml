@@ -1,0 +1,13 @@
+<!--   
+  @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Endeca/International/Index/config/atg/commerce/endeca/index/category-dim-output-config.xml#3 $
+  @updated $DateTime: 2013/02/05 00:41:33 $ 
+-->
+
+<item item-descriptor-name="category" is-document="true">
+  <text-properties>
+    <property name="displayName"
+	      property-accessor="/atg/commerce/search/GenerativeLanguagePropertyAccessor"
+	      />
+  </text-properties>
+</item>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Endeca/International/Index/config/atg/commerce/endeca/index/category-dim-output-config.xml#3 $$Change: 788278 $-->

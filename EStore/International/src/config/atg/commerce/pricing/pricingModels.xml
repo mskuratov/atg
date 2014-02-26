@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<gsa-template xml-combine="append">
+
+  <!--///////////////////////////////-->
+  <!--          promotion            -->
+  <!--///////////////////////////////-->
+
+  <item-descriptor name="promotion" expert="true" xml-combine="append">
+    <table name="dcs_promotion" type="primary" id-column-name="promotion_id">
+      <property name="displayName" xml-combine="remove"/>
+      <property name="description" xml-combine="remove"/>
+      <property name="displayNameDefault" data-type="string" column-name="display_name" required="true"
+                category-resource="categoryBasics" display-name-resource="nameDefault">
+        <attribute name="resourceBundle"
+                   value="atg.projects.store.InternationalStorePricingTemplateResources"/>
+        <attribute name="propertySortPriority" value="10"/>
+      </property>
+      <property name="descriptionDefault" data-type="string" column-name="description"
+                category-resource="categoryBasics" display-name-resource="description">
+        <attribute name="resourceBundle"
+                   value="atg.projects.store.InternationalStorePricingTemplateResources"/>
+        <attribute name="propertySortPriority" value="54"/>
+      </property>
+    </table>
+
+    <property name="displayName" data-type="string"
+              writable="false" hidden="true" queryable="true">
+      <derivation user-method="atg.repository.dp.LanguageTranslation">
+        <expression>displayNameDefault</expression>   
+      </derivation>        	
+      <attribute name="defaultProperty" value="displayNameDefault"/>
+      <attribute name="defaultLocale" value="en_US"/>
+       
+    </property>
+    
+    <property name="description" data-type="string"
+              writable="false" hidden="true" queryable="true">
+      <derivation user-method="atg.repository.dp.LanguageTranslation">
+        <expression>descriptionDefault</expression>   
+      </derivation>        	
+      <attribute name="defaultProperty" value="descriptionDefault"/>
+      <attribute name="defaultLocale" value="en_US"/>
+       
+    </property>
+
+    <table name="crs_prm_prm_xlate" type="multi" multi-column-name="locale" id-column-names="promotion_id">
+      <property name="translations" display-name="Translations" column-name="translation_id" data-type="map"
+                component-item-type="promotionTranslation" category-resource="categoryBasics"
+                display-name-resource="translations">
+         <attribute name="resourceBundle"
+                    value="atg.projects.store.InternationalStorePricingTemplateResources"/>
+         <attribute name="propertySortPriority" value="55"/>
+      </property>
+    </table>
+  </item-descriptor>
+
+  <!--///////////////////////////////-->
+  <!--     promotionTranslation      -->
+  <!--///////////////////////////////-->
+
+  <item-descriptor name="promotionTranslation" 
+                   id-space-name="promotionTranslation"
+                   display-name-resource="itemDescriptorPromotionTranslation" 
+                   display-property="displayName"
+    item-cache-size="1000" query-cache-size="1000" cache-mode="simple">
+
+    <attribute name="resourceBundle"
+               value="atg.projects.store.InternationalStorePricingTemplateResources"/>
+
+    <table name="crs_prm_xlate" type="primary" id-column-name="translation_id">
+      <property name="displayName" column-names="display_name" data-types="string"
+                category-resource="categoryPresentation" display-name-resource="name"/>
+      <property name="description" column-names="description" data-types="string"
+                category-resource="categoryPresentation" display-name-resource="description"/>
+    </table>
+  </item-descriptor>
+  
+  <!--///////////////////////////////-->
+  <!--       closenessQualifier      -->
+  <!--///////////////////////////////-->
+
+  <item-descriptor name="closenessQualifier" xml-combine="append">
+    <table name="dcs_close_qualif" type="primary" id-column-name="close_qualif_id">
+      <property name="name" xml-combine="remove"/>
+      <property name="nameDefault" data-type="string" column-name="name" required="true"
+                category-resource="categoryBasics" display-name-resource="closenessQualifierName">
+      </property>
+    </table>
+    
+    <property name="name" data-type="string"
+              writable="false" hidden="true" queryable="true">
+      <derivation user-method="atg.repository.dp.LanguageTranslation">
+        <expression>nameDefault</expression>   
+      </derivation>         
+      <attribute name="defaultProperty" value="nameDefault"/>
+      <attribute name="defaultLocale" value="en_US"/>
+    </property>
+
+    <table name="crs_cq_cq_xlate" type="multi" multi-column-name="locale" id-column-names="close_qualif_id">
+      <property name="translations" display-name="Translations" column-name="translation_id" data-type="map"
+                component-item-type="closenessQualifierTranslation" category-resource="categoryBasics"
+                display-name-resource="translations">
+         <attribute name="resourceBundle"                     value="atg.projects.store.InternationalStorePricingTemplateResources"/>
+         <attribute name="propertySortPriority" value="1"/>
+      </property>
+    </table>
+  </item-descriptor>
+
+  <!--///////////////////////////////////-->
+  <!--    closenessQualifierTranslation  -->
+  <!--///////////////////////////////////-->
+
+  <item-descriptor name="closenessQualifierTranslation" display-property="name"
+    display-name-resource="itemDescriptorQualifierTranslation" 
+    item-cache-size="1000" query-cache-size="1000" cache-mode="simple">
+
+    <attribute name="resourceBundle" value="atg.projects.store.InternationalStorePricingTemplateResources"/>
+
+    <table name="crs_cq_xlate" type="primary" id-column-name="translation_id">
+      <property name="name" data-type="string" column-name="name" category-resource="categoryPresentation" display-name-resource="name"/>
+    </table>
+  </item-descriptor>
+
+</gsa-template>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/International/config/atg/commerce/pricing/pricingModels.xml#2 $$Change: 789196 $ -->

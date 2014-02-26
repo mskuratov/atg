@@ -1,0 +1,28 @@
+<gsa-template>
+  <header>
+    <name>Store International Related Profile Additions</name>
+    <author>ATG</author>
+  </header>
+
+  <!--///////////////////////////////-->
+  <!--            user               -->
+  <!--///////////////////////////////-->
+
+  <item-descriptor name="user" cache-mode="simple" item-cache-timeout="550000" query-expire-timeout="550000" xml-combine="append">
+
+    <!-- Possible locales for ATG Store demo -->
+    <table name="dps_user" xml-combine="append">
+      <property name="locale" xml-combine="append">
+        <option value="fr_US" code="100"/>
+        <option value="es_US" code="101"/>
+        <option value="en_FR" code="102"/>
+        <option value="es_FR" code="103"/>
+        <option value="de_FR" code="104"/>
+        <option value="de_US" code="105"/>
+        <option value="en_DE" code="106"/>
+      </property>
+    </table>
+  </item-descriptor>
+
+</gsa-template>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/International/config/atg/userprofiling/userProfile.xml#1 $$Change: 735822 $-->

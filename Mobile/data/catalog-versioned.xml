@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gsa-template SYSTEM "dynamosystemresource:/atg/dtds/gsa/gsa_1.0.dtd">
+<gsa-template>
+  <update-item id="homeStoreCatalog" item-descriptor="catalog">
+    <set-property name="siteIds"><![CDATA[homeSite,mobileHomeSite]]></set-property>
+  </update-item>
+  <update-item id="masterCatalog" item-descriptor="catalog">
+    <set-property name="siteIds"><![CDATA[storeSiteUS,mobileStoreSiteUS]]></set-property>
+  </update-item>
+  <update-item id="catBagsAndWallets" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[storeSiteUS,mobileStoreSiteUS]]></set-property>
+  </update-item>
+  <update-item id="catMenPants" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[storeSiteUS,mobileStoreSiteUS]]></set-property>
+  </update-item>
+  <update-item id="rootCategory" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[storeSiteUS,mobileStoreSiteUS]]></set-property>
+  </update-item>
+  <update-item id="cat10022" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[storeSiteUS,mobileStoreSiteUS,homeSite,mobileHomeSite]]></set-property>
+  </update-item>
+  <update-item id="homeStoreSeating" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[homeSite,mobileHomeSite]]></set-property>
+  </update-item>
+  <update-item id="homeStoreGlassware" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[homeSite,mobileHomeSite]]></set-property>
+  </update-item>
+  <update-item id="cat50056" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[storeSiteUS,mobileStoreSiteUS]]></set-property>
+  </update-item>
+  <update-item id="cat10020" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[storeSiteUS,mobileStoreSiteUS,homeSite,mobileHomeSite]]></set-property>
+  </update-item>
+  <update-item id="cat10026" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[storeSiteUS,mobileStoreSiteUS,homeSite,mobileHomeSite]]></set-property>
+  </update-item>
+  <update-item id="homeStoreUnique" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[homeSite,mobileHomeSite]]></set-property>
+  </update-item>
+  <update-item id="homeStoreStorage" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[homeSite,mobileHomeSite]]></set-property>
+  </update-item>
+  <update-item id="cat10024" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[storeSiteUS,mobileStoreSiteUS,homeSite,mobileHomeSite]]></set-property>
+  </update-item>
+  <update-item id="catMountedLamps" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[storeSiteUS,mobileStoreSiteUS,homeSite,mobileHomeSite]]></set-property>
+  </update-item>
+  <update-item id="cat10018" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[storeSiteUS,mobileStoreSiteUS,homeSite,mobileHomeSite]]></set-property>
+  </update-item>
+  <update-item id="homeStoreStorageCabinets" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[homeSite,mobileHomeSite]]></set-property>
+  </update-item>
+  <update-item id="cat10016" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[storeSiteUS,mobileStoreSiteUS,homeSite,mobileHomeSite]]></set-property>
+  </update-item>
+  <update-item id="catDeskLamps" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[storeSiteUS,mobileStoreSiteUS,homeSite,mobileHomeSite]]></set-property>
+  </update-item>
+  <update-item id="homeStoreGiftShop" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[homeSite,mobileHomeSite]]></set-property>
+  </update-item>
+  <update-item id="homeStoreSeatingKitchen" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[homeSite,mobileHomeSite]]></set-property>
+  </update-item>
+  <update-item id="homeStoreSeatingSofas" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[homeSite,mobileHomeSite]]></set-property>
+  </update-item>
+  <update-item id="catCandlesAndOilLamps" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[storeSiteUS,mobileStoreSiteUS,homeSite,mobileHomeSite]]></set-property>
+  </update-item>
+  <update-item id="cat50067" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[storeSiteUS,mobileStoreSiteUS]]></set-property>
+  </update-item>
+  <update-item id="homeStoreSeatingFootstools" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[homeSite,mobileHomeSite]]></set-property>
+  </update-item>
+  <update-item id="homeStoreTables" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[homeSite,mobileHomeSite]]></set-property>
+  </update-item>
+  <update-item id="homeStoreSeatingDining" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[homeSite,mobileHomeSite]]></set-property>
+  </update-item>
+  <update-item id="cat70004" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[storeSiteUS,mobileStoreSiteUS]]></set-property>
+  </update-item>
+  <update-item id="cat70006" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[storeSiteUS,mobileStoreSiteUS]]></set-property>
+  </update-item>
+  <update-item id="homeStoreStorageDressers" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[homeSite,mobileHomeSite]]></set-property>
+  </update-item>
+  <update-item id="homeStoreStorageContainers" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[homeSite,mobileHomeSite]]></set-property>
+  </update-item>
+  <update-item id="cat70002" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[storeSiteUS,mobileStoreSiteUS]]></set-property>
+  </update-item>
+  <update-item id="cat50077" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[storeSiteUS,mobileStoreSiteUS]]></set-property>
+  </update-item>
+  <update-item id="homeStoreRootCategory" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[homeSite,mobileHomeSite]]></set-property>
+  </update-item>
+  <update-item id="cat70008" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[storeSiteUS,mobileStoreSiteUS]]></set-property>
+  </update-item>
+  <update-item id="catMenShirts" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[storeSiteUS,mobileStoreSiteUS]]></set-property>
+  </update-item>
+  <update-item id="catTableLamps" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[storeSiteUS,mobileStoreSiteUS,homeSite,mobileHomeSite]]></set-property>
+  </update-item>
+  <update-item id="homeStoreSeatingOffice" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[homeSite,mobileHomeSite]]></set-property>
+  </update-item>
+  <update-item id="catMenShorts" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[storeSiteUS,mobileStoreSiteUS]]></set-property>
+  </update-item>
+  <update-item id="cat60001" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[storeSiteUS,mobileStoreSiteUS]]></set-property>
+  </update-item>
+  <update-item id="catMen" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[storeSiteUS,mobileStoreSiteUS]]></set-property>
+  </update-item>
+  <update-item id="cat70012" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[storeSiteUS,mobileStoreSiteUS]]></set-property>
+  </update-item>
+  <update-item id="cat70010" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[storeSiteUS,mobileStoreSiteUS]]></set-property>
+  </update-item>
+  <update-item id="cat70014" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[storeSiteUS,mobileStoreSiteUS]]></set-property>
+  </update-item>
+  <update-item id="cat50087" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[storeSiteUS,mobileStoreSiteUS]]></set-property>
+  </update-item>
+  <update-item id="catMenAccessories" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[storeSiteUS,mobileStoreSiteUS]]></set-property>
+  </update-item>
+  <update-item id="catFloorLamps" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[storeSiteUS,mobileStoreSiteUS,homeSite,mobileHomeSite]]></set-property>
+  </update-item>
+  <update-item id="homeStoreTablesSide" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[homeSite,mobileHomeSite]]></set-property>
+  </update-item>
+  <update-item id="cat50001" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[storeSiteUS,mobileStoreSiteUS]]></set-property>
+  </update-item>
+  <update-item id="homeStoreSeatingOutdoor" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[homeSite,mobileHomeSite]]></set-property>
+  </update-item>
+  <update-item id="cat10014" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[storeSiteUS,mobileStoreSiteUS,homeSite,mobileHomeSite]]></set-property>
+  </update-item>
+  <update-item id="homeStoreTablesDining" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[homeSite,mobileHomeSite]]></set-property>
+  </update-item>
+  <update-item id="homeStoreSeatingArmchairs" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[homeSite,mobileHomeSite]]></set-property>
+  </update-item>
+  <update-item id="cat50097" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[storeSiteUS,mobileStoreSiteUS]]></set-property>
+  </update-item>
+  <update-item id="homeStoreNonNavigableProducts" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[homeSite,mobileHomeSite]]></set-property>
+  </update-item>
+  <update-item id="NonNavigableProducts" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[storeSiteUS,mobileStoreSiteUS]]></set-property>
+  </update-item>
+  <update-item id="catMenJackets" item-descriptor="category">
+    <set-property name="siteIds"><![CDATA[storeSiteUS,mobileStoreSiteUS]]></set-property>
+  </update-item>
+  <update-item id="HomeCatalogFolder" item-descriptor="catalogFolder">
+    <set-property name="siteIds"><![CDATA[homeSite,mobileHomeSite]]></set-property>
+  </update-item>
+  <update-item id="StoreCatalogFolder" item-descriptor="catalogFolder">
+    <set-property name="siteIds"><![CDATA[storeSiteUS,mobileStoreSiteUS]]></set-property>
+  </update-item>
+</gsa-template>

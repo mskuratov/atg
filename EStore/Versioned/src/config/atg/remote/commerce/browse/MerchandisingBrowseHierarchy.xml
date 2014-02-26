@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<browse-hierarchy xml-combine="append">
+
+  <browse-item id="home" xml-combine="append">
+    <browse-item reference-id="stores"/>
+    <browse-item reference-id="storeText"/>
+  </browse-item>
+
+  <links
+    id="mediaFolderLinks" xml-combine="append">
+   <list-definition
+        id="mediaFolderChildPromoContentFolders"
+        retriever="property"
+        child-type="/atg/commerce/catalog/MerchandisingProductCatalog:promotionalContent">
+        <retriever-parameter
+          name="propertyName"
+          value="parentFolder"/>
+        <retriever-parameter
+          name="reverseLink"
+          value = "true"  />
+      </list-definition>
+  </links>
+
+  <!-- The store text node -->
+  <browse-item id="storeText"
+               label-resource="node.storeText.label"
+               is-root="true"
+               icon-resource="node.storeText.iconSmall">
+    <list-definition id="allStoreText"
+                     retriever="query"
+                     child-type="/atg/store/stores/StoreTextRepository:storeText">
+      <retriever-parameter name="query"
+                           value="ALL" />
+    </list-definition>
+  </browse-item> <!-- end media -->
+
+</browse-hierarchy>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/Versioned/config/atg/remote/commerce/browse/MerchandisingBrowseHierarchy.xml#3 $$Change: 789379 $-->

@@ -1,0 +1,14 @@
+#atg_store_search span.atg_store_smallButton input,
+.atg_store_sortButton input{
+  color:#fff !important;
+}
+#atg_store_search span.atg_store_smallButton input{
+  background:url(/crsdocroot/content/images/atghome/search_button_ie.png) no-repeat right top !important;
+}
+.atg_store_sortButton input{
+  background:url(/crsdocroot/content/images/atghome/small_search_button_ie.png) no-repeat right top !important;
+}
+#atg_store_search span.atg_store_smallButton input:hover,
+.atg_store_sortButton input:hover{
+  background-position: right bottom !important;
+}

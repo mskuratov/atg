@@ -1,0 +1,3 @@
+ATG-Product: The Commerce Store Endeca module
+Manifest-Version: 1.0
+ATG-Required: Store.Endeca.Index

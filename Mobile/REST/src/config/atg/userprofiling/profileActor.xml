@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actor-template default-chain-id="summary"
+                xsi:noNamespaceSchemaLocation="http://www.atg.com/xsds/actorChain_1.0.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <actor-chain id="summary">
+    <component id="profile" name="/atg/userprofiling/Profile" component-var="profile"/>
+    <component id="orderLookupService" name="/atg/commerce/order/OrderLookupService" method="getOrderCount" method-return-var="numberOfOrders">
+      <input name="profile" class-name="java.lang.String" value="${profile.repositoryId}"/>
+      <input name="closedStates" class-name="[Ljava.lang.String;" value="${nucleus['/atg/commerce/order/OrderLookup'].closedStates}"/>
+    </component>
+    <output id="numberOfOrders" name="profile.misc.numberOfOrders" value="${numberOfOrders}"/>
+    <droplet id="forEach" name="/atg/dynamo/droplet/ForEach" var="results">
+      <input name="array" value="${profile.secondaryAddresses}"/>
+    </droplet>
+    <output id="numberOfAddresses" name="profile.misc.numberOfAddresses" value="${results.size}"/>
+    <droplet id="forEach" name="/atg/dynamo/droplet/ForEach" var="results">
+      <input name="array" value="${profile.creditCards}"/>
+    </droplet>
+    <output id="numberOfCreditCards" name="profile.misc.numberOfCreditCards" value="${results.size}"/>
+
+    <component id="checkoutPreferences" name="/atg/store/profile/ProfileCheckoutPreferences" component-var="checkoutPreferences"/>
+    <output id="defaultShippingMethod" name="profile.checkoutDefaults.defaultCarrier" value="${profile.defaultCarrier}"/>
+    <output id="defaultShippingAddressNickname" name="profile.checkoutDefaults.defaultAddress.nickname"
+            value="${checkoutPreferences.defaultShippingAddressNickname}"/>
+    <output id="defaultCreditCard" name="profile.checkoutDefaults.defaultCreditCard" value="${profile.defaultCreditCard}" filter-id="short"/>
+    <output id="defaultCreditCardNickname" name="profile.checkoutDefaults.defaultCreditCard.nickname"
+            value="${checkoutPreferences.defaultCreditCardNickname}"/>
+  </actor-chain>
+  <actor-chain id="info">
+    <component id="profile" name="/atg/userprofiling/Profile" component-var="profile"/>
+    <output id="profile" name="profile" value="${profile.dataSource}" filter-id="short"/>
+  </actor-chain>
+</actor-template>
+<!-- @version $Id: //hosting-blueprint/MobileCommerce/version/10.2/server/MobileCommerce/config/atg/userprofiling/profileActor.xml#2 $$Change: 796710 $-->

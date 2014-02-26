@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.6.2
+ATG-Product: ATG Store DCS-CSR
+ATG-Class-Path: lib/classes.jar
+ATG-Config-Path: config/config.jar
+ATG-J2EE: j2ee-apps/DCS-CSR
+ATG-EAR-Module: j2ee-apps/DCS-CSR
+ATG-Required: DCS-CSR Store.EStore

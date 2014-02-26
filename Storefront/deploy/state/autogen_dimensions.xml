@@ -1,0 +1,1516 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE DIMENSIONS SYSTEM "dimensions.dtd">
+<DIMENSIONS>
+   <NUM_DVALS>233</NUM_DVALS>
+   <DIMENSION NAME="clothing-sku.color" SRC_TYPE="INTERNAL">
+      <DIMENSION_ID ID="4294967294"/>
+      <DIMENSION_NODE>
+         <DVAL TYPE="EXACT">
+            <DVAL_ID ID="10001"/>
+            <SYN DISPLAY="TRUE" SEARCH="FALSE" CLASSIFY="FALSE">clothing-sku.color</SYN>
+         </DVAL>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967281"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Blau/Weiß</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967276"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Blue/White</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967275"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Azul/Blanco</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967271"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Kastanie</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967270"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Maroon</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967269"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Granate</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967268"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Grün</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967267"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Green</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967266"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Verde</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967265"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Rot</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967264"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Red</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967263"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Rojo</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967262"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Blau</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967261"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Blue</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967260"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Azul</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967259"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Marine</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967258"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Navy</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967257"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Azul marino</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967256"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Grau</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967255"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Grey</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967254"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Gris</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967253"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Weiß</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967252"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">White</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967251"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Blanco</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967250"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Oliv</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967249"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Olive</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967248"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Verde oliva</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967247"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Gelb</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967246"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Yellow</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967245"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Amarillo</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967244"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Anthrazit</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967243"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Charcoal</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967242"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Carbón</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967240"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Vintage-Waschung</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967239"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Vintage Wash</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967238"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Pre-lavado</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967234"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Khaki</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967233"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Caqui</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967232"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Braun</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967231"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Brown</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967230"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Marrón</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967229"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Dunkle Waschung</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967228"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Dark Wash</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967227"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Prelavado oscuro</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967226"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Aschgrau</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967225"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Ash Grey</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967224"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Gris ceniza</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967223"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Sand</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967222"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Arena</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967220"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Silber</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967218"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Silver</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967216"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Plata</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967215"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Dunkelgrau</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967214"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Dark Gray</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967213"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Gris oscuro</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967210"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Schwarz</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967209"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Black</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967208"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Negro </SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967207"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Ziegelrot</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967206"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Brick</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967205"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Rojo ladrillo</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967204"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Lachs</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967203"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Salmon</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967202"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Salmón</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967201"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Farn</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967200"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Fern</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967199"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Verde helecho</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967198"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Taupe</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967197"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Marrón topo</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967196"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Salbei</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967195"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Sage</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967194"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Verde salvia</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967193"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Türkis</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967192"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Turquoise</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967191"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Turquesa</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967190"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Ecru</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967189"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Crudo</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967169"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Helllila</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967168"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Light Purple</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967167"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Púrpura claro</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967152"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Limone</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967151"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Lemon-Lime</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967150"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Lima-limón</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967149"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Rosa</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967148"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Pink</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967145"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Lavendel</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967144"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Lavender</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967143"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Lavanda</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967142"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Beige</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967141"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Umbra</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967140"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Umber</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967139"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Gris sombra</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967138"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Seegrün</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967137"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Periwinkle</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967136"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Verde hierba</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967135"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Maisgelb</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967134"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Butter</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967133"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Mantequilla</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967132"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Lila</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967131"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Purple</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967130"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Púrpura</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967128"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Mandarine</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967127"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Tangerine</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967126"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Mandarina</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967125"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Violett</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967124"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Violet</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967123"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Violeta</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967122"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Steingrau</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967121"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Stone</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967120"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Piedra</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967119"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Mint</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967118"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Menta</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967117"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Lime</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967116"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Lima</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967115"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Chocolate</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967114"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Eierschale</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967113"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Eggshell</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967112"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Cáscara de huevo</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967111"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Champagner</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967110"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Champagne</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967109"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Champán</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967108"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Camel</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967107"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Beige oscuro</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967106"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Dunkelblau</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967105"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Dark Blue</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967104"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Azul oscuro</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+      </DIMENSION_NODE>
+   </DIMENSION>
+   <DIMENSION NAME="clothing-sku.size" SRC_TYPE="INTERNAL">
+      <DIMENSION_ID ID="4294967293"/>
+      <DIMENSION_NODE>
+         <DVAL TYPE="EXACT">
+            <DVAL_ID ID="10002"/>
+            <SYN DISPLAY="TRUE" SEARCH="FALSE" CLASSIFY="FALSE">clothing-sku.size</SYN>
+         </DVAL>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967284"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">S</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967274"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">M</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967273"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">L</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967272"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">XL</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967241"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">30</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967237"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">32</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967236"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">34</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967235"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">36</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967221"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Einheitsgröße</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967219"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">One Size</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967217"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Talla única</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967212"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">38</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967211"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">28</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967182"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">40</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967160"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">6</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967159"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">7</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967158"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">8</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967157"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">9</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967156"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">10</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967155"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">11</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967154"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">12</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967153"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">5</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967147"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">2</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967146"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">4</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967129"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">XXL</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+      </DIMENSION_NODE>
+   </DIMENSION>
+   <DIMENSION NAME="furniture-sku.woodFinish" SRC_TYPE="INTERNAL">
+      <DIMENSION_ID ID="4294967292"/>
+      <DIMENSION_NODE>
+         <DVAL TYPE="EXACT">
+            <DVAL_ID ID="10003"/>
+            <SYN DISPLAY="TRUE" SEARCH="FALSE" CLASSIFY="FALSE">furniture-sku.woodFinish</SYN>
+         </DVAL>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967096"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Espresso</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967090"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Walnuss</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967089"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Walnut</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967088"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Nuez</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967087"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Kirsch</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967086"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Cherry</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967085"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Cereza</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967084"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Mahagoni</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967083"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Mahogany</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967082"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Caoba</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967081"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Natur</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967080"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Natural</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967079"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Antikrot</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967078"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Antique Red</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967077"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Rojo antiguo</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967076"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Antikschwarz</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967075"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Antique Black</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967074"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Negro antiguo</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967073"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Antikweiß</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967072"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Antique White</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967071"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Blanco antiguo</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967070"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Honig</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967069"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Honey</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967068"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Miel</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+      </DIMENSION_NODE>
+   </DIMENSION>
+   <DIMENSION NAME="product.brand" SRC_TYPE="INTERNAL">
+      <DIMENSION_ID ID="4294967061"/>
+      <DIMENSION_NODE>
+         <DVAL TYPE="EXACT">
+            <DVAL_ID ID="10093"/>
+            <SYN DISPLAY="TRUE" SEARCH="FALSE" CLASSIFY="FALSE">product.brand</SYN>
+         </DVAL>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967056"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">MoreheadLTD</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967050"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">CricketClub</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967049"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">StyleForce7</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967048"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Fuzzy O'Hare</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967047"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Khushaboo</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967046"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Adriana Olivier</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967045"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">BrophyBuilt</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967043"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Tedford Office</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967042"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Fisher's Colony</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967041"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Style by Zhanna</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967040"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Wisteria Valley</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+      </DIMENSION_NODE>
+   </DIMENSION> 
+   <DIMENSION NAME="product.disallowAsRecommendation" SRC_TYPE="INTERNAL">
+      <DIMENSION_ID ID="4294967291"/>
+      <DIMENSION_NODE>
+         <DVAL TYPE="EXACT">
+            <DVAL_ID ID="10006"/>
+            <SYN DISPLAY="TRUE" SEARCH="FALSE" CLASSIFY="FALSE">product.disallowAsRecommendation</SYN>
+         </DVAL>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967282"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">0</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967102"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">1</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+      </DIMENSION_NODE>
+   </DIMENSION>
+   <DIMENSION NAME="product.features.displayName" SRC_TYPE="INTERNAL">
+      <DIMENSION_ID ID="4294967290"/>
+      <DIMENSION_NODE>
+         <DVAL TYPE="EXACT">
+            <DVAL_ID ID="10007"/>
+            <SYN DISPLAY="TRUE" SEARCH="FALSE" CLASSIFY="FALSE">product.features.displayName</SYN>
+         </DVAL>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967188"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Seide</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967187"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Silk</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967186"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Seda</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967185"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Leder</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967184"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Leather</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967183"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Cuero</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967181"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Kaschmir</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967180"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Cashmere</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967179"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Cachemira</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967178"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Wolle</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967177"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Bio-Qualität</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967176"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Wool</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967175"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Organic</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967174"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Lana</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967173"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Orgánico</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967172"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Baumwolle</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967171"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Cotton</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967170"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Algodón</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967166"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Recyclingmaterial</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967165"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Umweltfreundlich</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967164"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Recycled</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967163"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Eco-friendly</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967162"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Reciclado</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967161"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Ecológico</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967103"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Chemische Reinigung</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967101"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Dry Clean</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967100"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Limpieza al seco</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967099"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Handgefertigt</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967098"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Massivholz</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967094"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Handcrafted</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967093"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Solid Wood</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967092"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Hecho a mano</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967091"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Madera maciza</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967067"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Mikrofaser</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967066"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Microfiber</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967065"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Microfibra</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967064"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Ergonomisch</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967063"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Ergonomic</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967062"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Ergonómico</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+      </DIMENSION_NODE>
+   </DIMENSION>
+   <DIMENSION NAME="product.nonreturnable" SRC_TYPE="INTERNAL">
+      <DIMENSION_ID ID="4294967289"/>
+      <DIMENSION_NODE>
+         <DVAL TYPE="EXACT">
+            <DVAL_ID ID="10008"/>
+            <SYN DISPLAY="TRUE" SEARCH="FALSE" CLASSIFY="FALSE">product.nonreturnable</SYN>
+         </DVAL>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967283"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">0</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+      </DIMENSION_NODE>
+   </DIMENSION>
+   <DIMENSION NAME="product.siteId" SRC_TYPE="INTERNAL">
+      <DIMENSION_ID ID="4294967288"/>
+      <DIMENSION_NODE>
+         <DVAL TYPE="EXACT">
+            <DVAL_ID ID="10009"/>
+            <SYN DISPLAY="TRUE" SEARCH="FALSE" CLASSIFY="FALSE">product.siteId</SYN>
+         </DVAL>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967278"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">storeSiteUS</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967277"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">storeSiteDE</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967095"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">homeSite</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+      </DIMENSION_NODE>
+   </DIMENSION>
+   <DIMENSION NAME="sku.siteId" SRC_TYPE="INTERNAL">
+      <DIMENSION_ID ID="4294967287"/>
+      <DIMENSION_NODE>
+         <DVAL TYPE="EXACT">
+            <DVAL_ID ID="10010"/>
+            <SYN DISPLAY="TRUE" SEARCH="FALSE" CLASSIFY="FALSE">sku.siteId</SYN>
+         </DVAL>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967280"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">storeSiteUS</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967279"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">storeSiteDE</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294967097"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">homeSite</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+      </DIMENSION_NODE>
+   </DIMENSION>
+   <DIMENSION NAME="product.category" SRC_TYPE="INTERNAL">
+      <DIMENSION_ID ID="4294967286"/>
+      <DIMENSION_NODE>
+         <DVAL TYPE="EXACT">
+            <DVAL_ID ID="10011"/>
+            <SYN DISPLAY="TRUE" SEARCH="FALSE" CLASSIFY="FALSE">product.category</SYN>
+            <PROP NAME="display_name">
+               <PVAL>product.category</PVAL>
+            </PROP>
+         </DVAL>
+      </DIMENSION_NODE>
+   </DIMENSION>
+   <DIMENSION NAME="item.type" SRC_TYPE="INTERNAL">
+      <DIMENSION_ID ID="4294967285"/>
+      <DIMENSION_NODE>
+         <DVAL TYPE="EXACT">
+            <DVAL_ID ID="10079"/>
+            <SYN DISPLAY="TRUE" SEARCH="FALSE" CLASSIFY="FALSE">item.type</SYN>
+            <PROP NAME="display_name">
+               <PVAL>item.type</PVAL>
+            </PROP>
+         </DVAL>
+      </DIMENSION_NODE>
+   </DIMENSION>
+
+</DIMENSIONS>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Storefront/deploy/state/autogen_dimensions.xml#2 $$Change: 768606 $-->

@@ -1,0 +1,13 @@
+{
+    "sling:resourceType": "endeca/preview/devices",
+    "Handheld (Portrait)":{
+        "skin":"iphone-portrait",
+        "userAgent": "Mozilla/5.0 (iPhone; U; CPU like Mac OS X; en) AppleWebKit/420+ (KHTML, like Gecko) Version/4.0 Mobile/1C25 Safari/419.3",
+        "sling:resourceType":"endeca/device"
+    },
+    "Handheld (Landscape)":{
+        "skin":"iphone-landscape",
+        "userAgent": "Mozilla/5.0 (iPhone; U; CPU like Mac OS X; en) AppleWebKit/420+ (KHTML, like Gecko) Version/4.0 Mobile/1C25 Safari/419.3",
+        "sling:resourceType":"endeca/device"
+    }
+}

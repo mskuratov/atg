@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<gsa-template xml-combine="append">
+  <header xml-combine="replace">
+    <name>ATG Store Catalog</name>
+    <author>ATG</author>
+    <version>$Revision: #3 $</version>
+  </header>
+
+  <!--///////////////////////////////-->
+  <!--          catalog              -->
+  <!--///////////////////////////////-->
+
+  <item-descriptor name="catalog" xml-combine="append">
+    <table name="crs_catalog" type="auxiliary" id-column-name="catalog_id">
+      <property name="rootNavigationCategory" item-type="category" column-name="root_nav_cat"
+                category-resource="categoryCategorization" display-name-resource="rootNavigationCategory">
+        <attribute name="propertySortPriority" value="-10"/>
+      </property>
+    </table>
+  </item-descriptor>
+
+  <!--///////////////////////////////-->
+  <!--          category             -->
+  <!--///////////////////////////////-->
+  <item-descriptor name="category" xml-combine="append">
+    <table name="dcs_cat_aux_media" type="multi">
+      <property name="auxiliaryMedia">
+        <attribute name="propertySortPriority" value="10"/>
+      </property>
+    </table>
+
+    <!-- These are the groups used by the dynamic properties -->
+    <table name="dcs_cat_groups" type="auxiliary" id-column-name="category_id">
+
+      <!-- The childProductGroup here is overridden to make it queryable   -->
+      <!-- We do this to allow the pages to find categories whose products -->
+      <!-- originate from a particular content group.  There is no harm in -->
+      <!-- changing this from the default.  The property is a standard     -->
+      <!-- string property using the OOB default property descriptor       -->
+      <!-- which has no limitations on queryability                       -->
+      <property name="childProductGroup" queryable="true">
+        <attribute name="references" value="true"/>
+      </property>
+    </table>
+    <table name="crs_category" type="auxiliary" id-column-name="category_id">
+      <property name="myFeature" item-type="promotionalContent" column-name="feature_promo_id" 
+                category-resource="categoryPresentation" display-name-resource="myFeature">
+        <attribute name="propertySortPriority" value="1"/>
+        <attribute name="references" value="true"/>
+      </property>
+      <property name="heroImage" item-type="media" column-name="hero_image_id" 
+                category-resource="categoryImagesMedia" display-name-resource="heroImage">
+        <attribute name="propertySortPriority" value="1"/>
+        <attribute name="references" value="true"/>
+      </property>  
+    </table>
+    <table name="crs_cat_site_features" type="multi" id-column-name="category_id" multi-column-name="site_id">
+      <property name="siteSpecificFeature" data-type="map" component-item-type="promotionalContent" 
+                column-name="site_feature_promo_id" category-resource="categoryPresentation" 
+                display-name-resource="siteSpecificFeature" required="false">       
+        <attribute name="propertySortPriority" value="1"/>
+        <attribute name="references" value="true"/>                  
+      </property>
+    </table>
+    <table name="crs_cat_rel_prod" type="multi" id-column-name="category_id" multi-column-name="sequence_num">
+      <property name="relatedProducts" data-type="list" component-item-type="product" 
+                column-name="product_id" category-resource="categoryCrossSells" 
+                display-name-resource="relatedProducts">
+        <attribute name="propertySortPriority" value="2"/>
+        <attribute name="references" value="true"/>
+      </property>
+    </table>
+    <property name="feature" item-type="promotionalContent" display-name-resource="feature" 
+              category-resource="categoryPresentation">
+      <derivation user-method="atg.projects.store.dp.SiteSpecificPropertyDerivation">
+        <expression>myFeature</expression>
+        <expression>siteSpecificFeature</expression>
+      </derivation>
+      <attribute name="propertySortPriority" value="2"/>
+      <attribute name="uiwritable" value="false"/>
+      <attribute name="references" value="true"/>
+      <attribute name="queryable" value="true"/>
+    </property>
+  </item-descriptor>
+
+  <!--///////////////////////////////-->
+  <!--          product              -->
+  <!--///////////////////////////////-->
+  <item-descriptor name="product" xml-combine="append">  
+
+    <table name="dcs_prd_aux_media" type="multi">
+      <property name="auxiliaryMedia">
+        <attribute name="propertySortPriority" value="10"/>
+      </property>
+    </table>
+    <table name="crs_product" type="auxiliary" id-column-name="product_id">
+      <property name="briefDescription" data-type="string" column-name="brief_description" 
+                category-resource="categoryPresentation" display-name-resource="briefDescription">
+        <attribute name="propertySortPriority" value="-5"/>
+      </property>
+     
+      <property name="usageInstructions" data-type="string" column-name="usage_instructions" 
+                category-resource="categoryCategoryRelated" display-name-resource="usageInstructions">
+        <attribute name="propertySortPriority" value="-5"/>
+      </property>
+      <property name="asSeenIn" item-type="asSeenIn" column-name="as_seen_in" 
+                category-resource="categoryAppearance" display-name-resource="asSeenIn">
+        <attribute name="propertySortPriority" value="5"/>
+        <attribute name="references" value="true"/>
+      </property>
+      <property name="new" data-type="boolean" column-name="is_new" 
+                category-resource="categoryAppearance" display-name-resource="new">
+        <attribute name="propertySortPriority" value="-3"/>
+      </property>
+      <property name="emailAFriendEnabled" data-type="boolean" column-name="email_frnd_enabled" 
+                default="true" category-resource="categoryPresentation" display-name-resource="emailAFriendEnabled">
+        <attribute name="propertySortPriority" value="5"/>
+      </property>
+      <property name="mediumImage" item-type="media" column-name="medium_image_id"
+                category-resource="categoryImagesMedia" display-name-resource="mediumImage">
+        <attribute name="propertySortPriority" value="2"/>
+        <attribute name="references" value="true"/>
+      </property>
+      <property name="fullImage" item-type="media" column-name="full_image_id" 
+                category-resource="categoryImagesMedia" display-name-resource="fullImage">
+        <attribute name="propertySortPriority" value="2"/>
+        <attribute name="references" value="true"/>
+      </property>
+      <property name="preorderable" data-type="boolean" column-name="preorderable" 
+                default="false" category-resource="categoryPreorder" display-name-resource="preorderable">
+        <attribute name="propertySortPriority" value="1"/>
+      </property>
+      <property name="preorderEndDate" data-type="timestamp" column-name="preord_end_date" 
+                category-resource="categoryPreorder" display-name-resource="preorderEndDate">
+        <attribute name="propertySortPriority" value="2"/>
+      </property>
+      <property name="useInventoryForPreorder" data-type="boolean" column-name="use_inv_for_preord" 
+                default="false" category-resource="categoryPreorder" display-name-resource="useInventoryForPreorder">
+        <attribute name="propertySortPriority" value="3"/>
+      </property>
+      <property name="averageCustomerRating" data-type="double" column-name="average_customer_rating" 
+                required="false" category-resource="categoryAppearance" display-name-resource="averageCustomerRating">
+        <attribute name="propertySortPriority" value="4"/>
+      </property>
+    </table>
+
+    <!-- Product features -->
+    <table name="crs_prd_features" type="multi" id-column-name="product_id" multi-column-name="sequence_num">
+      <property name="features" data-type="list" component-item-type="feature" 
+                category-resource="categoryCategorization" column-name="feature_id" 
+                display-name-resource="productFeatures">
+        <attribute name="propertySortPriority" value="3"/>
+        <attribute name="references" value="true"/>
+      </property>
+    </table>
+
+    <!-- Product tips -->
+    <table name="crs_prd_tips" type="multi" id-column-name="product_id" multi-column-name="sequence_num">
+      <property name="productTips" data-type="list" component-data-type="string" 
+                column-name="tip_text" category-resource="categoryCategorization" 
+                display-name-resource="productTips">
+        <attribute name="propertySortPriority" value="4"/>
+      </property>
+    </table>
+    <table name="crs_prd_ship_cntry" type="multi" id-column-name="product_id">
+      <property name="shippableCountries" data-type="set" component-data-type="string" column-name="country" queryable="true" writable="true" display-name-resource="shippableCountries" category-resource="categoryFundamentals">
+        <attribute name="propertySortPriority" value="1"/>
+      </property>
+    </table>
+    <table name="crs_prd_nshp_cntry" type="multi" id-column-name="product_id">
+      <property name="nonShippableCountries" data-type="set" component-data-type="string" column-name="country" queryable="true" writable="true" display-name-resource="nonShippableCountries" category-resource="categoryFundamentals">
+        <attribute name="propertySortPriority" value="1"/>
+      </property>
+    </table>
+  </item-descriptor>
+
+  <!--///////////////////////////////-->
+  <!--           sku                 -->
+  <!--///////////////////////////////-->
+  <item-descriptor name="sku" sub-type-property="type" sub-type-value="sku" xml-combine="append">
+    
+    <table name="dcs_sku" type="primary" id-column-name="sku_id">
+      <property name="type" data-type="enumerated" column-name="sku_type" expert="true">
+        <attribute name="uiwritable" value="false"/>
+        <attribute name="useCodeForValue" value="false"/>
+        <option value="sku" code="0"/>
+        <option value="clothing-sku" code="1"/>
+        <option value="furniture-sku" code="2"/>
+        <option value="configurableSku" code="4001"/>
+      </property>
+
+      <property name="taxStatus" data-type="enumerated" default="default" column-name="tax_status"
+                queryable="true" category-resource="categoryBasics" display-name-resource="taxStatus">
+        <attribute name="useCodeForValue" value="false"/>
+        <attribute name="resourceBundle" value="atg.commerce.CustomCatalogTemplateResources"/>
+        <option value="default" code="0"/>
+        <option value="gift_wrapping" code="2"/>
+      </property>
+    </table>
+    <table name="dcs_sku_media" type="auxiliary" id-column-name="sku_id">
+      <property name="template">
+        <attribute name="propertySortPriority" value="10"/>
+      <attribute name="references" value="true"/>
+     </property>
+    </table>
+    <table name="crs_sku" type="auxiliary" id-column-name="sku_id">
+      <property name="giftWrapEligible" data-type="boolean" column-name="gift_wrap_el"  
+              default="true" category-resource="categoryPresentation" display-name-resource="giftWrapEligible">
+        <attribute name="propertySortPriority" value="-5"/>
+      </property>
+      <property name="margin" data-type="double" column-name="margin" 
+              required="false" category-resource="categoryMiscellaneous" display-name-resource="margin">
+        <attribute name="propertySortPriority" value="7"/>
+      </property>
+    </table>
+  </item-descriptor>
+  <item-descriptor name="clothing-sku" super-type="sku" sub-type-value="clothing-sku" display-name-resource="clothingSku">
+    <attribute name="resourceBundle" value="atg.commerce.CustomCatalogTemplateResources"/>
+    <attribute name="plural-display-name-resource" value="clothingSku.plural"/>
+    <table name="crs_clothing_sku" type="auxiliary" id-column-name="sku_id">
+      <property name="size" data-type="string" column-name="sku_size" 
+          category-resource="categoryPresentation" display-name-resource="size">
+        <attribute name="propertySortPriority" value="-6"/>
+      </property>
+
+      <property name="color" data-type="string" column-name="color" 
+          category-resource="categoryPresentation" display-name-resource="color">
+        <attribute name="propertySortPriority" value="-4"/>
+      </property>
+      <property name="colorSwatch" item-type="media" column-name="color_swatch" queryable="true" 
+          category-resource="categoryPresentation" display-name-resource="colorSwatch">
+        <attribute name="propertySortPriority" value="-1"/>
+      </property>
+    </table>
+  </item-descriptor>
+  <item-descriptor name="furniture-sku" super-type="sku" sub-type-value="furniture-sku" display-name-resource="furnitureSku">
+    <attribute name="resourceBundle" value="atg.commerce.CustomCatalogTemplateResources"/>
+    <attribute name="plural-display-name-resource" value="furnitureSku.plural"/>
+    <table name="crs_furniture_sku" type="auxiliary" id-column-name="sku_id">
+      <property name="woodFinish" data-type="string" column-name="wood_finish" 
+          category-resource="categoryPresentation" display-name-resource="woodFinish">
+        <attribute name="propertySortPriority" value="-4"/>
+      </property>
+      <property name="colorSwatch" item-type="media" column-name="color_swatch" queryable="true" 
+          category-resource="categoryPresentation" display-name-resource="colorSwatch">
+        <attribute name="propertySortPriority" value="-1"/>
+      </property>
+    </table>
+  </item-descriptor>
+
+  <!--///////////////////////////////-->
+  <!--           As Seen In          -->
+  <!--///////////////////////////////-->
+  <item-descriptor name="asSeenIn" id-space-name="asSeenIn" version-property="version" 
+                   display-name-resource="itemDescriptorAsSeenIn" item-cache-size="1000" query-cache-size="1000"
+                   display-property="displayName">
+
+    <attribute name="resourceBundle" value="atg.commerce.CustomCatalogTemplateResources"/>
+    
+    <table name="crs_prod_seen_in" type="primary" id-column-name="seen_in_id">
+      <property name="id" data-type="string" column-name="seen_in_id"
+                category-resource="categoryInfo" display-name-resource="id">
+        <attribute name="propertySortPriority" value="-5"/>
+      </property>
+
+      <property name="version" data-type="int" column-name="version" queryable="true" 
+                expert="true" display-name-resource="version" category-resource="categoryInfo">
+        <attribute name="uiwritable" value="false"/>
+        <attribute name="propertySortPriority" value="-3"/>
+      </property>
+      <property name="displayName" data-type="string" column-name="display_name"  
+                category-resource="categoryPresentation" display-name-resource="displayName">
+        <attribute name="propertySortPriority" value="-10"/>
+      </property>
+      <property name="description" data-type="string" column-name="description" 
+                category-resource="categoryPresentation" display-name-resource="description">
+        <attribute name="propertySortPriority" value="-9"/>
+      </property>
+      <property name="source" data-type="string" column-name="source_name" 
+                category-resource="categoryPresentation" display-name-resource="source">
+        <attribute name="propertySortPriority" value="-8"/>
+      </property>
+      <property name="date" data-type="timestamp" column-name="source_date" 
+                category-resource="categoryPresentation" display-name-resource="sourceDate">
+        <attribute name="propertySortPriority" value="-7"/>
+      </property>
+    </table>
+  </item-descriptor>
+
+  <!--///////////////////////////////-->
+  <!--         promotional content   -->
+  <!--///////////////////////////////-->
+  <item-descriptor name="promotionalContent" display-name-resource="itemDescriptorPromotionalContent" 
+        display-property="displayName" item-cache-size="1000" query-cache-size="1000" 
+        version-property="version" id-space-name="promotionalContent" 
+        content="true" content-path-property="path" folder-id-property="parentFolder" 
+        content-property="description">
+
+    <attribute name="resourceBundle" value="atg.commerce.CustomCatalogTemplateResources"/>
+    <attribute name="flexIconResource" value="item.promotionalContent.iconSmall"/>
+    <attribute name="largeFlexIconResource" value="item.promotionalContent.iconLarge"/>
+
+    <table name="crs_promo_content" type="primary" id-column-name="promo_id">
+
+      <property name="id" data-type="string" column-name="promo_id" category-resource="categoryInfo" display-name-resource="id">
+        <attribute name="uiwritable" value="false"/>
+      </property>
+      <property name="version" data-type="int" column-name="version" expert="true" category-resource="categoryInfo" display-name-resource="version">
+        <attribute name="uiwritable" value="false"/>
+      </property>
+      <property name="creationDate" data-type="timestamp" column-name="creation_date" category-resource="categoryInfo" display-name-resource="creationDate">
+        <attribute name="uiwritable" value="false"/>
+        <attribute name="useNowForDefault" value="true"/>
+      </property>
+      <property name="startDate" data-type="timestamp" column-name="start_date" category-resource="categoryPublishing" display-name-resource="startDate">
+        <attribute name="propertySortPriority" value="-2"/>
+      </property>
+      <property name="endDate" data-type="timestamp" column-name="end_date" category-resource="categoryPublishing" display-name-resource="endDate">
+        <attribute name="propertySortPriority" value="-1"/>
+      </property>
+      <property name="path" data-type="string" column-name="path" required="true" category-resource="categoryBasics" display-name-resource="path">
+        <attribute name="propertySortPriority" value="-9"/>
+      </property>
+      <property name="parentFolder" item-type="folder" column-name="parent_folder_id" required="true" category-resource="categoryBasics" display-name-resource="parentFolder">
+        <attribute name="propertySortPriority" value="-8"/>
+        <attribute name="references" value="true"/>
+      </property>
+      <property name="displayName" data-type="string" column-name="display_name"  
+                category-resource="categoryPresentation" display-name-resource="displayName">
+        <attribute name="propertySortPriority" value="-10"/>
+      </property>
+      <property name="storeDisplayName" data-type="string" column-name="store_display_name"  
+                category-resource="categoryPresentation" display-name-resource="storeDisplayName">
+        <attribute name="propertySortPriority" value="-11"/>
+      </property>
+      <property name="marketingPriority" data-type="int" column-name="marketing_priority"  
+                category-resource="categoryBasics" display-name-resource="marketingPriority">
+        <attribute name="propertySortPriority" value="-6"/>
+      </property>
+      <property name="description" data-type="string" column-name="description" category-resource="categoryPresentation" 
+                description="1000 characters" display-name-resource="description">
+        <attribute name="propertySortPriority" value="-9"/>
+      </property>
+      <property name="longDescription" data-type="big string" column-name="long_description" category-resource="categoryPresentation" 
+                display-name-resource="longDescription">
+        <attribute name="propertySortPriority" value="-8"/>
+      </property>
+      <property name="template" item-type="media-external" column-name="template_id" queryable="true" 
+                category-resource="categoryPresentation" display-name-resource="template" 
+        required="true">
+        <attribute name="propertySortPriority" value="-7"/>
+        <attribute name="references" value="true"/>
+      </property>
+      <property name="image" data-type="string" column-name="image_url" queryable="true" 
+                category-resource="categoryPresentation" display-name-resource="imagePath">
+        <attribute name="propertySortPriority" value="-6"/>
+      </property>
+      <property name="associatedCategory" item-type="category" column-name="category_id"
+                category-resource="categoryPresentation" display-name-resource="associatedCategory">
+        <attribute name="propertySortPriority" value="-5"/>
+        <attribute name="references" value="true"/>
+      </property>
+      <property name="associatedProduct" item-type="product" column-name="product_id"
+                category-resource="categoryPresentation" display-name-resource="associatedProduct">
+        <attribute name="propertySortPriority" value="-4"/>
+        <attribute name="references" value="true"/>
+      </property>
+      <property name="associatedSite" data-type="string" column-name="site_id"
+                category-resource="categoryPresentation" display-name-resource="associatedSite">
+        <attribute name="propertySortPriority" value="-1"/>
+      </property>
+      <property name="linkText" data-type="string" column-name="link_text"
+                category-resource="categoryPresentation" display-name-resource="linkText">
+        <attribute name="propertySortPriority" value="-3"/>
+      </property>
+      <property name="linkUrl" data-type="string" column-name="link_url"
+                category-resource="categoryPresentation" display-name-resource="linkUrl" editor-class="atg.ui.document.DocumentURLPropertyEditor">
+        <attribute name="propertySortPriority" value="-2"/>
+      </property>
+      <property name="promotion" item-type="promotion" column-name="promotion_id" hidden="true" 
+                category-resource="categoryPricing" display-name-resource="applicablePromotion" 
+                description="Optional discount promotion to apply if the template allows">
+        <attribute name="propertySortPriority" value="-10"/>
+        <attribute name="references" value="true"/>
+      </property>
+
+    </table>
+    <property name="derivedImage" data-type="string" writable="false" hidden="true" queryable="true">
+      <derivation user-method="atg.projects.store.dp.StoreContextDerivation">
+        <expression>image</expression>   
+      </derivation>
+      <attribute name="defaultSite" value="storeSiteUS"/>
+      <attribute name="defaultLanguage" value="en"/>
+    </property>    
+
+  </item-descriptor> 
+
+  <!--///////////////////////////////-->
+  <!--      media-internal-text      -->
+  <!--///////////////////////////////-->
+  <!-- 
+    This definition fixes a bug in Publishing that  prevents media-internal-text
+    items from being edited throgh the ACC (see ATG ticket# 77898)
+    -->
+  <item-descriptor name="media-internal-text" content-length-property="length" id-space-name="media" super-type="media" last-modified-property="lastModified" writable="true" expert="false" item-cache-size="1000" folder="false" use-id-for-path="false" content-property="data" display-name-resource="itemDescriptorMediaInternalText" version-property="version" sub-type-value="internal-text" cache-mode="disabled" content="true" hidden="false" default="false" query-cache-size="1000" id-separator=":">
+   
+    <table name="dcs_media_txt" type="auxiliary" id-column-name="media_id">
+      <property name="length" display-name-resource="length" data-type="long" queryable="true" readable="true" column-name="length" hidden="false" expert="true" required="true" writable="true" cache-mode="inherit">
+        <attribute name="propertySortPriority" value="-8"/>
+      </property>
+      <property name="lastModified" display-name-resource="lastModifiedDate" data-type="timestamp" queryable="true" readable="true" column-name="last_modified" hidden="false" category-resource="categoryInfo" expert="true" required="true" writable="true" cache-mode="inherit">
+        <attribute name="uiwritable" value="false"/>
+        <attribute name="propertySortPriority" value="-7"/>
+      </property>
+
+      <property name="data" display-name-resource="data" data-type="big string" queryable="true" readable="true" column-name="data" hidden="false" category-resource="categoryInfo" expert="true" required="true" cache-mode="disabled" writable="true">
+        <attribute name="propertySortPriority" value="-6"/>
+      </property>
+    </table>
+    <property name="mimeType" display-name-resource="mimeType" data-type="string" queryable="true" readable="true" property-type="atg.repository.MimeTyperPropertyDescriptor" hidden="false" category-resource="categoryInfo" expert="false" required="false" writable="false" cache-mode="inherit">
+       <attribute name="identifier" value="name"/>
+       <attribute name="propertySortPriority" value="-5"/>
+    </property>
+    <property name="url" display-name-resource="url" data-type="string" queryable="true" readable="true" property-type="atg.distributor.DistributorPropertyDescriptor" hidden="false" category-resource="categoryInfo" expert="false" required="false" writable="true" cache-mode="inherit">
+       <attribute name="poolPath" value="/atg/commerce/catalog/ContentDistributorPool"/>
+       <attribute name="propertySortPriority" value="-4"/>
+    </property>
+    <attribute name="epubIcon" value="mediaPubIcon"/>
+    <attribute name="epubIconBundle" value="atg.epub.dcs.CatalogTemplateResources"/>
+    <attribute name="pluralName" value="mediaInternalText"/>
+    <attribute name="pluralNameBundle" value="atg.epub.dcs.CatalogTemplateResources"/>
+  </item-descriptor>
+
+  <!--///////////////////////////////-->
+  <!--           feature             -->
+  <!--///////////////////////////////-->
+  <item-descriptor name="feature" id-space-name="feature" version-property="version" 
+                   display-name-resource="itemDescriptorFeature"
+           item-cache-size="1000" query-cache-size="1000" display-property="displayName">
+
+    <attribute name="resourceBundle" value="atg.commerce.CustomCatalogTemplateResources"/>
+    
+    <table name="crs_feature" type="primary" id-column-name="feature_id">
+      <property name="id" data-type="string" column-name="feature_id"
+                category-resource="categoryInfo" display-name-resource="id">
+        <attribute name="uiwritable" value="false"/>
+        <attribute name="uiqueryable" value="true"/>
+      </property>
+      <property name="version" data-type="int" column-name="version" queryable="true" 
+                expert="true" display-name-resource="version" category-resource="categoryBasics">
+        <attribute name="uiwritable" value="false"/>
+        <attribute name="propertySortPriority" value="-3"/>
+      </property>
+      <property name="featureName" data-type="string" column-name="feature_name" required="false" 
+                category-resource="categoryBasics" display-name-resource="featureName">
+        <attribute name="propertySortPriority" value="-5"/>
+      </property>
+      <property name="startDate" data-type="timestamp" column-name="start_date" 
+                category-resource="categoryPublishing" display-name-resource="startDate">
+        <attribute name="propertySortPriority" value="-2"/>
+      </property>
+      <property name="endDate" data-type="timestamp" column-name="end_date" 
+                category-resource="categoryPublishing" display-name-resource="endDate">
+        <attribute name="propertySortPriority" value="-1"/>
+      </property>
+      <property name="displayName" data-type="string" column-name="display_name" required="true" 
+                category-resource="categoryBasics" display-name-resource="displayName">
+        <attribute name="propertySortPriority" value="-6"/>
+      </property>
+      <property name="description" data-type="string" column-name="description" 
+                category-resource="categoryPresentation" display-name-resource="description">
+        <attribute name="propertySortPriority" value="-8"/>
+      </property>
+      <property name="longDescription" data-type="string" column-name="long_description" 
+                category-resource="categoryPresentation" display-name-resource="longDescription">
+        <attribute name="propertySortPriority" value="-7"/>
+      </property>
+
+      <property name="smallImage" item-type="media" column-name="small_image_id" queryable="true" 
+                category-resource="categoryImagesMedia" display-name-resource="smallImage">
+        <attribute name="propertySortPriority" value="-9"/>
+        <attribute name="references" value="true"/>
+      </property>
+
+      <property name="largeImage" item-type="media" column-name="large_image_id" 
+                category-resource="categoryImagesMedia" display-name-resource="largeImage">
+        <attribute name="propertySortPriority" value="-8"/>
+        <attribute name="references" value="true"/>
+      </property>
+      <property name="hidden" data-type="boolean" column-name="hidden" 
+                category-resource="categoryPresentation" display-name-resource="hidden" 
+                default="false">
+        <attribute name="propertySortPriority" value="-5"/>
+      </property>
+    </table>
+  </item-descriptor>
+</gsa-template>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/config/atg/commerce/catalog/custom/customCatalog.xml#3 $$Change: 788278 $-->
+

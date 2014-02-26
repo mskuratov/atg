@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<gsa-template>
+
+  <header>
+    <name>Internationalized SEO repository</name>
+    <description>Extends the SEO tag repository definition to support internationalized content</description>
+  </header>
+        
+  <item-descriptor name="SEOTags" display-property="displayName" xml-combine="append">
+
+    <table name="das_seo_tag"  type="primary" id-column-name="seo_tag_id"> 
+
+      <property name="title" xml-combine="remove"/>
+      <property name="displayName" xml-combine="remove"/>  
+      <property name="description" xml-combine="remove"/>  
+      <property name="keywords" xml-combine="remove"/>
+
+      <property name="titleDefault" column-name="title" data-type="string" 
+		category-resource="categoryBasics" display-name-resource="titleDefault">
+        <attribute name="resourceBundle"
+                   value="atg.seo.InternationalStoreSEOTemplateResources"/>
+      </property>
+      
+      <property name="displayNameDefault" column-name="display_name" data-type="string" 
+    category-resource="categoryBasics" display-name-resource="displayNameDefault">
+        <attribute name="resourceBundle"
+                   value="atg.seo.InternationalStoreSEOTemplateResources"/>
+      </property>
+      
+      
+      <property name="descriptionDefault" column-name="description" data-type="string"	
+ 		category-resource="categoryBasics" display-name-resource="descriptionDefault">
+        <attribute name="resourceBundle"
+                   value="atg.seo.InternationalStoreSEOTemplateResources"/>
+      </property>
+      
+      <property name="keywordsDefault" column-name="keywords" data-type="string"	
+		category-resource="categoryBasics" display-name-resource="keywordsDefault">
+        <attribute name="resourceBundle"
+                   value="atg.seo.InternationalStoreSEOTemplateResources"/>
+      </property>
+
+    </table> 
+    <property name="title" data-type="string" writable="false" hidden="true" queryable="true">
+    	<derivation user-method="atg.repository.dp.LanguageTranslation">
+        <expression>titleDefault</expression>   
+      </derivation>
+      <attribute name="defaultProperty" value="titleDefault"/>
+      <attribute name="defaultLocale" value="en_US"/>
+      
+    </property>
+    
+    <property name="displayName" data-type="string" writable="false" hidden="true" queryable="true">
+      <derivation user-method="atg.repository.dp.LanguageTranslation">
+        <expression>displayNameDefault</expression>   
+      </derivation>
+      <attribute name="defaultProperty" value="displayNameDefault"/>
+      <attribute name="defaultLocale" value="en_US"/>
+      
+    </property>
+    
+    <property name="description" data-type="string" writable="false" hidden="true" queryable="true">
+    	<derivation user-method="atg.repository.dp.LanguageTranslation">
+        <expression>descriptionDefault</expression>   
+      </derivation>
+      <attribute name="defaultProperty" value="descriptionDefault"/>
+      <attribute name="defaultLocale" value="en_US"/>
+      
+    </property>
+    <property name="keywords" data-type="string" writable="false" hidden="true" queryable="true">
+    	<derivation user-method="atg.repository.dp.LanguageTranslation">
+        <expression>keywordsDefault</expression>   
+      </derivation>
+      <attribute name="defaultProperty" value="keywordsDefault"/>
+      <attribute name="defaultLocale" value="en_US"/>
+      
+    </property>
+
+    <table name="crs_seo_seo_xlate" type="multi" multi-column-name="locale" id-column-names="seo_tag_id">
+      <property name="translations" column-name="translation_id" data-type="map" component-item-type="SEOTranslation"
+	category-resource="categoryPresentation"    display-name-resource="translations">
+        <attribute name="resourceBundle"
+                   value="atg.seo.InternationalStoreSEOTemplateResources"/>
+      </property>
+
+    </table>
+
+  </item-descriptor>
+  
+  <item-descriptor name="SEOTranslation" display-name-resource="itemDescriptorSEOTranslation" item-cache-size="1000" query-cache-size="1000">
+    <attribute name="resourceBundle" value="atg.seo.InternationalStoreSEOTemplateResources"/>
+    <table name="crs_seo_xlate" type="primary" id-column-name="translation_id">
+      
+      <property name="title" column-name="title" data-type="string" 
+		category-resource="categoryPresentation" display-name-resource="title">
+      </property>
+      
+      <property name="displayName" column-name="display_name" data-type="string" 
+    category-resource="categoryPresentation" display-name-resource="displayName">
+      </property>
+
+      <property name="description" column-name="description" data-type="string" 
+		category-resource="categoryPresentation" display-name-resource="description">
+      </property>
+
+      <property name="keywords" column-name="keywords" data-type="string" 
+		category-resource="categoryPresentation" display-name-resource="keywords">
+      </property>
+
+    </table>
+  </item-descriptor>
+</gsa-template>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/International/config/atg/seo/SEORepository.xml#2 $$Change: 789379 $-->

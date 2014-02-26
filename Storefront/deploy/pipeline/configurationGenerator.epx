@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE PIPELINE SYSTEM "pipeline.dtd">
+<PIPELINE NAME="Configuration Generator">
+
+  <RECORD_ADAPTER COL_DELIMITER="" DIRECTION="INPUT" FILTER_EMPTY_PROPS="FALSE" FORMAT="JAVA_ADAPTER" FRC_PVAL_IDX="FALSE" JAVA_CLASSNAME="com.endeca.esource.springadapter.SpringDelegateAdapter" MULTI="FALSE" NAME="LoadSchemaRecordStore" PREFIX="" REC_DELIMITER="" REQUIRE_DATA="FALSE" ROW_DELIMITER="" STATE="FALSE" URL="">
+    <COMMENT></COMMENT>
+    <PASS_THROUGH NAME="SPRING_CONTEXT">./config/script/fcm.context.xml</PASS_THROUGH>
+    <PASS_THROUGH NAME="ADAPTER_BEAN">schemaRecordStoreAdapter</PASS_THROUGH>      
+  </RECORD_ADAPTER>
+
+  <RECORD_CACHE COMBINE_RECORDS="FALSE" DISK_BACKED="NONE" FRC_PVAL_IDX="FALSE" NAME="SchemaRecordStoreCache">
+    <COMMENT>Necessary to ensure all records are read by record assembler for left join.</COMMENT>
+    <RECORD_SOURCE>LoadSchemaRecordStore</RECORD_SOURCE>
+    <RECORD_INDEX UNIQUE="FALSE">
+      <KEY_DIMENSION ID="attribute.name" MIN_VALS="0" TYPE="PVAL"/>
+    </RECORD_INDEX>
+  </RECORD_CACHE>
+  
+  <RECORD_ADAPTER COL_DELIMITER="" DIRECTION="INPUT" FILTER_EMPTY_PROPS="FALSE" FORMAT="JAVA_ADAPTER" FRC_PVAL_IDX="FALSE" JAVA_CLASSNAME="com.endeca.esource.springadapter.SpringDelegateAdapter" MULTI="FALSE" NAME="LoadDimValsRecordStore" PREFIX="" REC_DELIMITER="" REQUIRE_DATA="FALSE" ROW_DELIMITER="" STATE="FALSE" URL="">
+    <COMMENT></COMMENT>
+    <PASS_THROUGH NAME="SPRING_CONTEXT">./config/script/fcm.context.xml</PASS_THROUGH>
+    <PASS_THROUGH NAME="ADAPTER_BEAN">dimValsRecordStoreAdapter</PASS_THROUGH>      
+  </RECORD_ADAPTER>
+
+  <RECORD_ADAPTER COL_DELIMITER="" DIRECTION="INPUT" FILTER_EMPTY_PROPS="FALSE" FORMAT="JAVA_ADAPTER" FRC_PVAL_IDX="FALSE" JAVA_CLASSNAME="com.endeca.esource.springadapter.SpringDelegateAdapter" MULTI="FALSE" NAME="LoadPrecedenceRulesRecordStore" PREFIX="" REC_DELIMITER="" REQUIRE_DATA="FALSE" ROW_DELIMITER="" STATE="FALSE" URL="">
+    <COMMENT></COMMENT>
+    <PASS_THROUGH NAME="SPRING_CONTEXT">./config/script/fcm.context.xml</PASS_THROUGH>
+    <PASS_THROUGH NAME="ADAPTER_BEAN">precedenceRulesRecordStoreAdapter</PASS_THROUGH>      
+  </RECORD_ADAPTER>
+
+  <RECORD_ADAPTER COL_DELIMITER="," DIRECTION="INPUT" ENCODING="UTF-8" FILTER_EMPTY_PROPS="TRUE" FORMAT="DELIMITED" FRC_PVAL_IDX="FALSE" MULTI="FALSE" NAME="LoadPrecedenceRulesCsv" PREFIX="" REC_DELIMITER="" REQUIRE_DATA="FALSE" ROW_DELIMITER="\r\n" STATE="FALSE" URL="../../config/api_input/precedence_rules.csv">
+    <COMMENT></COMMENT>
+  </RECORD_ADAPTER>
+
+  <RECORD_ADAPTER COL_DELIMITER="," DIRECTION="INPUT" ENCODING="UTF-8" FILTER_EMPTY_PROPS="TRUE" FORMAT="DELIMITED" FRC_PVAL_IDX="FALSE" MULTI="FALSE" NAME="LoadDimValsCsv" PREFIX="" REC_DELIMITER="" REQUIRE_DATA="FALSE" ROW_DELIMITER="\r\n" STATE="FALSE" URL="../../config/api_input/dimension_values.csv">
+    <COMMENT></COMMENT>
+  </RECORD_ADAPTER>
+
+  <RECORD_ADAPTER COL_DELIMITER="," DIRECTION="INPUT" ENCODING="UTF-8" FILTER_EMPTY_PROPS="TRUE" FORMAT="DELIMITED" FRC_PVAL_IDX="FALSE" MULTI="FALSE" NAME="LoadSchemaCsv" PREFIX="" REC_DELIMITER="" REQUIRE_DATA="FALSE" ROW_DELIMITER="\r\n" STATE="FALSE" URL="../../config/api_input/schema.csv">
+    <COMMENT></COMMENT>
+  </RECORD_ADAPTER>
+
+  <JAVA_MANIPULATOR CLASS_NAME="com.endeca.itl.fcm.integration.cadk.ifdi.RecordPropertyRenamer" NAME="MappedSchemaCsv">
+    <RECORD_SOURCE>LoadSchemaCsv</RECORD_SOURCE>
+    <PASS_THROUGH NAME="SourcePrefix">attribute.</PASS_THROUGH>
+    <PASS_THROUGH NAME="TargetPrefix">CSV.attribute.</PASS_THROUGH>
+    <PASS_THROUGH NAME="ExceptionList">attribute.name</PASS_THROUGH>
+  </JAVA_MANIPULATOR>
+
+  <RECORD_CACHE COMBINE_RECORDS="FALSE" DISK_BACKED="NONE" FRC_PVAL_IDX="FALSE" NAME="SchemaCsvCache">
+    <RECORD_SOURCE>MappedSchemaCsv</RECORD_SOURCE>
+    <RECORD_INDEX UNIQUE="FALSE">
+      <KEY_DIMENSION ID="attribute.name" MIN_VALS="0" TYPE="PVAL"/>
+    </RECORD_INDEX>
+  </RECORD_CACHE>
+
+  <RECORD_ASSEMBLER NAME="JoinSchemaCsvWithSchemaRecordStore">
+    <RECORD_SOURCE>SchemaRecordStoreCache</RECORD_SOURCE>
+    <RECORD_SOURCE>SchemaCsvCache</RECORD_SOURCE>
+    <RECORD_JOIN JOIN_TYPE="OUTER_JOIN">
+      <CONFIG NAME="UNIQUE_RECORD_PROPS" VALUE="TRUE"/>
+      <JOIN_ENTRY>
+        <RECORD_SOURCE>SchemaRecordStoreCache</RECORD_SOURCE>
+        <KEY_DIMENSION ID="attribute.name" TYPE="PVAL"/>
+      </JOIN_ENTRY>
+      <JOIN_ENTRY>
+        <RECORD_SOURCE>SchemaCsvCache</RECORD_SOURCE>
+        <KEY_DIMENSION ID="attribute.name" TYPE="PVAL"/>
+      </JOIN_ENTRY>
+    </RECORD_JOIN>
+  </RECORD_ASSEMBLER>
+
+  <JAVA_MANIPULATOR CLASS_NAME="com.endeca.itl.fcm.integration.cadk.ifdi.RecordPropertyRenamer" NAME="JoinedSchemaFeedWithRemappedSchemaCsv">
+    <RECORD_SOURCE>JoinSchemaCsvWithSchemaRecordStore</RECORD_SOURCE>
+    <PASS_THROUGH NAME="SourcePrefix">CSV.attribute.</PASS_THROUGH>
+    <PASS_THROUGH NAME="TargetPrefix">attribute.</PASS_THROUGH>
+  </JAVA_MANIPULATOR>
+
+  <RECORD_ASSEMBLER FRC_PVAL_IDX="TRUE" NAME="JoinDimValFeeds">
+    <COMMENT></COMMENT>
+    <RECORD_SOURCE>LoadDimValsRecordStore</RECORD_SOURCE>
+    <RECORD_SOURCE>LoadDimValsCsv</RECORD_SOURCE>
+    <RECORD_JOIN JOIN_TYPE="SWITCH">
+      <JOIN_ENTRY>
+        <RECORD_SOURCE>LoadDimValsRecordStore</RECORD_SOURCE>
+      </JOIN_ENTRY>
+      <JOIN_ENTRY>
+        <RECORD_SOURCE>LoadDimValsCsv</RECORD_SOURCE>
+      </JOIN_ENTRY>
+    </RECORD_JOIN>
+  </RECORD_ASSEMBLER>
+
+  <RECORD_ASSEMBLER FRC_PVAL_IDX="TRUE" NAME="JoinPrecedenceRuleFeeds">
+    <COMMENT></COMMENT>
+    <RECORD_SOURCE>LoadPrecedenceRulesRecordStore</RECORD_SOURCE>
+    <RECORD_SOURCE>LoadPrecedenceRulesCsv</RECORD_SOURCE>
+    <RECORD_JOIN JOIN_TYPE="SWITCH">
+      <JOIN_ENTRY>
+        <RECORD_SOURCE>LoadPrecedenceRulesRecordStore</RECORD_SOURCE>
+      </JOIN_ENTRY>
+      <JOIN_ENTRY>
+        <RECORD_SOURCE>LoadPrecedenceRulesCsv</RECORD_SOURCE>
+      </JOIN_ENTRY>
+    </RECORD_JOIN>
+  </RECORD_ASSEMBLER>
+
+  <JAVA_MANIPULATOR CLASS_NAME="com.endeca.esource.springadapter.SpringDelegateAdapter" NAME="ConfigurationAdapter">
+    <RECORD_SOURCE>JoinedSchemaFeedWithRemappedSchemaCsv</RECORD_SOURCE>
+	<RECORD_SOURCE>JoinDimValFeeds</RECORD_SOURCE>	
+	<RECORD_SOURCE>JoinPrecedenceRuleFeeds</RECORD_SOURCE>		
+    <PASS_THROUGH NAME="SPRING_CONTEXT">./config/script/fcm.context.xml</PASS_THROUGH>
+    <PASS_THROUGH NAME="ADAPTER_BEAN">configurationAdapter</PASS_THROUGH>
+  </JAVA_MANIPULATOR>
+
+</PIPELINE>

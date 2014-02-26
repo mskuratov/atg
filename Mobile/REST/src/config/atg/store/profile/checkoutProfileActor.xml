@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actor-template default-chain-id="skipLogin"
+                xsi:noNamespaceSchemaLocation="http://www.atg.com/xsds/actorChain_1.0.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <actor-chain id="skipLogin" transaction="TX_SUPPORTS">
+    <form id="formHandler" name="/atg/store/profile/CheckoutProfileFormHandler" handle="anonymousCustomer" var="formHandler">
+      <input name="loginSuccessURL" value="answer"/>
+      <input name="loginErrorURL" value="answer"/>
+    </form>
+  </actor-chain>
+  <actor-chain id="answer">
+    <component id="cart" name="/atg/commerce/ShoppingCart" component-var="cart"/>
+    <droplet id="isNull" name="/atg/dynamo/droplet/IsNull">
+      <input name="value" value="${cart.current}"/>
+    </droplet>
+    <component id="formHandler" name="/atg/store/profile/CheckoutProfileFormHandler" component-var="handler"/>
+    <droplet id="switch" name="/atg/dynamo/droplet/Switch">
+      <input name="value" value="${handler.formError}"/>
+      <oparam name="true">
+        <output id="formError" name="formError" value="${handler.formError}"/>
+        <output id="formExceptions" name="formExceptions" value="${handler.formExceptions}" filter-id="full"/>
+      </oparam>
+    </droplet>
+  </actor-chain>
+</actor-template>
+<!-- @version $Id: //hosting-blueprint/MobileCommerce/version/10.2/server/MobileCommerce/config/atg/store/profile/checkoutProfileActor.xml#2 $$Change: 796710 $-->

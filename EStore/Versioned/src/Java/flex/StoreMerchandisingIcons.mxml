@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<container:FlexModule xmlns:mx="http://www.adobe.com/2006/mxml"
+                      xmlns:container="atg.flex.containers.*"
+                      resourceModule="/crs-merchandising/StoreMerchandisingResources_">
+
+  <mx:Metadata>
+    <![CDATA[
+      [ResourceBundle("StoreMerchandisingResources")]
+    ]]>
+  </mx:Metadata>
+
+</container:FlexModule>
+ 

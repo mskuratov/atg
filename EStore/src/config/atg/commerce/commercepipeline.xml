@@ -1,0 +1,27 @@
+<!-- $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/config/atg/commerce/commercepipeline.xml#1 $ -->
+
+<pipelinemanager>
+
+  <pipelinechain name="processOrder">
+    <pipelinelink name="sendPromotionUsedMessage" transaction="TX_MANDATORY" xml-combine="replace">
+      <processor jndi="/atg/commerce/order/processor/SendPromotionUsedMessage"/>
+      <transition returnvalue="1" link="sendFulfillmentMessage"/>
+    </pipelinelink>
+  </pipelinechain>
+  
+  <pipelinechain name="moveToPurchaseInfo" 
+                 resultclassname="atg.service.pipeline.PipelineResultImpl" 
+                 classname="atg.service.pipeline.PipelineChain" 
+                 headlink="validateInventoryForCheckout" 
+                 transaction="TX_REQUIRED" xml-combine="replace">
+    <pipelinelink name="validateInventoryForCheckout" transaction="TX_MANDATORY">
+      <processor jndi="/atg/store/order/processor/ValidateInventoryForCheckout"/>
+      <transition returnvalue="1" link="validateOrderForCheckout2"/>
+    </pipelinelink>
+    <pipelinelink name="validateOrderForCheckout2" transaction="TX_MANDATORY">
+      <processor jndi="/atg/commerce/order/processor/ValidateOrderForCheckout"/>
+    </pipelinelink>
+  </pipelinechain>
+
+</pipelinemanager>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/config/atg/commerce/commercepipeline.xml#1 $$Change: 735822 $-->

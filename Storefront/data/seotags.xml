@@ -1,0 +1,745 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE gsa-template SYSTEM "dynamosystemresource:/atg/dtds/gsa/gsa_1.0.dtd">
+<gsa-template>
+  <import-items>
+    <!-- 2 items of type SEOTags -->
+    
+    <add-item item-descriptor="SEOTags" id="1100002">
+      <set-property name="description"><![CDATA[Find New Styles at Great Prices. Shop and save on Women's Apparel, Footwear and more at atgstore.com.]]></set-property>
+      <set-property name="displayName"><![CDATA[Home]]></set-property>
+      <set-property name="keywords"><![CDATA[shoes, shirts, pants, dresses, skirts, shorts, jackets, accessories, women's shoes, men's shoes, dress shoes, casual shoes, athletic shoes, atgstore.com, shop atgstore.com]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Powered by ATG]]></set-property>
+      <set-property name="key"><![CDATA[/]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    
+    <add-item item-descriptor="SEOTags" id="1100003">
+      <set-property name="description"><![CDATA[Find New Styles at Great Prices. Shop and save on Women's Apparel, Footwear and more at atgstore.com.]]></set-property>
+      <set-property name="displayName"><![CDATA[Home Page]]></set-property>
+      <set-property name="keywords"><![CDATA[shoes, shirts, pants, dresses, skirts, shorts, jackets, accessories, women's shoes, men's shoes, dress shoes, casual shoes, athletic shoes, atgstore.com, shop atgstore.com]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Powered by ATG]]></set-property>
+      <set-property name="key"><![CDATA[/index.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    
+    <add-item item-descriptor="SEOTags" id="1100032">
+      <set-property name="description"><![CDATA[Find New Styles at Great Prices. Shop and save on Home Furnishings and more at atgstore.com.]]></set-property>
+      <set-property name="displayName"><![CDATA[Home]]></set-property>
+      <set-property name="keywords"><![CDATA[tables, seating, storage, display, towels, linens, home accessories, atgstore.com, shop atgstore.com]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Powered by ATG]]></set-property>
+      <set-property name="key"><![CDATA[/]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <add-item item-descriptor="SEOTags" id="1100033">
+      <set-property name="description"><![CDATA[Find New Styles at Great Prices. Shop and save on Home Furnishings and more at atgstore.com.]]></set-property>
+      <set-property name="displayName"><![CDATA[Home Page]]></set-property>
+      <set-property name="keywords"><![CDATA[tables, seating, storage, display, towels, linens, home accessories, atgstore.com, shop atgstore.com]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Powered by ATG]]></set-property>
+      <set-property name="key"><![CDATA[/index.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /cart/cart.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100004">
+      <set-property name="displayName"><![CDATA[Shopping Cart]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Shopping Cart]]></set-property>
+      <set-property name="key"><![CDATA[/cart/cart.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100005">
+      <set-property name="displayName"><![CDATA[Shopping Cart]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Shopping Cart]]></set-property>
+      <set-property name="key"><![CDATA[/cart/cart.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /checkout/login.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100006">
+      <set-property name="displayName"><![CDATA[Checkout Login]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Checkout - Login]]></set-property>
+      <set-property name="key"><![CDATA[/checkout/login.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100007">
+      <set-property name="displayName"><![CDATA[Checkout Login]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Checkout - Login]]></set-property>
+      <set-property name="key"><![CDATA[/checkout/login.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /checkout/shipping.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100008">
+      <set-property name="displayName"><![CDATA[Checkout Shipping]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Checkout - Shipping]]></set-property>
+      <set-property name="key"><![CDATA[/checkout/shipping.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100009">
+      <set-property name="displayName"><![CDATA[Checkout Shipping]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Checkout - Shipping]]></set-property>
+      <set-property name="key"><![CDATA[/checkout/shipping.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /checkout/billing.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100010">
+      <set-property name="displayName"><![CDATA[Checkout Billing]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Checkout - Billing]]></set-property>
+      <set-property name="key"><![CDATA[/checkout/billing.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100011">
+      <set-property name="displayName"><![CDATA[Checkout Billing]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Checkout - Billing]]></set-property>
+      <set-property name="key"><![CDATA[/checkout/billing.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /checkout/confirm.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100012">
+      <set-property name="displayName"><![CDATA[Checkout Confirmation]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Checkout - Order Confirmation]]></set-property>
+      <set-property name="key"><![CDATA[/checkout/confirm.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100013">
+      <set-property name="displayName"><![CDATA[Checkout Confirmation]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Checkout - Order Confirmation]]></set-property>
+      <set-property name="key"><![CDATA[/checkout/confirm.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /checkout/giftMessage.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100014">
+      <set-property name="displayName"><![CDATA[Checkout Gift Message]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Checkout - Gift Message]]></set-property>
+      <set-property name="key"><![CDATA[/checkout/giftMessage.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100015">
+      <set-property name="displayName"><![CDATA[Checkout Gift Message]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Checkout - Gift Message]]></set-property>
+      <set-property name="key"><![CDATA[/checkout/giftMessage.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /checkout/shippingMultiple.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100016">
+      <set-property name="displayName"><![CDATA[Checkout Multiple Shipping]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Checkout - Shipping To Multiple Addresses]]></set-property>
+      <set-property name="key"><![CDATA[/checkout/shippingMultiple.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100017">
+      <set-property name="displayName"><![CDATA[Checkout Multiple Shipping]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Checkout - Shipping To Multiple Addresses]]></set-property>
+      <set-property name="key"><![CDATA[/checkout/shippingMultiple.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /checkout/confirm.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100018">
+      <set-property name="displayName"><![CDATA[Checkout Confirmation]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Checkout - Order Confirmation]]></set-property>
+      <set-property name="key"><![CDATA[/checkout/confirm.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100019">
+      <set-property name="displayName"><![CDATA[Checkout Confirmation]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Checkout - Order Confirmation]]></set-property>
+      <set-property name="key"><![CDATA[/checkout/confirm.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /checkout/shippingAddressAdd.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100020">
+      <set-property name="displayName"><![CDATA[Checkout Add Shipping Address]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Checkout - Add Shipping Address]]></set-property>
+      <set-property name="key"><![CDATA[/checkout/shippingAddressAdd.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100021">
+      <set-property name="displayName"><![CDATA[Checkout Add Shipping Address]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Checkout - Add Shipping Address]]></set-property>
+      <set-property name="key"><![CDATA[/checkout/shippingAddressAdd.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /checkout/shippingAddressEdit.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100022">
+      <set-property name="displayName"><![CDATA[Checkout Edit Shipping Address]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Checkout - Edit Shipping Address]]></set-property>
+      <set-property name="key"><![CDATA[/checkout/shippingAddressEdit.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100023">
+      <set-property name="displayName"><![CDATA[Checkout Edit Shipping Address]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Checkout - Edit Shipping Address]]></set-property>
+      <set-property name="key"><![CDATA[/checkout/shippingAddressEdit.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /checkout/creditCardEdit.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100024">
+      <set-property name="displayName"><![CDATA[Checkout Edit Credit Card]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Checkout - Edit Credit Card]]></set-property>
+      <set-property name="key"><![CDATA[/checkout/creditCardEdit.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100025">
+      <set-property name="displayName"><![CDATA[Checkout Edit Credit Card]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Checkout - Edit Credit Card]]></set-property>
+      <set-property name="key"><![CDATA[/checkout/creditCardEdit.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /cart/orderNotPlaced.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100026">
+      <set-property name="displayName"><![CDATA[Checkout Order Not Placed]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Checkout - Order Not Placed]]></set-property>
+      <set-property name="key"><![CDATA[/cart/orderNotPlaced.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100027">
+      <set-property name="displayName"><![CDATA[Checkout Order Not Placed]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Checkout - Order Not Placed]]></set-property>
+      <set-property name="key"><![CDATA[/cart/orderNotPlaced.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /checkout/billingAddressEdit.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100028">
+      <set-property name="displayName"><![CDATA[Checkout Edit Billing Address]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Checkout - Edit Billing Address]]></set-property>
+      <set-property name="key"><![CDATA[/checkout/billingAddressEdit.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100029">
+      <set-property name="displayName"><![CDATA[Checkout Edit Billing Address]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Checkout - Edit Billing Address]]></set-property>
+      <set-property name="key"><![CDATA[/checkout/billingAddressEdit.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /checkout/confirmResponse.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100030">
+      <set-property name="displayName"><![CDATA[Checkout Order Success]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Checkout - Order Success]]></set-property>
+      <set-property name="key"><![CDATA[/checkout/confirmResponse.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100031">
+      <set-property name="displayName"><![CDATA[Checkout Order Success]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Checkout - Order Success]]></set-property>
+      <set-property name="key"><![CDATA[/checkout/confirmResponse.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /company/aboutUs.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100034">
+      <set-property name="displayName"><![CDATA[About Us]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - About Us]]></set-property>
+      <set-property name="key"><![CDATA[/company/aboutUs.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100035">
+      <set-property name="displayName"><![CDATA[About Us]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - About Us]]></set-property>
+      <set-property name="key"><![CDATA[/company/aboutUs.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /company/stores.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100036">
+      <set-property name="displayName"><![CDATA[Store Locator]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Store Locator]]></set-property>
+      <set-property name="key"><![CDATA[/company/stores.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100037">
+      <set-property name="displayName"><![CDATA[Store Locator]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Store Locator]]></set-property>
+      <set-property name="key"><![CDATA[/company/stores.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /company/corporateSite.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100038">
+      <set-property name="displayName"><![CDATA[Corporate Site]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Corporate Site]]></set-property>
+      <set-property name="key"><![CDATA[/company/corporateSite.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100039">
+      <set-property name="displayName"><![CDATA[Corporate Site]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Corporate Site]]></set-property>
+      <set-property name="key"><![CDATA[/company/corporateSite.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /company/employment.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100040">
+      <set-property name="displayName"><![CDATA[Employment]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Employment]]></set-property>
+      <set-property name="key"><![CDATA[/company/employment.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100041">
+      <set-property name="displayName"><![CDATA[Employment]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Employment]]></set-property>
+      <set-property name="key"><![CDATA[/company/employment.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /company/news.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100042">
+      <set-property name="displayName"><![CDATA[News]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - News]]></set-property>
+      <set-property name="key"><![CDATA[/company/news.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100043">
+      <set-property name="displayName"><![CDATA[News]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - News]]></set-property>
+      <set-property name="key"><![CDATA[/company/news.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /browse/asSeenIn.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100044">
+      <set-property name="displayName"><![CDATA[As Seen In...]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - As Seen In...]]></set-property>
+      <set-property name="key"><![CDATA[/browse/asSeenIn.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100045">
+      <set-property name="displayName"><![CDATA[As Seen In...]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - As Seen In...]]></set-property>
+      <set-property name="key"><![CDATA[/browse/asSeenIn.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /company/faq.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100046">
+      <set-property name="displayName"><![CDATA[FAQs]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - FAQs]]></set-property>
+      <set-property name="key"><![CDATA[/company/faq.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100047">
+      <set-property name="displayName"><![CDATA[FAQs]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - FAQs]]></set-property>
+      <set-property name="key"><![CDATA[/company/faq.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /company/privacy.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100048">
+      <set-property name="displayName"><![CDATA[Privacy Policy]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Privacy Policy ]]></set-property>
+      <set-property name="key"><![CDATA[/company/privacy.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100049">
+      <set-property name="displayName"><![CDATA[Privacy Policy]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Privacy Policy]]></set-property>
+      <set-property name="key"><![CDATA[/company/privacy.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /company/terms.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100050">
+      <set-property name="displayName"><![CDATA[Terms & Conditions]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Terms & Conditions]]></set-property>
+      <set-property name="key"><![CDATA[/company/terms.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100051">
+      <set-property name="displayName"><![CDATA[Terms & Conditions]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Terms & Conditions]]></set-property>
+      <set-property name="key"><![CDATA[/company/terms.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /company/shipping.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100052">
+      <set-property name="displayName"><![CDATA[Shipping & Handling]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Shipping & Handling]]></set-property>
+      <set-property name="key"><![CDATA[/company/shipping.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100053">
+      <set-property name="displayName"><![CDATA[Shipping & Handling]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Shipping & Handling]]></set-property>
+      <set-property name="key"><![CDATA[/company/shipping.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /company/returns.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100054">
+      <set-property name="displayName"><![CDATA[Return Policy]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Return Policy]]></set-property>
+      <set-property name="key"><![CDATA[/company/returns.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100055">
+      <set-property name="displayName"><![CDATA[Return Policy]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Return Policy]]></set-property>
+      <set-property name="key"><![CDATA[/company/returns.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /company/customerService.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100056">
+      <set-property name="displayName"><![CDATA[Contact Us]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Contact Us]]></set-property>
+      <set-property name="key"><![CDATA[/company/customerService.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100057">
+      <set-property name="displayName"><![CDATA[Contact Us]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Contact Us]]></set-property>
+      <set-property name="key"><![CDATA[/company/customerService.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /myaccount/myOrders.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100058">
+      <set-property name="displayName"><![CDATA[Orders]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Orders]]></set-property>
+      <set-property name="key"><![CDATA[/myaccount/myOrders.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100059">
+      <set-property name="displayName"><![CDATA[Orders]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Orders]]></set-property>
+      <set-property name="key"><![CDATA[/myaccount/myOrders.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /myaccount/orderDetail.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100060">
+      <set-property name="displayName"><![CDATA[Order]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Order]]></set-property>
+      <set-property name="key"><![CDATA[/myaccount/orderDetail.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100061">
+      <set-property name="displayName"><![CDATA[Order]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Order]]></set-property>
+      <set-property name="key"><![CDATA[/myaccount/orderDetail.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /myaccount/profile.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100062">
+      <set-property name="displayName"><![CDATA[Profile]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Profile]]></set-property>
+      <set-property name="key"><![CDATA[/myaccount/profile.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100063">
+      <set-property name="displayName"><![CDATA[Profile]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Profile]]></set-property>
+      <set-property name="key"><![CDATA[/myaccount/profile.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /myaccount/accountProfileEdit.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100064">
+      <set-property name="displayName"><![CDATA[Edit Your Personal Info]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Edit Your Personal Info]]></set-property>
+      <set-property name="key"><![CDATA[/myaccount/accountProfileEdit.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100065">
+      <set-property name="displayName"><![CDATA[Edit Your Personal Info]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Edit Your Personal Info]]></set-property>
+      <set-property name="key"><![CDATA[/myaccount/accountProfileEdit.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /myaccount/profilePasswordEdit.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100066">
+      <set-property name="displayName"><![CDATA[Edit Your Password]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Edit Your Password]]></set-property>
+      <set-property name="key"><![CDATA[/myaccount/profilePasswordEdit.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100067">
+      <set-property name="displayName"><![CDATA[Edit Your Password]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Edit Your Password]]></set-property>
+      <set-property name="key"><![CDATA[/myaccount/profilePasswordEdit.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /myaccount/profileDefaults.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100068">
+      <set-property name="displayName"><![CDATA[Checkout Defaults]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Checkout Defaults]]></set-property>
+      <set-property name="key"><![CDATA[/myaccount/profileDefaults.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100069">
+      <set-property name="displayName"><![CDATA[Edit Your Password]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Checkout Defaults]]></set-property>
+      <set-property name="key"><![CDATA[/myaccount/profileDefaults.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /myaccount/paymentInfo.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100070">
+      <set-property name="displayName"><![CDATA[Payment Info]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Payment Info]]></set-property>
+      <set-property name="key"><![CDATA[/myaccount/paymentInfo.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100071">
+      <set-property name="displayName"><![CDATA[Payment Info]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Payment Info]]></set-property>
+      <set-property name="key"><![CDATA[/myaccount/paymentInfo.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /myaccount/accountCardEdit.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100072">
+      <set-property name="displayName"><![CDATA[Edit Credit Card]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Edit Credit Card]]></set-property>
+      <set-property name="key"><![CDATA[/myaccount/accountCardEdit.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100073">
+      <set-property name="displayName"><![CDATA[Edit Credit Card]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Edit Credit Card]]></set-property>
+      <set-property name="key"><![CDATA[/myaccount/accountCardEdit.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /myaccount/newCreditCard.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100074">
+      <set-property name="displayName"><![CDATA[Add a New Credit Card]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Add a New Credit Card]]></set-property>
+      <set-property name="key"><![CDATA[/myaccount/newCreditCard.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100075">
+      <set-property name="displayName"><![CDATA[Add a New Credit Card]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Add a New Credit Card]]></set-property>
+      <set-property name="key"><![CDATA[/myaccount/newCreditCard.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /myaccount/accountAddressEdit.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100076">
+      <set-property name="displayName"><![CDATA[Profile Address]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Profile Address]]></set-property>
+      <set-property name="key"><![CDATA[/myaccount/accountAddressEdit.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100077">
+      <set-property name="displayName"><![CDATA[Profile Address]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Profile Address]]></set-property>
+      <set-property name="key"><![CDATA[/myaccount/accountAddressEdit.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /myaccount/addressBook.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100078">
+      <set-property name="displayName"><![CDATA[Address Book]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Address Book]]></set-property>
+      <set-property name="key"><![CDATA[/myaccount/addressBook.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100079">
+      <set-property name="displayName"><![CDATA[Address Book]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Address Book]]></set-property>
+      <set-property name="key"><![CDATA[/myaccount/addressBook.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /myaccount/myReturns.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100080">
+      <set-property name="displayName"><![CDATA[Returns History]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Returns History]]></set-property>
+      <set-property name="key"><![CDATA[/myaccount/myReturns.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100081">
+      <set-property name="displayName"><![CDATA[Returns History]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Returns History]]></set-property>
+      <set-property name="key"><![CDATA[/myaccount/myReturns.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /myaccount/myWishList.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100082">
+      <set-property name="displayName"><![CDATA[Wish List]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Wish List]]></set-property>
+      <set-property name="key"><![CDATA[/myaccount/myWishList.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100083">
+      <set-property name="displayName"><![CDATA[Wish List]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Wish List]]></set-property>
+      <set-property name="key"><![CDATA[/myaccount/myWishList.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /myaccount/giftListHome.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100084">
+      <set-property name="displayName"><![CDATA[My Gift Lists]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - My Gift Lists]]></set-property>
+      <set-property name="key"><![CDATA[/myaccount/giftListHome.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100085">
+      <set-property name="displayName"><![CDATA[My Gift Lists]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - My Gift Lists]]></set-property>
+      <set-property name="key"><![CDATA[/myaccount/giftListHome.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /giftlists/giftListSearch.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100086">
+      <set-property name="displayName"><![CDATA[Find a Gift List]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Find a Gift List]]></set-property>
+      <set-property name="key"><![CDATA[/giftlists/giftListSearch.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100087">
+      <set-property name="displayName"><![CDATA[Find a Gift List]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Find a Gift List]]></set-property>
+      <set-property name="key"><![CDATA[/giftlists/giftListSearch.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /promo/promotions.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100088">
+      <set-property name="displayName"><![CDATA[Promotions]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Promotions]]></set-property>
+      <set-property name="key"><![CDATA[/promo/promotions.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100089">
+      <set-property name="displayName"><![CDATA[Promotions]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Promotions]]></set-property>
+      <set-property name="key"><![CDATA[/promo/promotions.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /comparisons/productComparisons.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100090">
+      <set-property name="displayName"><![CDATA[Comparisons]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Comparisons]]></set-property>
+      <set-property name="key"><![CDATA[/comparisons/productComparisons.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100091">
+      <set-property name="displayName"><![CDATA[Comparisons]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Comparisons]]></set-property>
+      <set-property name="key"><![CDATA[/comparisons/productComparisons.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /myaccount/login.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100092">
+      <set-property name="displayName"><![CDATA[Login]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Login]]></set-property>
+      <set-property name="key"><![CDATA[/myaccount/login.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100093">
+      <set-property name="displayName"><![CDATA[Login]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Login]]></set-property>
+      <set-property name="key"><![CDATA[/myaccount/login.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /checkout/shippingMethod.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100094">
+      <set-property name="displayName"><![CDATA[Checkout Shipping Method]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Checkout - Shipping Method]]></set-property>
+      <set-property name="key"><![CDATA[/checkout/shippingMethod.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100095">
+      <set-property name="displayName"><![CDATA[Checkout Shipping Method]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Checkout - Shipping Method]]></set-property>
+      <set-property name="key"><![CDATA[/checkout/shippingMethod.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /browse/newItems.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100096">
+      <set-property name="displayName"><![CDATA[New Items]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - New Items]]></set-property>
+      <set-property name="key"><![CDATA[/browse/newItems.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100097">
+      <set-property name="displayName"><![CDATA[New Items]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - New Items]]></set-property>
+      <set-property name="key"><![CDATA[/browse/newItems.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+
+    <!-- /myaccount/returnItemsSelection.jsp -->
+    <add-item id="1100098" item-descriptor="SEOTags">
+      <set-property name="displayName"><![CDATA[Order Return]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Order Return]]></set-property>
+      <set-property name="key"><![CDATA[/myaccount/returnItemsSelection.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item id="1100099" item-descriptor="SEOTags">
+      <set-property name="displayName"><![CDATA[Order Return]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Order Return]]></set-property>
+      <set-property name="key"><![CDATA[/myaccount/returnItemsSelection.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item>
+    
+    <!-- /myaccount/confirmReturn.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100100">
+      <set-property name="displayName"><![CDATA[Order Return Confirmation]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Order Return]]></set-property>
+      <set-property name="key"><![CDATA[/myaccount/confirmReturn.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100101">
+      <set-property name="displayName"><![CDATA[Order Return Confirmation]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Order Return]]></set-property>
+      <set-property name="key"><![CDATA[/myaccount/confirmReturn.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item> 
+
+    <!-- /myaccount/confirmReturnResponse.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100102">
+      <set-property name="displayName"><![CDATA[Order Return Placed]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Order Return Placed]]></set-property>
+      <set-property name="key"><![CDATA[/myaccount/confirmReturnResponse.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100103">
+      <set-property name="displayName"><![CDATA[Order Return Placed]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Order Return Placed]]></set-property>
+      <set-property name="key"><![CDATA[/myaccount/confirmReturnResponse.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item> 
+
+    <!-- /myaccount/gadgets/returnPromotionAmendmentsPopup.jsp -->
+    <add-item item-descriptor="SEOTags" id="1100104">
+      <set-property name="displayName"><![CDATA[Pricing & Promotion Adjustments]]></set-property>
+      <set-property name="title"><![CDATA[ATG Store - Pricing & Promotion Adjustments]]></set-property>
+      <set-property name="key"><![CDATA[/myaccount/gadgets/returnPromotionAmendmentsPopup.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteUS,storeSiteDE]]></set-property>
+    </add-item>
+    <add-item item-descriptor="SEOTags" id="1100105">
+      <set-property name="displayName"><![CDATA[Pricing & Promotion Adjustments]]></set-property>
+      <set-property name="title"><![CDATA[ATG Home - Pricing & Promotion Adjustments]]></set-property>
+      <set-property name="key"><![CDATA[/myaccount/gadgets/returnPromotionAmendmentsPopup.jsp]]></set-property>
+      <set-property name="sites"><![CDATA[homeSite]]></set-property>
+    </add-item> 
+
+  </import-items>
+</gsa-template>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Storefront/data/seotags.xml#2 $$Change: 788278 $-->

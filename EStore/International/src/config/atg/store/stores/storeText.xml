@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<gsa-template>
+  <item-descriptor name="storeShortText"
+                   super-type="storeText"
+                   sub-type-value="shortText"
+                   display-name-resource="shortText"
+                   xml-combine="append">
+    <attribute name="resourceBundle" value="atg.projects.store.stores.StoreTextRepositoryTemplateResources"/>
+     
+    <attribute name="categoryStoreKeyPriority" value="10"/>
+    <attribute name="categoryStoreTextPriority" value="20"/>
+    <attribute name="categoryStoreTranslationsPriority" value="30"/>
+
+    <attribute name="flexIconResource" value="item.shortStoreText.iconSmall"/>
+    <attribute name="largeFlexIconResource" value="item.shortStoreText.iconLarge"/>
+
+    <table name="crs_store_short_txt"
+           type="auxiliary"
+           id-column-names="text_id">
+      <property name="text" xml-combine="remove"/>
+      
+      <property name="textDefault"
+                column-name="text_template"
+                data-type="string"
+                category-resource="categoryStoreText"
+                display-name-resource="textDefault"/>
+    </table>       
+
+    <property name="text"
+              data-type="string"
+              writable="false"
+              hidden="true"
+              queryable="true">
+      <derivation user-method="atg.repository.dp.LanguageTranslation">
+        <expression>textDefault</expression>
+      </derivation>
+      
+      <attribute name="defaultProperty" value="defaultText"/>
+      <attribute name="defaultLocale" value="en_US"/>
+    </property>
+
+    <table name="crs_txt_txt_xlate"
+           type="multi"
+           multi-column-name="locale"
+           id-column-name="text_id">
+
+      <property name="translations"
+                column-name="translation_id"
+                queryable="false"
+                data-type="map"
+                cascade="delete"
+                component-item-type="storeShortTextTranslation" 
+                category-resource="categoryStoreTranslations"
+                display-name-resource="translations">
+      </property>
+    </table>
+  </item-descriptor>
+
+  <item-descriptor name="storeLongText"
+                   super-type="storeText"
+                   sub-type-value="longText"
+                   display-name-resource="longText"
+                   xml-combine="append">
+    <attribute name="resourceBundle" value="atg.projects.store.stores.StoreTextRepositoryTemplateResources"/>
+
+    <attribute name="categoryStoreKeyPriority" value="10"/>
+    <attribute name="categoryStoreTextPriority" value="20"/>
+
+    <attribute name="flexIconResource" value="item.longStoreText.iconSmall"/>
+    <attribute name="largeFlexIconResource" value="item.longStoreText.iconLarge"/>
+
+    <table name="crs_store_long_txt" 
+           type="auxiliary"
+           id-column-names="text_id">
+      
+      <property name="text" xml-combine="remove"/>
+      
+      <property name="textDefault"
+                column-name="text_template"
+                data-type="string"
+                category-resource="categoryStoreText"
+                display-name-resource="textDefault"/>
+    </table>
+    
+    <property name="text"
+              data-type="string"
+              writable="false"
+              hidden="true"
+              queryable="true">
+      <derivation user-method="atg.repository.dp.LanguageTranslation">
+        <expression>textDefault</expression>
+      </derivation>
+      
+      <attribute name="defaultProperty" value="defaultText"/>
+      <attribute name="defaultLocale" value="en_US"/>
+    </property>
+    
+    <table name="crs_txt_txt_xlate"
+           type="multi"
+           multi-column-name="locale"
+           id-column-name="text_id">
+
+      <property name="translations"
+                column-name="translation_id"
+                queryable="false"
+                data-type="map"
+                cascade="delete"
+                component-item-type="storeLongTextTranslation" 
+                category-resource="categoryStoreTranslations"
+                display-name-resource="translations">
+      </property>
+    </table>
+    
+  </item-descriptor>
+
+  <item-descriptor name="storeShortTextTranslation"
+                   sub-type-property="type"
+                   sub-type-value="shortTextXlate"
+                   id-space-name="storeTextTranslation"
+                   display-name-resource="shortTextTranslation"
+                   item-cache-size="1000"
+                   query-cache-size="1000"
+                   cache-mode="simple">
+                   
+    <attribute name="resourceBundle" value="atg.projects.store.stores.StoreTextRepositoryTemplateResources"/>
+    <attribute name="categoryStoreTextPriority" value="10"/>
+
+    <table name="crs_short_txt_xlate"
+           type="primary"
+           id-column-name="translation_id">
+           
+      <property name="type"
+                column-name="text_type"
+                data-type="enumerated"
+                category-resource="categoryStoreText"
+                display-name-resource="type">
+        <option value="shortTextXlate" code="0"/>
+        <option value="longTextXlate" code="1"/>
+      </property>
+
+      <property name="text"
+                column-name="text_template"
+                data-type="string"
+                category-resource="categoryStoreText"
+                display-name-resource="text"/>
+    </table>
+  </item-descriptor>
+
+  <item-descriptor name="storeLongTextTranslation"
+                   super-type="storeShortTextTranslation"
+                   sub-type-value="longTextXlate"
+                   display-name-resource="longTextTranslation">
+                   
+    <attribute name="resourceBundle" value="atg.projects.store.stores.StoreTextRepositoryTemplateResources"/>
+    <attribute name="categoryStoreTextPriority" value="10"/>
+
+    <table name="crs_long_txt_xlate" 
+           type="auxiliary"
+           id-column-names="translation_id">
+           
+      <property name="text" 
+                column-name="text_template"
+                data-type="big string"
+                category-resource="categoryStoreText"
+                display-name-resource="text"/>
+    </table>
+  </item-descriptor>
+</gsa-template>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/International/config/atg/store/stores/storeText.xml#3 $$Change: 789379 $-->
+

@@ -1,0 +1,8 @@
+{
+"sling:resourceType": "endeca/zone",
+"shuffleRules": "FALSE",
+"jcr:primaryType": "endeca:unstructured",
+"contentType": "MainContent",
+"validForSearch": "TRUE",
+"ruleLimit": "1"
+}

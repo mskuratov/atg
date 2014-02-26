@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE process-manager-configuration 
+        PUBLIC "-//Art Technology Group, Inc.//DTD Process Manager//EN" 
+        'http://www.atg.com/dtds/processmanager/processmanager_1.0.dtd'>
+
+<process-manager-configuration>
+
+  <grammar-registry>
+    <grammar-extension-class>
+      atg.projects.store.ui.StoreGrammarExtension
+    </grammar-extension-class>
+  </grammar-registry>
+
+  <action-registry>
+    <action>
+      <action-name>
+        fillRelatedItemsSlotAction
+      </action-name>
+      <action-class>
+        atg.projects.store.scenario.action.StoreFillRelatedItemsSlotAction
+      </action-class>
+    </action>
+  </action-registry>
+  
+  
+  <condition-registry>
+    <condition>
+      <condition-name>
+        merchandiseTotalCondition
+      </condition-name>
+      <filter-class>
+        atg.projects.store.scenario.MerchandiseTotalCondition
+      </filter-class>
+      <filter-configuration>
+        /atg/scenario/configuration/PMDLExpressionFilterConfiguration
+      </filter-configuration>
+    </condition>
+  </condition-registry>
+  
+
+</process-manager-configuration>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/config/atg/scenario/scenarioManager.xml#1 $$Change: 735822 $-->

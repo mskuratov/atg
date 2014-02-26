@@ -1,0 +1,157 @@
+<%-- 
+  This page parse request params and add these to the "url" param.
+
+  Required Parameters:
+    url
+      A URL to which the request parameters will be appended.
+  
+  Optional Parameters: 
+  (Via the requests "paramValues")
+    pageNum
+      Current page number.
+    viewAll
+      Set to true if 'view all' has been requested.
+    sort
+      How the results should be sorted sorted.
+    facetTrail  
+      Records the currently supplied faceting on the search results.
+    addFacet
+      Facet to be added to the facet trail
+    categoryId
+      The currently browsed category
+    searchFeatures
+      attribute for features param
+    sSearchInput
+      attribute for searchInput param
+    searchCategoryId
+      attribute for categoryId param
+    sid
+      Site ids to perform the search on
+--%>
+<c:set var="searchExecByFormSubmitVar" value="${param.searchExecByFormSubmit}"/>
+<c:set var="separator" value="?"/>
+<dsp:getvalueof var="pageSize" vartype="java.lang.Object" bean="/atg/multisite/SiteContext.site.defaultPageSize"/>
+
+<%-- Create the URL --%>
+<c:url var="url" value="${url}" context="/">
+  <c:forEach var='paramItem' items='${paramValues}'>
+    <c:choose>
+      
+      <%-- FacetTrail --%>
+      <c:when test="${paramItem.key eq 'q_facetTrail' && not empty facetTrailVar && !doNotIncludeFacetTrailParam}">
+        <c:param name="q_facetTrail" value="${facetTrailVar}"/>
+        <c:set var="facetTrailSet" value="true"/>
+      </c:when>
+      
+      <%-- FacetOrder --%>
+      <c:when test="${paramItem.key eq 'facetOrder' && not empty facetOrder}">
+        <c:param name="facetOrder" value="${facetOrder}"/>
+        <c:set var="facetOrderSet" value="true"/>
+      </c:when>
+      
+      <%-- pageSize --%>
+      <c:when test="${paramItem.key eq 'pageSize' && not empty pageSize}">
+        <c:param name="pageSize" value="${pageSize}"/>
+        <c:set var="pageSizeSet" value="true"/>
+      </c:when>
+      
+      <%-- p (page number) --%>
+      <c:when test="${paramItem.key eq 'p'}">
+        <c:if test="${not empty pageNum && viewAll ne 'true'}">
+          <c:param name="p" value="${pageNum}"/>
+          <c:set var="pageNumSet" value="true"/>
+        </c:if>
+      </c:when>
+      
+      <%-- q (query) --%>
+      <c:when test="${paramItem.key eq 'q' && not empty question}">
+        <c:param name="q" value="${question}"/>
+        <c:set var="questionSet" value="true"/>
+      </c:when>
+      
+      <%-- sort --%>
+      <c:when test="${paramItem.key eq 'sort' && not empty sort}">
+        <c:param name="sort" value="${sort}"/>
+        <c:set var="sortSet" value="true"/>
+      </c:when>
+      
+      <%-- Features --%>
+      <c:when test="${paramItem.key eq 'features' && not empty searchFeatures}">
+        <c:param name="features" value="${searchFeatures}"/>
+        <c:set var="searchFeaturesSet" value="true"/>
+      </c:when>
+
+      <%-- SearchInput --%>
+      <c:when test="${paramItem.key eq 'searchInput' && not empty sSearchInput}">
+        <c:param name="searchInput" value="${sSearchInput}"/>
+        <c:set var="sSearchInputSet" value="true"/>
+      </c:when>
+      
+      <%-- categoryId --%>
+      <c:when test="${paramItem.key eq 'categoryId' && not empty searchCategoryId}">
+        <c:param name="categoryId" value="${searchCategoryId}"/>
+        <c:set var="searchCategoryIdSet" value="true"/>
+      </c:when>
+      
+      <%-- sid is used to indicate which sites to search, it can be multi-valued --%>
+      <c:when test="${paramItem.key eq 'sid'}">
+        <c:forEach var="value" items="${paramValues.sid}">
+          <c:param name="sid" value="${value}"/>
+        </c:forEach>
+      </c:when>
+      
+      <%-- Maintain other parameters --%>
+      <c:otherwise>
+        <c:if test="${paramItem.key ne 'viewAll' 
+                   && empty searchExecByFormSubmitVar
+                   && paramItem.key ne 'addFacet'
+                   && !(doNotIncludeFacetTrailParam && paramItem.key eq 'q_facetTrail')
+                   && paramItem.key ne 'token'}">
+          <c:param name="${paramItem.key}" value="${paramItem.value[0]}"/>
+        </c:if>
+      </c:otherwise>
+      
+    </c:choose>
+  </c:forEach>
+  
+  <c:if test="${empty facetTrailSet && not empty facetTrailVar && !doNotIncludeFacetTrailParam}">
+    <c:param name="q_facetTrail" value="${facetTrailVar}"/>
+  </c:if>
+
+  <c:if test="${empty facetOrderSet && not empty facetOrder}">
+    <c:param name="facetOrder" value="${facetOrder}"/>
+  </c:if>
+
+  <c:if test="${empty pageSizeSet && not empty pageSize}">
+    <c:param name="pageSize" value="${pageSize}"/>
+  </c:if>
+
+  <c:if test="${empty pageNumSet && not empty pageNum}">
+    <c:param name="p" value="${pageNum}"/>
+  </c:if>
+
+  <c:if test="${empty questionSet && not empty question}">
+    <c:param name="q" value="${question}"/>
+  </c:if>
+
+  <c:if test="${empty sortSet && not empty sortSet}">
+    <c:param name="sort" value="${sort}"/>
+  </c:if>
+
+  <c:if test="${viewAllLink eq 'true'}">
+    <c:param name="viewAll" value="true"/>
+  </c:if>
+
+  <c:if test="${empty searchFeaturesSet && not empty searchFeatures}">
+    <c:param name="features" value="${searchFeatures}"/>
+  </c:if>
+
+  <c:if test="${empty sSearchInputSet && not empty sSearchInput}">
+    <c:param name="searchInput" value="${sSearchInput}"/>
+  </c:if>
+
+  <c:if test="${empty searchCategoryIdSet && not empty searchCategoryId}">
+    <c:param name="categoryId" value="${searchCategoryId}"/>
+  </c:if>
+</c:url>
+<%-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Storefront/j2ee/store.war/navigation/gadgets/navLinkHelper.jspf#3 $$Change: 792408 $--%>

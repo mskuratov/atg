@@ -1,0 +1,8 @@
+<gsa-template xml-combine="append">
+  <item-descriptor name="clothing-sku" cache-mode="distributed"/>
+  <item-descriptor name="furniture-sku" cache-mode="distributed"/>
+  <item-descriptor name="asSeenIn" cache-mode="distributed"/>
+  <item-descriptor name="promotionalContent" cache-mode="distributed"/>
+  <item-descriptor name="feature" cache-mode="distributed"/>
+</gsa-template>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/Versioned/configlayers/preview/atg/commerce/catalog/custom/customCatalog.xml#1 $$Change: 735822 $-->

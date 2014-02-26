@@ -1,0 +1,3 @@
+ATG-Product: Mobile Commerce Reference Store - Versioned Repository
+Manifest-Version: 1.0
+ATG-Required: Store.EStore.Versioned Store.Mobile

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE gsa-template SYSTEM "dynamosystemresource:/atg/dtds/gsa/gsa_1.0.dtd">
+<gsa-template>
+  <import-items>
+
+    <!-- Right Now Urls -->
+
+    <!-- The Default URL values -->
+    <add-item item-descriptor="siteConfiguration" id="homeSite">
+      <set-property name="rightNowUrlDefault"><![CDATA[http://oracleatg.rightnowdemo.com]]></set-property>
+    </add-item>
+    <add-item item-descriptor="siteConfiguration" id="storeSiteUS">
+      <set-property name="rightNowUrlDefault"><![CDATA[http://oracleatg.rightnowdemo.com]]></set-property>
+    </add-item>
+    <add-item item-descriptor="siteConfiguration" id="storeSiteDE">
+      <set-property name="rightNowUrlDefault"><![CDATA[http://oracleatg.rightnowdemo.com]]></set-property>
+    </add-item>
+
+    <!--  The language variants -->
+    <add-item item-descriptor="siteConfiguration" id="storeSiteDE">
+      <set-property name="translations"><![CDATA[de=de_xlaterightnow10001]]></set-property>
+    </add-item>
+
+    <add-item item-descriptor="siteConfiguration" id="storeSiteUS">
+      <set-property name="translations"><![CDATA[es=es_xlaterightnow10001]]></set-property>
+    </add-item>
+
+    <add-item item-descriptor="siteConfiguration" id="homeSite">
+      <set-property name="translations"><![CDATA[es=es_xlaterightnow10001]]></set-property>
+    </add-item>
+
+    <!--  The translations -->
+    <add-item item-descriptor="siteUrlTranslation" id="es_xlaterightnow10001">
+      <set-property name="rightNowUrl"><![CDATA[http://oracleatg-es.rightnowdemo.com]]></set-property>
+    </add-item>
+
+    <add-item item-descriptor="siteUrlTranslation" id="de_xlaterightnow10001">
+      <set-property name="rightNowUrl"><![CDATA[http://oracleatg-de.rightnowdemo.com]]></set-property>
+    </add-item>
+
+  </import-items>
+
+</gsa-template>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/KnowledgeBase/International/install/data/urls.xml#1 $$Change: 788278 $-->
+

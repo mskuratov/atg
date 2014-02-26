@@ -1,0 +1,6 @@
+  <tr valign=top>
+    <td><a href="index.jhtml">Store Administration</a></td>
+    <td>Test e-mail templates.</td>
+  </tr>
+<java>/* @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/admin/atg/store/admin/en/store-home.jhtml#1 $$Change: 735822 $*/</java>
+

@@ -1,0 +1,58 @@
+<%-- 
+    This file displays a sku availability information message such as in stock, out of stock, preorderable etc..
+--%>
+
+<dsp:getvalueof var="selectedSku" vartype="atg.repository.RepositoryItem" param="selectedSku"/>
+<dsp:getvalueof var="availabilityType" vartype="java.lang.String" param="availabilityType"/>
+
+<c:set var="skuAvailabilityMessage" value=""/>
+<c:if test="${not empty selectedSku && not empty availabilityType}">
+  <c:choose>
+    <c:when test="${availabilityType == 'available'}">
+      <fmt:message var="skuAvailabilityMessage" key="common.available"/>
+    </c:when>
+    <c:when test="${availabilityType == 'preorderable'}">
+      <dsp:getvalueof var="availabilityDate" vartype="java.util.Date" param="availabilityDate"/>
+      <c:choose>      
+        <c:when test="${not empty availabilityDate}">
+          <fmt:message var="skuAvailabilityMessage" key="common.preorderableUntil">
+            <fmt:param>
+              <span class="date numerical"><fmt:formatDate value="${availabilityDate}" dateStyle="short"/></span>
+            </fmt:param>
+          </fmt:message>
+        </c:when>
+        <c:otherwise>
+          <fmt:message var="skuAvailabilityMessage" key="common.preorderable"/>
+        </c:otherwise>
+      </c:choose>
+    </c:when>
+    <c:when test="${availabilityType == 'backorderable'}">
+      <dsp:getvalueof var="availabilityDate" vartype="java.util.Date" param="availabilityDate"/>
+      <c:choose>
+        <c:when test="${not empty availabilityDate}">
+          <fmt:message var="skuAvailabilityMessage" key="common.backorderableUntil">
+            <fmt:param>
+              <span class="date numerical"><fmt:formatDate value="${availabilityDate}" dateStyle="short"/></span>
+            </fmt:param>
+          </fmt:message>
+        </c:when>
+        <c:otherwise>
+          <fmt:message var="skuAvailabilityMessage" key="common.backorderable"/>
+        </c:otherwise>
+      </c:choose>
+    </c:when>
+    <c:otherwise>
+      <fmt:message var="skuAvailabilityMessage" key="common.temporarilyOutOfStock"/>
+    </c:otherwise>
+  </c:choose>
+</c:if>
+
+<div class="atg_store_productID">
+  <div class="atg_store_availability">
+    <span>
+      <c:out value="${skuAvailabilityMessage}" escapeXml="false" />
+    </span>
+  </div>
+</div>
+
+<%-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Storefront/j2ee/store.war/browse/gadgets/pickerAvailabilityMessage.jspf#2 $$Change: 788278 $--%>

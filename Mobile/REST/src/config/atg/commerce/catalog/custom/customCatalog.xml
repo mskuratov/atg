@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!DOCTYPE gsa-template
+        PUBLIC "-//Art Technology Group, Inc.//DTD General SQL Adapter//EN"
+        "http://www.atg.com/dtds/gsa/gsa_1.0.dtd">
+        
+<gsa-template xml-combine="append">
+	<item-descriptor name="promotionalContent">
+		<table name="crs_mobile_img" type="multi" id-column-name="promo_content_id" multi-column-name="device_name">
+			<property name="mobileImages" data-type="map" component-data-type="string" column-name="url">
+				<attribute name="propertySortPriority" value="-3"/>
+			</property>
+		</table>
+		<table name="crs_mobile_desc" type="multi" id-column-name="promo_content_id" multi-column-name="device_name">
+			<property name="mobileDescriptions" data-type="map" component-data-type="string" column-name="url">
+				<attribute name="propertySortPriority" value="-3"/>
+			</property>
+		</table>
+		<property name="deviceImage" data-type="string" writable="false" hidden="true" queryable="true" display-name="device derived image">
+			<derivation user-method="atg.projects.store.dp.DeviceTypeDerivation">
+				<expression>mobileImages</expression>
+				<expression>image</expression>
+			</derivation>
+			<attribute name="deviceTypes" value="iPad,iPadRetina,iPhone,iPhoneRetina"/>
+		</property>
+		<property name="deviceDescription" data-type="string" writable="false" hidden="true" queryable="true" display-name="device derived description">
+			<derivation user-method="atg.projects.store.dp.DeviceTypeDerivation">
+				<expression>mobileDescriptions</expression>
+				<expression>description</expression>
+			</derivation>
+			<attribute name="deviceTypes" value="iPad,iPadRetina,iPhone,iPhoneRetina"/>
+		</property>
+		<property name="derivedDeviceImage" data-type="string" writable="false" hidden="true" queryable="true" display-name="device derived image">
+			<derivation user-method="atg.projects.store.dp.StoreContextDerivation">
+				<expression>deviceImage</expression>
+			</derivation>
+			<attribute name="defaultSite" value="storeSiteUS"/>
+			<attribute name="defaultLanguage" value="en"/>
+		</property>
+	</item-descriptor>
+</gsa-template>
+<!-- @version $Id: //hosting-blueprint/MobileCommerce/version/10.2/server/MobileCommerce/config/atg/commerce/catalog/custom/customCatalog.xml#3 $$Change: 796710 $-->

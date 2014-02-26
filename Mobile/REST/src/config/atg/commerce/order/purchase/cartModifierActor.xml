@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<actor-template xsi:noNamespaceSchemaLocation="http://www.atg.com/xsds/actorChain_1.0.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+  <!-- Override the success/error URLs in these chains -->
+  
+  <actor-chain id="addItemToOrder">
+    <form id="cartModifierFormHandler">
+      <input name="originOfOrder" value="mobile"/>
+      <input name="addItemToOrderSuccessURL" value="/model/atg/commerce/ShoppingCartActor/totalCommerceItemCount"/>
+      <input name="addItemToOrderErrorURL" value="/model/atg/commerce/order/purchase/CartModifierActor/error"/>
+    </form>
+  </actor-chain>
+  
+  <actor-chain id="removeAndAddItemToOrder">
+    <form id="cartModifierFormHandler">
+      <input name="originOfOrder" value="mobile"/>
+      <input name="removeAndAddItemToOrderSuccessURL" value="/model/atg/commerce/ShoppingCartActor/totalCommerceItemCount"/>
+      <input name="removeAndAddItemToOrderErrorURL" value="/model/atg/commerce/order/purchase/CartModifierActor/error"/>
+    </form>
+  </actor-chain>
+  
+  <actor-chain id="removeItemFromOrder">
+    <form id="cartModifierFormHandler">
+     <input name="removeItemFromOrderSuccessURL" value="/model/atg/commerce/ShoppingCartActor/summary"/>
+     <input name="removeItemFromOrderErrorURL" value="/model/atg/commerce/order/purchase/CartModifierActor/error"/>
+    </form>
+  </actor-chain>
+  
+  <!-- These chains are added to the actor in the Store.Mobile.REST layer -->
+  
+  <actor-chain id="updateQuantity">
+    <form id="cartModifierFormHandler" name="/atg/commerce/order/purchase/CartModifierFormHandler" handle="update">
+      <!-- commerceId to quantity mappings are retrieved from the request -->
+      <input name="updateSuccessURL" value="/model/atg/commerce/ShoppingCartActor/totalCommerceItemCount"/>
+      <input name="updateErrorURL" value="/model/atg/commerce/order/purchase/CartModifierActor/error"/>
+    </form>
+  </actor-chain>
+  <actor-chain id="updateGiftOptions" transaction="TX_SUPPORTS">
+    <droplet id="showGiftWrap" name="/atg/store/droplet/ShowGiftWrap">
+      <input name="order" value="${nucleus['/atg/commerce/ShoppingCart'].current}"/>
+      <oparam name="true">
+        <droplet id="targetingFirst" name="/atg/targeting/TargetingFirst" var="targetingFirst">
+          <input name="fireViewItemEvent" value="false"/>
+          <input name="targeter" value="${nucleus['/atg/registry/RepositoryTargeters/ProductCatalog/GiftWrapItem']}"/>
+          <input name="elementName" value="targetedProduct"/>
+          <oparam name="output">
+            <component id="orderManager" name="/atg/commerce/order/OrderManager" method="addRemoveGiftServices">
+              <input name="order" index="0" class-name="atg.projects.store.order.StoreOrderImpl" value="${nucleus['/atg/commerce/ShoppingCart'].current}"/>
+              <input name="addGiftWrap" index="1" class-name="boolean" value="${param.addGiftWrap}"/>
+              <input name="addGiftMessage" index="2" class-name="boolean" value="${param.addGiftNote}"/>
+              <input name="giftWrapSkuID" index="3" class-name="java.lang.String" value="${targetingFirst.targetedProduct.childSkus[0].repositoryId}"/>
+              <input name="giftWrapProductID" index="4" class-name="java.lang.String" value="${targetingFirst.targetedProduct.repositoryId}"/>
+            </component>
+          </oparam>
+        </droplet>
+        <component id="pricingTools" name="/atg/commerce/pricing/PricingTools" method="priceOrderTotal">
+          <input name="order" class-name="atg.commerce.order.Order" value="${nucleus['/atg/commerce/ShoppingCart'].current}"/>
+        </component>
+      </oparam>
+    </droplet>
+    <droplet id="switch" name="/atg/dynamo/droplet/Switch">
+      <input name="value" value="${param.addGiftNote}"/>
+      <oparam name="true">
+        <form id="giftMessageHandler" name="/atg/store/order/purchase/GiftMessageFormHandler" handle="addGiftMessage" var="handler">
+          <input name="couponCode" value="${nucleus['/atg/store/order/purchase/CouponFormHandler'].currentCouponCode}"/>
+          <input name="giftMessageTo" value="${param.to}"/>
+          <input name="giftMessageFrom" value="${param.from}"/>
+          <input name="giftMessage" value="${param.message}"/>
+          <input name="addGiftMessageSuccessURL" value="/model/atg/commerce/ShoppingCartActor/summary"/>
+          <input name="addGiftMessageErrorURL" value="/model/atg/commerce/order/purchase/CartModifierActor/giftOptionsError"/>
+        </form>
+      </oparam>
+      <oparam name="default">
+        <form id="giftMessageHandler" name="/atg/store/order/purchase/GiftMessageFormHandler" handle="addGiftMessage" var="handler">
+          <input name="couponCode" value="${nucleus['/atg/store/order/purchase/CouponFormHandler'].currentCouponCode}"/>
+          <input name="addGiftMessageSuccessURL" value="/model/atg/commerce/ShoppingCartActor/summary"/>
+          <input name="addGiftMessageErrorURL" value="/model/atg/commerce/ShoppingCartActor/summary"/>
+        </form>
+      </oparam>
+    </droplet>
+  </actor-chain>
+  <actor-chain id="error">
+    <component id="fh" name="/atg/commerce/order/purchase/CartModifierFormHandler" component-var="fh">
+      <output id="formError" name="formError" value="${fh.formError}"/>
+      <output id="formExceptions" name="formExceptions" value="${fh.formExceptions}" filter-id="full"/>
+      <!-- Did a concurrent update exception occur? -->
+      <output id="concurrentUpdate" name="concurrentUpdate" value="${fh.concurrentUpdate}"/>
+      <output id="order" xml-combine="remove"/>
+    </component>
+  </actor-chain>
+  <actor-chain id="giftOptionsError">
+    <component id="fh" name="/atg/store/order/purchase/GiftMessageFormHandler" component-var="fh">
+      <output id="formError" name="formError" value="${fh.formError}"/>
+      <output id="formExceptions" name="formExceptions" value="${fh.formExceptions}" filter-id="full"/>
+    </component>
+  </actor-chain>
+</actor-template>
+<!-- @version $Id: //hosting-blueprint/MobileCommerce/version/10.2/server/MobileCommerce/config/atg/commerce/order/purchase/cartModifierActor.xml#1 $$Change: 788278 $ -->

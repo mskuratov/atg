@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<toolbar xml-combine="append">
+
+  <operation-menu-adjustments id="storeTextOpMenuAdjustments"
+       asset-type="/atg/store/stores/StoreTextRepository:storeText">
+    <disable-menu-item menu-item-id="addToWorkbench"/>
+  </operation-menu-adjustments>
+
+</toolbar>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/Versioned/config/atg/remote/assetmanager/toolbar/DefaultToolbar.xml#2 $$Change: 789379 $-->

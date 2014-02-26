@@ -1,0 +1,1554 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE product SYSTEM "http://www.atg.com/dtds/product_1_0.dtd">
+<product id="store" extends="commerce">
+  
+  <title resource-key="StoreCommerceProduct.name">Oracle ATG Commerce Reference Store</title>
+  <detail resource-key="StoreCommerceProduct.detail">Includes the ATG platform, ATG-Endeca Integration, ATG Content Administration, Site Administration, Oracle ATG Web Commerce, and Oracle ATG Web Commerce Merchandising. Optional: data warehouse components and Preview</detail>
+
+  <requires-addon-id id="merch"/>  
+  
+  <product-id-required id ="siteadmin"/>
+  <product-id-required id="endeca"/>  
+  <incompatible-addon-id id="motorpriseJSP"/>
+  
+  <!-- Endeca addon - CRS setup when Endecca has already been selected--> 
+  <product-addon-group id="endeca">
+    <product-addon id="endeca">
+      <modify-server-instance-type id="production">
+        <append-module name="Store.Endeca.Index"/>
+        <append-module name="DAF.Endeca.Assembler"/>
+      </modify-server-instance-type>
+	  
+      <modify-server-instance-type id="staging">
+        <append-module name="Store.Endeca.Index"/>
+        <append-module name="DAF.Endeca.Assembler"/>
+      </modify-server-instance-type>
+      
+      <modify-server-instance-type id="svcagent">
+        <append-module name="Store.Endeca.Index"/>
+      </modify-server-instance-type>
+      
+      <modify-server-instance-type id="externalpreview">
+        <append-module name="Store.Endeca.Index"/>
+      </modify-server-instance-type>
+    </product-addon>
+  </product-addon-group>
+
+  <product-addon-group id="endeca_preview_staging">
+    <title>Endeca Preview Options Selection For Staging</title>
+    <requires-product-addon id="staging"/>
+    <requires-product-addon id="endeca"/>
+    <!-- Endeca preview configlayer addition -->
+    <product-addon id="endecapreview_staging">
+      <title resource-key="">Configure Endeca Preview to run on the Staging Server</title>
+      <modify-server-instance id="basic_staging">
+        <add-appassembler-option name="layer" value="EndecaPreview"/>
+      </modify-server-instance>
+      <modify-server-instance id="staging_db">
+        <add-appassembler-option name="layer" value="EndecaPreview"/>
+      </modify-server-instance>
+    </product-addon>
+  </product-addon-group>
+
+  <product-addon-group id="endeca_preview_production">
+    <title>Endeca Preview Options Selection For Production</title>
+    <requires-product-addon id="endeca"/>
+    <!-- Endeca preview configlayer addition -->
+    <product-addon id="endecapreview_production">
+      <title resource-key="">Configure Endeca Preview to run on the Production Server. Use this option in development or evaluation environments only. Do not use it for an actual production system.</title>
+      <modify-server-instance id="basic_production">
+        <add-appassembler-option name="layer" value="EndecaPreview"/>
+      </modify-server-instance>
+      <modify-server-instance id="production_lock">
+        <add-appassembler-option name="layer" value="EndecaPreview"/>
+      </modify-server-instance>
+    </product-addon>
+  </product-addon-group>
+
+  <!-- CRS addons - Additional options to choose for the CRS setup --> 
+  <product-addon-group id="store_addon_group">
+    <title>Choose ATG Commerce Reference Store AddOns :</title>
+    <!-- Choose CRS demo -->
+    <product-addon id="storefront_demo">
+      <title resource-key="">Storefront Demo Application</title>
+      <!-- Add the Storefront module to provide CRS demo -->
+      <!-- Storefront module includes the Store.EStore module -->
+      <modify-server-instance-type id="production">
+        <append-module name="Store.Storefront"/>
+      </modify-server-instance-type>
+      <modify-server-instance-type id="staging">
+        <append-module name="Store.Storefront"/>
+      </modify-server-instance-type>
+      <modify-server-instance-type id="management_db">
+        <append-module name="Store.Storefront"/>
+      </modify-server-instance-type>
+      <modify-server-instance-type id="externalpreview">
+        <append-module name="Store.Storefront"/>
+      </modify-server-instance-type>
+    </product-addon>
+
+    <!-- Choose international CRS data for demo -->
+    <product-addon id="international">
+      <title>International</title>
+      <detail resource-key="">Enables multi-country and multi-language functionality</detail>
+      <modify-server-instance-type id="production">
+        <append-module name="Store.EStore.International"/>
+      </modify-server-instance-type>
+      <modify-server-instance-type id="staging">
+        <append-module name="Store.EStore.International"/>
+      </modify-server-instance-type>
+      <modify-server-instance-type id="management">
+        <append-module name="Store.EStore.International.Versioned"/>
+      </modify-server-instance-type>
+      <modify-server-instance-type id="externalpreview">
+        <append-module name="Store.EStore.International.Versioned"/>
+      </modify-server-instance-type>
+    </product-addon>
+
+    <!-- Choose to add fufillment to CRS data for demo -->
+    <product-addon id="fulfillment">
+      <title resource-key="">Fulfillment</title>
+    </product-addon>
+
+    <!-- Choose to add recommendations to CRS data for demo -->
+    <product-addon id="recommendations">
+      <title resource-key="">Oracle Recommendations On Demand Integration</title>
+      <modify-server-instance-type id="production">
+        <append-module name="Store.Recommendations"/>
+      </modify-server-instance-type>
+      <modify-server-instance-type id="staging">
+        <append-module name="Store.Recommendations"/>
+      </modify-server-instance-type> 
+    </product-addon>
+
+    <!-- RightNow addon -->
+    <product-addon id="rightNow-knowledgeBase">
+      <title resource-key="">RightNow KnowledgeBase</title>
+    </product-addon>
+
+    <!-- ClickToCall store addon -->
+    <product-addon id="clicktocall">
+      <title resource-key="">ClickToCall Integration</title>
+      <modify-server-instance-type id="production">
+        <append-module name="DCS.ClickToConnect"/>
+      </modify-server-instance-type>
+      <modify-server-instance-type id="staging">
+        <append-module name="DCS.ClickToConnect"/>
+      </modify-server-instance-type>
+    </product-addon>
+
+    <!-- Mobile store addon -->
+    <product-addon id="mobileCRS">
+      <title resource-key="">Mobile Reference Store</title>
+      <modify-server-instance-type id="production">
+        <append-module name="Store.Mobile"/>
+      </modify-server-instance-type>
+      <modify-server-instance-type id="staging">
+        <append-module name="Store.Mobile"/>
+      </modify-server-instance-type>
+      <modify-server-instance-type id="management">
+        <append-module name="Store.Mobile"/>
+        <append-module name="Store.Mobile.Versioned"/>
+      </modify-server-instance-type>
+    </product-addon>
+  </product-addon-group>
+  <!-- end CRS addons - Additional options to choose for the CRS setup -->
+
+  <!-- Automatically add endecca international if endecca and CRS international option selected --> 
+  <product-addon-group id="endeca-international" min-occurs="1" max-occurs="1">
+    <title>Endeca International</title>
+    <requires-product-addon id="international"/>
+    <requires-product-addon id="endeca"/>
+
+    <product-addon id="endeca-international">
+	    <title>Endeca International</title>
+		<modify-server-instance-type id="management">
+          <append-module name="Store.Endeca.International"/>
+        </modify-server-instance-type> 
+	    <modify-server-instance-type id="production">
+		  <append-module name="Store.Endeca.International"/>         
+	    </modify-server-instance-type>
+	    <modify-server-instance-type id="staging">
+		  <append-module name="Store.Endeca.International"/>         
+	    </modify-server-instance-type>
+	    <modify-server-instance-type id="externalpreview">
+		  <append-module name="Store.Endeca.International"/>         
+	    </modify-server-instance-type>
+	    <modify-server-instance-type id="svcagent">
+		  <append-module name="Store.Endeca.International"/>         
+	    </modify-server-instance-type>
+    </product-addon>
+  </product-addon-group>
+  
+  <!-- Automatically add CSC setup if CSC and Commerce CSC options selected --> 
+  <product-addon-group id="dcs-csr" min-occurs="1" max-occurs="1">
+    <title>DCS-CSR</title>
+    <product-id-required id="commerceservicecenter" />
+    <product-addon id="dcs-csr">
+      <title resource-key="dcs-csr">DCS-CSR</title>
+
+      <modify-server-instance-type id="svcagent">
+        <prepend-module name="Store.EStore" />
+        <append-module name="DCS.PublishingAgent"/>
+        <append-module name="Store.DCS-CSR"/>
+      </modify-server-instance-type>
+    </product-addon>
+  </product-addon-group>
+  
+  <!-- Storefront demo addons - Additional options to choose for the storefront demo e.g fluoroscope --> 
+  <product-addon-group id="storefront_options"  max-occurs="2" min-occurs="-1">
+    <title>Choose Storefront AddOns:</title>
+    <requires-product-addon id="storefront_demo"/>
+    
+    <product-addon id="storefront_no_publishing">
+      <title resource-key="">Storefront Without Publishing</title>
+
+      <modify-server-instance-type id="production">
+        <append-module name="Store.Storefront.NoPublishing"/>
+      </modify-server-instance-type>
+
+      <modify-server-instance-type id="staging">
+        <append-module name="Store.Storefront.NoPublishing"/>
+      </modify-server-instance-type>
+
+    </product-addon>
+    
+    <product-addon id="fluoroscope">
+      <title resource-key="">Inspect Application</title>
+      <modify-server-instance-type id="production">
+        <append-module name="Store.Fluoroscope"/>
+      </modify-server-instance-type>
+      <modify-server-instance-type id="staging">
+        <append-module name="Store.Fluoroscope"/>
+      </modify-server-instance-type>
+    </product-addon>
+  </product-addon-group>
+
+  <!-- Storefront Data loading addons - choose what data to start demo with --> 
+  <product-addon-group id="store-sampledata" min-occurs="1" max-occurs="1">
+    <title>Choose Storefront Sample Data Configuration:</title>
+    <requires-product-addon id="storefront_demo"/>
+
+    <product-addon id="storefront-full-setup">
+      <title resource-key="">Full</title>
+      <detail resource-key="">Populated product catalog, users, orders, promotions, etc.</detail>
+    </product-addon>
+
+    <product-addon id="storefront-basic-setup">
+      <title resource-key="">Minimal</title>
+      <detail resource-key="">Empty product catalog and minimum data required for startup</detail>
+    </product-addon>
+  </product-addon-group>
+
+  <!-- Storefront fufillment addons - Additional options to choose for the fulfillment --> 
+  <product-addon-group id="store_fufillment"  min-occurs="1" max-occurs="1">  
+
+    <title>Choose ATG Commerce Reference Store Fulfillment AddOns :</title>
+    <requires-product-addon id="fulfillment"/>
+      <product-addon id="fulfillment_using_atg">
+        <title resource-key=""> Fulfillment using ATG Platform</title>
+        <detail resource-key="">Manages order fulfillment using the ATG Platform</detail>
+        
+        <modify-server-instance-type id="production">
+          <append-module name="Store.Fulfillment"/>         
+        </modify-server-instance-type>        
+        
+        <modify-server-instance-type id="staging">
+          <append-module name="Store.Fulfillment"/>         
+        </modify-server-instance-type>   
+      </product-addon>      
+
+  </product-addon-group>
+
+  <!-- Rightnow addon - Additional setup when RightNow and international is selected --> 
+  <product-addon-group id="store_rightnow_i18n"
+    min-occurs="1" max-occurs="1">
+
+    <title>Choose ATG Commerce Reference Store RightNow AddOns :</title>
+    <requires-product-addon id="rightNow-knowledgeBase" />
+    <requires-product-addon id="international" />
+    <product-addon id="rightNow-knowledgeBase-i18n">
+      <title resource-key="">RightNow (International)</title>
+      <detail resource-key="">The international data for RightNow</detail>
+
+      <modify-server-instance-type id="production">
+        <prepend-module name="Store.EStore.International" />
+        <append-module name="Store.KnowledgeBase.International" />
+      </modify-server-instance-type>
+
+      <modify-server-instance-type id="staging">
+        <prepend-module name="Store.EStore.International" />
+        <append-module name="Store.KnowledgeBase.International" />
+      </modify-server-instance-type>
+
+      <modify-server-instance-type id="management">
+        <append-module name="Store.KnowledgeBase.International" />
+      </modify-server-instance-type>
+
+    </product-addon>
+  </product-addon-group>
+
+  <!-- Rightnow addon - Additional setup when RightNow but not international is selected --> 
+  <product-addon-group id="store_rightnow"
+    min-occurs="1" max-occurs="1">
+
+    <title>Choose ATG Commerce Reference Store RightNow AddOns :</title>
+    <requires-product-addon id="rightNow-knowledgeBase" />
+    <incompatible-addon-id id="international" />
+    <product-addon id="rightNow-knowledgeBase-non-i18n">
+      <title resource-key="">RightNow (Non-International)</title>
+      <detail resource-key="">The non-international version of the RightNow data</detail>
+
+      <modify-server-instance-type id="production">
+        <prepend-module name="Store.EStore" />
+        <append-module name="Store.KnowledgeBase" />
+      </modify-server-instance-type>
+
+      <modify-server-instance-type id="staging">
+        <prepend-module name="Store.EStore" />
+        <append-module name="Store.KnowledgeBase" />
+      </modify-server-instance-type>
+
+      <modify-server-instance-type id="management">
+        <append-module name="Store.KnowledgeBase" />
+      </modify-server-instance-type>
+
+    </product-addon>
+  </product-addon-group>
+
+  <!-- Recommendations addon - Additional setup when Recommendations is selected for CRS demo --> 
+  <product-addon-group id="recommendations-retailer" min-occurs="1" max-occurs="1">
+    <title>Choose Oracle Recommendations On Demand account:</title>
+    <requires-product-addon id="recommendations"/>
+
+    <product-addon id="demo-retailer">
+      <title resource-key="">Use Recommendations demonstration account</title>
+    </product-addon>
+
+    <product-addon id="custom-retailer">
+      <title resource-key="">Enter retailer ID for a specific account</title>
+    </product-addon>
+  </product-addon-group>
+  
+  <!-- ClickToCall retailer id options -->
+  <product-addon-group id="clicktocall-retailer" min-occurs="1" max-occurs="1">
+    <title>Choose ClickToCall account:</title>
+    <requires-product-addon id="clicktocall"/>
+
+    <product-addon id="demo-c2c-retailer">
+      <title resource-key="">Use Click To Call demonstration account</title>
+    </product-addon>
+
+    <product-addon id="custom-c2c-retailer">
+      <title resource-key="">Enter Webcare account Id.</title>
+    </product-addon>
+  </product-addon-group>
+
+
+  <!-- Mobile Native Apps Server Module -->
+  <product-addon-group id="mobilecommerce" min-occurs="0" max-occurs="1">
+    <title resource-key="">Mobile Reference Store Web Services</title>
+    <requires-product-addon id="mobileCRS"/>  
+
+    <product-addon id="mobilecommerce-REST">
+      <title resource-key="">REST Web Services for Native Applications</title>
+      <modify-server-instance-type id="production" >
+    		<append-module name="Store.Mobile.REST"/>
+      </modify-server-instance-type>
+      <modify-server-instance-type id="staging" >
+    		<append-module name="Store.Mobile.REST"/>
+      </modify-server-instance-type>
+      <modify-server-instance-type id="management" >
+    		<append-module name="Store.Mobile.REST.Versioned"/>
+      </modify-server-instance-type>
+    </product-addon>
+  </product-addon-group>
+
+  <product-addon-group id="mobileCRS-recommendations" min-occurs="1" max-occurs="1">
+    <title>Mobile Recommendations</title>
+    <requires-product-addon id="recommendations"/>
+    <requires-product-addon id="mobileCRS"/>
+
+    <product-addon id="mobileCRS-recommendations">
+	    <title>Mobile Recommendations</title>
+      <modify-server-instance-type id="production">
+          <append-module name="Store.Mobile.Recommendations"/>         
+      </modify-server-instance-type>
+      <modify-server-instance-type id="staging">
+          <append-module name="Store.Mobile.Recommendations"/>         
+      </modify-server-instance-type>
+    </product-addon>
+  </product-addon-group>
+
+  <product-addon-group id="mobileCRS-international" min-occurs="1" max-occurs="1">
+    <title>Mobile International</title>
+    <requires-product-addon id="international"/>
+    <requires-product-addon id="mobileCRS"/>
+
+    <product-addon id="mobileCRS-international">
+	    <title>Mobile International</title>
+      <modify-server-instance-type id="production">
+          <append-module name="Store.Mobile.International"/>         
+      </modify-server-instance-type>
+      <modify-server-instance-type id="staging">
+          <append-module name="Store.Mobile.International"/>         
+      </modify-server-instance-type>
+    </product-addon>
+  </product-addon-group>
+  
+  <!-- End Mobile addons -->
+ 
+  <!-- CSC combo - Additional setup when CSC and international has been selected --> 
+  <product-addon-combo id="store-agent-International">
+    <combo-product-addon id="international"/>
+    <combo-product-addon id="dcs-csr"/>
+    
+    <modify-server-instance-type id="svcagent">
+      <append-module name="Store.EStore.International" before="DCS-CSR-UI"/>
+    </modify-server-instance-type>  
+
+    <modify-server-instance-type id="svcagent">
+      <append-module name="Store.DCS-CSR.International"/>
+    </modify-server-instance-type>  
+
+  </product-addon-combo>
+
+  <!-- CSC combo - Additional setup when CSC and CRS has been selected --> 
+  <product-addon-combo id="store-agent-storefront_demo">
+    <combo-product-addon id="storefront_demo"/>
+    <combo-product-addon id="dcs-csr"/>
+    
+    <modify-server-instance-type id="svcagent">
+      <append-module name="Store.Storefront" before="DCS-CSR-UI"/>
+    </modify-server-instance-type>  
+  </product-addon-combo>
+
+  <!-- CSC combo - Additional setup when CSC and Storefront Without Publishing has been selected --> 
+  <product-addon-combo id="store-agent-storefront_no_publishing">
+    <combo-product-addon id="storefront_no_publishing"/>
+    <combo-product-addon id="dcs-csr"/>
+    
+    <modify-server-instance-type id="svcagent">
+      <append-module name="Store.Storefront.NoPublishing" before="DCS-CSR-UI"/>
+    </modify-server-instance-type>  
+  </product-addon-combo>
+
+  <!-- Non Switching DS combo - Additional setup when Non-switching DS has been selected --> 
+  <product-addon-combo id="store-nonswitchingdatasource">
+    <combo-product-addon id="nonswitchingdatasource"/>
+
+    <modify-server-instance-type id="production">
+      <append-module name="Store.EStore" before="DCS-ABTest.runtime"/>
+    </modify-server-instance-type>
+
+    <modify-server-instance-type id="staging">
+      <append-module name="Store.EStore" before="DCS-ABTest.runtime"/>
+    </modify-server-instance-type>
+  </product-addon-combo>  
+  
+  <!-- Preview combo - Additional setup when Preview has been selected -->
+
+  <!-- External preview server plus CRS International has been selected -->
+  <product-addon-combo id="store-externalPreview-International">
+    <combo-product-addon id="externalPreviewServer"/>
+    <combo-product-addon id="international"/>    
+  </product-addon-combo>
+  
+  <!-- External preview server plus Storefront has been selected -->
+  <product-addon-combo id="store-externalPreviewStorefront">
+    <combo-product-addon id="externalPreviewServer"/>
+    <combo-product-addon id="storefront_demo"/>
+  </product-addon-combo>  
+
+  <!-- External preview server base setup -->
+  <product-addon-combo id="store-externalPreview">
+    <combo-product-addon id="externalPreviewServer"/>
+    
+    <modify-server-instance-type id="externalpreview">
+      <prepend-module name="Store.EStore.Versioned"/>
+      <remove-module name="DCS.Versioned"/>       
+    </modify-server-instance-type>
+  </product-addon-combo>  
+  
+  <!-- Preview on management(publishing) server plus Storefront has been selected ??why remove??-->
+  <product-addon-combo id="storefront-preview">
+    <combo-product-addon id="publishing_previewOnManagement"/>
+    <combo-product-addon id="storefront_demo"/>
+  
+    <modify-server-instance-type id="management_db">
+      <remove-module name="Store.Storefront"/>
+    </modify-server-instance-type>
+  </product-addon-combo>    
+
+  <!-- End Preview combo --> 
+
+  <!-- CRS DataWarehouse combo --> 
+
+  <product-addon-combo id="storefront-datawarehouse">
+     <combo-product-addon id="reporting"/>
+    <combo-product-addon id="storefront_demo"/>
+
+    <modify-server-instance-type id="datawarehouse_loader">
+      <append-module name="Store.EStore"/>
+    </modify-server-instance-type>
+  </product-addon-combo>
+
+  <product-addon-combo id="storefront-datawarehouse-international">
+    <combo-product-addon id="reporting"/>
+    <combo-product-addon id="storefront_demo"/>
+    <combo-product-addon id="international"/>
+
+    <modify-server-instance-type id="datawarehouse_loader">
+      <append-module name="Store.EStore.International"/>
+    </modify-server-instance-type>
+  </product-addon-combo>
+
+  <product-addon-combo id="storefront-datawarehouse-sampledata">
+    <combo-product-addon id="reporting"/>
+    <combo-product-addon id="storefront_demo"/>
+
+    <modify-server-instance-type id="datawarehouse">
+      <append-module name="Store.Storefront"/>
+    </modify-server-instance-type>
+  </product-addon-combo>
+
+  <!-- End CRS DataWarehouse combo --> 
+
+  <!-- Recommendations combo - Additional setup when recommendations and CRS International has been selected --> 
+  <product-addon-combo id="recommendations-international">
+    <combo-product-addon id="international"/>
+    <combo-product-addon id="recommendations"/>
+
+    <modify-server-instance-type id="production">
+      <append-module name="Store.Recommendations.International"/>
+    </modify-server-instance-type>  
+
+    <modify-server-instance-type id="staging">
+      <append-module name="Store.Recommendations.International"/>
+    </modify-server-instance-type>
+  </product-addon-combo>
+  
+  <!-- NoPublishing combo - Additional setup when Storefront Without Publishing and CRS International is selected --> 
+  <product-addon-combo id="storefront_no_publishing-international">
+    <combo-product-addon id="storefront_no_publishing"/>
+    <combo-product-addon id="international"/>
+    
+    <modify-server-instance-type id="production">
+      <append-module name="Store.Storefront.NoPublishing.International"/>
+    </modify-server-instance-type>
+    
+    <modify-server-instance-type id="staging">
+      <append-module name="Store.Storefront.NoPublishing.International"/>
+    </modify-server-instance-type>
+  </product-addon-combo>
+
+  <!-- End Mobile combo --> 
+
+  <!-- server instance types -->
+  <server-instance-type id="management">
+    <title resource-key="StoreCommerceCAServer.name">Publishing Server</title>
+    <detail resource-key="StoreCommerceCAServer.detail"/>
+
+    <append-module name="DCS-UI"/>
+    <append-module name="Store.EStore.Versioned"/>
+    <append-module name="Store.Storefront" before="DCS-ABTest.runtime,ABTest.runtime"/> 
+    
+    <config-directory>
+      <property-file file="/atg/dynamo/service/jdbc/DirectJTDataSource.properties">
+        <property-group id="base">
+          <property name="className">
+            <value>atg.nucleus.JNDIReference</value>
+          </property>
+          <property name="JNDIName">
+            <value>${AppServerPortsProvider.jndiPrefix}${NamedDatasource[management].datasourceValue.jndiName}</value>
+          </property>
+        </property-group>
+      </property-file>
+      <property-file file="/atg/dynamo/service/jdbc/DirectJTDataSource_production.properties">
+        <property-group id="base">
+          <property name="className">
+            <value>atg.nucleus.JNDIReference</value>
+          </property>
+        </property-group>
+        <property-group id="nonswitching">
+          <requires-addon-id id="nonswitchingdatasource"/>
+          <property name="JNDIName">
+            <value>${AppServerPortsProvider.jndiPrefix}${NamedDatasource[nonswitchingCore].datasourceValue.jndiName}</value>
+          </property>
+        </property-group>
+        <property-group id="switching">
+          <requires-addon-id id="switchingdatasource"/>
+          <property name="JNDIName">
+            <value>${AppServerPortsProvider.jndiPrefix}${NamedDatasource[switchingCore].datasourceValue.jndiName}</value>
+          </property>
+        </property-group>
+      </property-file>
+      <property-file file="/atg/dynamo/service/jdbc/DirectJTDataSource_staging.properties">
+        <property-group id="staging">
+          <requires-addon-id id="staging"/>
+          <property name="className">
+            <value>atg.nucleus.JNDIReference</value>
+          </property>
+          <property name="JNDIName">
+            <value>${AppServerPortsProvider.jndiPrefix}${NamedDatasource[stagingnonswitchingCore].datasourceValue.jndiName}</value>
+          </property>
+        </property-group>
+      </property-file>
+
+      <property-file file="/atg/store/stores/StoreTextRepository_production.properties">
+        <property-group id="nonswitching">
+          <requires-addon-id id="nonswitchingdatasource"/>
+          <property name="dataSource">
+            <value>/atg/dynamo/service/jdbc/JTDataSource_production</value>
+          </property>
+        </property-group>
+      </property-file>
+      <property-file file="/atg/commerce/pricing/priceLists/PriceLists_production.properties">
+        <property-group id="nonswitching">
+          <requires-addon-id id="nonswitchingdatasource"/>
+          <property name="dataSource">
+            <value>/atg/dynamo/service/jdbc/JTDataSource_production</value>
+          </property>
+        </property-group>
+      </property-file>
+      
+      <property-file file="/atg/commerce/catalog/ProductCatalog_production.properties">
+        <property-group id="basic">
+          <requires-addon-id id="nonswitchingdatasource"/>
+          <property name="dataSource">
+            <value>/atg/dynamo/service/jdbc/JTDataSource_production</value>
+          </property>
+        </property-group>
+      </property-file>
+        
+      <property-file file="moduleList.properties">
+        <property-group id="base">
+          <property name="modules">
+            <value>${ServerInstanceType[management].calculatedModuleString}</value>
+          </property>
+        </property-group>
+      </property-file>
+
+      <property-file file="/atg/store/stores/StoreTextRepository_production.properties">
+        <property-group id="switchingonly">
+          <requires-addon-id id="switchingdatasource" />
+          <property name="dataSource">
+            <value>/atg/dynamo/service/jdbc/SwitchingDataSource</value>
+          </property>
+        </property-group>
+      </property-file>
+
+      <property-file file="/atg/dynamo/service/preview/Localhost.properties">
+        <property-group id="base">
+          <requires-addon-id id="preview"/>
+          <property name="hostName">
+            <value>localhost</value>
+              <input type="text">
+                <label>Enter Local Preview Hostname</label>
+                <validator id="NoWhiteSpaceInputValidator">
+                  <error-message>Hostname cannot contain whitespace</error-message>
+                </validator>
+              </input>
+          </property>
+          <property name="port">
+            <value>8080</value>
+              <input type="text">
+                <label>Enter Local Preview Host Port</label>
+                <validator id="PortNumberInputValidator">
+                  <error-message>Invalid port number</error-message>
+                </validator>
+              </input>
+          </property>
+        </property-group>
+      </property-file>
+      
+      <!-- Endeca  -->
+      <property-file file="/atg/endeca/ApplicationConfiguration.properties">
+        <property-group id="endeca">
+          <property name="baseApplicationName">
+            <value>CRS</value>          
+            <input type="text">
+              <validator id="CannotBeBlankValidator">
+                <error-message>App Name cannot be blank</error-message>
+              </validator>
+            </input>
+          </property>
+          <property name="workbenchHostName">
+            <value></value>
+            <input type="text">
+              <label>Enter the Fully-qualified Workbench Hostname, Including Domain</label>
+              <validator id="CannotBeBlankValidator">
+                <error-message>Workbench Hostname cannot be blank</error-message>
+              </validator>
+              <validator id="NoWhiteSpaceInputValidator">
+                <error-message>Workbench Hostname cannot contain whitespace</error-message>
+              </validator>
+            </input>
+          </property>
+          <property name="workbenchPort">
+            <value>8006</value>
+            <input type="text">
+              <label>Enter Workbench Port Number</label>
+              <validator id="PortNumberInputValidator">
+                <error-message>Invalid port number</error-message>
+              </validator>
+            </input>
+          </property>       
+        </property-group>   
+      </property-file>     
+      
+      <property-file file="/atg/endeca/assembler/AssemblerApplicationConfiguration.properties">
+        <property-group id="endeca">
+          <property name="defaultMdexHostName">
+            <value>localhost</value>
+            <input type="text">
+              <label>Enter Default MDEX Host Name</label>
+              <validator id="NoWhiteSpaceInputValidator">
+                <error-message>Hostname cannot contain whitespace</error-message>
+              </validator>
+            </input>
+          </property>
+          <property name="defaultMdexPort">
+            <value>15000</value>
+            <input type="text">
+              <label>Enter Default MDEX Port Number</label>
+              <validator id="PortNumberInputValidator">
+                <error-message>Invalid port number</error-message>
+              </validator>
+            </input>
+          </property>
+        </property-group>
+      </property-file>       
+
+    </config-directory>
+    
+    <optional-config-directory id="edeca-deploy">
+      <title>Deploy CRS Endeca Application</title>  
+     
+      <step id="CRSEndecaDeployConfigStep">
+       
+        <navoption id="endecaPreview">
+          <label>Endeca App Configuration with Experience Manager Preview</label>
+          <command type="EXECUTE_NEXT"/>
+        </navoption>
+        
+        <navoption id="noEndecaPreview">
+          <label>Endeca App Configuration without Experience Manager Preview</label>
+          <command type="GOTO_STEP" value="CRSEndecaDeployNoPreviewStep"/>
+        </navoption>
+      </step>
+                
+      <!-- Steps for Endeca App configuration with Experience Manager Preview  -->          
+      <step id="CRSEndecaDeployStep">
+        <title>Deploy CRS Endeca App</title>        
+        <task id="EndecaCRSDeployConfigWriterTask"/>
+        <task id="CRSEndecaDeployTask"/>
+        <navoption id="deploy">
+          <label>Deploy</label>
+          <command type="EXECUTE_NEXT"/>
+        </navoption>
+        <navoption id="skip">
+          <label>Skip</label>
+          <command type="NEXT_STEP"/>
+        </navoption>
+      </step>
+      
+      <step id="MobileCRSEndecaDeployStep">
+        <title>Deploy CRS Mobile Endeca App</title>
+        <task id="EndecaMobileCRSDeployConfigWriterTask"/>
+        <task id="MobileCRSEndecaDeployTask"/>
+        <navoption id="deploy">
+          <label>Deploy</label>
+          <command type="EXECUTE_NEXT"/>
+        </navoption>
+        <navoption id="skip">
+          <label>Skip</label>
+          <command type="NEXT_STEP"/>
+        </navoption>
+        <validator id="MobileCRSEnabledValidator" phase="PRESTEP">
+          <if-false>
+            <command type="NEXT_STEP"/>
+          </if-false>
+        </validator>
+      </step>
+      
+       <step id="InitializeCRSEndecaAppStep">
+        <title>Initialize CRS Endeca App</title>
+        <task id="EndecaInitializeTask"/>
+        <navoption id="deploy">
+          <label>Initialize</label>
+          <command type="EXECUTE_STEP_TASKS"/>
+          <command type="GOTO_STEP" value="FinishedDeploy"/>
+        </navoption>
+        <navoption id="skip">
+          <label>Skip</label>
+          <command type="GOTO_STEP" value="FinishedDeploy"/>
+        </navoption>
+      </step>
+      
+      <!-- Steps for Endeca App configuration without Experience Manager Preview  -->      
+      <step id="CRSEndecaDeployNoPreviewStep">
+        <title>Deploy CRS Endeca App</title>        
+        <task id="EndecaCRSDeployNoPreviewConfigWriterTask"/>
+        <task id="CRSEndecaDeployTask"/>
+        <navoption id="deploy">
+          <label>Deploy</label>
+          <command type="EXECUTE_NEXT"/>
+        </navoption>
+        <navoption id="skip">
+          <label>Skip</label>
+          <command type="NEXT_STEP"/>
+        </navoption>
+      </step>
+      
+      <step id="MobileCRSEndecaDeployNoPreviewStep">
+        <title>Deploy CRS Mobile Endeca App</title>
+        <task id="EndecaMobileCRSDeployNoPreviewConfigWriterTask"/>
+        <task id="MobileCRSEndecaDeployTask"/>
+        <navoption id="deploy">
+          <label>Deploy</label>
+          <command type="EXECUTE_NEXT"/>
+        </navoption>
+        <navoption id="skip">
+          <label>Skip</label>
+          <command type="NEXT_STEP"/>
+        </navoption>
+        <validator id="MobileCRSEnabledValidator" phase="PRESTEP">
+          <if-false>
+            <command type="NEXT_STEP"/>
+          </if-false>
+        </validator>
+      </step>
+      
+       <step id="InitializeCRSEndecaAppNoPreviewStep">
+        <title>Initialize CRS Endeca App</title>
+        <task id="EndecaInitializeNoPreviewTask"/>
+        <navoption id="deploy">
+          <label>Initialize</label>
+          <command type="EXECUTE_NEXT"/>
+        </navoption>
+        <navoption id="skip">
+          <label>Skip</label>
+          <command type="GOTO_STEP" value="FinishedDeploy"/>
+        </navoption>
+      </step>     
+      
+      <step id="FinishedDeploy">
+        <validator id="AlwaysTrueValidator" phase="PRESTEP">
+           <if-true>
+              <command type="NEXT_STEP" />
+           </if-true>
+          </validator>
+      </step>
+    </optional-config-directory>
+
+  </server-instance-type>     
+
+
+  <server-instance-type id="production" >
+
+    <title resource-key="StoreCommerceProductionServer.name">Production Server</title>
+    <detail/>
+
+    <append-module name="DCS.AbandonedOrderServices"/>
+
+    <config-directory>
+      <property-file file="moduleList.properties">
+        <property-group id="base">
+          <property name="modules">
+            <value>${ServerInstanceType[production].calculatedModuleString}</value>
+          </property>
+        </property-group>
+      </property-file>
+      
+      <property-file file="/atg/commerce/catalog/ProductCatalog.properties">
+        <property-group id="nonswitching">
+          <requires-addon-id id="nonswitchingdatasource"/>
+          <property name="dataSource">
+            <value>/atg/dynamo/service/jdbc/JTDataSource</value>
+          </property>
+        </property-group>
+      </property-file>
+      
+      <property-file file="/atg/store/stores/StoreTextRepository.properties">
+        <property-group id="nonswitching">
+          <requires-addon-id id="nonswitchingdatasource"/>
+          <property name="dataSource">
+            <value>/atg/dynamo/service/jdbc/JTDataSource</value>
+          </property>
+        </property-group>
+        <property-group id="switching">
+          <requires-addon-id id="switchingdatasource"/>
+          <property name="dataSource">
+            <value>/atg/dynamo/service/jdbc/SwitchingDataSource</value>
+          </property>
+        </property-group>
+      </property-file>
+
+      <property-file file="/atg/commerce/pricing/priceLists/PriceLists.properties">
+        <property-group id="nonswitching">
+          <requires-addon-id id="nonswitchingdatasource"/>
+          <property name="dataSource">
+            <value>/atg/dynamo/service/jdbc/JTDataSource</value>
+          </property>
+        </property-group>
+      </property-file>
+
+
+      <property-file file="atg/dynamo/service/jdbc/DirectJTDataSource.properties">
+        <property-group id="base">
+          <property name="className">
+            <value>atg.nucleus.JNDIReference</value>
+          </property>
+        </property-group>
+        <property-group id="nonswitching">
+          <requires-addon-id id="nonswitchingdatasource"/>
+          <property name="JNDIName">
+            <value>${AppServerPortsProvider.jndiPrefix}${NamedDatasource[nonswitchingCore].datasourceValue.jndiName}</value>
+          </property>
+        </property-group>
+        <property-group id="switching">
+          <requires-addon-id id="switchingdatasource"/>
+          <property name="JNDIName">
+            <value>${AppServerPortsProvider.jndiPrefix}${NamedDatasource[switchingCore].datasourceValue.jndiName}</value>
+          </property>
+        </property-group>
+      </property-file>
+
+      <property-file file="/atg/multisite/DefaultSiteRuleFilter.properties">
+        <property-group id="basic-setup">
+          <requires-addon-id id="storefront-basic-setup"/>
+          <property name="defaultSiteId">
+            <value>basicSite</value>
+          </property>
+        </property-group>
+      </property-file>
+
+      <property-file file="/atg/store/recommendations/StoreRecommendationsConfiguration.properties">
+        <property-group id="base">
+          <requires-addon-id id="custom-retailer"/>
+          <property name="retailerId">
+            <input type="text">
+              <label>Enter Retailer ID</label>
+              <validator id="NoWhiteSpaceInputValidator">
+                <error-message>Retailer ID cannot contain whitespace</error-message>
+              </validator>
+            </input>
+          </property>
+        </property-group>
+      </property-file>
+      
+      <!-- ClickToCall custom-c2c-retailer account information -->
+      <property-file file="/atg/clicktoconnect/Configuration.properties">
+        <property-group id="base">
+          <requires-addon-id id="custom-c2c-retailer"/>
+          <property name="accountId" persist-key="c2c.accountId">
+            <input type="text">
+              <label>Enter Webcare Account Id</label>
+              <validator id="NoWhiteSpaceInputValidator">
+                <error-message>Account ID cannot contain whitespace</error-message>
+              </validator>
+            </input>
+          </property>
+        </property-group>
+      </property-file>
+      
+      <!-- ClickToCall demo-c2c-retailer account information -->
+      <property-file file="/atg/clicktoconnect/Configuration.properties">
+        <property-group id="base">
+          <requires-addon-id id="demo-c2c-retailer"/>
+          <property name="accountId">
+            <value>200106301954</value>
+          </property>
+        </property-group>
+      </property-file>
+      
+      <!-- Endeca  -->
+      
+      <property-file file="/atg/endeca/ApplicationConfiguration.properties">
+        <property-group id="endeca">
+          <property name="baseApplicationName">
+            <value>CRS</value>          
+            <input type="text">
+              <validator id="CannotBeBlankValidator">
+                <error-message>App Name cannot be blank</error-message>
+              </validator>
+            </input>
+          </property>
+          <property name="workbenchHostName">
+            <value></value>
+            <input type="text">
+              <label>Enter the Fully-qualified Workbench Hostname, Including Domain</label>
+              <validator id="CannotBeBlankValidator">
+                <error-message>Workbench Hostname cannot be blank</error-message>
+              </validator>
+              <validator id="NoWhiteSpaceInputValidator">
+                <error-message>Workbench Hostname cannot contain whitespace</error-message>
+              </validator>
+            </input>
+          </property>
+          <property name="workbenchPort">
+            <value>8006</value>
+            <input type="text">
+              <label>Enter Workbench Port Number</label>
+              <validator id="PortNumberInputValidator">
+                <error-message>Invalid port number</error-message>
+              </validator>
+            </input>
+          </property>     
+        </property-group>   
+      </property-file>     
+      
+      <property-file file="/atg/endeca/assembler/AssemblerApplicationConfiguration.properties">
+        <property-group id="endeca">
+          <property name="defaultMdexHostName">
+            <value>localhost</value>
+            <input type="text">
+              <label>Enter Default MDEX Host Name</label>
+              <validator id="NoWhiteSpaceInputValidator">
+                <error-message>Hostname cannot contain whitespace</error-message>
+              </validator>
+            </input>
+          </property>
+          <property name="defaultMdexPort">
+            <value>15000</value>
+            <input type="text">
+              <label>Enter Default MDEX Port Number</label>
+              <validator id="PortNumberInputValidator">
+                <error-message>Invalid port number</error-message>
+              </validator>
+            </input>
+          </property>
+        </property-group>
+      </property-file>  
+
+    </config-directory>
+    <optional-config-directory id="edeca-deploy">
+      <title>Deploy CRS Endeca Application</title>  
+     
+      <step id="CRSEndecaDeployConfigStep">
+       
+        <navoption id="endecaPreview">
+          <label>Endeca App Configuration with Experience Manager Preview</label>
+          <command type="EXECUTE_NEXT"/>
+        </navoption>
+        
+        <navoption id="noEndecaPreview">
+          <label>Endeca App Configuration without Experience Manager Preview</label>
+          <command type="GOTO_STEP" value="CRSEndecaDeployNoPreviewStep"/>
+        </navoption>
+      </step>
+                
+      <!-- Steps for Endeca App configuration with Experience Manager Preview  -->          
+      <step id="CRSEndecaDeployStep">
+        <title>Deploy CRS Endeca App</title>        
+        <task id="EndecaCRSDeployConfigWriterTask"/>
+        <task id="CRSEndecaDeployTask"/>
+        <navoption id="deploy">
+          <label>Deploy</label>
+          <command type="EXECUTE_NEXT"/>
+        </navoption>
+        <navoption id="skip">
+          <label>Skip</label>
+          <command type="NEXT_STEP"/>
+        </navoption>
+      </step>
+      
+      <step id="MobileCRSEndecaDeployStep">
+        <title>Deploy CRS Mobile Endeca App</title>
+        <task id="EndecaMobileCRSDeployConfigWriterTask"/>
+        <task id="MobileCRSEndecaDeployTask"/>
+        <navoption id="deploy">
+          <label>Deploy</label>
+          <command type="EXECUTE_NEXT"/>
+        </navoption>
+        <navoption id="skip">
+          <label>Skip</label>
+          <command type="NEXT_STEP"/>
+        </navoption>
+        <validator id="MobileCRSEnabledValidator" phase="PRESTEP">
+          <if-false>
+            <command type="NEXT_STEP"/>
+          </if-false>
+        </validator>
+      </step>
+      
+       <step id="InitializeCRSEndecaAppStep">
+        <title>Initialize CRS Endeca App</title>
+        <task id="EndecaInitializeTask"/>
+        <navoption id="deploy">
+          <label>Initialize</label>
+          <command type="EXECUTE_STEP_TASKS"/>
+          <command type="GOTO_STEP" value="FinishedDeploy"/>
+        </navoption>
+        <navoption id="skip">
+          <label>Skip</label>
+          <command type="GOTO_STEP" value="FinishedDeploy"/>
+        </navoption>
+      </step>
+      
+      <!-- Steps for Endeca App configuration without Experience Manager Preview  -->      
+      <step id="CRSEndecaDeployNoPreviewStep">
+        <title>Deploy CRS Endeca App</title>        
+        <task id="EndecaCRSDeployNoPreviewConfigWriterTask"/>
+        <task id="CRSEndecaDeployTask"/>
+        <navoption id="deploy">
+          <label>Deploy</label>
+          <command type="EXECUTE_NEXT"/>
+        </navoption>
+        <navoption id="skip">
+          <label>Skip</label>
+          <command type="NEXT_STEP"/>
+        </navoption>
+      </step>
+      
+      <step id="MobileCRSEndecaDeployNoPreviewStep">
+        <title>Deploy CRS Mobile Endeca App</title>
+        <task id="EndecaMobileCRSDeployNoPreviewConfigWriterTask"/>
+        <task id="MobileCRSEndecaDeployTask"/>
+        <navoption id="deploy">
+          <label>Deploy</label>
+          <command type="EXECUTE_NEXT"/>
+        </navoption>
+        <navoption id="skip">
+          <label>Skip</label>
+          <command type="NEXT_STEP"/>
+        </navoption>
+        <validator id="MobileCRSEnabledValidator" phase="PRESTEP">
+          <if-false>
+            <command type="NEXT_STEP"/>
+          </if-false>
+        </validator>
+      </step>
+      
+       <step id="InitializeCRSEndecaAppNoPreviewStep">
+        <title>Initialize CRS Endeca App</title>
+        <task id="EndecaInitializeNoPreviewTask"/>
+        <navoption id="deploy">
+          <label>Initialize</label>
+          <command type="EXECUTE_NEXT"/>
+        </navoption>
+        <navoption id="skip">
+          <label>Skip</label>
+          <command type="GOTO_STEP" value="FinishedDeploy"/>
+        </navoption>
+      </step>     
+      
+      <step id="FinishedDeploy">
+        <validator id="AlwaysTrueValidator" phase="PRESTEP">
+           <if-true>
+              <command type="NEXT_STEP" />
+           </if-true>
+          </validator>
+      </step>
+    </optional-config-directory>
+
+  </server-instance-type>
+  
+
+  <server-instance-type id="staging" >
+
+    <title resource-key="StoreCommerceStagingServer.name">Staging Server</title>
+    <detail/>
+
+    <append-module name="DCS.AbandonedOrderServices"/>
+    
+    <config-directory>
+      <property-file file="/atg/commerce/catalog/ProductCatalog.properties">
+        <property-group id="base">
+          <property name="dataSource">
+            <value>/atg/dynamo/service/jdbc/JTDataSource</value>
+          </property>
+        </property-group>
+      </property-file>
+      
+      <property-file file="/atg/store/stores/StoreTextRepository.properties">
+        <property-group id="base">
+          <property name="dataSource">
+            <value>/atg/dynamo/service/jdbc/JTDataSource</value>
+          </property>
+        </property-group>
+      </property-file>
+      <property-file file="/atg/commerce/pricing/priceLists/PriceLists.properties">
+        <property-group id="base">
+          <property name="dataSource">
+            <value>/atg/dynamo/service/jdbc/JTDataSource</value>
+          </property>
+        </property-group>
+      </property-file>
+      <property-file file="/atg/multisite/DefaultSiteRuleFilter.properties">
+        <property-group id="basic-setup">
+          <requires-addon-id id="storefront-basic-setup"/>
+          <property name="defaultSiteId">
+            <value>basicSite</value>
+          </property>
+        </property-group>
+      </property-file>
+
+      <property-file file="/atg/store/recommendations/StoreRecommendationsConfiguration.properties">
+        <property-group id="base">
+          <requires-addon-id id="custom-retailer"/>
+          <property name="retailerId">
+            <value>e47a35e3</value>
+            <input type="text">
+              <label>Enter Retailer Id</label>
+              <validator id="NoWhiteSpaceInputValidator">
+                <error-message>Retailer ID cannot contain whitespace</error-message>
+              </validator>
+            </input>
+          </property>
+        </property-group>
+      </property-file>
+		
+      <!-- ClickToCall custom-c2c-retailer account information -->
+      <property-file file="/atg/clicktoconnect/Configuration.properties">
+        <property-group id="base">
+          <requires-addon-id id="custom-c2c-retailer"/>
+          <property name="accountId" persist-key="c2c.accountId">
+            <input type="text">
+              <label>Enter Webcare Account Id</label>
+              <validator id="NoWhiteSpaceInputValidator">
+                <error-message>Account ID cannot contain whitespace</error-message>
+              </validator>
+            </input>
+          </property>
+        </property-group>
+      </property-file>
+      
+      <!-- ClickToCall demo-c2c-retailer account information -->
+      <property-file file="/atg/clicktoconnect/Configuration.properties">
+        <property-group id="base">
+          <requires-addon-id id="demo-c2c-retailer"/>
+          <property name="accountId">
+            <value>200106301954</value>
+          </property>
+        </property-group>
+      </property-file>
+
+      <!-- Endeca  -->
+      
+      <property-file file="/atg/endeca/ApplicationConfiguration.properties">
+        <property-group id="endeca">
+          <property name="baseApplicationName">
+            <value>CRS</value>          
+            <input type="text">
+              <validator id="CannotBeBlankValidator">
+                <error-message>App Name cannot be blank</error-message>
+              </validator>
+            </input>
+          </property>
+          <property name="workbenchHostName">
+            <value></value>
+            <input type="text">
+              <label>Enter the Fully-qualified Workbench Hostname, Including Domain</label>
+              <validator id="CannotBeBlankValidator">
+                <error-message>Workbench Hostname cannot be blank</error-message>
+              </validator>
+              <validator id="NoWhiteSpaceInputValidator">
+                <error-message>Workbench Hostname cannot contain whitespace</error-message>
+              </validator>
+            </input>
+          </property>
+          <property name="workbenchPort">
+            <value>8006</value>
+            <input type="text">
+              <label>Enter Workbench Port Number</label>
+              <validator id="PortNumberInputValidator">
+                <error-message>Invalid port number</error-message>
+              </validator>
+            </input>
+          </property>      
+        </property-group>   
+      </property-file>     
+      
+      <property-file file="/atg/endeca/assembler/AssemblerApplicationConfiguration.properties">
+        <property-group id="endeca">
+          <property name="defaultMdexHostName">
+            <value>localhost</value>
+            <input type="text">
+              <label>Enter Default MDEX Host Name</label>
+              <validator id="NoWhiteSpaceInputValidator">
+                <error-message>Hostname cannot contain whitespace</error-message>
+              </validator>
+            </input>
+          </property>
+          <property name="defaultMdexPort">
+            <value>15000</value>
+            <input type="text">
+              <label>Enter Default MDEX Port Number</label>
+              <validator id="PortNumberInputValidator">
+                <error-message>Invalid port number</error-message>
+              </validator>
+            </input>
+          </property>
+        </property-group>
+      </property-file>  
+
+    </config-directory>
+    <optional-config-directory id="edeca-deploy">
+      <title>Deploy CRS Endeca Application</title>  
+     
+      <step id="CRSEndecaDeployConfigStep">
+       
+        <navoption id="endecaPreview">
+          <label>Endeca App Configuration with Experience Manager Preview</label>
+          <command type="EXECUTE_NEXT"/>
+        </navoption>
+        
+        <navoption id="noEndecaPreview">
+          <label>Endeca App Configuration without Experience Manager Preview</label>
+          <command type="GOTO_STEP" value="CRSEndecaDeployNoPreviewStep"/>
+        </navoption>
+      </step>
+                
+      <!-- Steps for Endeca App configuration with Experience Manager Preview  -->          
+      <step id="CRSEndecaDeployStep">
+        <title>Deploy CRS Endeca App</title>        
+        <task id="EndecaCRSDeployConfigWriterTask"/>
+        <task id="CRSEndecaDeployTask"/>
+        <navoption id="deploy">
+          <label>Deploy</label>
+          <command type="EXECUTE_NEXT"/>
+        </navoption>
+        <navoption id="skip">
+          <label>Skip</label>
+          <command type="NEXT_STEP"/>
+        </navoption>
+      </step>
+      
+      <step id="MobileCRSEndecaDeployStep">
+        <title>Deploy CRS Mobile Endeca App</title>
+        <task id="EndecaMobileCRSDeployConfigWriterTask"/>
+        <task id="MobileCRSEndecaDeployTask"/>
+        <navoption id="deploy">
+          <label>Deploy</label>
+          <command type="EXECUTE_NEXT"/>
+        </navoption>
+        <navoption id="skip">
+          <label>Skip</label>
+          <command type="NEXT_STEP"/>
+        </navoption>
+        <validator id="MobileCRSEnabledValidator" phase="PRESTEP">
+          <if-false>
+            <command type="NEXT_STEP"/>
+          </if-false>
+        </validator>
+      </step>
+      
+       <step id="InitializeCRSEndecaAppStep">
+        <title>Initialize CRS Endeca App</title>
+        <task id="EndecaInitializeTask"/>
+        <navoption id="deploy">
+          <label>Initialize</label>
+          <command type="EXECUTE_STEP_TASKS"/>
+          <command type="GOTO_STEP" value="FinishedDeploy"/>
+        </navoption>
+        <navoption id="skip">
+          <label>Skip</label>
+          <command type="GOTO_STEP" value="FinishedDeploy"/>
+        </navoption>
+      </step>
+      
+      <!-- Steps for Endeca App configuration without Experience Manager Preview  -->      
+      <step id="CRSEndecaDeployNoPreviewStep">
+        <title>Deploy CRS Endeca App</title>        
+        <task id="EndecaCRSDeployNoPreviewConfigWriterTask"/>
+        <task id="CRSEndecaDeployTask"/>
+        <navoption id="deploy">
+          <label>Deploy</label>
+          <command type="EXECUTE_NEXT"/>
+        </navoption>
+        <navoption id="skip">
+          <label>Skip</label>
+          <command type="NEXT_STEP"/>
+        </navoption>
+      </step>
+      
+      <step id="MobileCRSEndecaDeployNoPreviewStep">
+        <title>Deploy CRS Mobile Endeca App</title>
+        <task id="EndecaMobileCRSDeployNoPreviewConfigWriterTask"/>
+        <task id="MobileCRSEndecaDeployTask"/>
+        <navoption id="deploy">
+          <label>Deploy</label>
+          <command type="EXECUTE_NEXT"/>
+        </navoption>
+        <navoption id="skip">
+          <label>Skip</label>
+          <command type="NEXT_STEP"/>
+        </navoption>
+        <validator id="MobileCRSEnabledValidator" phase="PRESTEP">
+          <if-false>
+            <command type="NEXT_STEP"/>
+          </if-false>
+        </validator>
+      </step>
+      
+       <step id="InitializeCRSEndecaAppNoPreviewStep">
+        <title>Initialize CRS Endeca App</title>
+        <task id="EndecaInitializeNoPreviewTask"/>
+        <navoption id="deploy">
+          <label>Initialize</label>
+          <command type="EXECUTE_NEXT"/>
+        </navoption>
+        <navoption id="skip">
+          <label>Skip</label>
+          <command type="GOTO_STEP" value="FinishedDeploy"/>
+        </navoption>
+      </step>     
+      
+      <step id="FinishedDeploy">
+        <validator id="AlwaysTrueValidator" phase="PRESTEP">
+           <if-true>
+              <command type="NEXT_STEP" />
+           </if-true>
+          </validator>
+      </step>
+    </optional-config-directory>
+  </server-instance-type>
+
+
+  <server-instance-type id="datawarehouse_loader">
+    <config-directory>
+      <property-file file="/atg/commerce/catalog/ProductCatalog.properties">
+        <property-group id="nonswitching">
+          <requires-addon-id id="nonswitchingdatasource"/>
+          <property name="dataSource">
+            <value>/atg/dynamo/service/jdbc/JTDataSource_production</value>
+          </property>
+        </property-group>
+      </property-file>
+      <property-file file="/atg/commerce/pricing/priceLists/PriceLists.properties">
+        <property-group id="reportingnonswitching">
+          <requires-addon-id id="reporting" />
+          <requires-addon-id id="nonswitchingdatasource"/>
+          <property name="dataSource">
+            <value>/atg/dynamo/service/jdbc/JTDataSource_production</value>
+          </property>
+        </property-group>
+      </property-file>
+      <property-file file="/atg/store/stores/StoreTextRepository.properties">
+        <property-group id="nonswitching">
+          <requires-addon-id id="nonswitchingdatasource"/>
+          <property name="dataSource">
+            <value>/atg/dynamo/service/jdbc/JTDataSource_production</value>
+          </property>
+        </property-group>
+        <property-group id="switchingonly">
+          <requires-addon-id id="switchingdatasource"/>
+          <property name="dataSource">
+            <value>/atg/dynamo/service/jdbc/SwitchingDataSource</value>
+          </property>
+        </property-group>
+      </property-file>
+    </config-directory>
+  </server-instance-type>
+
+  <server-instance-type id="externalpreview">
+    <append-module name="Store.EStore.Versioned"/>
+    <config-directory>
+      <property-file file="/atg/dynamo/service/jdbc/DirectJTDataSource.properties">
+        <property-group id="base">
+          <property name="JNDIName">
+            <value>${AppServerPortsProvider.jndiPrefix}${NamedDatasource[management].datasourceValue.jndiName}</value>
+          </property>
+        </property-group>
+      </property-file>
+      <property-file file="/atg/dynamo/service/jdbc/DirectJTDataSource_production.properties">
+        <property-group id="base">
+          <property name="className">
+            <value>atg.nucleus.JNDIReference</value>
+          </property>
+        </property-group>
+      </property-file>
+      <property-file file="/atg/dynamo/service/jdbc/DirectJTDataSource_staging.properties">
+        <property-group id="staging">
+          <requires-addon-id id="staging"/>
+          <property name="className">
+            <value>atg.nucleus.JNDIReference</value>
+          </property>
+          <property name="JNDIName">
+            <value>${AppServerPortsProvider.jndiPrefix}${NamedDatasource[stagingnonswitchingCore].datasourceValue.jndiName}</value>
+          </property>
+        </property-group>
+      </property-file>
+      <property-file file="/atg/store/stores/StoreTextRepository_production.properties">
+        <property-group id="nonswitching">
+          <requires-addon-id id="nonswitchingdatasource"/>
+          <property name="dataSource">
+            <value>/atg/dynamo/service/jdbc/JTDataSource_production</value>
+          </property>
+        </property-group>
+      </property-file>
+      <property-file file="/atg/commerce/pricing/priceLists/PriceLists_production.properties">
+        <property-group id="nonswitching">
+          <requires-addon-id id="nonswitchingdatasource"/>
+          <property name="dataSource">
+            <value>/atg/dynamo/service/jdbc/JTDataSource_production</value>
+          </property>
+        </property-group>
+      </property-file>
+     
+      <property-file file="/atg/commerce/catalog/ProductCatalog_production.properties">
+          <property-group id="basic">
+            <requires-addon-id id="nonswitchingdatasource"/>
+            <property name="dataSource">
+              <value>/atg/dynamo/service/jdbc/JTDataSource_production</value>
+            </property>
+          </property-group>
+        </property-file>        
+        
+        <property-file file="moduleList.properties">
+          <property-group id="base">
+            <property name="modules">
+              <value>${ServerInstanceType[management].calculatedModuleString}</value>
+            </property>
+          </property-group>
+        </property-file>
+        
+    </config-directory>
+  </server-instance-type>
+
+   <server-instance-type id="svcagent">
+    <title resource-key="AgentServer.name">ATG Agent Server</title>
+    <config-directory>
+      <property-file file="/atg/store/stores/StoreTextRepository.properties">
+        <property-group id="nonswitching">
+          <requires-addon-id id="dcs-csr"/>
+		  <requires-addon-id id="nonswitchingdatasource" />
+          <property name="dataSource">
+            <value>/atg/dynamo/service/jdbc/JTDataSource_production</value>
+          </property>
+        </property-group>
+		<property-group id="switchingonly">
+		  <requires-addon-id id="dcs-csr"/>
+          <requires-addon-id id="switchingdatasource" />
+          <property name="dataSource">
+            <value>/atg/dynamo/service/jdbc/SwitchingDataSource</value>
+          </property>
+        </property-group>
+      </property-file>
+      <property-file file="/atg/store/StoreConfiguration.properties">
+        <property-group id="base">
+          <property name="siteHttpServerName" persist-key="productionServerSiteHttpServerName">
+            <input type="text">
+              <label>Enter Production Server Hostname</label>
+              <validator id="NoWhiteSpaceInputValidator">
+                <error-message>Hostname cannot contain whitespace</error-message>
+              </validator>
+            </input>
+          </property>
+          <property name="siteHttpServerPort" persist-key="productionServerSiteHttpServerPort">
+            <value>${AppServerPortsProvider.siteHttpPort}</value>
+            <input type="text">
+              <label>Enter Production Server Site HTTP Port</label>
+              <validator id="PortNumberInputValidator">
+                <error-message>Invalid port number</error-message>
+              </validator>
+            </input>
+          </property>
+        </property-group>
+      </property-file>
+    </config-directory>
+  </server-instance-type>
+</product>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/cim/product.xml#6 $$Change: 792367 $-->

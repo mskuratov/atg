@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE database-initializer SYSTEM "http://www.atg.com/dtds/dbinit_1_0.dtd">
+<database-initializer >
+
+  <schema id="multiSiteRightNowI18NSchema">
+    <sql>       
+      <path>
+        <create>
+        sql/db_components/${database}/knowledgebase_multisite_i18n_ddl.sql
+        </create>
+      <drop>
+        sql/uninstall/${database}/drop_knowledgebase_multisite_i18n_ddl.sql
+      </drop>
+      </path>
+    </sql>
+    
+  </schema>
+ 
+  <schema id="versionedMultiSiteRightNowI18NSchema">
+    <sql>
+      <path>
+        <create>
+        sql/db_components/${database}/versioned_knowledgebase_multisite_i18n_ddl.sql
+        </create>
+      <drop>
+        sql/uninstall/${database}/drop_versioned_knowledgebase_multisite_i18n_ddl.sql
+      </drop>
+      </path>
+    </sql>
+  </schema>
+  
+
+  
+  <server-instance-type id="production">
+    <datasource id="nonswitchingCore">
+      <schema id="multiSiteRightNowI18NSchema"/>
+    </datasource>
+
+    <datasource id="switchingA">
+      <schema id="multiSiteRightNowI18NSchema"/>
+    </datasource>
+
+    <datasource id="switchingB">
+      <schema id="multiSiteRightNowI18NSchema"/>
+    </datasource>
+
+  </server-instance-type>
+
+  <server-instance-type id="staging">
+
+    <datasource id="stagingnonswitchingCore">
+      <schema id="multiSiteRightNowI18NSchema"/>
+    </datasource>
+
+    <datasource id="stagingswitchingA">
+      <schema id="multiSiteRightNowI18NSchema"/>
+    </datasource>
+
+    <datasource id="stagingswitchingB">
+      <schema id="multiSiteRightNowI18NSchema"/>
+    </datasource>
+
+  </server-instance-type>
+
+
+  <server-instance-type id="management">
+
+    <datasource id="management">
+      <schema id="versionedMultiSiteRightNowI18NSchema"/>
+    </datasource>
+
+  </server-instance-type>
+
+
+</database-initializer>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/KnowledgeBase/International/cim/dbinit.xml#1 $$Change: 788278 $-->
+
+  

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<bean-filtering>
+  <bean name="atg.projects.store.pricing.StoreItemPriceInfo">
+    <filter id="summary">
+      <property name="currentPriceDetailsSorted"/>
+    </filter>
+  </bean>
+  <repository name="/atg/commerce/gifts/Giftlists">
+    <item-descriptor name="gift-list">
+      <filter id="short">
+        <property name="repositoryId" target="id" />
+        <property name="name" target="eventName" />
+      </filter>
+    </item-descriptor>
+  </repository>
+  <repository name="/atg/commerce/catalog/ProductCatalog">
+    <item-descriptor name="product">
+      <filter id="summary">
+        <property name="fullImageUrl" target="fullImage.url" />
+        <property name="isNavigableProduct" target="NavigableProducts" />
+      </filter>
+    </item-descriptor>
+    <item-descriptor name="clothing-sku">
+      <filter id="summary">
+        <property name="displayName" />
+        <property name="colorSwatchUrl" target="colorSwatch.url" />
+        <property name="color" />
+        <property name="size" />
+      </filter>
+    </item-descriptor>
+    <item-descriptor name="furniture-sku">
+      <filter id="summary">
+        <property name="displayName" />
+        <property name="colorSwatchUrl" target="colorSwatch.url"/>
+        <property name="woodFinish" />
+      </filter>
+    </item-descriptor>
+    <item-descriptor name="sku">
+      <filter id="summary">
+        <property name="repositoryId" />
+        <property name="displayName" />
+        <property name="type" />
+      </filter>
+    </item-descriptor>
+    <item-descriptor name="feature">
+      <filter id="summary">
+        <property name="displayName" />
+      </filter>
+      <filter id="full">
+        <property name="displayName" />
+        <property name="longDescription" />
+      </filter>
+    </item-descriptor>
+  </repository>
+  <repository name="/atg/commerce/locations/LocationRepository">
+    <item-descriptor name="store">
+      <filter id="full">
+        <property name="repositoryId"/>
+        <property name="name"/>
+        <property name="address1" />
+        <property name="address2" />
+        <property name="address3" />
+        <property name="city" />
+        <property name="state" target="stateAddress" />
+        <property name="postalCode" />
+        <property name="country" />
+        <property name="phoneNumber" />
+        <property name="faxNumber" />
+        <property name="email" />
+        <property name="latitude" />
+        <property name="longitude" />
+      </filter>
+    </item-descriptor>
+  </repository>
+</bean-filtering>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/dev/10.2/EStore/config/atg/dynamo/service/filter/bean/beanFilteringConfiguration.xml#3 
+  $$Change: 788278 $ -->

@@ -1,0 +1,28 @@
+<ContentItem type="AutoSuggestPanel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://endeca.com/schema/content/2008">
+  <TemplateId>AutoSuggestPanel</TemplateId>
+  <Name>Auto-Suggest Panel</Name>
+  <Property name="autoSuggest">
+    <ContentItemList type="AutoSuggest">
+      <ContentItem type="AutoSuggest">
+        <TemplateId>DimensionSearchAutoSuggestItem</TemplateId>
+        <Name>Dimension Search Auto-Suggest</Name>
+        <Property name="title">
+          <String>Search Suggestions:</String>
+        </Property>
+        <Property name="displayImage">
+          <Boolean>false</Boolean>
+        </Property>
+        <Property name="maxResults">
+          <String>8</String>
+        </Property>
+        <Property name="dimensionList">
+          <List xmlns="http://endeca.com/schema/xavia/2010">
+            <String>10093</String>
+            <String>10007</String>
+          </List>
+        </Property>
+      </ContentItem>
+    </ContentItemList>
+  </Property>
+</ContentItem>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Storefront/deploy/ifcr/content/Shared/Auto-Suggest Panels/Default Auto-Suggest Panel/content.xml#3 $$Change: 793421 $-->

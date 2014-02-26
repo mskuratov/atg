@@ -1,0 +1,8 @@
+<actor-template>
+  <actor-chain id="giftlistTypes">
+    <droplet id="possibleValues">
+      <input name="comparator" value="${nucleus['/atg/commerce/gifts/GiftlistPossibleValuesComparator']}"/>
+    </droplet>
+  </actor-chain>
+</actor-template>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/config/atg/commerce/gifts/giftlistActor.xml#1 $$Change: 788278 $ -->

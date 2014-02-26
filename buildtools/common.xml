@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  This build file contains the tasks common to most if not all of the
+  projects.  The basedir is not set here as it is meaningless in this context.
+  The basedir of module's project build file will be used in this project.
+
+  To include this fragment, include the following tags in your project file:
+    <property name="global.dir" value="${basedir}/.."/>
+    <import file="${global.dir}/buildtools/common.xml"/>
+    
+  All build properties imports are handled in this project so there is no need to
+  additionally import them into module's build file unless some custom properties files
+  are added.
+-->
+<project name="common">
+  
+  <property name="buildtools.dir" value="${global.dir}/buildtools"/>
+  <property environment="env" />
+  
+  <!-- Import task definitions from Ant-Contrib library. -->
+  <taskdef resource="net/sf/antcontrib/antcontrib.properties"
+           classpath="${buildtools.dir}/lib/ant-contrib.jar"/>
+    
+  <!-- First import user's local settings. -->
+  <property file="${buildtools.dir}/userenv.properties" />
+  
+  <!--
+    Check whether modules.build.order is overriden in the userenv.properties and if so
+    report a warning to the log.
+  -->
+  <available file="${buildtools.dir}/userenv.properties" property="userenv.properties.exists" />
+
+  <if>  
+    <equals arg1="${userenv.properties.exists}" arg2="true" />
+    <then>
+          
+      <loadfile srcfile="${buildtools.dir}/userenv.properties" property="test.modules.build.order">
+        <filterchain>
+          <linecontains>
+            <contains value="modules.build.order="/>
+          </linecontains>
+          <striplinebreaks/>
+          <tokenfilter>
+            <replacestring from="modules.build.order=" to=""/>
+          </tokenfilter>
+        </filterchain>
+      </loadfile>
+
+      <if>
+        <isset property="test.modules.build.order" />
+        <then>
+          <echo level="warning">WARNING: The modules.build.order property is overridden in userenv.properties. It is not recommended to override this property in local userenv.properties. Use exclude.modules instead to exclude modules from the build. The example of usage can be found at buildtools/sample-userenv.properties.</echo>
+        </then>
+      </if>
+    </then>
+  </if>
+  
+  <!-- Import common environment properties. -->
+  <property file="${buildtools.dir}/environment.properties" />
+  
+  <!-- Import properties common to all sub modules. -->
+  <property file="${buildtools.dir}/common.properties" />
+  
+  <!--
+    Parse the Dynamo MANIFEST.MF file to obtain the ATG version.
+    This must appear after the environment properties have been set
+    (so that Dynamo home direcroty has been already set)
+    but prior to the module build.properties being imported as module's
+    build.properties can reference ATG version.
+  -->
+  <loadfile srcfile="${dynamo.home}/META-INF/MANIFEST.MF" property="atg.version" failonerror="false">
+    <filterchain>
+      <linecontains>
+        <contains value="ATG-Version:"/>
+      </linecontains>
+      <striplinebreaks/>
+      <tokenfilter>
+        <replacestring from="ATG-Version: " to=""/>
+      </tokenfilter>
+    </filterchain>
+  </loadfile>
+  
+  <!-- Import module specific properties -->
+  <property file="${basedir}/build.properties" />
+
+  <!-- Define a task that sets a given property to the class path required by a given set of Dynamo
+       modules, by examining the module manifests. -->
+  <taskdef name="dynamoclasspath" 
+           classname="atg.applauncher.taskdef.DynamoClasspathTask" 
+           classpath="${dynamo.home}/lib/launcher.jar"
+           onerror="report"/>
+
+  <!--
+    Create a quick macro to call all the sub projects so we don't have to
+    repeat ourselves...
+  -->
+  <macrodef name="call-subant">
+    <!-- target is the ant target we want to invoke in the subant task -->
+    <attribute name="target"/>
+    <sequential >
+      <!-- Check whether child modules list is specified for the current project. -->        
+      <if>
+        <isset property="modules.build.order"/>
+        <then>
+          <echo level="debug">The modules.build.order property is set for the current project.</echo>
+
+          <!--
+            Filter out modules from exclude.modules property. The original order of modules
+            should be preserved so that the most dependant module is built last.
+          -->
+          <difference id="filtered.build.files">
+            <filelist dir="${global.dir}" files="${modules.build.order}"/>
+            <intersect>
+              <filelist dir="${global.dir}" files="${modules.build.order}"/>
+              <filelist dir="${global.dir}" files="${exclude.modules}"/>
+            </intersect>
+          </difference>
+            
+          <!--
+            Convert filtered.build.files resource collection to filelist type as
+            subant target accepts only filelists.
+          -->
+          <pathconvert pathsep="," dirsep="/" property="filtered.build.files.string" refid="filtered.build.files">
+            <map from="${global.dir}" to="."/>
+          </pathconvert>
+            
+          <filelist id="build.files" dir="${global.dir}" files="${filtered.build.files.string}"/>
+        
+          <echo>Target '@{target}' will be called for the following list of build files: ${filtered.build.files.string}</echo>
+        
+          <subant target="@{target}">
+            <filelist refid="build.files"/>
+          </subant>
+        </then>
+      </if>        
+    </sequential>
+  </macrodef>
+  
+  <!-- Sets Dynamo classpath -->
+  <target name="-set-dynamo-classpath" description="Sets Dynamo classpath">
+
+    <echo>atg.required = ${atg.required}</echo>
+
+    <dynamoclasspath classpathproperty="dynamo.classpath"
+                     dynamoroot="${dynamo.root.dir}"
+                     modules="${atg.required}"/>
+
+    <path id="daf.endeca.classpath">
+      <pathelement location="${dynamo.home}/../DAF/Endeca/Index/classes" />
+      <fileset dir="${dynamo.home}/../DAS/lib" >
+        <include name="**/*.jar" />
+      </fileset>
+      <fileset dir="${dynamo.home}/../DAS-UI/lib">
+        <include name="**/*.jar" />
+      </fileset>
+      <fileset dir="${dynamo.home}/../DAF/Search/Index/lib">
+        <include name="**/*.jar" />
+      </fileset>
+    </path>
+    
+    <echo>dynamo.classpath = ${dynamo.classpath}</echo>
+
+    <property name="daf.endeca.classpath.property" refid="daf.endeca.classpath"/>
+    <echo>daf.endeca.classpath = ${daf.endeca.classpath.property}</echo>
+
+  </target>
+  
+  <!-- Other things to watch for in the classpath -->
+  <patternset id="resource.files">
+    <include name="**/*.properties" />
+    <include name="**/*.xml" />
+    <include name="**/*.dtd" />
+    <include name="**/*.bat" />
+    <include name="**/*.sh" />
+    <include name="**/*.txt" />
+  </patternset>
+
+  <!--
+    Files to exclude when cleaning out the temp ear directory. Excluding
+    JSPs will make it so they don't get redeployed and recompiled.
+  -->
+  <patternset id="clean.ear.excludes">
+    <exclude name="**/*.jsp"/>
+    <exclude name="**/*.jspf"/>
+  </patternset>
+  
+  <!--
+    Create the directories used in the build process. Not intended to be used publicly.
+  -->
+  <target name="-createdirs">
+    <mkdir dir="${build.dir}" />
+    <mkdir dir="${build.dir}/liveconfig" />
+    <mkdir dir="${build.config.dir}" />
+    <mkdir dir="${build.dir}/configlayers"/>
+    <mkdir dir="${classes.dir}" />
+    <mkdir dir="${build.dir}/lib" />
+  </target>
+  
+   <!--
+     Checks to see which core directories exist.
+   -->
+  <target name="-coredirsexist" description="verifies that certain core directories exist">
+    <available file="${src.dir}"             property="srcdirectory.exists" />
+    <available file="${sql.dir}"             property="sqldir.exists" />
+    <available file="${liveconfig.dir}"      property="liveconfig.exists" />
+    <available file="${configlayers.dir}"    property="configlayers.exists" />
+    <available file="${config.dir}"          property="config.exists" />
+  </target>
+  
+  <!--
+    Initializes the build.  This target is not public, but should be called
+    by all the others.
+  -->
+  <target name="-init">
+    <!-- Create the timestamp -->
+    <tstamp />
+    <echo message=""/>
+    <echo message=""/>
+    <echo message="#############################################################################"/>
+    <echo message="#############################################################################"/>
+    <echo message="${module.parent}.${module.name}: start date = ${DSTAMP}  start time = ${TSTAMP}" />
+    <echo message="JAVA_HOME       = ${env.JAVA_HOME}"/>
+    <echo message="dynamo.home     = ${dynamo.home}" />
+    <echo message="dynamo.root.dir = ${dynamo.root.dir}" />
+    <echo message="global.dir      = ${global.dir}" />
+    <echo message="#############################################################################"/>
+    <echo message="#############################################################################"/>
+    <echo message=""/>
+    <echo message=""/>
+  </target>
+  
+  <!-- Cleans, builds and installs the project. Also executes 'all' target for all sub modules. -->
+  <target name="all"
+          depends="clean,build,install"
+          description="Cleans, builds, and installs the project.">
+    
+    <echo level="debug">Calling 'all' target for sub modules.</echo>
+    <call-subant target="all"/>
+  </target>
+  
+  <!--
+    Deletes the contents of the build directory.
+  -->
+  <target name="clean"
+          depends="-init"
+          description="Deletes the contents of the build directory.">
+    
+    <echo level="debug">Deleting build directory content except JSPs.</echo>
+    
+    <delete failonerror="false" includeEmptyDirs="true">
+      <fileset dir="${build.dir}">
+        <patternset refid="clean.ear.excludes" />
+      </fileset>
+    </delete>
+    
+    <echo level="debug">Calling 'clean' target for sub modules.</echo>
+    <call-subant target="clean"/>
+  </target>
+  
+  <!--
+    Compiles and jars the code.
+  -->
+  <target name="build"
+          depends="compile,-jar"
+          description="Compiles and jars the code.">
+  </target>
+  
+  <!-- Compiles the codebase -->
+  <target name="compile"
+          depends="-init,-createdirs,-coredirsexist,-set-dynamo-classpath"
+          if="srcdirectory.exists"
+          description="Compiles the source code to the build directory.">
+    <mkdir dir="${classes.dir}" />
+
+    <echo message="Module specific classpath: CLASSPATH = ${classpath}"/>
+
+    <echo>Dynamo classpath: dynamo.classpath = ${dynamo.classpath}</echo>  
+
+    <javac srcdir="${src.dir}"
+           destdir="${classes.dir}"
+           debug="true"
+           deprecation="false"
+           optimize="false"
+           source="1.5"
+           target="1.5"
+           verbose="${javac.verbose.bool}">
+
+      <classpath path="${classpath}"/>
+      <classpath path="${lib.classpath}"/>
+      <classpath path="${dynamo.classpath}"/>
+      <include name="**/*.java" />
+    </javac>
+    
+    <!-- Copy java resource files to build directory -->
+    <echo level="debug">Copying other source files (properties, xml, txt, etc) into the directory with compiled Java classes.</echo>
+    <copy todir="${classes.dir}">
+      <fileset dir="${src.dir}/">
+        <patternset refid="resource.files" />
+      </fileset>
+    </copy>
+  </target>
+  
+  <!-- Jars compiled Java classes and configuration files. -->
+  <target name="-jar"
+          depends="-init,-createdirs,-jarclasses,-jarconfigs"
+          description="Creates build directories, jars classes and configuration">
+  </target>
+  
+  <!-- Jars Java classes. -->
+  <target name="-jarclasses"
+          depends="-init,-createdirs,-coredirsexist"
+          if="srcdirectory.exists"
+          description="Jars classes and source to build directory.">
+    <jar jarfile="${build.dir}/lib/classes.jar"
+         basedir="${classes.dir}/"
+         includes="**"/>
+  </target>
+    
+  <!--
+    Granular task to just copy and jar the configs. During copying
+    the token filter is used that replaces specified tokens with their actual
+    values.
+  -->
+  <target name="-jarconfigs" depends="-init" if="config.exists">
+    <!--
+      Set filter token to look for
+        - install unit
+        - module parent name
+        - module name
+        - web applications default context roots
+        - web applications names        
+      settings in manifests and configuration files.
+     -->
+    <echo level="debug">Token filters will be applied to configuration files. The following tokens will be replaced with their actual values.</echo>
+    <echo level="debug">install_unit = ${install.unit}</echo>
+    <echo level="debug">module_root_parent = ${module.root.parent}</echo>
+    <echo level="debug">module_name = ${module.name}</echo>
+    <echo level="debug">default_context_root = ${default.context.root}</echo>
+    <echo level="debug">default_web_app_name = ${default.web.app.name}</echo>
+    <echo level="debug">default_merch_context_root = ${default.merch.context.root}</echo>
+    <echo level="debug">default_merch_web_app_name = ${default.merch.web.app.name}</echo>
+    <echo level="debug">docroot_context_root = ${docroot.context.root}</echo>
+    <echo level="debug">docroot_web_app_name = ${docroot.web.app.name}</echo>
+    <echo level="debug">default_mobile_context_path = ${default.mobile.context.path}</echo>
+    
+    <filter token="install_unit"               value="${install.unit}"/>
+    <filter token="module_root_parent"         value="${module.root.parent}"/>
+    <filter token="module_name"                value="${module.name}"/>
+    <filter token="default_context_root"       value="${default.context.root}"/>
+    <filter token="default_web_app_name"       value="${default.web.app.name}"/>
+    <filter token="default_merch_context_root" value="${default.merch.context.root}"/>
+    <filter token="default_merch_web_app_name" value="${default.merch.web.app.name}"/>
+    <filter token="docroot_context_root"       value="${docroot.context.root}"/>
+    <filter token="docroot_web_app_name"       value="${docroot.web.app.name}"/>
+    <filter token="default_mobile_context_path" value="${default.mobile.context.path}"/>
+
+    <!--
+      Make a temporary config directory to support filter substitution.
+      After applying token filters final configuration files are put there.
+    -->
+    <echo level="debug">Applying token filters to configuration files and storying them into ${build.tempconfig.dir} directory.</echo>
+    
+    <mkdir dir="${build.tempconfig.dir}" />
+    <copy todir="${build.tempconfig.dir}" filtering="true">
+      <fileset dir="${config.dir}" />
+    </copy>
+
+    <!-- Jar up the configuration files -->
+    <echo level="debug">Putting configuration files into ${build.config.dir}/config.jar.</echo>
+    <jar jarfile="${build.config.dir}/config.jar" basedir="${build.tempconfig.dir}/" includes="**" />
+
+  </target>
+  
+  <!--
+    Installs the codebase to the installation directory.  This will not build anything,
+    but will create enough of a base application to run off.
+  -->
+  <target name="install"
+          depends="-init, -createdirs, -coredirsexist, -installcore"
+          description="Installs the codebase to the install directory.">
+  </target>
+  
+  <!--
+    Installs core module files: classes and configuration files.
+  -->
+  <target name="-installcore" description="Installs the core config and classes">
+    
+    <!-- Copy libraries -->
+    <if>
+      <equals arg1="${srcdirectory.exists}" arg2="true" />
+      <then>
+        <copy todir="${install.dir}/lib" overwrite="true">
+          <fileset dir="${build.dir}/lib" />
+        </copy>
+      </then>
+    </if>
+    
+    <!-- Copy configs -->
+    <antcall target="-installconfigs"/>
+   
+  </target>
+  
+  <!-- Copy the configs from the build directory to the install -->
+  <target name="-installconfigs" depends="-init" description="Copy configs to install">
+    <echo level="debug">Checking whether module's config.jar exist.</echo>
+    <available file="${build.config.dir}/config.jar" property="config.exists" />
+    
+    <if>
+      <equals arg1="${config.exists}" arg2="true" />
+      <then>
+        <copy file="${build.config.dir}/config.jar"
+              todir="${install.dir}/config" overwrite="true"/>
+      </then>
+    </if>
+  </target>
+  
+  <!--
+    Jars and installs the configs
+  -->
+  <target name="updateconfig" depends="-jarconfigs, -installconfigs"
+          description="Jars and installs the configuration files">
+
+    <echo level="debug">Calling 'updateconfig' target for sub modules.</echo>
+    <call-subant target="updateconfig"/>
+  </target>
+  
+  <!--
+    Checks whether CSC is installed in the platform and if not reports an error.
+  -->
+  <target name="-check-csc-installed"
+          description="Checks whether CSC is installed.">
+    
+    <echo level="debug">Checking whether CSC is installed.</echo>
+    
+    <available file="${dynamo.root.dir}/CSC${atg.version}/DCS-CSR/META-INF/MANIFEST.MF" property="csc.installed" />
+    <if>
+      <not>
+        <isset  property="csc.installed"/>
+      </not>
+      <then>
+        <echo level="error">Error: CSC is not installed in the platform. All dependent build projects will be skipped. If you don't use CSC and want to avoid this error in the future include CSC-dependent modules into the exclude.modules list in the buildtools/userenv.properties.</echo>
+      </then>
+    </if>
+  </target>
+
+</project>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/buildtools/common-base.xml#2 $$Change: 794629 $-->

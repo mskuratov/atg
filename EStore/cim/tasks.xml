@@ -1,0 +1,733 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tasks SYSTEM "http://www.atg.com/dtds/task_1_0.dtd">
+<tasks>
+
+  <!-- Task for Endeca App configuration with Experience Manager Preview  -->
+
+  <task id="EndecaCRSDeployConfigWriterTask" class="atg.cim.productconfig.endeca.EndecaDeployConfigWriterTask">
+    <property name="appName">
+      <value>CRS</value>
+      <input type="text">
+        <label>Enter the CRS Endeca App Name</label>
+        <validator phase="POSTINPUT" id="CannotBeBlankValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="App Name cannot be blank."/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+      </input>
+    </property>
+    <property name="deploymentPath">
+      <input type="path">
+        <label>Enter the CRS Endeca App Deployment Path</label>
+        <validator phase="POSTINPUT" id="CannotBeBlankValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Deployment Path cannot be blank"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+        <validator id="DirectoryExistsValidator" phase="POSTINPUT">
+          <if-false>
+            <command type="DISPLAY_TEXT"
+              value="Deployment Path doesn't exist." />
+            <command type="REDO_INPUT" />
+          </if-false>
+        </validator>
+      </input>
+    </property>
+    <property name="baseDeploy">
+      <value>TRUE</value>
+    </property>
+    <property name="eacPort">
+      <value>8888</value>
+      <input type="text">
+        <label>Enter the EAC Port Number</label>
+        <validator phase="POSTINPUT" id="CannotBeBlankValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Port cannot be blank"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+        <validator phase="POSTINPUT" id="PortNumberInputValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Must be a valid port number"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+      </input>
+    </property>
+    <property name="dgraphPort">
+      <value>15000</value>
+      <input type="text">
+        <label>Enter the Dgraph Port Number</label>
+        <validator phase="POSTINPUT" id="CannotBeBlankValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Port cannot be blank"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+        <validator phase="POSTINPUT" id="PortNumberInputValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Must be a valid port number"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+      </input>
+    </property> 
+    <property name="authoringPort">
+      <value>15002</value>
+      <input type="text">
+        <label>Enter the Authoring Dgraph Port Number</label>
+        <validator phase="POSTINPUT" id="CannotBeBlankValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Port cannot be blank"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+        <validator phase="POSTINPUT" id="PortNumberInputValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Must be a valid port number"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+      </input>
+    </property>   
+    <property name="logserverPort">
+      <value>15010</value>
+      <input type="text">
+        <label>Enter the Log Server Port Number</label>
+        <validator phase="POSTINPUT" id="CannotBeBlankValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Port cannot be blank"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+        <validator phase="POSTINPUT" id="PortNumberInputValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Must be a valid port number"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+      </input>
+    </property>
+    <property name="casHost">
+      <value>localhost</value>
+      <input type="text">
+        <label>Enter the CAS Hostname</label>
+        <validator phase="POSTINPUT" id="CannotBeBlankValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Hostname cannot be blank"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+      </input>
+    </property>
+    <property name="casPort">
+      <value>8500</value>
+      <input type="text">
+        <label>Enter the CAS Port Number</label>
+        <validator phase="POSTINPUT" id="CannotBeBlankValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Port cannot be blank"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+        <validator phase="POSTINPUT" id="PortNumberInputValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Must be a valid port number"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+      </input>
+    </property>
+    <property name="casPath">
+      <input type="path">
+        <label>Enter the CAS Path</label>
+        <validator phase="POSTINPUT" id="CannotBeBlankValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Path cannot be blank"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+        <validator phase="POSTINPUT" id="DirectoryExistsValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Path doesn't exist"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+      </input>
+    </property>
+    <property name="casJarVersion">
+      <value>3.1.2</value>
+      <input type="text">
+        <label>Enter the CAS Version</label>
+        <validator phase="POSTINPUT" id="CannotBeBlankValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Version cannot be blank"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+      </input>
+    </property>
+    <property name="languageId">
+      <value>en</value>
+      <input type="text">
+        <label>Enter the Language Code</label>
+        <validator phase="POSTINPUT" id="CannotBeBlankValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Language cannot be blank"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+      </input>
+    </property>
+    <property name="host">
+      <value>localhost</value>
+      <input type="text">
+        <label>Enter the Workbench Hostname</label>
+        <validator phase="POSTINPUT" id="CannotBeBlankValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Hostname cannot be blank"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+      </input>
+    </property>
+    <property name="workbenchPort">
+      <value>8006</value>
+      <input type="text">
+        <label>Enter the Workbench Port Number</label>
+        <validator phase="POSTINPUT" id="CannotBeBlankValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Port cannot be blank"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+        <validator phase="POSTINPUT" id="PortNumberInputValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Must be a valid port number"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+      </input>
+    </property>
+    <property name="workbenchEnabled">
+      <value>true</value>
+    </property>
+    <property name="previewHost">
+      <value>localhost</value>
+      <input type="text">
+        <label>Enter the preview host name</label>
+        <validator phase="POSTINPUT" id="CannotBeBlankValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Preview Host name cannot be blank"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+      </input>
+    </property>
+    <property name="previewPort">
+      <value>8080</value>
+      <input type="text">
+        <label>Enter the preview port number. Typical values are 7003 for WebLogic,
+8080 for JBoss and Tomcat, and 9080 for WebSphere.</label>
+        <validator phase="POSTINPUT" id="CannotBeBlankValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Port cannot be blank"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+        <validator phase="POSTINPUT" id="PortNumberInputValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Must be a valid port number"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+      </input>
+    </property>
+    <property name="previewContextRoot">
+      <value>crs</value>
+      <input type="text">
+        <label>Enter the context root of the preview application</label>
+        <validator phase="POSTINPUT" id="CannotBeBlankValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Preview context root cannot be blank"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+      </input>
+    </property>
+    <property name="baseDeployTemplateFile">
+      <value>${cim.home}/plugins/Base/filetemplate/endeca/deploy-prompt-basemodule.xml</value>
+    </property>
+    <property name="inputPath">
+      <value>${cim.home}/plugins/Base/filetemplate/endeca/deploy-prompt.xml</value>
+    </property>
+    <property name="outputPath">
+      <value>${cim.home}/data/tmp/deploy-prompt.xml</value>
+    </property>
+  </task>
+   
+  <task id="EndecaMobileCRSDeployConfigWriterTask" class="atg.cim.productconfig.endeca.EndecaDeployConfigWriterTask">
+    <property name="appName">
+      <value>${EndecaCRSDeployConfigWriterTask.appName}</value>
+    </property>
+    <property name="deploymentPath">
+      <value>${EndecaCRSDeployConfigWriterTask.deploymentPath}</value>
+    </property>
+    <property name="baseDeploy">
+      <value>FALSE</value>
+    </property>
+    <property name="eacPort">
+      <value>${EndecaCRSDeployConfigWriterTask.eacPort}</value>
+    </property>
+    <property name="workbenchPort">
+      <value>${EndecaCRSDeployConfigWriterTask.workbenchPort}</value>
+    </property>
+    <property name="workbenchEnabled">
+      <value>${EndecaCRSDeployConfigWriterTask.workbenchEnabled}</value>
+    </property>
+    <property name="dgraphPort">
+      <value>${EndecaCRSDeployConfigWriterTask.dgraphPort}</value>
+    </property> 
+    <property name="authoringPort">
+      <value>${EndecaCRSDeployConfigWriterTask.authoringPort}</value>
+    </property>   
+    <property name="logserverPort">
+      <value>${EndecaCRSDeployConfigWriterTask.logserverPort}</value>
+    </property>
+    <property name="casHost">
+      <value>${EndecaCRSDeployConfigWriterTask.casHost}</value>
+    </property>
+    <property name="casPort">
+      <value>${EndecaCRSDeployConfigWriterTask.casPort}</value>
+    </property>
+    <property name="casPath">
+      <value>${EndecaCRSDeployConfigWriterTask.casPath}</value>
+    </property>
+    <property name="casJarVersion">
+      <value>${EndecaCRSDeployConfigWriterTask.casJarVersion}</value>
+    </property>
+    <property name="languageId">
+      <value>${EndecaCRSDeployConfigWriterTask.languageId}</value>
+    </property>
+    <property name="host">
+      <value>${EndecaCRSDeployConfigWriterTask.host}</value>
+    </property>
+    <property name="inputPath">
+      <value>${EndecaCRSDeployConfigWriterTask.inputPath}</value>
+    </property>
+    <property name="outputPath">
+      <value>${EndecaCRSDeployConfigWriterTask.outputPath}</value>
+    </property>
+    <property name="previewHost">
+      <value>${EndecaCRSDeployConfigWriterTask.previewHost}</value>
+    </property>
+    <property name="previewPort">
+      <value>${EndecaCRSDeployConfigWriterTask.previewPort}</value>
+    </property>
+    <property name="previewContextRoot">
+      <value>${EndecaCRSDeployConfigWriterTask.previewContextRoot}</value>
+    </property>
+  </task> 
+   
+  <task id="CRSEndecaDeployTask" class="atg.cim.productconfig.endeca.EndecaDeployTask" longRunning="true">
+    <property name="deployXMLPath">
+      <value>${cim.home}/../CommerceReferenceStore/Store/Storefront/deploy/deploy.xml</value>
+    </property>
+    <property name="toolsAndFrameworksRootPath">
+      <input type="path">
+        <label>Enter the path to the Endeca ToolsAndFrameworks directory (including version number) </label>
+        <validator phase="POSTINPUT" id="CannotBeBlankValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Path cannot be blank"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+        <validator phase="POSTINPUT" id="DirectoryExistsValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Path doesn't exist"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+      </input>
+    </property>
+    <property name="endecaMDEXRootPath">
+      <input type="path">
+        <label>Enter the path to the Endeca MDEX directory (including version number)</label>
+        <validator phase="POSTINPUT" id="CannotBeBlankValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Path cannot be blank"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+        <validator phase="POSTINPUT" id="DirectoryExistsValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Path doesn't exist"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+      </input>
+    </property>
+    <property name="endecaPlatformServicesRootPath">
+      <input type="path">
+        <label>Enter the path to the Endeca Platform Services directory (including version number)</label>
+        <validator phase="POSTINPUT" id="CannotBeBlankValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Path cannot be blank"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+        <validator phase="POSTINPUT" id="DirectoryExistsValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Path doesn't exist"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+      </input>
+    </property>
+    <property name="promptXMLPath">
+      <value>${cim.home}/data/tmp/deploy-prompt.xml</value>
+    </property>
+  </task>
+  
+  <task id="MobileCRSEndecaDeployTask" class="atg.cim.productconfig.endeca.EndecaDeployTask" longRunning="true">
+    <property name="deployXMLPath">
+      <value>${cim.home}/../CommerceReferenceStore/Store/Mobile/Endeca/deploy/deploy.xml</value>
+    </property>
+    <property name="toolsAndFrameworksRootPath">
+      <value>${CRSEndecaDeployTask.toolsAndFrameworksRootPath}</value>
+    </property>
+    <property name="promptXMLPath">
+      <value>${cim.home}/data/tmp/deploy-prompt.xml</value>
+    </property>
+    <property name="endecaMDEXRootPath">
+      <value>${CRSEndecaDeployTask.endecaMDEXRootPath}</value>
+    </property>
+    <property name="endecaPlatformServicesRootPath">
+      <value>${CRSEndecaDeployTask.endecaPlatformServicesRootPath}</value>
+    </property>
+  </task>
+  
+  <task id="EndecaInitializeTask" class="atg.cim.productconfig.endeca.EndecaInitializeTask"  longRunning="true">
+    <property name="endecaAppRootPath">
+      <value>${EndecaCRSDeployConfigWriterTask.deploymentPath}/${EndecaCRSDeployConfigWriterTask.appName}</value>
+    </property>
+    <property name="endecaMDEXRootPath">
+      <value>${CRSEndecaDeployTask.endecaMDEXRootPath}</value>
+    </property>
+    <property name="endecaPlatformServicesRootPath">
+      <value>${CRSEndecaDeployTask.endecaPlatformServicesRootPath}</value>
+    </property>
+    
+  </task>
+  
+  <!-- Task for Endeca App configuration without Experience Manager Preview  -->
+  
+  <task id="EndecaCRSDeployNoPreviewConfigWriterTask" class="atg.cim.productconfig.endeca.EndecaDeployConfigWriterTask">
+    <property name="appName">
+      <value>CRS</value>
+      <input type="text">
+        <label>Enter the CRS Endeca App Name</label>
+        <validator phase="POSTINPUT" id="CannotBeBlankValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="App Name cannot be blank."/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+      </input>
+    </property>
+    <property name="deploymentPath">
+      <input type="path">
+        <label>Enter the CRS Endeca App Deployment Path</label>
+        <validator phase="POSTINPUT" id="CannotBeBlankValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Deployment Path cannot be blank"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+        <validator id="DirectoryExistsValidator" phase="POSTINPUT">
+          <if-false>
+            <command type="DISPLAY_TEXT"
+              value="Deployment Path doesn't exist." />
+            <command type="REDO_INPUT" />
+          </if-false>
+        </validator>
+      </input>
+    </property>
+    <property name="baseDeploy">
+      <value>TRUE</value>
+    </property>
+    <property name="eacPort">
+      <value>8888</value>
+      <input type="text">
+        <label>Enter the EAC Port Number</label>
+        <validator phase="POSTINPUT" id="CannotBeBlankValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Port cannot be blank"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+        <validator phase="POSTINPUT" id="PortNumberInputValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Must be a valid port number"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+      </input>
+    </property>
+    <property name="dgraphPort">
+      <value>15000</value>
+      <input type="text">
+        <label>Enter the Dgraph Port Number</label>
+        <validator phase="POSTINPUT" id="CannotBeBlankValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Port cannot be blank"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+        <validator phase="POSTINPUT" id="PortNumberInputValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Must be a valid port number"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+      </input>
+    </property> 
+    <property name="authoringPort">
+      <value>15002</value>
+      <input type="text">
+        <label>Enter the Authoring Dgraph Port Number</label>
+        <validator phase="POSTINPUT" id="CannotBeBlankValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Port cannot be blank"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+        <validator phase="POSTINPUT" id="PortNumberInputValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Must be a valid port number"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+      </input>
+    </property>   
+    <property name="logserverPort">
+      <value>15010</value>
+      <input type="text">
+        <label>Enter the Log Server Port Number</label>
+        <validator phase="POSTINPUT" id="CannotBeBlankValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Port cannot be blank"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+        <validator phase="POSTINPUT" id="PortNumberInputValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Must be a valid port number"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+      </input>
+    </property>
+    <property name="casHost">
+      <value>localhost</value>
+      <input type="text">
+        <label>Enter the CAS Hostname</label>
+        <validator phase="POSTINPUT" id="CannotBeBlankValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Hostname cannot be blank"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+      </input>
+    </property>
+    <property name="casPort">
+      <value>8500</value>
+      <input type="text">
+        <label>Enter the CAS Port Number</label>
+        <validator phase="POSTINPUT" id="CannotBeBlankValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Port cannot be blank"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+        <validator phase="POSTINPUT" id="PortNumberInputValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Must be a valid port number"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+      </input>
+    </property>
+    <property name="casPath">
+      <input type="path">
+        <label>Enter the CAS Path</label>
+        <validator phase="POSTINPUT" id="CannotBeBlankValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Path cannot be blank"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+        <validator phase="POSTINPUT" id="DirectoryExistsValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Path doesn't exist"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+      </input>
+    </property>
+    <property name="casJarVersion">
+      <value>3.1.2</value>
+      <input type="text">
+        <label>Enter the CAS Version</label>
+        <validator phase="POSTINPUT" id="CannotBeBlankValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Version cannot be blank"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+      </input>
+    </property>
+    <property name="languageId">
+      <value>en</value>
+      <input type="text">
+        <label>Enter the Language Code</label>
+        <validator phase="POSTINPUT" id="CannotBeBlankValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Language cannot be blank"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+      </input>
+    </property>
+    <property name="host">
+      <value>localhost</value>
+      <input type="text">        
+        <label>Enter the Workbench Hostname</label>
+        <validator phase="POSTINPUT" id="CannotBeBlankValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Hostname cannot be blank"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+      </input>
+    </property>
+    <property name="workbenchPort">
+      <value>8006</value>
+      <input type="text">
+        <label>Enter the Workbench Port Number</label>
+        <validator phase="POSTINPUT" id="CannotBeBlankValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Port cannot be blank"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+        <validator phase="POSTINPUT" id="PortNumberInputValidator">
+          <if-false>
+            <command type="DISPLAY_TEXT" value="Must be a valid port number"/>
+            <command type="REDO_INPUT"/>
+          </if-false>
+        </validator>
+      </input>
+    </property>
+    <property name="workbenchEnabled">
+      <value>true</value>
+    </property>
+    <property name="previewHost">
+      <value>localhost</value>
+    </property>
+    <property name="previewPort">
+      <value>7003</value>
+    </property>
+    <property name="previewContextRoot">
+      <value>crs</value>
+    </property>
+    <property name="baseDeployTemplateFile">
+      <value>${cim.home}/plugins/Base/filetemplate/endeca/deploy-prompt-basemodule.xml</value>
+    </property>
+    <property name="inputPath">
+      <value>${cim.home}/plugins/Base/filetemplate/endeca/deploy-prompt.xml</value>
+    </property>
+    <property name="outputPath">
+      <value>${cim.home}/data/tmp/deploy-prompt.xml</value>
+    </property>
+  </task>
+    
+  <task id="EndecaMobileCRSDeployNoPreviewConfigWriterTask" class="atg.cim.productconfig.endeca.EndecaDeployConfigWriterTask">
+    <property name="appName">
+      <value>${EndecaCRSDeployNoPreviewConfigWriterTask.appName}</value>
+    </property>
+    <property name="deploymentPath">
+      <value>${EndecaCRSDeployNoPreviewConfigWriterTask.deploymentPath}</value>
+    </property>
+    <property name="baseDeploy">
+      <value>FALSE</value>
+    </property>
+    <property name="eacPort">
+      <value>${EndecaCRSDeployNoPreviewConfigWriterTask.eacPort}</value>
+    </property>
+    <property name="workbenchPort">
+      <value>${EndecaCRSDeployNoPreviewConfigWriterTask.workbenchPort}</value>
+    </property>
+    <property name="workbenchEnabled">
+      <value>${EndecaCRSDeployNoPreviewConfigWriterTask.workbenchEnabled}</value>
+    </property>
+    <property name="dgraphPort">
+      <value>${EndecaCRSDeployNoPreviewConfigWriterTask.dgraphPort}</value>
+    </property> 
+    <property name="authoringPort">
+      <value>${EndecaCRSDeployNoPreviewConfigWriterTask.authoringPort}</value>
+    </property>   
+    <property name="logserverPort">
+      <value>${EndecaCRSDeployNoPreviewConfigWriterTask.logserverPort}</value>
+    </property>
+    <property name="casHost">
+      <value>${EndecaCRSDeployNoPreviewConfigWriterTask.casHost}</value>
+    </property>
+    <property name="casPort">
+      <value>${EndecaCRSDeployNoPreviewConfigWriterTask.casPort}</value>
+    </property>
+    <property name="casPath">
+      <value>${EndecaCRSDeployNoPreviewConfigWriterTask.casPath}</value>
+    </property>
+    <property name="casJarVersion">
+      <value>${EndecaCRSDeployNoPreviewConfigWriterTask.casJarVersion}</value>
+    </property>
+    <property name="languageId">
+      <value>${EndecaCRSDeployNoPreviewConfigWriterTask.languageId}</value>
+    </property>
+    <property name="host">
+      <value>${EndecaCRSDeployNoPreviewConfigWriterTask.host}</value>
+    </property>
+    <property name="inputPath">
+      <value>${EndecaCRSDeployNoPreviewConfigWriterTask.inputPath}</value>
+    </property>
+    <property name="outputPath">
+      <value>${EndecaCRSDeployNoPreviewConfigWriterTask.outputPath}</value>
+    </property>
+    <property name="previewHost">
+      <value>${EndecaCRSDeployNoPreviewConfigWriterTask.previewHost}</value>
+    </property>
+    <property name="previewPort">
+      <value>${EndecaCRSDeployNoPreviewConfigWriterTask.previewPort}</value>
+    </property>
+    <property name="previewContextRoot">
+      <value>${EndecaCRSDeployNoPreviewConfigWriterTask.previewContextRoot}</value>
+    </property>
+  </task>  
+    
+  <task id="EndecaInitializeNoPreviewTask" class="atg.cim.productconfig.endeca.EndecaInitializeTask" longRunning="true">
+    <property name="endecaAppRootPath">
+      <value>${EndecaCRSDeployNoPreviewConfigWriterTask.deploymentPath}/${EndecaCRSDeployNoPreviewConfigWriterTask.appName}</value>
+    </property>
+    <property name="endecaMDEXRootPath">
+      <value>${CRSEndecaDeployTask.endecaMDEXRootPath}</value>
+    </property>
+    <property name="endecaPlatformServicesRootPath">
+      <value>${CRSEndecaDeployTask.endecaPlatformServicesRootPath}</value>
+    </property>
+  </task>
+
+</tasks>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/cim/tasks.xml#3 $$Change: 794556 $-->

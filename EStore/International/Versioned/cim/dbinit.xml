@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE database-initializer SYSTEM "http://www.atg.com/dtds/dbinit_1_0.dtd">
+<database-initializer>
+
+  <schema id="storeViewmapping">
+    <data-import start-up-module="Store.EStore.International.Versioned,DCS-UI">
+      <repository-path>/atg/web/viewmapping/ViewMappingRepository</repository-path>
+      <import-file-path>/CommerceReferenceStore/Store/EStore/International/Versioned/install/data/viewmapping.xml</import-file-path>
+      <user>publishing</user>
+      <workspace>store_viewmapping</workspace>
+      <comment>initial_store_viewmapping_import</comment>
+    </data-import>
+  </schema>
+
+  <server-instance-type id="management">
+    <datasource id="management">
+      <schema id="storeViewmapping" />
+    </datasource>
+  </server-instance-type>
+
+</database-initializer>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/International/Versioned/cim/dbinit.xml#1 $$Change: 735822 $-->

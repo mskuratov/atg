@@ -1,0 +1,48 @@
+/* Display Javascript Size and Color Picker if Javascript is Enabeld */
+#picker_contents{
+  display:block;
+}
+/* Hide Non-Javascript Size and Color Picker if Javascript is Enabled */
+#no_js_picker_contents{
+  display:none;
+}
+/* Hide non-javascript email me when in stock area on PDP */
+#atg_store_noJsNotifyMeRequest{
+  display:none;
+}
+/* Display Javascript buttons on Gift With Purchase */
+.atg_store_gwpSelectButton{
+  display:inline-block !important;
+}
+.atg_store_gwpSelectButtonNoJs{
+  display:none !important;
+}
+/* Hide ATG Recs slot container when ATG Recs is installed and JavaScript is Enabled */
+.cs-slot{
+  display:none;
+}
+
+/* Show Rich Cart When JS is enabled */
+#atg_store_header #atg_store_personalNav ul#atg_store_personalNavItems li.atg_store_viewCart{
+  display:inline;
+}
+
+/* Show Close button in popup window if Javascript is enabled */
+#atg_store_popupCloseButton{
+  display:block;
+}
+
+/* Show char counter if Javascript enabled*/
+#atg_store_emailAFriendJSCharCounter{
+  display:block;
+}
+
+/* Hide max char available message if Javascript enabled*/
+#atg_store_emailAFriendNoJSCharCounter{
+  display:none;
+}
+
+/* Show rightnow knowledgebase link if javascript is enabled */
+#atg_store_rightnowKnowledgebaseContainer{
+  display:inline-block;
+}

@@ -1,0 +1,50 @@
+.atg_store_fluoroscope .actionMarker {
+  background: url(/inspect/images/icons/sensorparent.png);
+  display: block; 
+  height: 30px !important; 
+  width: 22px !important; 
+  position: absolute; 
+  top: 2px; 
+  left: 2px; 
+  z-index: 798; 
+  cursor: pointer;
+}
+
+.atg_store_fluoroscope .actionMarkerActive {
+  background: url(/inspect/images/icons/sensorparent_active.png);
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.atg_store_fluoroscope .actionOverlay {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: 100% !important;
+  height: 100%;
+  z-index: 500;
+  display: block;
+  border: 4px solid white;
+  background: rgba(0,0,255,.25);
+  pointer-events: none;
+  -webkit-box-shadow: 0px 2px 5px #000;
+  -moz-box-shadow: 0px 2px 5px #000;
+  box-shadow: 0px 2px 5px #000;
+}
+
+.atg_store_fluoroscope .sensorOverlay {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: 100% !important;
+  height: 100%;
+  z-index: 500;
+  display: block;
+  border: 4px solid white;
+  background: rgba(0,255,0,.25);
+  pointer-events: none;
+  -webkit-box-shadow: 0px 2px 5px #000;
+  -moz-box-shadow: 0px 2px 5px #000;
+  box-shadow: 0px 2px 5px #000;
+}

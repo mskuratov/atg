@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<bean-filtering>
+  <repository name="/atg/commerce/catalog/ProductCatalog">
+    <item-descriptor name="promotionalContent" default-filter="summary">
+      <filter id="summary">
+        <property name="id"/>
+        <property name="displayName"/>
+        <property name="storeDisplayName"/>
+        <property name="description"/>
+        <property name="longDescription"/>
+        <property name="image"/>
+        <property name="derivedImage"/>
+        <property name="linkUrl"/>
+        <property name="linkText"/>
+        <property name="templateUrl" target="template.url"/>
+      </filter>
+      <filter id="detailed">
+        <property name="id"/>
+        <property name="displayName"/>
+        <property name="storeDisplayName"/>
+        <property name="description"/>
+        <property name="longDescription"/>
+        <property name="image"/>
+        <property name="derivedImage"/>
+        <property name="linkUrl"/>
+        <property name="linkText"/>
+        <property name="templateUrl" target="template.url"/>
+        <property name="associatedProduct" target="associatedProduct.id"/>
+        <property name="associatedCategory" target="associatedCategory.id"/>
+        <property name="associatedSite"/>
+      </filter>
+    </item-descriptor>
+  </repository>
+</bean-filtering>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Endeca/Assembler/config/atg/dynamo/service/filter/bean/beanFilteringConfiguration.xml#1 $$Change: 742374 $ -->

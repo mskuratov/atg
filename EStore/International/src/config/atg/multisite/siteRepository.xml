@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<gsa-template xml-combine="append">
+
+  <header xml-combine="replace">
+    <name>ATG International Store Site Repository extension</name>
+    <author>ATG</author>
+    <version>$Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/International/config/atg/multisite/siteRepository.xml#2 $$Change: 789379 $</version>
+  </header>
+
+  <item-descriptor name="siteConfiguration" xml-combine="append">
+    <table name="crs_i18n_site_attr" type="auxiliary" id-column-name="id">
+      <property name="defaultLanguage" data-type="string" column-name="default_lang" display-name-resource="defaultLanguage" category-resource="categoryLocalization">
+        <attribute name="resourceBundle" value="atg.projects.store.multisite.InternationalStoreSiteRepositoryTemplateResources"/>
+        <attribute name="propertySortPriority" value="40"/>
+      </property>
+    </table>   
+    <table name="crs_site_languages" type="multi" id-column-name="id" multi-column-name="sequence_num">
+      <property name="languages" column-name="languages" data-type="list" component-data-type="string" display-name-resource="languages" category-resource="categoryLocalization">
+        <attribute name="resourceBundle" value="atg.projects.store.multisite.InternationalStoreSiteRepositoryTemplateResources"/>
+        <attribute name="propertySortPriority" value="60"/>
+      </property>
+    </table>
+    
+  </item-descriptor>
+</gsa-template>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/International/config/atg/multisite/siteRepository.xml#2 $$Change: 789379 $-->

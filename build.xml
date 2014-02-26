@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Commerce Reference Store" default="all" basedir="."> 
+                                                                 
+  <property name="global.dir" value="${basedir}"/>
+
+  <import file="${global.dir}/buildtools/common.xml"/>                                                             
+
+  <!-- ================================================================= -->
+  <!-- Tasks common to all sub modules.                                  -->
+  <!-- ================================================================= -->
+  
+  <!-- Cleans, builds and installs all modules -->
+  <target name="all" description="Runs all projects.">
+    <call-subant target="all"/>
+  </target>
+
+  <target name="clean" depends="common.clean" description="Cleans all projects.">
+    <call-subant target="clean"/>
+  </target>
+  
+  <!--
+    This target is overriden to do nothing for the root module, as we have no java classes or
+    configuration to build. 
+  -->
+  <target name="build" description="Builds the current project.">
+    <!-- Override common's target with empty one for the root module -->
+  </target>
+
+  <!--
+    This target is overriden to do nothing for the root module, as we have no java classes or
+    configuration to install. 
+  -->
+  <target name="install" description="Installs the current project">
+    <!-- Override common's target with empty one for the root module -->
+  </target>
+  
+  <!-- Jars and installs configuration files for all modules. -->
+  <target name="updateconfig" depends="-init" description="Jars the config files and copies them to install.">
+    <call-subant target="updateconfig"/>
+  </target>
+
+  <!-- ======================================= -->
+  <!-- JAVADOC                                 -->
+  <!-- ======================================= -->
+  <!-- Run this to generate public javadoc -->
+  <target name="javadoc"
+          depends="-init,-set-dynamo-classpath"
+          description="Builds the javadoc.">
+    <mkdir dir="${javadoc.dir}" />
+    
+    <path id="javadoc.sourcepath">
+      <pathelement path="${basedir}/EStore/${relative.src.dir}"/>
+      <pathelement path="${basedir}/EStore/International/${relative.src.dir}"/>
+      <pathelement path="${basedir}/EStore/International/Versioned/${relative.src.dir}"/>
+      <pathelement path="${basedir}/EStore/Versioned/${relative.src.dir}"/>
+      <pathelement path="${basedir}/Endeca/Assembler/${relative.src.dir}"/>
+      <pathelement path="${basedir}/Endeca/Index/${relative.src.dir}"/>
+      <pathelement path="${basedir}/Endeca/International/Index/${relative.src.dir}"/>
+      <pathelement path="${basedir}/Fluoroscope/${relative.src.dir}"/>
+      <pathelement path="${basedir}/Fulfillment/${relative.src.dir}"/>
+      <pathelement path="${basedir}/KnowledgeBase/${relative.src.dir}"/>
+      <pathelement path="${basedir}/Recommendations/${relative.src.dir}"/>
+    </path>
+    
+    <javadoc destdir="${javadoc.dir}"
+             author="true"
+             version="true"
+             use="true"
+             windowtitle="ATG Commerce Reference Store API">
+      <sourcepath refid="javadoc.sourcepath"/>
+      <classpath path="${dynamo.classpath}" />
+    </javadoc>
+  </target>
+</project>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/build-base.xml#3 $$Change: 794629 $-->

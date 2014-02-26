@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actor-template>
+  <actor-chain id="orderConfirmation" xml-combine="replace">
+    <output id="orderId" name="orderId" value="${nucleus['/atg/commerce/ShoppingCart'].last.id}"/>
+    <output id="securityStatus" name="securityStatus" value="${nucleus['/atg/userprofiling/Profile'].securityStatus}"/>
+  </actor-chain>
+</actor-template>
+<!-- @version $Id: //hosting-blueprint/MobileCommerce/version/10.2/server/MobileCommerce/config/atg/commerce/order/purchase/orderConfirmationActor.xml#2 $$Change: 796710 $-->

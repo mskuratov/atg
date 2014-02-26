@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators SYSTEM "http://www.atg.com/dtds/validator_1_0.dtd">
+<validators>  
+  <validator id="MobileCRSEnabledValidator" class="atg.cim.worker.common.ProductSelectionAddOnValidator">
+    <property name="addOnIds">
+      <value>mobileCRS</value>
+    </property>
+  </validator>
+</validators>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/cim/validators.xml#1 $$Change: 742374 $-->

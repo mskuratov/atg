@@ -1,0 +1,5 @@
+{
+    "sling:resourceType": "endeca/redirect-group",
+    "ruleLimit": "1",
+    "jcr:primaryType": "endeca:unstructured"
+}

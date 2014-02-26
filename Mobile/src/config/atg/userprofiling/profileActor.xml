@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actor-template>
+  <!--
+    Credit cards
+  -->
+  <actor-chain id="createNewCreditCard">
+    <form id="mobileStoreProfileFormHandler" 
+          name="/atg/userprofiling/MobileProfileFormHandler" 
+          handle="storeNewCreditCardDataWithoutAddress">
+      <input name="editValue.creditCardNickname" value="${param.creditCardNickname}" />
+      <input name="editValue.creditCardType" value="${param.creditCardType}" />
+      <input name="editValue.creditCardNumber" value="${param.creditCardNumber}" />
+      <input name="editValue.expirationMonth" value="${param.expirationMonth}" />
+      <input name="editValue.expirationYear" value="${param.expirationYear}" />
+      <input name="editValue.saveCreditCard" value="${param.saveCreditCard}" />
+      <input name="editValue.newCreditCard" value="${param.setAsDefault}" />
+      <input name="createCardSuccessURL" value="${param.createCardSuccessURL}" />
+      <input name="createCardErrorURL" value="/model/atg/userprofiling/ProfileActor/error" />
+    </form>
+  </actor-chain>
+
+  <actor-chain id="selectBillingAddress">
+    <form id="mobileStoreProfileFormHandler" 
+          name="/atg/userprofiling/MobileProfileFormHandler" 
+          handle="createNewCreditCard">
+      <input name="selectedBillingAddress" value="${param.selectedBillingAddress}" />
+      <input name="createCardSuccessURL" value="${param.createCardSuccessURL}" />
+      <input name="createCardErrorURL" value="/model/atg/userprofiling/ProfileActor/error" />
+    </form>
+  </actor-chain>
+
+  <actor-chain id="createCardAndAddress">
+    <form id="mobileStoreProfileFormHandler" 
+          name="/atg/userprofiling/MobileProfileFormHandler" 
+          handle="createNewCreditCardAndAddress">
+      <input name="billAddrValue.shippingAddrNickname" value="${param.nickname}"/>
+      <input name="billAddrValue.firstName" value="${param.firstName}" />
+      <input name="billAddrValue.lastName" value="${param.lastName}" />
+      <input name="billAddrValue.address1" value="${param.address1}" />
+      <input name="billAddrValue.address2" value="${param.address2}" />
+      <input name="billAddrValue.city" value="${param.city}" />
+      <input name="billAddrValue.state" value="${param.state}" />
+      <input name="billAddrValue.country" value="${param.country}" />
+      <input name="billAddrValue.postalCode" value="${param.postalCode}" />
+      <input name="billAddrValue.phoneNumber" value="${param.phoneNumber}" />
+      <input name="createCardSuccessURL" value="${param.createCardSuccessURL}" />
+      <input name="createCardErrorURL" value="/model/atg/userprofiling/ProfileActor/error" />
+    </form>
+  </actor-chain>
+
+  <actor-chain id="updateCreditCard">
+    <form id="mobileStoreProfileFormHandler"
+          name="/atg/userprofiling/MobileProfileFormHandler"
+          handle="updateCard">
+      <input name="editValue.nickname" value="${param.nickname}"/>
+      <input name="editValue.newNickname" value="${param.newNickname}"/>
+      <input name="editValue.expirationYear" value="${param.expirationYear}"/>
+      <input name="editValue.expirationMonth" value="${param.expirationMonth}"/>
+      <input name="editValue.newCreditCard" value="${param.setAsDefault}" />
+      <input name="billAddrValue.firstName" value="${param.firstName}" />
+      <input name="billAddrValue.lastName" value="${param.lastName}" />
+      <input name="billAddrValue.address1" value="${param.address1}" />
+      <input name="billAddrValue.address2" value="${param.address2}" />
+      <input name="billAddrValue.city" value="${param.city}" />
+      <input name="billAddrValue.state" value="${param.state}" />
+      <input name="billAddrValue.country" value="${param.country}" />
+      <input name="billAddrValue.postalCode" value="${param.postalCode}" />
+      <input name="billAddrValue.phoneNumber" value="${param.phoneNumber}" />
+      <input name="updateCardSuccessURL" value="${param.updateCardSuccessURL}" />
+      <input name="updateCardErrorURL" value="/model/atg/userprofiling/ProfileActor/error" />
+    </form>
+  </actor-chain>
+
+  <actor-chain id="removeCreditCard">
+    <form id="mobileStoreProfileFormHandler"
+          name="/atg/userprofiling/MobileProfileFormHandler"
+          handle="removeCard">
+      <input name="removeCard" value="${param.removeCard}"/>
+      <input name="removeCardSuccessURL" value="${param.removeCardSuccessURL}"/>
+      <input name="removeCardErrorURL" value="/model/atg/userprofiling/ProfileActor/error"/>
+    </form>
+  </actor-chain>
+
+  <!--
+    Addresses
+  -->
+  <actor-chain id="createNewBillingAddress">
+    <form id="mobileStoreProfileFormHandler" 
+          name="/atg/userprofiling/MobileProfileFormHandler" 
+          handle="createBillingAddress">
+      <input name="billAddrValue.newNickname" value="${param.newNickname}" />
+      <input name="billAddrValue.firstName" value="${param.firstName}" />
+      <input name="billAddrValue.lastName" value="${param.lastName}" />
+      <input name="billAddrValue.address1" value="${param.address1}" />
+      <input name="billAddrValue.address2" value="${param.address2}" />
+      <input name="billAddrValue.city" value="${param.city}" />
+      <input name="billAddrValue.state" value="${param.state}" />
+      <input name="billAddrValue.country" value="${param.country}" />
+      <input name="billAddrValue.postalCode" value="${param.postalCode}" />
+      <input name="billAddrValue.phoneNumber" value="${param.phoneNumber}" />
+      <input name="billAddrValue.useShippingAddressAsDefault" value="${param.useShippingAddressAsDefault}" />
+      <input name="billAddrValue.saveBillingAddress" value="${param.saveBillingAddress}" />
+      <input name="createBillingAddressSuccessURL" value="${param.createBillingAddressSuccessURL}" />
+      <input name="createBillingAddressErrorURL" value="/model/atg/userprofiling/ProfileActor/error" />
+    </form>
+  </actor-chain>
+
+  <actor-chain id="updateAddress">
+    <form id="mobileStoreProfileFormHandler"
+          name="/atg/userprofiling/MobileProfileFormHandler"
+          handle="updateAddress">
+      <input name="editValue.nickname" value="${param.nickname}"/>
+      <input name="editValue.newNickname" value="${param.newNickname}"/>
+      <input name="editValue.firstName" value="${param.firstName}"/>
+      <input name="editValue.lastName" value="${param.lastName}"/>
+      <input name="editValue.address1" value="${param.address1}"/>
+      <input name="editValue.address2" value="${param.address2}"/>
+      <input name="editValue.city" value="${param.city}"/>
+      <input name="editValue.state" value="${param.state}"/>
+      <input name="editValue.postalCode" value="${param.postalCode}"/>
+      <input name="editValue.country" value="${param.country}"/>
+      <input name="editValue.phoneNumber" value="${param.phoneNumber}"/>
+      <input name="useShippingAddressAsDefault" value="${param.useShippingAddressDefault}"/>
+      <input name="updateAddressSuccessURL" value="${param.updateAddressSuccessURL}" />
+      <input name="updateAddressErrorURL" value="/model/atg/userprofiling/ProfileActor/error" />
+    </form>
+  </actor-chain>
+
+  <actor-chain id="newAddress">
+    <form id="mobileStoreProfileFormHandler"
+          name="/atg/userprofiling/MobileProfileFormHandler"
+          handle="newAddress">
+      <input name="editValue.nickname" value="${param.nickname}"/>
+      <input name="editValue.firstName" value="${param.firstName}"/>
+      <input name="editValue.lastName" value="${param.lastName}"/>
+      <input name="editValue.address1" value="${param.address1}"/>
+      <input name="editValue.address2" value="${param.address2}"/>
+      <input name="editValue.city" value="${param.city}"/>
+      <input name="editValue.state" value="${param.state}"/>
+      <input name="editValue.postalCode" value="${param.postalCode}"/>
+      <input name="editValue.country" value="${param.country}"/>
+      <input name="editValue.phoneNumber" value="${param.phoneNumber}"/>
+      <input name="useShippingAddressAsDefault" value="${param.useShippingAddressDefault}"/>
+      <input name="newAddressSuccessURL" value="${param.newAddressSuccessURL}" />
+      <input name="newAddressErrorURL" value="/model/atg/userprofiling/ProfileActor/error" />
+    </form>
+  </actor-chain>
+
+  <actor-chain id="removeAddress">
+    <form id="mobileStoreProfileFormHandler"
+          name="/atg/userprofiling/MobileProfileFormHandler"
+          handle="removeAddress" var="handler">
+      <input name="removeAddress" value="${param.removeAddress}"/>
+    </form>
+    <droplet id="switch" name="/atg/dynamo/droplet/Switch">
+      <input name="value" value="${handler.formError}"/>
+      <oparam name="true">
+        <actor id="error" name="/atg/userprofiling/ProfileActor" chain-id="error" return-model-var="error">
+          <output id="error" value="${error}" add-map-children="true"/>
+        </actor>
+      </oparam>
+    </droplet>
+  </actor-chain>
+
+  <!--
+    Passwords
+  -->
+  <actor-chain id="changePassword">
+    <form id="mobileStoreProfileFormHandler"
+          name="/atg/userprofiling/MobileProfileFormHandler"
+          handle="changePassword" use-forwards="false">
+      <input name="value.confirmPassword" value="${param.confirmPassword}"/>
+      <input name="value.oldPassword" value="${param.oldPassword}"/>
+      <input name="value.password" value="${param.password}"/>
+      <input name="confirmPassword" value="${param.isConfirmPassword}"/>
+      <input name="changePasswordSuccessURL" value="${param.changePasswordSuccessURL}" />
+      <input name="changePasswordErrorURL" value="/rest/model/atg/userprofiling/ProfileActor/error" />
+    </form>
+  </actor-chain>
+
+  <!--
+    Error handling
+  -->
+  <actor-chain id="error">
+    <component id="mobileStoreProfileFormHandler"
+               name="/atg/userprofiling/MobileProfileFormHandler"
+               component-var="mobileStoreProfileFormHandler">
+      <output id="formError" name="formError"
+        value="${mobileStoreProfileFormHandler.formError}" />
+      <output id="formExceptions" name="formExceptions"
+        value="${mobileStoreProfileFormHandler.formExceptions}" />
+    </component>
+  </actor-chain>
+  
+</actor-template>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Mobile/config/atg/userprofiling/profileActor.xml#2 $$Change: 791340 $-->

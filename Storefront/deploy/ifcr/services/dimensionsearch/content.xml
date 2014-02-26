@@ -1,0 +1,10 @@
+<ContentItem type="Page" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://endeca.com/schema/content/2008">
+  <TemplateId>DimensionSearchService</TemplateId>
+  <Name>Dimension Search Service</Name>
+  <Property name="dimensionSearchResults">
+	<ContentItem type="DimensionSearchResults">
+		<TemplateId>DimensionSearchResults</TemplateId>
+	</ContentItem>
+  </Property>
+</ContentItem>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Storefront/deploy/ifcr/services/dimensionsearch/content.xml#2 $$Change: 768606 $-->

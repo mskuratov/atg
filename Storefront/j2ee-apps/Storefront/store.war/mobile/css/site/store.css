@@ -1,0 +1,70 @@
+#header,
+#footer,
+.subHeader {
+  background-color: #294353;
+}
+
+.storeContainer,
+#pageContainer {
+  background-color: #D9DEE6;
+}
+
+li.productTitle {
+  background-image: -webkit-gradient(linear, left bottom, left top,
+    from(rgba(191, 192, 195, 1)),
+    to(rgba(191, 192, 195, 0))
+  );
+  background-image: -moz-linear-gradient(center bottom, #BFC0C3, rgba(191, 192, 195, 0) 100%);
+  color: black;
+}
+
+.headerLogo {
+  width: 75px;
+  height: 40px;
+}
+
+/* Product details title */
+p.detailsTitle {
+  color: #737C0B;
+}
+
+/* Product sliders title ("Recently Viewed Items", "Related Items") */
+.sliderTitle {
+  color: #737C0B;
+}
+
+.subHeader div a,.subHeader div div {
+  background-color: #294353;
+}
+
+.subHeader > div.hide {
+  background-color: #294353;
+}
+
+#emailMePopup li:first-child,
+#contactInfo li:first-child,
+#emailMeConfirm li:first-child,
+#modalMessageBox li:first-child,
+#noSearchResultsPopup li:first-child {
+  background: #294353;
+}
+
+.subHeader div.highlight a,
+.subHeader div.highlight div {
+  background-image: -webkit-gradient(linear, left bottom, left top,
+    color-stop(0.53, #738199),
+    color-stop(1, #284067)
+  );
+}
+
+/* Refine bar (is on top of the Browse/Search pages) */
+.switchBar button:first-of-type {
+  background-image: -webkit-gradient(linear, center bottom, center top,
+    color-stop(0.13, #9AA5B7),
+    color-stop(1, #37475F)
+  );
+  background-image: -moz-linear-gradient(top, #9AA5B7 13%, #37475F 100%);
+}
+.switchBar button:last-of-type {
+  background-color: rgba(40, 64, 103, 1);
+}

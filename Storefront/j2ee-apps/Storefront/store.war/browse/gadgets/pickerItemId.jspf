@@ -1,0 +1,10 @@
+<%-- 
+  This file is used for display item id, and it should be included in the pickerLayout.jspf file directly.
+--%>
+<dsp:getvalueof var="selectedSku" param="selectedSku"/>
+<c:if test="${not empty selectedSku}">
+  <span class="atg_store_itemID">
+    <dsp:valueof param="selectedSku.id" />
+  </span>
+</c:if>
+<%-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Storefront/j2ee/store.war/browse/gadgets/pickerItemId.jspf#1 $$Change: 735822 $--%>

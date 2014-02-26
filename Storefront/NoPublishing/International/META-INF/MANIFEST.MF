@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+ATG-Product: Storefront Fashion Commerce noPublishing international configuration
+ATG-Config-Path: config/config.jar
+ATG-Required: Store.Storefront.NoPublishing

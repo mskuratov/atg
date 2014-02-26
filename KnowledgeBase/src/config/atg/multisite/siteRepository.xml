@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<gsa-template xml-combine="append">
+
+  <item-descriptor name="siteConfiguration" xml-combine="append">
+    <attribute name="categoryRightNowPriority" value="550"/>
+    
+    <table name="crs_rnow_url" type="auxiliary" id-column-name="id">
+      <property name="rightNowUrl" 
+                data-type="string" 
+                column-name="crs_rnow_url"
+                required="false"
+                category-resource="categoryRightNow"
+                display-name-resource="rightNowUrl">
+        <attribute name="resourceBundle"
+                   value="atg.projects.store.multisite.StoreSiteRepositoryTemplateResources"/>
+        <attribute name="propertySortPriority" value="160"/>
+      </property>
+    </table>
+    
+  </item-descriptor>
+</gsa-template>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/KnowledgeBase/config/atg/multisite/siteRepository.xml#2 $$Change: 789379 $-->

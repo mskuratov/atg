@@ -1,0 +1,27 @@
+<%--
+  Footer fragment of the page.
+  This fragment is used to end the page. It works in pair with "header.jspf".
+  It's included by the "mobilePageContainer" custom tag.
+--%>
+<div id="footer">
+  <ul>
+    <li onclick="CRSMA.global.showContactUsPage()">
+      <a href="javascript:void(0);"><span><fmt:message key="mobile.navigation_tertiaryNavigation.contactUs"/></span></a>
+    </li>
+    <li class="dividerBar"><br/></li>
+    <li>
+      <dsp:a page="${mobileStorePrefix}/company/stores.jsp"><span><fmt:message key="mobile.navigation_tertiaryNavigation.storeLocator"/></span></dsp:a>
+    </li>
+    <li class="dividerBar"><br/></li>
+    <li>
+      <dsp:a page="${mobileStorePrefix}/company/moreInfo.jsp"><span><fmt:message key="mobile.footer.moreInfo"/><fmt:message key="mobile.common.ellipsis"/></span></dsp:a>
+    </li>
+  </ul>
+  <div class="footerCopyright">
+    <dsp:a page="${mobileStorePrefix}/company/terms.jsp">
+      <p><fmt:message key="mobile.common.copyright"/></p>
+      <img src="/crsdocroot/content/mobile/images/icon-arrowRIGHT.png" alt=""/>
+    </dsp:a>
+  </div>
+</div>
+<%-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Storefront/j2ee/store.war/mobile/includes/footer.jspf#3 $$Change: 788278 $ --%>

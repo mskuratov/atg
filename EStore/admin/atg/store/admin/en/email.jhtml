@@ -1,0 +1,224 @@
+<html>
+  <head>
+    <!-- Calculate page title based on current template -->
+    <java>
+      String emailTemplate = request.getParameter("template");
+      
+      if(emailTemplate == null || emailTemplate.equals("registration")) {
+        out.println("<title>Registered User > Store E-mail Template Tester</title>");
+      } else if(emailTemplate != null && emailTemplate.equals("password")) {
+        out.println("<title>New Password > Store E-mail Template Tester</title>");
+      } else if(emailTemplate != null && emailTemplate.equals("changepass")) {
+        out.println("<title>Updated Password > Store E-mail Template Tester</title>");
+      } else if(emailTemplate != null && emailTemplate.equals("friend")) {
+        out.println("<title>Email a Friend > Store E-mail Template Tester</title>");
+      } else if(emailTemplate != null && emailTemplate.equals("confirm")) {
+        out.println("<title>Order Confirmation > Store E-mail Template Tester</title>");
+      } else if(emailTemplate != null && emailTemplate.equals("shipped")) {
+        out.println("<title>Order Shipped > Store E-mail Template Tester</title>");
+      } else if(emailTemplate != null && emailTemplate.equals("returnSubmitted")) {
+        out.println("<title>Return Submitted > Store E-mail Template Tester</title>");
+      } else if(emailTemplate != null && emailTemplate.equals("returnReceived")) {
+        out.println("<title>Return Received > Store E-mail Template Tester</title>");
+      }else if(emailTemplate != null && emailTemplate.equals("returnProcessed")) {
+        out.println("<title>Return Processed > Store E-mail Template Tester</title>");
+      }else if(emailTemplate != null && emailTemplate.equals("backInStock")) {
+        out.println("<title>Back in Stock Notification > Store E-mail Template Tester</title>");
+      } else if(emailTemplate != null && emailTemplate.equals("abandoned")) {
+        out.println("<title>Abandoned Order Promotion > Store E-mail Template Tester</title>");
+      }       
+    </java>
+
+    <title>Store E-mail Template Tester</title>
+    <link rel="stylesheet" href="tester.css"
+          type="text/css" media="screen" title="no title" charset="utf-8" />
+     <!--[if IE]>
+      <link rel="stylesheet" href="tester_ie.css"
+      type="text/css" media="screen" title="no title" charset="utf-8" />
+    <![endif]-->
+    <script type="text/javascript" src="templateTester.js"></script>
+  </head>
+  
+  <importbean bean="/atg/dynamo/droplet/Switch">
+  <importbean bean="/atg/store/email/TemplateTesterFormHandler"/>
+  <importbean bean="/atg/dynamo/droplet/ForEach"/>
+  <importbean bean="/atg/dynamo/droplet/IsEmpty"/>
+  
+  <body>
+   
+    <div id="templateTesterBreadcrumbs"><a href="/">admin</a>/<a href="index.jhtml">Store</a>/Email Tester</div>
+    <h2 class="templateTesterHeader">Store E-mail Template Tester</h2>
+    
+    <!-- Result of 'send email' operation -->
+    <span id="emailTemplateResult"><valueof valueishtml="true" bean="TemplateTesterFormHandler.actionResult"></valueof></span>
+    
+    
+    <div id="emailTemplateTesterContainer">
+
+    <!-- Init form based on recently sent info -->
+    <droplet bean="IsEmpty">
+      <param name="value" value="parameter:emailId">            
+      <oparam name="false">
+        <setvalue bean="TemplateTesterFormHandler.initFromSentList" value="true"/>   
+      </oparam>
+    </droplet>
+   
+    <div id="emailTemplateType">
+      <h3>Template</h3>
+    <ul>
+    
+      <java>
+        String template = request.getParameter("template");
+        if(template == null || template.equals("registration")) {
+          out.println("<li class=\"currentTemplate\">");
+        } else {
+          out.println("<li>");
+        }
+      </java>
+      <a href="email.jhtml?template=registration">Registered User</a></li>
+
+      <java>        
+        if(template != null && template.equals("password")) {
+          out.println("<li class=\"currentTemplate\">");
+        } else {
+          out.println("<li>");
+        }
+      </java>
+      <a href="email.jhtml?template=password">New Password</a></li>
+      
+      <java>
+        if(template != null && template.equals("changepass")) {
+          out.println("<li class=\"currentTemplate\">");
+        } else {
+          out.println("<li>");
+        }
+      </java>
+      <a href="email.jhtml?template=changepass">Updated Password</a></li>
+      
+      <java>
+        if(template != null && template.equals("friend")) {
+          out.println("<li class=\"currentTemplate\">");
+        } else {
+          out.println("<li>");
+        }
+      </java>
+      <a href="email.jhtml?template=friend">Email a Friend</a></li>
+      
+      
+      <java>
+        if(template != null && template.equals("confirm")) {
+          out.println("<li class=\"currentTemplate\">");
+        } else {
+          out.println("<li>");
+        }
+      </java><a href="email.jhtml?template=confirm">Order Confirmation</a></li>
+      
+      <java>
+        if(template != null && template.equals("shipped")) {
+          out.println("<li class=\"currentTemplate\">");
+        } else {
+          out.println("<li>");
+        }
+      </java><a href="email.jhtml?template=shipped">Order Shipped</a></li>
+      
+      <java>
+        if(template != null && template.equals("returnSubmitted")) {
+          out.println("<li class=\"currentTemplate\">");
+        } else {
+          out.println("<li>");
+        }
+      </java><a href="email.jhtml?template=returnSubmitted">Return Submitted</a></li>
+      
+      <java>
+        if(template != null && template.equals("returnReceived")) {
+          out.println("<li class=\"currentTemplate\">");
+        } else {
+          out.println("<li>");
+        }
+      </java><a href="email.jhtml?template=returnReceived">Return Received</a></li>
+      
+      <java>
+        if(template != null && template.equals("returnProcessed")) {
+          out.println("<li class=\"currentTemplate\">");
+        } else {
+          out.println("<li>");
+        }
+      </java><a href="email.jhtml?template=returnProcessed">Return Processed</a></li>
+      
+      <java>
+        if(template != null && template.equals("backInStock")) {
+          out.println("<li class=\"currentTemplate\">");
+        } else {
+          out.println("<li>");
+        }
+      </java><a href="email.jhtml?template=backInStock">Back in Stock Notification</a></li>
+      
+      <java>
+        if(template != null && template.equals("abandoned")) {
+          out.println("<li class=\"currentTemplate\">");
+        } else {
+          out.println("<li>");
+        }
+      </java><a href="email.jhtml?template=abandoned">Abandoned Order Promotion</a></li>
+            
+    </ul>
+  </div> 
+  <div id="emailTemplateFormContainer">
+  <div id="emailTemplateForm">
+          <form action="email.jhtml" method=POST>
+            <input type="hidden" bean="TemplateTesterFormHandler.errorURL" value="`new String("email.jhtml?template=" + request.getParameter("template"))`"/>
+            <input type="hidden" bean="TemplateTesterFormHandler.successURL" value="`new String("email.jhtml?template=" + request.getParameter("template"))`"/>
+            <input type="hidden" bean="TemplateTesterFormHandler.senderName" value="ATG Email Tester"/>
+            <input type="hidden" bean="TemplateTesterFormHandler.senderEmail" value="ATGEmail@atg.com"/>
+        
+            <!-- Check which email template is chosen and display corresponding form fields. -->
+            <droplet bean="Switch">
+              <param name="value" value="param:template">            
+              <oparam name="friend">
+                <droplet src="email-friend.jhtml"/>    
+              </oparam>
+              <oparam name="confirm">
+                <droplet src="order-confirmation.jhtml"/>    
+              </oparam> 
+              <oparam name="shipped">
+                <droplet src="order-shipped.jhtml"/>    
+              </oparam> 
+              <oparam name="returnSubmitted">
+                <droplet src="return-confirmation.jhtml"/>    
+              </oparam> 
+              <oparam name="returnReceived">
+                <droplet src="return-confirmation.jhtml"/>    
+              </oparam> 
+              <oparam name="returnProcessed">
+                <droplet src="return-confirmation.jhtml"/>    
+              </oparam> 
+              <oparam name="backInStock">
+                <droplet src="back-in-stock.jhtml"/>    
+              </oparam> 
+              <oparam name="abandoned">
+                <droplet src="abandoned-promo.jhtml"/>
+              </oparam>
+              <oparam name="changepass">
+                <droplet src="change-password.jhtml"/>    
+              </oparam>              
+              <oparam name="password">
+                <droplet src="new-password.jhtml"/>    
+              </oparam>     
+              <oparam name="default">
+                <droplet src="registered-user.jhtml"/>    
+              </oparam>          
+            </droplet>
+              
+            <input type="submit" bean="TemplateTesterFormHandler.send" value="Send E-mail" class="emailTemplateSubmit"/>
+          </form>
+    </div>
+    </div>
+    
+    <!-- List of recently sent emails -->
+    <droplet src="recently-sent.jhtml"/>
+    
+    </div>
+  </body>
+</html>
+<java>/* @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/admin/atg/store/admin/en/email.jhtml#2 $$Change: 788278 $*/</java>
+

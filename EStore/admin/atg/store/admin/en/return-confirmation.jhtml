@@ -1,0 +1,105 @@
+<!-- Displays form fields for Return Confirmation email templates. -->
+<importbean bean="/atg/store/email/TemplateTesterFormHandler"/>
+<importbean bean="/atg/dynamo/droplet/Switch">
+<importbean bean="/atg/dynamo/droplet/ForEach"/>
+<importbean bean="/atg/commerce/custsvc/returns/ReturnRequestLookup"/>
+
+<!-- Check which email template is chosen and display corresponding form fields. -->
+<droplet bean="Switch">
+  <param name="value" value="param:template">
+  <oparam name="returnSubmitted">
+    <h3>Return Submitted</h3>
+    <input type="hidden" bean="TemplateTesterFormHandler.templateUrl" value="/crs/emailtemplates/returnConfirmation.jsp"/>    
+  </oparam> 
+  <oparam name="returnReceived">
+    <h3>Return Received</h3>
+    <input type="hidden" bean="TemplateTesterFormHandler.templateUrl" value="/crs/emailtemplates/returnReceived.jsp"/>
+    <input type="hidden" bean="TemplateTesterFormHandler.applyReturnSuccessURL" value="email.jhtml?template=returnReceived&initForm=true">
+    <input type="hidden" bean="TemplateTesterFormHandler.applyRetyrbErrorURL" value="email.jhtml?template=returnReceived&initForm=true"/>
+    
+    <!-- Initialize form with values previously stored into the session. -->
+    <droplet bean="Switch">
+      <param name="value" value="param:initForm">            
+      <oparam name="true">
+        <setvalue bean="TemplateTesterFormHandler.initializeForm" value="true"/>   
+      </oparam>
+    </droplet> 
+        
+  </oparam> 
+  <oparam name="returnProcessed">
+    <h3>Return Processed</h3>
+    <input type="hidden" bean="TemplateTesterFormHandler.templateUrl" value="/crs/emailtemplates/returnProcessed.jsp"/>    
+  </oparam> 
+</droplet>
+
+<droplet src="error-message.jhtml"/>
+   
+<ul class="emailTemplateFields">
+  <droplet src="email-base-inputs.jhtml"/>
+  
+  <!-- Display Return Confirmation template specific form fields. -->         
+  <li>
+    <label>Return Id:</label>
+    
+    <input type="text" bean="TemplateTesterFormHandler.returnRequestId" required="true"/>
+    
+    <droplet bean="Switch">
+      <param name="value" value="param:template">
+      <oparam name="returnReceived">
+        <input type="submit" bean="TemplateTesterFormHandler.applyReturn" value="Apply Return"/>
+      </oparam>
+    </droplet>
+    
+  </li>
+  
+  <!--
+    Check whether we are dealing with Return Items Received email template and if so display additional form
+    inputs.
+  -->
+    
+  <droplet bean="Switch">
+    <param name="value" value="param:template">            
+    <oparam name="returnReceived">      
+
+      <droplet bean="Switch">
+        <param name="value" value="bean:TemplateTesterFormHandler.returnRequestId">            
+        <oparam name="unset">
+          Press "Apply Return" button to load return items list.
+
+        </oparam>
+        <oparam name="">
+          Press "Apply Return" button to load return items list.
+
+        </oparam>
+        <oparam name="default">
+          <setvalue bean="ReturnRequestLookup.enableSecurity" value="false"/>
+        
+          <droplet name="ReturnRequestLookup">
+            <param name="returnRequestId" value="bean:TemplateTesterFormHandler.returnRequestId"/>
+            <oparam name="error">
+              No return request is found for the specified ID   
+            </oparam>
+            <oparam name="empty">
+              No return request is found for the specified ID   
+            </oparam>
+            <oparam name="output">
+              <droplet name="ForEach">
+                <param name="array" value="param:result.returnItemList"/>
+                <param name="elementName" value="returnItem"/>
+                <oparam name="output">
+                  <li>
+                    <label class="returnItem"><valueof param="returnItem.id"/>:<valueof param="returnItem.commerceItem.auxiliaryData.catalogRef.displayName"/></label>
+                    <input class="returnItemQuantity" type="text" bean="TemplateTesterFormHandler.returnItemToQuantityMap.`((atg.commerce.csr.returns.ReturnItem) request.getObjectParameter("returnItem")).getId()`" value="0" /><span> of <valueof param="returnItem.quantityReturned" /></span>
+                  </li>
+                </oparam>
+              </droplet>
+            </oparam>
+          </droplet>
+        </oparam>
+      </droplet>
+      
+    </oparam>
+  </droplet>
+ 
+</ul>
+<java>/* @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/admin/atg/store/admin/en/return-confirmation.jhtml#1 $$Change: 788278 $*/</java>

@@ -1,0 +1,9 @@
+ATG-Product: The Commerce Store international store
+Manifest-Version: 1.0
+ATG-Client-Class-Path: lib/classes.jar
+ATG-Class-Path: lib/classes.jar
+ATG-Config-Path: config/config.jar
+ATG-Required: Store.EStore
+
+Name: lib/classes.jar
+ATG-Client-Update-File: true

@@ -1,0 +1,6 @@
+{
+"sling:resourceType": "endeca/content-item",
+"workflowState": "ACTIVE",
+"priority": "20",
+"jcr:primaryType": "endeca:contentItem"
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actor-template default-chain-id="claimCoupon"
+                xsi:noNamespaceSchemaLocation="http://www.atg.com/xsds/actorChain_1.0.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <actor-chain id="claimCoupon" transaction="TX_SUPPORTS">
+    <form id="couponHandler" name="/atg/store/order/purchase/CouponFormHandler" handle="claimCoupon"
+          var="couponHandler">
+      <input name="couponCode" value="${param.couponCode}"/>
+      <input name="applyCouponSuccessURL"
+             value="${param.cart == 'true' ? '/model/atg/commerce/ShoppingCartActor/summary' : '/model/atg/commerce/order/purchase/ConfirmOrderActor/confirmOrder'}"/>
+      <input name="applyCouponErrorURL" value="/model/atg/store/order/purchase/CouponActor/error"/>
+    </form>
+  </actor-chain>
+  <actor-chain id="error">
+    <component id="handler" name="/atg/store/order/purchase/CouponFormHandler" component-var="handler">
+      <output id="formError" name="formError" value="${handler.formError}"/>
+      <output id="formExceptions" name="formExceptions" value="${handler.formExceptions}" filter-id="full"/>
+      <output id="concurrentUpdate" name="concurrentUpdate" value="${handler.concurrentUpdate}"/>
+    </component>
+  </actor-chain>
+</actor-template>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/config/atg/store/order/purchase/couponActor.xml#2 $$Change: 791340 $-->

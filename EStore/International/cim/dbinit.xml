@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE database-initializer SYSTEM "http://www.atg.com/dtds/dbinit_1_0.dtd">
+<database-initializer>
+
+  <schema id="versionedSchema">
+    <sql>
+      <path>
+        <create>
+          sql/db_components/${database}/versioned_catalog_i18n_ddl.sql
+        </create>
+        <drop>
+          sql/uninstall/${database}/drop_versioned_catalog_i18n_ddl.sql
+        </drop>
+      </path>
+    </sql>
+    <sql>
+      <path>
+        <create>
+          sql/db_components/${database}/versioned_promotion_i18n_ddl.sql
+        </create>
+        <drop>
+          sql/uninstall/${database}/drop_versioned_promotion_i18n_ddl.sql
+        </drop>
+      </path>
+    </sql>
+    <sql>
+      <path>
+        <create>
+          sql/db_components/${database}/versioned_seo_i18n_ddl.sql
+        </create>
+        <drop>
+          sql/uninstall/${database}/drop_versioned_seo_i18n_ddl.sql
+        </drop>
+      </path>
+    </sql>
+    <sql>
+      <path>
+        <create>
+          sql/db_components/${database}/versioned_multisite_i18n_ddl.sql
+        </create>
+        <drop>
+          sql/uninstall/${database}/drop_versioned_multisite_i18n_ddl.sql
+        </drop>
+      </path>
+    </sql>
+    <sql>
+      <path>
+        <create>
+          sql/db_components/${database}/versioned_storetext_i18n_ddl.sql
+        </create>
+        <drop>
+          sql/uninstall/${database}/drop_versioned_storetext_i18n_ddl.sql
+        </drop>
+      </path>
+    </sql>
+  </schema>
+
+  <schema id="catalogSchema">
+    <sql>
+      <path>
+        <create>
+          sql/db_components/${database}/catalog_i18n_ddl.sql
+        </create>
+        <drop>
+          sql/uninstall/${database}/drop_catalog_i18n_ddl.sql
+        </drop>
+      </path>
+    </sql>
+
+    <sql>
+      <path>
+        <create>
+          sql/db_components/${database}/promotion_i18n_ddl.sql
+        </create>
+        <drop>
+          sql/uninstall/${database}/drop_promotion_i18n_ddl.sql
+        </drop>
+      </path>
+    </sql>
+    <sql>
+      <path>
+        <create>
+          sql/db_components/${database}/seo_i18n_ddl.sql
+        </create>
+        <drop>
+          sql/uninstall/${database}/drop_seo_i18n_ddl.sql
+        </drop>
+      </path>
+    </sql>
+  </schema>
+  
+  <schema id="multisite">
+    <sql>
+      <path>
+        <create>
+          sql/db_components/${database}/multisite_i18n_ddl.sql
+        </create>
+        <drop>
+          sql/uninstall/${database}/drop_multisite_i18n_ddl.sql
+        </drop>
+      </path>
+    </sql>
+  </schema>
+
+  <schema id="storeTextSchema">
+    <sql>
+      <path>
+        <create>
+        sql/db_components/${database}/storetext_i18n_ddl.sql
+        </create>
+      <drop>
+        sql/uninstall/${database}/drop_storetext_i18n_ddl.sql
+      </drop>
+      </path>
+    </sql>
+  </schema>
+
+  <server-instance-type id="production">
+
+    <datasource id="nonswitchingCore">
+      <schema id="catalogSchema"/>
+      <schema id="multisite"/>
+      <schema id="storeTextSchema"/>
+    </datasource>
+    <datasource id="switchingA">
+      <schema id="catalogSchema"/>
+      <schema id="multisite"/>
+      <schema id="storeTextSchema"/>
+    </datasource>
+    <datasource id="switchingB">
+      <schema id="catalogSchema"/>
+      <schema id="multisite"/>
+      <schema id="storeTextSchema"/>
+    </datasource>
+
+  </server-instance-type>
+  <server-instance-type id="staging">
+
+    <datasource id="stagingnonswitchingCore">
+      <schema id="catalogSchema"/>
+      <schema id="multisite"/>
+      <schema id="storeTextSchema"/>
+    </datasource>
+    <datasource id="stagingswitchingA">
+      <schema id="catalogSchema"/>
+      <schema id="multisite"/>
+      <schema id="storeTextSchema"/>
+    </datasource>
+    <datasource id="stagingswitchingB">
+      <schema id="catalogSchema"/>
+      <schema id="multisite"/>
+      <schema id="storeTextSchema"/>
+    </datasource>
+
+  </server-instance-type>
+
+  <server-instance-type id="management">
+    <datasource id="all">
+      <schema id="versionedSchema"/>
+    </datasource>
+  </server-instance-type>
+
+  <server-instance-type id="svcagent">
+
+    <datasource id="svcagent">
+      <schema id="storeTextSchema"/>
+    </datasource>
+
+  </server-instance-type>
+
+</database-initializer>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/International/cim/dbinit.xml#1 $$Change: 735822 $-->

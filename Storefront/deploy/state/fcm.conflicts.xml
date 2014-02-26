@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE RESOLUTION_STATE [
+<!ELEMENT RESOLUTION_STATE (RESOLUTION_DEFAULTS, RESOLUTION*)><!ELEMENT RESOLUTION_DEFAULTS EMPTY><!ATTLIST RESOLUTION_DEFAULTS OWNER CDATA #REQUIRED><!ATTLIST RESOLUTION_DEFAULTS UNKNOWN_OWNER_ACTION CDATA #REQUIRED><!ELEMENT RESOLUTION EMPTY><!ATTLIST RESOLUTION TYPE CDATA #REQUIRED><!ATTLIST RESOLUTION OWNER CDATA #REQUIRED><!ATTLIST RESOLUTION NAME CDATA #REQUIRED>]>
+
+<RESOLUTION_STATE>
+  <RESOLUTION_DEFAULTS OWNER="DEV_STUDIO" UNKNOWN_OWNER_ACTION="LEAVE_UNMODIFIED" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="allAncestors.displayName" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="allAncestors.repositoryId" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="allAncestors.repositoryName" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="clothing-sku.color" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="clothing-sku.size" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="furniture-sku.woodFinish" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="item.type" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="product.adminDisplayName" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="product.averageCustomerRating" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="product.baseUrl" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="product.brand" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="product.briefDescription" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="product.catalogs.repositoryId" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="product.category" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="product.creationDate" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="product.dateAvailable" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="product.daysAvailable" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="product.description" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="product.disallowAsRecommendation" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="product.displayName" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="product.endDate" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="product.features.displayName" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="product.features.repositoryId" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="product.keywords" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="product.language" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="product.longDescription" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="product.manufacturer.description" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="product.manufacturer.displayName" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="product.manufacturer.long_description" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="product.manufacturer.repositoryId" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="product.manufacturer.repositoryName" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="product.nonreturnable" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="product.repositoryId" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="product.repositoryName" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="product.siteId" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="product.startDate" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="product.url" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="sku.baseUrl" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="sku.bundleLinks.description" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="sku.bundleLinks.displayName" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="sku.bundleLinks.endDate" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="sku.bundleLinks.item.repositoryId" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="sku.bundleLinks.repositoryId" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="sku.bundleLinks.startDate" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="sku.configurableProperties.configurationOptions.description" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="sku.configurableProperties.configurationOptions.displayName" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="sku.configurableProperties.configurationOptions.price" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="sku.configurableProperties.configurationOptions.product.repositoryId" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="sku.configurableProperties.configurationOptions.sku.repositoryId" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="sku.configurableProperties.description" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="sku.configurableProperties.displayName" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="sku.creationDate" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="sku.description" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="sku.displayName" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="sku.endDate" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="sku.margin" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="sku.manufacturer_part_number" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="sku.onSaleText" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="sku.quantity" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="sku.repositoryId" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="sku.salePrice" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="sku.siteId" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="sku.startDate" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="sku.type" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="sku.unit_of_measure" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="sku.url" />
+  <RESOLUTION TYPE="ATTRIBUTE" OWNER="SCRIPT" NAME="sku.wholesalePrice" />
+</RESOLUTION_STATE>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Storefront/deploy/state/fcm.conflicts.xml#2 $$Change: 768606 $-->

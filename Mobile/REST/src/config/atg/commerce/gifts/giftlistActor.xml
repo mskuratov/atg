@@ -1,0 +1,153 @@
+<actor-template>
+  <actor-chain id="moveItemsFromCartToWishlist" transaction="TX_SUPPORTS">
+    <form id="moveGiftlistProductHandler" name="/atg/commerce/gifts/GiftlistFormHandler" handle="moveItemsFromCart" var="moveGiftlistHandler">
+      <input name="giftlistId" value="${nucleus['/atg/userprofiling/Profile'].wishlist.repositoryId}"/>
+      <input name="itemIds" value="${param.itemIds}">
+        <tag-converter class-name="atg.droplet.ArrayTagConverter"/>
+      </input>
+      <input name="quantity" value="${param.quantity}"/>
+      <input name="moveItemsFromCartErrorURL" value="/model/atg/commerce/gifts/GiftlistActor/moveItemsFromCart-error"/>
+      <input name="moveItemsFromCartSuccessURL" value="/model/atg/commerce/gifts/GiftlistActor/moveItemsFromCart-success"/>
+    </form>
+  </actor-chain>
+  <actor-chain id="convertWishList" transaction="TX_SUPPORTS">
+    <!-- This chain converts user's current wish list into a newly created gift list. -->
+    <form id="giftListHandler" name="/atg/commerce/gifts/GiftlistFormHandler" handle="convertWishListToGiftList" use-forwards="false" var="handler">
+      <input name="isPublished" value="${param.isPublished}"/>
+      <input name="eventName" value="${param.eventName}"/>
+      <input name="year" value="${param.year}"/>
+      <input name="month" value="${param.month}"/>
+      <input name="date" value="${param.date}"/>
+      <input name="eventType" value="${param.eventType}"/>
+      <input name="description" value="${param.description}"/>
+      <input name="comments" value="${param.comments}"/>
+      <input name="shippingAddressId" value="${param.shippingAddressId}"/>
+      <input name="instructions" value="${param.instructions}"/>
+      <input name="saveGiftlistErrorURL" value="/rest/model/atg/commerce/gifts/GiftlistActor/error"/>
+      <input name="saveGiftlistSuccessURL" value="${null}"/>
+    </form>
+    <!-- On success, render additional info required by client to construct a local gift list instance. -->
+    <output id="giftlistId" name="giftlistId" value="${handler.giftlistId}"/>
+    <output id="firstName" name="firstName" value="${nucleus['/atg/userprofiling/Profile'].firstName}"/>
+    <output id="lastName" name="lastName" value="${nucleus['/atg/userprofiling/Profile'].lastName}"/>
+    <droplet id="forEach" name="/atg/dynamo/droplet/ForEach" var="forEach">
+      <input name="array" value="${nucleus['/atg/userprofiling/Profile'].allSecondaryAddresses}"/>
+      <oparam name="output">
+        <droplet id="switch" name="/atg/dynamo/droplet/Switch">
+          <input name="value" value="${forEach.element.repositoryId == param.shippingAddressId}"/>
+          <oparam name="true">
+            <output id="addressName" name="addressName" value="${forEach.key}"/>
+          </oparam>
+        </droplet>
+      </oparam>
+    </droplet>
+  </actor-chain>
+  <actor-chain id="addToGiftList">
+    <!-- Drill into GiftlistFormHandler definition and set proper error URL. -->
+    <droplet id="giftListLookup" name="/atg/commerce/gifts/GiftlistLookupDroplet">
+      <oparam name="output">
+        <droplet id="switch" name="/atg/dynamo/droplet/Switch">
+          <oparam name="true">
+            <form id="giftListHandler" name="/atg/commerce/gifts/GiftlistFormHandler" handle="addItemToGiftlist" use-forwards="false">
+              <input name="addItemToGiftlistErrorURL" value="/rest/model/atg/commerce/gifts/GiftlistActor/error"/>
+            </form>
+          </oparam>
+        </droplet>
+      </oparam>
+    </droplet>
+  </actor-chain>
+  <actor-chain id="removeGiftItem">
+    <!-- Drill into GiftlistFormHandler definition and set proper error URL. -->
+    <droplet id="giftListLookup" name="/atg/commerce/gifts/GiftlistLookupDroplet" var="lookup">
+      <oparam name="output">
+        <droplet id="switch" name="/atg/dynamo/droplet/Switch">
+          <oparam name="true">
+            <form id="giftListHandler" name="/atg/commerce/gifts/GiftlistFormHandler" handle="removeItemsFromGiftlist" use-forwards="false">
+              <input name="removeItemsFromGiftlistErrorURL" value="/rest/model/atg/commerce/gifts/GiftlistActor/error"/>
+            </form>
+          </oparam>
+        </droplet>
+      </oparam>
+    </droplet>
+  </actor-chain>
+  <actor-chain id="removeGiftList">
+    <form id="removeGiftListHandler" name="/atg/commerce/gifts/GiftlistFormHandler" handle="deleteGiftlist" use-forwards="false">
+      <input name="deleteGiftlistErrorURL" value="/rest/model/atg/commerce/gifts/GiftlistActor/error"/>
+    </form>
+  </actor-chain>
+  <actor-chain id="createGiftList">
+    <form id="createGiftListHandler" name="/atg/commerce/gifts/GiftlistFormHandler" handle="saveGiftlist" use-forwards="false" var="handler">
+      <input name="saveGiftlistErrorURL" value="/rest/model/atg/commerce/gifts/GiftlistActor/error"/>
+      <input name="saveGiftlistSuccessURL" value="/rest/model/atg/commerce/gifts/GiftlistActor/createGiftlist-success"/>
+    </form>
+  </actor-chain>
+  <actor-chain id="updateGiftList">
+    <droplet id="giftListLookup" name="/atg/commerce/gifts/GiftlistLookupDroplet" var="lookup">
+      <oparam name="output">
+        <droplet id="switch" name="/atg/dynamo/droplet/Switch">
+          <oparam name="true">
+            <form id="giftListHandler" name="/atg/commerce/gifts/GiftlistFormHandler" handle="updateGiftlist" use-forwards="false">
+              <input name="updateGiftlistAndItemsErrorURL" value="/rest/model/atg/commerce/gifts/GiftlistActor/error"/>
+            </form>
+          </oparam>
+        </droplet>
+      </oparam>
+    </droplet>
+  </actor-chain>
+  <actor-chain id="removeAllItems" transaction="TX_REQUIRES">
+    <form id="handler" name="/atg/commerce/gifts/GiftlistFormHandler" handle="removeAllItems">
+      <input name="giftlistId" value="${param.giftlistId}"/>
+    </form>
+  </actor-chain>
+  <actor-chain id="moveToWishList" transaction="TX_REQUIRES">
+    <form id="handler" name="/atg/commerce/gifts/GiftlistFormHandler" handle="moveItemToWishList">
+      <input name="giftlistId" value="${param.giftlistId}"/>
+      <input name="giftItemId" value="${param.giftItemId}"/>
+    </form>
+  </actor-chain>
+  <actor-chain id="copyToWishList" transaction="TX_REQUIRES">
+    <form id="handler" name="/atg/commerce/gifts/GiftlistFormHandler" handle="copyItemToWishList">
+      <input name="giftlistId" value="${param.giftlistId}"/>
+      <input name="giftItemId" value="${param.giftItemId}"/>
+    </form>
+  </actor-chain>
+  <actor-chain id="moveToGiftList" transaction="TX_REQUIRES">
+    <form id="handler" name="/atg/commerce/gifts/GiftlistFormHandler" handle="moveItemToGiftList">
+      <input name="sourceGiftlistId" value="${param.sourceGiftlistId}"/>
+      <input name="destinationGiftlistId" value="${param.destinationGiftlistId}"/>
+      <input name="giftItemId" value="${param.giftItemId}"/>
+    </form>
+  </actor-chain>
+  <actor-chain id="copyToGiftList" transaction="TX_REQUIRES">
+    <form id="handler" name="/atg/commerce/gifts/GiftlistFormHandler" handle="copyItemToGiftList">
+      <input name="sourceGiftlistId" value="${param.sourceGiftlistId}"/>
+      <input name="destinationGiftlistId" value="${param.destinationGiftlistId}"/>
+      <input name="giftItemId" value="${param.giftItemId}"/>
+    </form>
+  </actor-chain>
+  <actor-chain id="createGiftlist-success">
+    <component id="handler" name="/atg/commerce/gifts/GiftlistFormHandler" component-var="handler">
+	  <output id="giftlistId" name="giftlistId" value="${handler.giftlistId}"/>
+	  <output id="firstName" name="firstName" value="${nucleus['/atg/userprofiling/Profile'].firstName}"/>
+	  <output id="lastName" name="lastName" value="${nucleus['/atg/userprofiling/Profile'].lastName}"/>
+	  <droplet id="forEach" name="/atg/dynamo/droplet/ForEach" var="forEach">
+        <input name="array" value="${nucleus['/atg/userprofiling/Profile'].allSecondaryAddresses}"/>
+        <oparam name="output">
+          <droplet id="switch" name="/atg/dynamo/droplet/Switch">
+            <input name="value" value="${forEach.element.repositoryId == param.shippingAddressId}"/>
+            <oparam name="true">
+              <output id="addressName" name="addressName" value="${forEach.key}"/>
+            </oparam>
+          </droplet>
+        </oparam>
+      </droplet>
+    </component>
+  </actor-chain>
+  <actor-chain id="error">
+    <component id="handler" name="/atg/commerce/gifts/GiftlistFormHandler" component-var="handler">
+      <output id="formError" name="formError" value="${handler.formError}"/>
+      <output id="formExceptions" name="formExceptions" value="${handler.formExceptions}" filter-id="full"/>
+    </component>
+  </actor-chain>
+</actor-template>
+<!-- @version $Id: //hosting-blueprint/MobileCommerce/version/10.2/server/MobileCommerce/config/atg/commerce/gifts/giftlistActor.xml#4 $$Change: 794239 $ -->

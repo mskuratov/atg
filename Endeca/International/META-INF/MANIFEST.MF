@@ -1,0 +1,4 @@
+ATG-Product: The Commerce Reference Store International Endeca
+Manifest-Version: 1.0
+ATG-Required: Store.Endeca.International.Assembler Store.Endeca.International.Index
+ 

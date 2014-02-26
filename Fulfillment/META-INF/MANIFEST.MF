@@ -1,0 +1,5 @@
+ATG-Product: Commerce Store Fulfillment
+Manifest-Version: 1.0
+ATG-Class-Path: lib/classes.jar
+ATG-Config-Path: config/config.jar
+ATG-Required: Fulfillment Store.EStore

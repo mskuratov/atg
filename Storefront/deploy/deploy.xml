@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE app-descriptor [
+  <!ELEMENT app-descriptor ( dir-structure+, copy-pattern+ ) >
+  <!ATTLIST app-descriptor
+    update (true|false) #IMPLIED
+    id CDATA #IMPLIED
+    default-name CDATA #IMPLIED
+  >
+
+  <!ELEMENT dir-structure ( dir+ ) >
+
+  <!ELEMENT dir ( #PCDATA ) >
+  <!ATTLIST dir
+    primary (true|false) #IMPLIED
+    platform (win|unix) #IMPLIED
+  >
+
+  <!ELEMENT copy-pattern ( copy+ ) >
+  <!ATTLIST copy-pattern src-root CDATA #REQUIRED >
+
+  <!ELEMENT copy ( src-dir, src-file, dest-dir ) >
+  <!ATTLIST copy
+    clear-dest-dir (true|false) #IMPLIED
+    recursive (true|false) #IMPLIED
+    preserve-subdirs (true|false) #IMPLIED
+    filter-files (true|false) #IMPLIED
+    mode CDATA #IMPLIED
+    primary (true|false) #IMPLIED
+    platform (win|unix) #IMPLIED
+    endeca-version (460|470|480|500) #IMPLIED
+  >
+
+  <!ELEMENT dest-dir ( #PCDATA ) >
+  <!ELEMENT src-dir ( #PCDATA ) >
+  <!ELEMENT src-file ( #PCDATA ) >
+]>
+<app-descriptor update="true" id="CRSApp" default-name="CRS">
+
+  <custom-tokens>
+    <token name="CAS_ROOT">
+      <prompt-question>Please enter the CAS install directory using Unix-style forward slashes, including the version number (e.g. C:/Endeca/CAS/3.1.2).</prompt-question>
+      <install-config-option>casRoot</install-config-option>
+    </token>
+    <token name="CAS_JAR_VERSION">
+      <prompt-question>Please enter the version for CAS jar files (or hit 'enter' to use the default).  [Default: 3.1.2]</prompt-question>
+      <install-config-option>casJarVersion</install-config-option>
+      <default-value>3.1.2</default-value>
+    </token>
+    <token name="CAS_HOST">
+      <prompt-question>Please enter the hostname where CAS is running (or hit 'enter' to use the default). [Default: localhost]</prompt-question>
+      <install-config-option>casHost</install-config-option>
+      <default-value>localhost</default-value>
+    </token>
+    <token name="CAS_PORT">
+      <prompt-question>Please enter the port where CAS is running (or hit 'enter' to use the default). [Default: 8500]</prompt-question>
+      <install-config-option>casPort</install-config-option>
+      <default-value>8500</default-value>
+    </token>    
+    <token name="LANGUAGE_ID">
+      <prompt-question>Please enter the language code to use (or hit 'enter' to use the default). [Default: en]</prompt-question>
+      <install-config-option>languageId</install-config-option>
+      <default-value>en</default-value>
+    </token>
+    <token name="HOST">
+      <prompt-question>Please enter the fully-qualified Workbench hostname, including domain.</prompt-question>
+      <install-config-option>host</install-config-option>
+    </token> 
+    <token name="PREVIEW_HOST">
+      <prompt-question>Please enter the preview hostname. [Default: localhost]</prompt-question>
+      <install-config-option>previewHost</install-config-option>
+      <default-value>localhost</default-value>
+    </token>
+    <token name="PREVIEW_PORT">
+      <prompt-question>Please enter the preview port number. Typical values are 7003 for WebLogic, 8080 for JBoss and Tomcat, and 9080 for WebSphere.</prompt-question>
+      <install-config-option>previewPort</install-config-option>
+    </token>
+    <token name="PREVIEW_CONTEXT_ROOT">
+      <prompt-question>Please enter the context root of the preview application. [Default: crs]</prompt-question>
+      <install-config-option>previewContextRoot</install-config-option>
+      <default-value>crs</default-value>
+    </token>
+  </custom-tokens>  
+  
+  <dir-structure>
+    <dir>data/state</dir>
+  </dir-structure>
+
+  <copy-pattern src-root=".">
+    <copy clear-dest-dir="true" filter-files="true">
+      <src-dir>./pipeline</src-dir>
+      <src-file>*</src-file>
+      <dest-dir>./config/pipeline</dest-dir>
+    </copy>
+  </copy-pattern>
+  
+  <copy-pattern src-root=".">
+    <copy clear-dest-dir="true" recursive="true" preserve-subdirs="true" filter-files="true">
+      <src-dir>./ifcr</src-dir>
+      <src-file>*</src-file>
+      <dest-dir>./config/ifcr</dest-dir>
+    </copy>
+  </copy-pattern>
+
+  <copy-pattern src-root="." >
+    <copy clear-dest-dir="true" recursive="true" preserve-subdirs="true" filter-files="true">
+      <src-dir>./editors_config</src-dir>
+      <src-file>*</src-file>
+      <dest-dir>./config/editors_config</dest-dir>
+    </copy>
+  </copy-pattern>
+
+  <copy-pattern src-root=".">
+    <copy clear-dest-dir="true" recursive="true" preserve-subdirs="true" filter-files="true">
+      <src-dir>./cartridge_templates</src-dir>
+      <src-file>*</src-file>
+      <dest-dir>./config/cartridge_templates</dest-dir>
+    </copy>
+  </copy-pattern>
+
+  <copy-pattern src-root=".">
+    <copy clear-dest-dir="false" recursive="true" preserve-subdirs="true" filter-files="false">
+      <src-dir>./lib</src-dir>
+      <src-file>*</src-file>
+      <dest-dir>./config/lib/java</dest-dir>
+    </copy>
+  </copy-pattern>
+    
+  <copy-pattern src-root=".">
+    <copy clear-dest-dir="false" recursive="true" preserve-subdirs="true" platform="win" filter-files="true">
+      <src-dir>./control</src-dir>
+      <src-file>*.bat</src-file>
+      <dest-dir>./control</dest-dir>
+    </copy>
+  </copy-pattern>
+  
+  <copy-pattern src-root=".">
+    <copy clear-dest-dir="false" recursive="true" preserve-subdirs="true" platform="unix" mode="755" filter-files="true">
+      <src-dir>./control</src-dir>
+      <src-file>*.sh</src-file>
+      <dest-dir>./control</dest-dir>
+    </copy>
+  </copy-pattern>
+
+  <copy-pattern src-root=".">
+    <copy filter-files="true" clear-dest-dir="true">
+      <src-dir>./state</src-dir>
+      <src-file>*</src-file>
+      <dest-dir>./data/state</dest-dir>
+    </copy>
+  </copy-pattern>
+  
+  <copy-pattern src-root=".">
+    <copy clear-dest-dir="true" filter-files="true">
+      <src-dir>./api_input</src-dir>
+      <src-file>*</src-file>
+      <dest-dir>./config/api_input</dest-dir>
+    </copy>
+  </copy-pattern>
+
+  <copy-pattern src-root=".">
+    <copy clear-dest-dir="false" filter-files="true">
+      <src-dir>./cas</src-dir>
+      <src-file>*</src-file>
+      <dest-dir>./config/cas</dest-dir>
+    </copy>
+  </copy-pattern>
+
+  <copy-pattern src-root=".">
+    <copy preserve-subdirs="true" recursive="true" filter-files="true">
+      <src-dir>./script/</src-dir>
+      <src-file>*</src-file>
+      <dest-dir>./config/script</dest-dir>
+    </copy>
+  </copy-pattern>
+
+</app-descriptor>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Storefront/deploy/deploy.xml#5 $$Change: 793369 $-->

@@ -1,0 +1,59 @@
+<%-- 
+  This gadget renders a size picker. It displays one button for each size.
+
+  This gadget is directly included into the outer page, no parameters.
+--%>
+
+<dsp:getvalueof var="sizes" param="availableSizes"/>
+<dsp:getvalueof id="sizeQuantity" value="${fn:length(sizes)}"/>
+
+<%-- If sizes are not provided for SKUs then size picker is not shown. --%>
+<c:if test="${sizeQuantity > 0}">
+  <div class="atg_store_sizePicker">
+    <label class="atg_store_pickerLabel">
+      <fmt:message key="common.size"/><fmt:message key="common.labelSeparator"/>
+    </label>
+
+    <span class="selector">
+      <%-- Iterate over available sizes and display them. --%>
+      <c:forEach var="size" items="${sizes}">
+        <%-- Always encode item's properties, cause them can have special characters --%>
+        <c:set var="sizeName" value="${fn:escapeXml(fn:replace(size.name, '\\'', '\\\\\\''))}"/>
+        <fmt:message var="oneSize" key="common.size.oneSize"/>
+        <fmt:message var="sizeTitle" key="browse_picker.${size.status}">
+          <fmt:param value="${sizeName}"/>
+        </fmt:message>
+
+        <%-- Display size button. --%>
+        <c:choose>
+          <c:when test="${size.status == 'notoffered'}">
+            <span class="disabled${oneSize == sizeName ? ' atg_store_oneSize' : ''}" title="${sizeTitle}">
+              <c:out value="${sizeName}"/>
+            </span>
+          </c:when>
+          <c:when test="${size.status == 'selected'}">
+            <a class="atg_store_pickerAttribute${oneSize == sizeName ? ' atg_store_oneSize' : ''}" href="javascript:void(0)"
+               title="${sizeTitle}" onClick="atg.store.picker.clickSize(this,'${sizeName}');">
+              <c:out value="${sizeName}"/>
+            </a>
+          </c:when>
+          <c:otherwise>
+            <a class="${oneSize == sizeName ? ' atg_store_oneSize' : ''}" href="javascript:void(0)"
+               title="${sizeTitle}" onClick="atg.store.picker.clickSize(this,'${sizeName}');">
+              <c:out value="${sizeName}"/>
+            </a>
+          </c:otherwise>
+        </c:choose>
+      </c:forEach>
+
+      <%-- Display size chart --%>
+      <c:if test="${sizeQuantity > 1}">
+        <a class="chart atg_store_help" href="javascript:void(0)"
+           onclick="atg.store.util.openwindow('gadgets/sizeChart.jsp','sizeChart',500,500)">
+          <fmt:message key="browse_picker.sizeChart"/>
+        </a>
+      </c:if>
+    </span>
+  </div>
+</c:if>
+<%-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Storefront/j2ee/store.war/browse/gadgets/pickerSizePicker.jspf#1 $$Change: 735822 $--%>

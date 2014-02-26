@@ -1,0 +1,2 @@
+Manifest-Version: 1.0
+ATG-Product: The Commerce Store Mobile Endeca module

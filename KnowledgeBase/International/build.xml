@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="knowledgebase.international" default="all" basedir=".">
+
+  <property name="global.dir" value="${basedir}/../.."/>
+  <import file="${global.dir}/buildtools/common.xml"/>  
+
+</project>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/KnowledgeBase/International/build-base.xml#1 $$Change: 788278 $-->
+

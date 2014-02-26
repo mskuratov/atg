@@ -1,0 +1,65 @@
+<secured-repository-template>
+
+  <item-descriptor name="categoryTranslation">
+
+    <!-- The ACL that applies to the item view/descriptor -->
+    <descriptor-acl value="Admin$role$administrators-group:read,write,create,delete;Admin$role$everyone-group:read;Profile$role$epubSuperAdmin:read,write,create,delete;Profile$role$epubAdmin:read,write,create,delete;Profile$role$epubManager:read,write,create,delete;Profile$accessRight$sitecatalogread:read;Profile$accessRight$sitecatalogfull:read,write,create,delete"/>
+
+    <!-- An ACL fragment that is assigned to all new items -->
+   <creation-base-acl value="Admin$role$administrators-group:read,write,list,destroy,read_owner,write_owner,read_acl,write_acl;Admin$role$everyone-group:read,list;Profile$role$epubSuperAdmin:read,write,list,destroy,read_owner,write_owner,read_acl,write_acl;Profile$role$epubAdmin:read,write,list,destroy,read_owner,write_owner,read_acl,write_acl;Profile$role$epubManager:read,write,list,destroy,read_owner,write_owner,read_acl,write_acl;Profile$accessRight$sitecatalogread:read,list;Profile$accessRight$sitecatalogfull:read,write,list,destroy,read_owner,write_owner,read_acl,write_acl"/>
+
+  </item-descriptor>
+
+  <item-descriptor name="productTranslation">
+
+    <!-- The ACL that applies to the item view/descriptor -->
+    <descriptor-acl value="Admin$role$administrators-group:read,write,create,delete;Admin$role$everyone-group:read;Profile$role$epubSuperAdmin:read,write,create,delete;Profile$role$epubAdmin:read,write,create,delete;Profile$role$epubManager:read,write,create,delete;Profile$accessRight$sitecatalogread:read;Profile$accessRight$sitecatalogfull:read,write,create,delete"/>
+
+    <!-- An ACL fragment that is assigned to all new items -->
+   <creation-base-acl value="Admin$role$administrators-group:read,write,list,destroy,read_owner,write_owner,read_acl,write_acl;Admin$role$everyone-group:read,list;Profile$role$epubSuperAdmin:read,write,list,destroy,read_owner,write_owner,read_acl,write_acl;Profile$role$epubAdmin:read,write,list,destroy,read_owner,write_owner,read_acl,write_acl;Profile$role$epubManager:read,write,list,destroy,read_owner,write_owner,read_acl,write_acl;Profile$accessRight$sitecatalogread:read,list;Profile$accessRight$sitecatalogfull:read,write,list,destroy,read_owner,write_owner,read_acl,write_acl"/>
+
+  </item-descriptor>
+
+  <item-descriptor name="skuTranslation">
+
+    <!-- The ACL that applies to the item view/descriptor -->
+    <descriptor-acl value="Admin$role$administrators-group:read,write,create,delete;Admin$role$everyone-group:read;Profile$role$epubSuperAdmin:read,write,create,delete;Profile$role$epubAdmin:read,write,create,delete;Profile$role$epubManager:read,write,create,delete;Profile$accessRight$sitecatalogread:read;Profile$accessRight$sitecatalogfull:read,write,create,delete"/>
+
+    <!-- An ACL fragment that is assigned to all new items -->
+   <creation-base-acl value="Admin$role$administrators-group:read,write,list,destroy,read_owner,write_owner,read_acl,write_acl;Admin$role$everyone-group:read,list;Profile$role$epubSuperAdmin:read,write,list,destroy,read_owner,write_owner,read_acl,write_acl;Profile$role$epubAdmin:read,write,list,destroy,read_owner,write_owner,read_acl,write_acl;Profile$role$epubManager:read,write,list,destroy,read_owner,write_owner,read_acl,write_acl;Profile$accessRight$sitecatalogread:read,list;Profile$accessRight$sitecatalogfull:read,write,list,destroy,read_owner,write_owner,read_acl,write_acl"/>
+
+  </item-descriptor>
+
+  <item-descriptor name="featureTranslation">
+
+    <!-- The ACL that applies to the item view/descriptor -->
+    <descriptor-acl value="Admin$role$administrators-group:read,write,create,delete;Admin$role$everyone-group:read;Profile$role$epubSuperAdmin:read,write,create,delete;Profile$role$epubAdmin:read,write,create,delete;Profile$role$epubManager:read,write,create,delete;Profile$accessRight$sitecatalogread:read;Profile$accessRight$sitecatalogfull:read,write,create,delete"/>
+
+    <!-- An ACL fragment that is assigned to all new items -->
+   <creation-base-acl value="Admin$role$administrators-group:read,write,list,destroy,read_owner,write_owner,read_acl,write_acl;Admin$role$everyone-group:read,list;Profile$role$epubSuperAdmin:read,write,list,destroy,read_owner,write_owner,read_acl,write_acl;Profile$role$epubAdmin:read,write,list,destroy,read_owner,write_owner,read_acl,write_acl;Profile$role$epubManager:read,write,list,destroy,read_owner,write_owner,read_acl,write_acl;Profile$accessRight$sitecatalogread:read,list;Profile$accessRight$sitecatalogfull:read,write,list,destroy,read_owner,write_owner,read_acl,write_acl"/>
+
+  </item-descriptor>
+
+  <item-descriptor name="asSeenInTranslation">
+
+    <!-- The ACL that applies to the item view/descriptor -->
+    <descriptor-acl value="Admin$role$administrators-group:read,write,create,delete;Admin$role$everyone-group:read;Profile$role$epubSuperAdmin:read,write,create,delete;Profile$role$epubAdmin:read,write,create,delete;Profile$role$epubManager:read,write,create,delete;Profile$accessRight$sitecatalogread:read;Profile$accessRight$sitecatalogfull:read,write,create,delete"/>
+
+    <!-- An ACL fragment that is assigned to all new items -->
+   <creation-base-acl value="Admin$role$administrators-group:read,write,list,destroy,read_owner,write_owner,read_acl,write_acl;Admin$role$everyone-group:read,list;Profile$role$epubSuperAdmin:read,write,list,destroy,read_owner,write_owner,read_acl,write_acl;Profile$role$epubAdmin:read,write,list,destroy,read_owner,write_owner,read_acl,write_acl;Profile$role$epubManager:read,write,list,destroy,read_owner,write_owner,read_acl,write_acl;Profile$accessRight$sitecatalogread:read,list;Profile$accessRight$sitecatalogfull:read,write,list,destroy,read_owner,write_owner,read_acl,write_acl"/>
+
+  </item-descriptor>
+
+  <item-descriptor name="promotionalContentTranslation">
+
+    <!-- The ACL that applies to the item view/descriptor -->
+    <descriptor-acl value="Admin$role$administrators-group:read,write,create,delete;Admin$role$everyone-group:read;Profile$role$epubSuperAdmin:read,write,create,delete;Profile$role$epubAdmin:read,write,create,delete;Profile$role$epubManager:read,write,create,delete;Profile$accessRight$mediaread:read;Profile$accessRight$mediafull:read,write,create,delete;Profile$accessRight$storecontentread:read;Profile$accessRight$storecontentfull:read,write,create,delete"/>
+
+    <!-- An ACL fragment that is assigned to all new items -->
+   <creation-base-acl value="Admin$role$administrators-group:read,write,list,destroy,read_owner,write_owner,read_acl,write_acl;Admin$role$everyone-group:read,list;Profile$role$epubSuperAdmin:read,write,list,destroy,read_owner,write_owner,read_acl,write_acl;Profile$role$epubAdmin:read,write,list,destroy,read_owner,write_owner,read_acl,write_acl;Profile$role$epubManager:read,write,list,destroy,read_owner,write_owner,read_acl,write_acl;Profile$accessRight$mediaread:read,list;Profile$accessRight$mediafull:read,write,list,destroy,read_owner,write_owner,read_acl,write_acl;Profile$accessRight$storecontentread:read,list;Profile$accessRight$storecontentfull:read,write,list,destroy,read_owner,write_owner,read_acl,write_acl"/>
+
+  </item-descriptor>
+
+
+</secured-repository-template>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/International/Versioned/config/atg/commerce/catalog/custom/secureCustomCatalog.xml#2 $$Change: 791340 $-->

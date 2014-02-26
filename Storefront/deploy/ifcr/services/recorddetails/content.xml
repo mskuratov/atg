@@ -1,0 +1,10 @@
+<ContentItem type="Page" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://endeca.com/schema/content/2008">
+  <TemplateId>RecordDetailsService</TemplateId>
+  <Name>Record Details Service</Name>
+  <Property name="recordDetails">
+	<ContentItem type="ProductDetail">
+		<TemplateId>ProductDetail</TemplateId>
+	</ContentItem>
+  </Property>
+</ContentItem>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Storefront/deploy/ifcr/services/recorddetails/content.xml#2 $$Change: 768606 $-->

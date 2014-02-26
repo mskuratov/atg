@@ -1,0 +1,84 @@
+<ContentItem type="SecondaryContent" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://endeca.com/schema/content/2008">
+  <TemplateId>GuidedNavigation</TemplateId>
+  <Name>Guided Navigation</Name>
+  <Property name="navigation">
+    <ContentItemList type="Navigation">
+      <ContentItem type="Navigation">
+        <TemplateId>RefinementMenu</TemplateId>
+        <Name>Category</Name>
+        <Property name="dimensionName">
+          <String>product.category</String>
+        </Property>
+        <Property name="dimensionId">
+          <String>10011</String>
+        </Property>
+        <Property name="sort">
+          <String>default</String>
+        </Property>
+        <Property name="showMoreLink">
+          <Boolean>false</Boolean>
+        </Property>
+        <Property name="moreLinkText">
+          <String>Show More Refinements...</String>
+        </Property>
+        <Property name="numRefinements">
+          <String>10</String>
+        </Property>
+        <Property name="maxNumRefinements">
+          <String>200</String>
+        </Property>
+        <Property name="boostRefinements">
+          <List name="boost" xmlns="http://endeca.com/schema/xavia/2010"/>
+        </Property>
+        <Property name="buryRefinements">
+          <aaa:List xmlns:aaa="http://endeca.com/schema/xavia/2010"/>
+        </Property>
+        <Property name="displayNamePropertyAlias">
+          <String>displayName</String>
+        </Property>
+      </ContentItem>
+      <ContentItem type="Navigation">
+        <TemplateId>PriceSlider</TemplateId>
+        <Name>Price</Name>
+        <Property name="priceProperty">
+          <String>sku.activePrice</String>
+        </Property>
+      </ContentItem>
+      <ContentItem type="Navigation">
+        <TemplateId>RefinementMenu</TemplateId>
+        <Name>Feature</Name>
+        <Property name="dimensionName">
+          <String>product.features.displayName</String>
+        </Property>
+        <Property name="dimensionId">
+          <String>10007</String>
+        </Property>
+        <Property name="sort">
+          <String>default</String>
+        </Property>
+        <Property name="showMoreLink">
+          <Boolean>true</Boolean>
+        </Property>
+        <Property name="moreLinkText">
+          <String>Show More Refinements...</String>
+        </Property>
+        <Property name="numRefinements">
+          <String>10</String>
+        </Property>
+        <Property name="maxNumRefinements">
+          <String>200</String>
+        </Property>
+        <Property name="boostRefinements">
+          <List name="boost" xmlns="http://endeca.com/schema/xavia/2010"/>
+        </Property>
+        <Property name="buryRefinements">
+          <aaa:List xmlns:aaa="http://endeca.com/schema/xavia/2010"/>
+        </Property>
+        <Property name="displayNamePropertyAlias">
+          <String>displayName</String>
+        </Property>
+      </ContentItem>
+    </ContentItemList>
+  </Property>
+</ContentItem>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Storefront/deploy/ifcr/content/Shared/Guided Navigation/Style by Zhanna Guided Navigation/content.xml#3 $$Change: 795110 $-->

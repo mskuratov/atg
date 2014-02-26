@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE task-configuration
+        PUBLIC "-//Art Technology Group, Inc.//DTD Asset Manager Task Configuration//EN"
+        "http://www.atg.com/dtds/task-configuration/task-configuration_2.0.dtd">
+
+<task-configuration>
+
+  <!--
+    default-activity configures the default Merchandising UI
+  -->
+  <default-activity>
+  
+    <panes>
+
+      <!-- Asset selector dialog configurations -->
+      <pane id="assetSelectorDialogs">
+        <panes>
+
+          <!-- custom asset selector for selecting product translation -->
+          <pane id="/atg/commerce/catalog/ProductCatalog:productTranslation">
+            <!-- Asset selector views get defined as sub-panes -->
+            <panes>
+              <pane-order>
+                <pane-id>find</pane-id>
+              </pane-order>
+              <initial-pane>
+                find
+              </initial-pane>
+              <!-- Define the toolbar configuration used in the asset selector dialog -->
+              <toolbar>
+                <configuration>
+                  /atg/remote/commerce/toolbar/MerchandisingToolbarManager
+                </configuration>
+              </toolbar>
+              <!-- Asset manager browse view configuration -->
+              <pane id="find">
+                <display-name>
+                  find.pane.displayName
+                </display-name>
+                <view-component>
+                  <value>
+                     atg.assetmanager.find.view.FindPanel
+                  </value>
+                </view-component>
+                <configuration>
+                  /atg/remote/assetmanager/find/service/FindNavStateFactory
+                </configuration>
+              </pane>
+            </panes>
+          </pane> 
+          <!-- end custom asset selector for product translation --> 
+        </panes>
+      </pane>
+    </panes>
+    
+   
+  </default-activity>
+
+</task-configuration>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/International/Versioned/config/atg/remote/commerce/assetmanager/taskConfiguration.xml#1 $$Change: 788278 $ -->

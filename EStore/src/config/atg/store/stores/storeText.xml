@@ -1,0 +1,119 @@
+<!DOCTYPE gsa-template PUBLIC "-//Art Technology Group, Inc.//DTD Dynamo Security//EN"
+"http://www.atg.com/dtds/gsa/gsa_1.0.dtd">
+
+<gsa-template>
+  <item-descriptor name="storeText"
+                   sub-type-property="type"
+                   sub-type-value="text"
+                   display-name-resource="storeText"
+                   display-property="key">
+    <attribute name="resourceBundle" value="atg.projects.store.stores.StoreTextRepositoryTemplateResources"/>
+
+    <attribute name="categoryStoreKeyPriority" value="10"/>
+    <attribute name="categoryStoreTextPriority" value="20"/>
+
+    <attribute name="flexIconResource" value="item.shortStoreText.iconSmall"/>
+    <attribute name="largeFlexIconResource" value="item.shortStoreText.iconLarge"/>
+
+    <table name="crs_store_text"
+           type="primary"
+           id-column-name="text_id">
+      <property name="key"
+                column-name="key_id"
+                data-type="string"
+                required="true"
+                category-resource="categoryStoreKey"
+                display-name-resource="key"/>
+
+      <property name="tag"
+                column-name="tag"
+                data-type="string"
+                category-resource="categoryStoreText"
+                display-name-resource="tag"/>
+
+      <property name="type" 
+                column-name="text_type"
+                data-type="enumerated"
+                category-resource="categoryStoreText"
+                display-name-resource="type">
+        <option value="text" code="0"/>
+        <option value="shortText" code="1"/>
+        <option value="longText" code="2"/>
+        <option value="textList" code="3"/>
+      </property>
+    </table>
+  </item-descriptor>
+  
+  <item-descriptor name="storeShortText"
+                   super-type="storeText"
+                   sub-type-value="shortText"
+                   display-name-resource="shortText">
+    <attribute name="resourceBundle" value="atg.projects.store.stores.StoreTextRepositoryTemplateResources"/>
+    
+    <attribute name="categoryStoreKeyPriority" value="10"/>
+    <attribute name="categoryStoreTextPriority" value="20"/>
+
+    <attribute name="flexIconResource" value="item.shortStoreText.iconSmall"/>
+    <attribute name="largeFlexIconResource" value="item.shortStoreText.iconLarge"/>    
+    
+    <table name="crs_store_short_txt"
+           type="auxiliary"
+           id-column-names="text_id">
+      <property name="text"
+                column-name="text_template"
+                data-type="string"
+                category-resource="categoryStoreText"
+                display-name-resource="text"/>       
+    </table>                   
+  </item-descriptor>
+
+  <item-descriptor name="storeLongText"
+                   super-type="storeText"
+                   sub-type-value="longText"
+                   display-name-resource="longText">
+    <attribute name="resourceBundle" value="atg.projects.store.stores.StoreTextRepositoryTemplateResources"/>
+
+    <attribute name="categoryStoreKeyPriority" value="10"/>
+    <attribute name="categoryStoreTextPriority" value="20"/>
+
+    <attribute name="flexIconResource" value="item.longStoreText.iconSmall"/>
+    <attribute name="largeFlexIconResource" value="item.longStoreText.iconLarge"/>
+
+
+    <table name="crs_store_long_txt"
+           type="auxiliary"
+           id-column-names="text_id">
+      <property name="text"
+                column-name="text_template"
+                data-type="big string"
+                category-resource="categoryStoreText"
+                display-name-resource="text"/>
+    </table>
+  </item-descriptor>
+  
+  <item-descriptor name="storeTextList"
+                   super-type="storeText"
+                   sub-type-value="textList"
+                   display-name-resource="textList">
+
+    <attribute name="resourceBundle" value="atg.projects.store.stores.StoreTextRepositoryTemplateResources"/>
+
+    <attribute name="categoryStoreKeyPriority" value="10"/>
+    <attribute name="categoryStoreTextPriority" value="20"/>
+
+    <table name="crs_store_list_txt"
+           type="multi"
+           id-column-names="list_id"
+           multi-column-name="sequence_num">
+      <property name="list"
+                data-type="list" 
+                display-name-resource="list"
+                component-item-type="storeText"
+                category-resource="categoryTextList"
+                column-name="text_id" />
+    </table>               
+                   
+  </item-descriptor>
+</gsa-template>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/config/atg/store/stores/storeText.xml#2 $$Change: 788278 $-->
+

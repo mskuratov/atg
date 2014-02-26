@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Servlet 2.4 deployment descriptor for a web application.  See the indicated XSD
+     for more information about the contents of this file. -->
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" version="2.4"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+         http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+  <description>
+    Commerce Reference Store
+  </description>
+
+  <display-name>
+    Commerce Reference Store
+  </display-name>
+
+  <!-- This is the name of the "parent web application", i.e. an application
+       that has a SessionNameContextServlet defined in it which will define the
+       session scope for this web application. -->
+  <context-param>
+    <param-name>atg.session.parentContextName</param-name>
+    <param-value>/dyn</param-value>
+  </context-param>
+
+  <!-- If context-root is set here, then ServletContextWebAppRegistry will use
+       this setting as the context root for this web application.  This must
+       match the context-root setting in application.xml. -->
+  <context-param>
+    <param-name>context-root</param-name>
+    <param-value>crs-merchandising</param-value>
+  </context-param>
+
+  <!-- Turn off preview for this app -->
+  <context-param>
+    <param-name>atg.preview</param-name>
+    <param-value>false</param-value>
+  </context-param>
+ 
+  <!-- This filter invokes the DAF servlet pipeline.  It is intended to
+       eliminate the need for dsp:page tags in JSPs.  (Unfortunately, this
+       functionality is not fully implemented as of ATG 7.0, so dsp:page
+       tags are also still required.) -->
+  <filter>
+    <filter-name>PageFilter</filter-name>
+    <filter-class>atg.filter.dspjsp.PageFilter</filter-class>
+  </filter>   
+
+  <!-- This filter is responsible for adding full caching headers to static
+       content (images, js files, etc.) -->
+  <filter>
+    <filter-name>AddCacheHeadersFilter</filter-name>
+    <filter-class>atg.filter.AddCacheHeadersFilter</filter-class>
+    <init-param>
+      <param-name>patterns</param-name>
+      <param-value>.*\.png,.*\.gif,.*\.jpg,.*\.js,.*\.ico,.*\.css</param-value>
+    </init-param>
+    <init-param>
+      <param-name>gzipPatterns</param-name>
+      <param-value>.*\.js,.*\.css</param-value>
+    </init-param>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>PageFilter</filter-name>
+    <url-pattern>*.jsp</url-pattern>
+  </filter-mapping>
+
+  <filter-mapping>
+    <filter-name>AddCacheHeadersFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <!-- Configure the Nucleus Servlet. This servlet definition is required in
+       each web application that uses Dynamo functionality.  When mapped, it
+       exposes the Nucleus component browser, but should not be mapped to any
+       paths on a live site. -->
+  <servlet>
+    <servlet-name>NucleusServlet</servlet-name>
+    <servlet-class>atg.nucleus.servlet.NucleusServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+</web-app>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/Versioned/j2ee/store-merchandising.war/WEB-INF/web.xml#1 $$Change: 735822 $-->

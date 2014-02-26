@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!DOCTYPE gsa-template SYSTEM "dynamosystemresource:/atg/dtds/gsa/gsa_1.0.dtd">
+
+<gsa-template>
+
+  <import-items>
+
+    <!-- 9 items of type StoreCreditClaimable -->
+    
+    <add-item item-descriptor="StoreCreditClaimable" id="sc100">
+      <set-property name="amount"><![CDATA[100.0]]></set-property>
+      <!-- export is false   <set-property name="version"><![CDATA[1]]></set-property>  -->
+      <set-property name="ownerId"><![CDATA[se-570030]]></set-property>
+      <set-property name="lastModified"><![CDATA[6/27/2012 14:59:34]]></set-property>
+      <set-property name="amountRemaining"><![CDATA[100.0]]></set-property>
+      <set-property name="type"><![CDATA[StoreCreditClaimable]]></set-property>
+    </add-item>
+    
+    <add-item item-descriptor="StoreCreditClaimable" id="sc350">
+      <set-property name="amount"><![CDATA[350.49]]></set-property>
+      <!-- export is false   <set-property name="version"><![CDATA[1]]></set-property>  -->
+      <set-property name="ownerId"><![CDATA[se-570031]]></set-property>
+      <set-property name="lastModified"><![CDATA[6/27/2012 14:59:34]]></set-property>
+      <set-property name="amountRemaining"><![CDATA[350.49]]></set-property>
+      <set-property name="type"><![CDATA[StoreCreditClaimable]]></set-property>
+    </add-item>
+    
+    <add-item item-descriptor="StoreCreditClaimable" id="sc31a31">
+      <set-property name="issueDate"><![CDATA[6/28/2012 05:24:15]]></set-property>
+      <set-property name="amountAuthorized"><![CDATA[100.03]]></set-property>
+      <set-property name="amount"><![CDATA[676.05]]></set-property>
+      <!-- export is false   <set-property name="version"><![CDATA[7]]></set-property>  -->
+      <set-property name="ownerId"><![CDATA[se-570040]]></set-property>
+      <set-property name="lastModified"><![CDATA[6/28/2012 06:18:54]]></set-property>
+      <set-property name="lastUsed"><![CDATA[6/28/2012 06:18:54]]></set-property>
+      <set-property name="status"><![CDATA[claimed]]></set-property>
+      <set-property name="amountRemaining"><![CDATA[576.02]]></set-property>
+      <set-property name="type"><![CDATA[StoreCreditClaimable]]></set-property>
+    </add-item>
+    
+    <add-item item-descriptor="StoreCreditClaimable" id="sc354df">
+      <set-property name="issueDate"><![CDATA[6/28/2012 05:07:56]]></set-property>
+      <set-property name="amountAuthorized"><![CDATA[38.33]]></set-property>
+      <set-property name="amount"><![CDATA[38.33]]></set-property>
+      <!-- export is false   <set-property name="version"><![CDATA[5]]></set-property>  -->
+      <set-property name="ownerId"><![CDATA[se-570030]]></set-property>
+      <set-property name="lastModified"><![CDATA[6/28/2012 06:08:09]]></set-property>
+      <set-property name="lastUsed"><![CDATA[6/28/2012 06:08:09]]></set-property>
+      <set-property name="status"><![CDATA[claimed]]></set-property>
+      <set-property name="type"><![CDATA[StoreCreditClaimable]]></set-property>
+    </add-item>
+    
+    <add-item item-descriptor="StoreCreditClaimable" id="sc3f29c">
+      <set-property name="issueDate"><![CDATA[6/28/2012 05:22:31]]></set-property>
+      <set-property name="amountAuthorized"><![CDATA[373.05]]></set-property>
+      <set-property name="amount"><![CDATA[373.05]]></set-property>
+      <!-- export is false   <set-property name="version"><![CDATA[5]]></set-property>  -->
+      <set-property name="ownerId"><![CDATA[se-570040]]></set-property>
+      <set-property name="lastModified"><![CDATA[6/28/2012 06:13:09]]></set-property>
+      <set-property name="lastUsed"><![CDATA[6/28/2012 06:13:09]]></set-property>
+      <set-property name="status"><![CDATA[claimed]]></set-property>
+      <set-property name="type"><![CDATA[StoreCreditClaimable]]></set-property>
+    </add-item>
+    
+    <add-item item-descriptor="StoreCreditClaimable" id="sc4b4f9">
+      <set-property name="issueDate"><![CDATA[6/28/2012 06:21:28]]></set-property>
+      <set-property name="amount"><![CDATA[19.65]]></set-property>
+      <!-- export is false   <set-property name="version"><![CDATA[1]]></set-property>  -->
+      <set-property name="lastModified"><![CDATA[6/28/2012 06:21:46]]></set-property>
+      <set-property name="amountRemaining"><![CDATA[19.65]]></set-property>
+      <set-property name="type"><![CDATA[StoreCreditClaimable]]></set-property>
+    </add-item>
+    
+    <add-item item-descriptor="StoreCreditClaimable" id="sc51f85">
+      <set-property name="issueDate"><![CDATA[6/28/2012 06:17:23]]></set-property>
+      <set-property name="amountAuthorized"><![CDATA[106.52]]></set-property>
+      <set-property name="amount"><![CDATA[106.52]]></set-property>
+      <!-- export is false   <set-property name="version"><![CDATA[1]]></set-property>  -->
+      <set-property name="lastModified"><![CDATA[6/28/2012 06:18:57]]></set-property>
+      <set-property name="lastUsed"><![CDATA[6/28/2012 06:18:54]]></set-property>
+      <set-property name="status"><![CDATA[claimed]]></set-property>
+      <set-property name="type"><![CDATA[StoreCreditClaimable]]></set-property>
+    </add-item>
+    
+    <add-item item-descriptor="StoreCreditClaimable" id="sc34fcb">
+      <set-property name="issueDate"><![CDATA[6/28/2012 05:07:56]]></set-property>
+      <set-property name="amountAuthorized"><![CDATA[82.25]]></set-property>
+      <set-property name="amount"><![CDATA[82.25]]></set-property>
+      <!-- export is false   <set-property name="version"><![CDATA[5]]></set-property>  -->
+      <set-property name="ownerId"><![CDATA[se-570031]]></set-property>
+      <set-property name="lastModified"><![CDATA[6/28/2012 06:08:09]]></set-property>
+      <set-property name="lastUsed"><![CDATA[6/28/2012 06:08:09]]></set-property>
+      <set-property name="status"><![CDATA[claimed]]></set-property>
+      <set-property name="type"><![CDATA[StoreCreditClaimable]]></set-property>
+    </add-item>
+    
+    <add-item item-descriptor="StoreCreditClaimable" id="sc6">
+      <set-property name="amount"><![CDATA[5.99]]></set-property>
+      <!-- export is false   <set-property name="version"><![CDATA[1]]></set-property>  -->
+      <set-property name="ownerId"><![CDATA[se-570030]]></set-property>
+      <set-property name="lastModified"><![CDATA[6/27/2012 14:59:34]]></set-property>
+      <set-property name="amountRemaining"><![CDATA[5.99]]></set-property>
+      <set-property name="type"><![CDATA[StoreCreditClaimable]]></set-property>
+    </add-item>
+
+    <!-- 2 items of type PromotionClaimable -->
+
+    <add-item item-descriptor="DeployablePromotionClaimable" id="TENSHIP">
+      <set-property name="displayName"><![CDATA[TENSHIP]]></set-property>
+      <set-property name="lastModified"><![CDATA[4/2/2010 10:10:13]]></set-property>
+      <set-property name="promotions"><![CDATA[promo20004,promo20011]]></set-property>
+      <set-property name="type"><![CDATA[DeployablePromotionClaimable]]></set-property>
+      <set-property name="redeemableOnPromotionSites"><![CDATA[true]]></set-property>
+    </add-item>
+
+  </import-items>
+
+</gsa-template>
+  <!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Storefront/data/claimable.xml#2 $$Change: 788278 $-->

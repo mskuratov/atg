@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE repository-admins
+        PUBLIC "-//Art Technology Group, Inc.//DTD Repository Admin Registration//EN"
+        "http://www.atg.com/dtds/ui/dps/admins_1.0.dtd">
+
+<repository-admins>
+
+  <!-- Register the promotional content editor with the ACC -->
+  <custom-admin id="IndividualCatalog">
+    <create-bean-displays>
+      <bean-display type="promotionalContent" class="atg.projects.store.ui.PromotionalContentEditor"/>
+    </create-bean-displays>
+    <standard-bean-displays>
+      <bean-display type="promotionalContent" class="atg.projects.store.ui.PromotionalContentEditor"/>
+    </standard-bean-displays>
+  </custom-admin>
+
+
+  <default-admin id="StandardCustomProductCatalog">
+    <create-bean-displays>
+      <bean-display type="promotionalContent" class="atg.projects.store.ui.PromotionalContentEditor"/>
+    </create-bean-displays>
+    <standard-bean-displays>
+      <bean-display type="promotionalContent" class="atg.projects.store.ui.PromotionalContentEditor"/>
+    </standard-bean-displays>
+  </default-admin>
+
+  <!-- Alter to also show the price lists in the standard repository editor pane -->
+  <default-admin id="StandardPriceLists">
+    <display-name bundle="atg.ui.commerce.CommerceToolsResources" resource="standardPriceLists"/>
+    <task>Pricing</task>
+    <privilege-header>Commerce</privilege-header>
+    <priority>20</priority>
+    <repository-name>PriceLists</repository-name>
+    <help-url>dcsRepositoryHelpURL</help-url>
+
+    <create-bean-displays>
+      <bean-display type="genericFolder" class="atg.ui.repository.RepositoryItemTable">
+        <property name="selectedProperties" value="name"/>
+      </bean-display>
+    </create-bean-displays>
+
+    <standard-bean-displays>
+      <bean-display type="genericFolder" class="atg.ui.repository.RepositoryItemTable">
+        <property name="selectedProperties" value="name"/>
+      </bean-display>
+    </standard-bean-displays>
+
+  </default-admin>
+  
+</repository-admins>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/config/atg/devtools/admins.xml#1 $$Change: 735822 $-->

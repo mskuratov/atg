@@ -1,0 +1,234 @@
+/* Global Styles
+-----------------------------------------*/
+.atg_store_infoList dt{
+  width:120px;
+}
+
+/* Header Links
+-----------------------------------------*/
+#atg_store_userAccountNav ul li.atg_store_welcomeMessage{
+  max-width:270px;
+}
+#atg_store_userAccountNav ul li.atg_store_welcomeMessage .atg_store_welcome{
+  width:206px;
+}
+#atg_store_userAccountNav ul li.atg_store_welcomeMessage span.atg_store_loggedInUser .atg_store_loggedInUserName{
+  width:124px;
+}
+/* Category Navigation */
+#atg_store_catNavContainer ul#atg_store_catNav > li > a{
+  padding: 0 28px;
+}
+
+/* 2.4 - Content Header
+----------------------------------------------------------*/
+#atg_store_contentHeader h2{
+  font-size:4.0em;
+  width:80%;
+}
+
+/* Checkout
+-----------------------------------------*/
+/* Checkout Progress */
+#atg_store_contentHeader #atg_store_checkoutProgressContainer h2{
+  width:auto;
+}
+
+.atg_store_checkoutProgress{
+  left:240px;
+}
+/* Shopping Cart */
+.atg_store_giftWrap{
+  line-height:22px;
+}
+/* Richcart */
+#atg_store_richCart .atg_store_richCartCartLink{
+  line-height:1em;
+  margin-top:7px;
+  margin-bottom:7px;
+}
+
+/* Billing - Add New Credit Card Form */
+ul.atg_store_addNewCreditCard li.atg_store_cardType label,
+ul.atg_store_addNewCreditCard li.atg_store_expiration label,
+ul.atg_store_addNewCreditCard li.atg_store_ccNumber label,
+ul.atg_store_addNewCreditCard li.atg_store_ccCsvCode label{
+  margin-top:16px;
+}
+.atg_store_savedCreditCard .atg_store_billingEnterCardCSV .atg_store_buttonMessage{
+  width:205px;
+}
+.atg_store_existingAddresses{
+    background:url(/crsdocroot/content/images/storefront/or_seperator_de.png) no-repeat top center; 
+}
+.atg_store_existingAddresses ul.atg_store_addNewCreditCard li .atg_store_cardNickName{
+margin-bottom: 12px;
+}
+.atg_store_addCardInfo ul.atg_store_addNewCreditCard li {
+    margin-right: 26px;
+}
+.atg_store_addCardInfo ul.atg_store_addNewCreditCard li.option {
+  margin-top: 42px;
+  margin-right:10px;
+}
+.atg_store_addCardInfo ul.atg_store_addNewCreditCard li.option label{
+  float:right;
+  text-align:left;
+  width:auto;
+  margin-bottom:0;
+}
+.dj_osx ul.atg_store_addNewCreditCard li .atg_store_cardNickName{
+margin-bottom: 10px;
+}
+#atg_store_selectAddress .atg_store_formActions {
+  margin-top:23px;
+}
+.atg_store_existingAddresses #atg_store_selectAddress .atg_store_formActions{
+  margin-top:0;
+}
+.atg_store_existingAddresses .atg_store_saveSelectAddress, 
+.atg_store_existingAddresses .atg_store_saveNewBillingAddress{
+  top:510px;
+}
+
+#atg_store_enterNewBillingAddress .atg_store_formActions{
+  margin-top:33x;
+}
+
+/* Shipping Options */
+.atg_store_shippingOptionsContainer{
+  width: 300px;
+}
+/* Add Gift Note */
+.atg_store_enterGiftMessage ul.atg_store_basicForm label{
+  width:70px;
+}
+ul.atg_store_addGiftNote li span.example{
+  margin-left:70px;
+}
+/* Confirmation/Order Details */
+.atg_store_myOrderDetail #atg_store_shipmentInfoContainer dl dt,
+#atg_store_shipmentInfoContainer dl dt,
+#atg_store_multishipGroupInfoContainer dl.atg_store_groupShippingAddress dt{
+  width:104px;
+}
+.atg_store_myOrderDetail #atg_store_shipmentInfoContainer dl dd,
+.atg_store_myOrderDetail #atg_store_shipmentInfoContainer dl dd.atg_store_groupPaymentCardExp,
+#atg_store_shipmentInfoContainer dl dd,
+#atg_store_multishipGroupInfoContainer dl.atg_store_groupShippingAddress dd {
+    margin-left:104px;
+    max-width: 155px;
+}
+#atg_store_checkout #atg_store_shipmentInfoContainer dl.atg_store_groupPayment{
+  width:221px;
+}
+#atg_store_checkout  #atg_store_shipmentInfoContainer dl.atg_store_groupPayment dt, 
+#atg_store_shipmentInfoContainer dl.atg_store_groupPaymentMethod dt{
+    width:65px;
+}
+#atg_store_checkout  #atg_store_shipmentInfoContainer dl.atg_store_groupPayment dd, 
+#atg_store_shipmentInfoContainer dl.atg_store_groupPaymentMethod dd{
+    margin-left:65px;
+    max-width:156px;
+}
+.atg_store_orderDetails .atg_store_groupOrderInfo dd.atg_store_orderDate{
+  margin-top:20px;
+}
+#atg_store_shipmentInfoContainer{
+  max-height:320px;
+}
+
+/* Order Not Placed */
+.atg_store_orderNotPlaced .atg_store_generalMessage ul{
+  padding-left:0;
+  width:314px;
+}
+
+/* Login
+-----------------------------------------*/
+#atg_store_checkoutlogin .atg_store_loginMethod ul.atg_store_basicForm li p{
+  margin: 0 20px;
+}
+
+/* Order Summary
+-----------------------------------------------------------------*/
+.atg_store_orderSummary ul li{
+  padding: 0 15px;
+}
+
+.atg_store_orderSummary ul.atg_store_orderSubTotals li .atg_store_orderSummaryLabel{
+  width:75px;
+}
+
+/* Checkout Defaults */
+.atg_store_chooseDefaults.atg_store_basicForm{
+  width:595px;
+}
+/* Gift list */
+#atg_store_addGiftList .atg_store_basicForm li label{
+  width:145px;
+}
+#atg_store_addGiftList ul.atg_store_basicForm li span.option{
+  width:230px;
+  margin-left:145px;
+}
+
+/* Choose Existing/Add Billing Address */
+#atg_store_chooseCardAddress #atg_store_selectAddress h4{
+  margin-right:14px;
+}
+/* Gift List Search
+-----------------------------------------------------------------*/
+#atg_store_giftListSearch #atg_store_contentHeader h2{
+  width:50%;
+  bottom:20px;
+}
+
+/* Product Detail
+-----------------------------------------*/
+label.atg_store_pickerLabel{
+  width:48px;
+}
+
+/* Profile
+-----------------------------------------*/
+.atg_store_myProfileInfo {
+  margin-left: 112px;
+}
+
+/* Returns
+-----------------------------------------*/
+/* Return Progress */
+.atg_store_returnItem #atg_store_contentHeader h2{
+  width:320px;
+  line-height: 1em;
+}
+
+.atg_store_returnItemSelectionProgress{
+  left:345px;
+}
+
+#atg_store_returnReviewSummary .atg_store_refundSummary {
+    width: 245px;
+}
+
+#atg_store_returnReviewSummary {
+    margin-left: -5px;
+}
+
+.atg_store_returnSummaryPart{
+  width:226px;
+}
+
+.atg_store_returnSummaryPart .atg_store_orderSummaryLabel{
+  width:165px;
+}
+
+.atg_store_myReturnItemSelection .returnAction .atg_store_basicButton input{
+  width:270px;
+}
+
+.atg_store_myAccount #atg_store_returnReviewSummary h4{
+  min-height: 2em;
+  word-wrap:break-word;
+}

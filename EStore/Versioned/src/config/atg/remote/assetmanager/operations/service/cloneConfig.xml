@@ -1,0 +1,22 @@
+<item-clone-config>
+
+  <!-- CATEGORY -->
+  <item-type-clone-config
+    item-type="/atg/commerce/catalog/MerchandisingProductCatalog:category"
+    honor-use-now-as-default="true" make-unique-names="true">
+    <exclude-property>siteSpecificFeature</exclude-property>
+  </item-type-clone-config>
+
+  <!-- USER -->
+  <item-type-clone-config
+    item-type="/atg/userprofiling/ProfileAdapterRepository:user"
+    honor-use-now-as-default="true" make-unique-names="true">
+    <exclude-property>activePromotions</exclude-property>
+    <exclude-property>wishlist</exclude-property>
+    <exclude-property>creditCards</exclude-property>
+    <exclude-property>billingAddress</exclude-property>
+    <exclude-property>shippingAddress</exclude-property>
+  </item-type-clone-config>
+
+</item-clone-config>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/Versioned/config/atg/remote/assetmanager/operations/service/cloneConfig.xml#1 $$Change: 788278 $-->

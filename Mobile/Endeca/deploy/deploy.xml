@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE app-descriptor [
+  <!ELEMENT app-descriptor ( dir-structure+, copy-pattern+ ) >
+  <!ATTLIST app-descriptor
+    update (true|false) #IMPLIED
+    id CDATA #IMPLIED
+    default-name CDATA #IMPLIED
+  >
+
+  <!ELEMENT dir-structure ( dir+ ) >
+
+  <!ELEMENT dir ( #PCDATA ) >
+  <!ATTLIST dir
+    primary (true|false) #IMPLIED
+    platform (win|unix) #IMPLIED
+  >
+
+  <!ELEMENT copy-pattern ( copy+ ) >
+  <!ATTLIST copy-pattern src-root CDATA #REQUIRED >
+
+  <!ELEMENT copy ( src-dir, src-file, dest-dir ) >
+  <!ATTLIST copy
+    clear-dest-dir (true|false) #IMPLIED
+    recursive (true|false) #IMPLIED
+    preserve-subdirs (true|false) #IMPLIED
+    filter-files (true|false) #IMPLIED
+    mode CDATA #IMPLIED
+    primary (true|false) #IMPLIED
+    platform (win|unix) #IMPLIED
+    endeca-version (460|470|480|500) #IMPLIED
+  >
+
+  <!ELEMENT dest-dir ( #PCDATA ) >
+  <!ELEMENT src-dir ( #PCDATA ) >
+  <!ELEMENT src-file ( #PCDATA ) >
+]>
+<app-descriptor update="true" id="CRSApp" default-name="CRS">
+  <dir-structure>
+    <dir>data/state</dir>
+  </dir-structure>
+
+  <copy-pattern src-root=".">
+    <copy clear-dest-dir="false" recursive="true" preserve-subdirs="true" filter-files="true">
+      <src-dir>./ifcr</src-dir>
+      <src-file>*</src-file>
+      <dest-dir>./config/ifcr</dest-dir>
+    </copy>
+  </copy-pattern>
+
+  <copy-pattern src-root=".">
+    <copy clear-dest-dir="false" recursive="true" preserve-subdirs="true" filter-files="true">
+      <src-dir>./cartridge_templates</src-dir>
+      <src-file>*</src-file>
+      <dest-dir>./config/cartridge_templates</dest-dir>
+    </copy>
+  </copy-pattern>
+</app-descriptor>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Mobile/Endeca/deploy/deploy.xml#2 $$Change: 791340 $-->

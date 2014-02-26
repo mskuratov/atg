@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<gsa-template>
+
+  <item-descriptor name="gift-list">
+    <table name="dcs_giftlist" type="primary">
+      <property name="eventType">
+        <attribute name="resourceBundle" value="atg.projects.store.gifts.GiftListsTemplateResources"/>
+        <option code="8" xml-combine="remove"/>
+        <option code="9" xml-combine="remove"/>
+        <option code="101" resource="housewarming"/>
+      </property>
+    </table>
+  </item-descriptor>
+
+  <!--///////////////////////////////-->
+  <!--         gift-item             -->
+  <!--///////////////////////////////-->
+
+  <item-descriptor name="gift-item">
+    <property name="quantityRemaining" data-type="long" queryable="false" writable="false" category-resource="categoryGift" display-name-resource="quantityRemaining" property-type="atg.projects.store.gifts.GiftlistQuantityRemaining">
+      <attribute name="resourceBundle" value="atg.projects.store.gifts.GiftListsTemplateResources"/>
+    </property>
+  </item-descriptor>
+
+</gsa-template>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/config/atg/commerce/gifts/giftlists.xml#2 $$Change: 789379 $ -->

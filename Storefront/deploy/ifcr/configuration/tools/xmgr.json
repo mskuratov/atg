@@ -1,0 +1,4 @@
+{
+"sling:resourceType" : "endeca/configuration/tools/xmgr",
+"jcr:primaryType": "endeca:unstructured"
+}

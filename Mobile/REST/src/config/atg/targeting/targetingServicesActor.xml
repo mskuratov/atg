@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<actor-template default-chain-id="executeTargeter" xsi:noNamespaceSchemaLocation="http://www.atg.com/xsds/actorChain_1.0.xsd"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <actor-chain id="executeTargeter" transaction="TX_SUPPORTS">
+    <component id="targetingServices" name="/atg/targeting/TargetingServices" method="executeRepositoryTargeterItems"
+      method-return-var="result">
+      <input name="pTargeterPath" class-name="java.lang.String" value="${param.targeterPath}" />
+      <output id="targeterResults" name="targeterResults" value="${result}" filter-id="short" />
+    </component>
+    <droplet id="forEach" name="/atg/dynamo/droplet/ForEach" var="forEach">
+      <input name="array" value="${result}" />
+      <oparam name="output">
+        <output id="itemDescriptorName" name="targeterResults[${forEach.index}].itemDescriptorName"
+          value="${forEach.element.itemDescriptor.itemDescriptorName}" />
+        <droplet id="switch" name="/atg/dynamo/droplet/Switch" var="switch">
+          <input name="value" value="${forEach.element.itemDescriptor.itemDescriptorName}" />
+          <oparam name="product">
+            <!-- price ranges for sale and list price lists -->
+            <actor id="productPriceRanges" name="/atg/commerce/pricing/PricingActor"
+              return-model-var="productPriceRanges" chain-id="productPriceRanges">
+              <input name="productId" value="${forEach.element.repositoryId}" />
+              <output id="priceRanges" name="targeterResults[${forEach.index}]" add-map-children="true"
+                value="${productPriceRanges}" />
+            </actor>
+            <droplet id="currencyCodeDroplet" name="/atg/commerce/pricing/CurrencyCodeDroplet"
+              var="currencyCode">
+              <input name="locale" value="${nucleus['/atg/userprofiling/Profile'].priceList.locale}" />
+              <oparam name="output">
+                <output id="currencyCode" name="targeterResults[${forEach.index}].currencyCode"
+                  value="${currencyCode.currencyCode}" />
+              </oparam>
+            </droplet>
+          </oparam>
+        </droplet>
+      </oparam>
+    </droplet>
+  </actor-chain>
+</actor-template>
+<!-- @version $Id: //hosting-blueprint/MobileCommerce/version/10.2/server/MobileCommerce/config/atg/targeting/targetingServicesActor.xml#2 $$Change: 796710 $-->

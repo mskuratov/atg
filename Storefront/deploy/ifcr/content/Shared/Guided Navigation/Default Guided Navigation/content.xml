@@ -1,0 +1,313 @@
+<ContentItem type="SecondaryContent" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://endeca.com/schema/content/2008">
+  <TemplateId>GuidedNavigation</TemplateId>
+  <Name>Guided Navigation</Name>
+  <Property name="navigation">
+    <ContentItemList type="Navigation">
+      <ContentItem type="Navigation">
+        <TemplateId>RefinementMenu</TemplateId>
+        <Name>Category</Name>
+        <Property name="dimensionName">
+          <String>product.category</String>
+        </Property>
+        <Property name="dimensionId">
+          <String>10011</String>
+        </Property>
+        <Property name="sort">
+          <String>default</String>
+        </Property>
+        <Property name="showMoreLink">
+          <Boolean>false</Boolean>
+        </Property>
+        <Property name="moreLinkText">
+          <String>Show More Refinements...</String>
+        </Property>
+        <Property name="numRefinements">
+          <String>10</String>
+        </Property>
+        <Property name="maxNumRefinements">
+          <String>200</String>
+        </Property>
+        <Property name="boostRefinements">
+          <List name="boost" xmlns="http://endeca.com/schema/xavia/2010"/>
+        </Property>
+        <Property name="buryRefinements">
+          <aaa:List xmlns:aaa="http://endeca.com/schema/xavia/2010"/>
+        </Property>
+        <Property name="displayNamePropertyAlias">
+          <String>displayName</String>
+        </Property>
+      </ContentItem>
+      <ContentItem type="Navigation">
+        <TemplateId>PriceSlider</TemplateId>
+        <Name>Price</Name>
+        <Property name="priceProperty">
+          <String>sku.activePrice</String>
+        </Property>
+      </ContentItem>
+      <ContentItem type="Navigation">
+        <TemplateId>RefinementMenu</TemplateId>
+        <Name>Size</Name>
+        <Property name="dimensionName">
+          <String>clothing-sku.size</String>
+        </Property>
+        <Property name="dimensionId">
+          <String>10002</String>
+        </Property>
+        <Property name="sort">
+          <String>default</String>
+        </Property>
+        <Property name="showMoreLink">
+          <Boolean>true</Boolean>
+        </Property>
+        <Property name="moreLinkText">
+          <String>Show More Refinements...</String>
+        </Property>
+        <Property name="numRefinements">
+          <String>10</String>
+        </Property>
+        <Property name="maxNumRefinements">
+          <String>200</String>
+        </Property>
+        <Property name="boostRefinements">
+          <List name="boost" xmlns="http://endeca.com/schema/xavia/2010">
+            <Item class="com.endeca.infront.navigation.model.DvalSpec">
+              <Property name="id">4294967147</Property>
+              <Property name="name">2</Property>
+            </Item>
+            <Item class="com.endeca.infront.navigation.model.DvalSpec">
+              <Property name="id">4294967146</Property>
+              <Property name="name">4</Property>
+            </Item>
+            <Item class="com.endeca.infront.navigation.model.DvalSpec">
+              <Property name="id">4294967153</Property>
+              <Property name="name">5</Property>
+            </Item>
+            <Item class="com.endeca.infront.navigation.model.DvalSpec">
+              <Property name="id">4294967160</Property>
+              <Property name="name">6</Property>
+            </Item>
+            <Item class="com.endeca.infront.navigation.model.DvalSpec">
+              <Property name="id">4294967159</Property>
+              <Property name="name">7</Property>
+            </Item>
+            <Item class="com.endeca.infront.navigation.model.DvalSpec">
+              <Property name="id">4294967158</Property>
+              <Property name="name">8</Property>
+            </Item>
+            <Item class="com.endeca.infront.navigation.model.DvalSpec">
+              <Property name="id">4294967157</Property>
+              <Property name="name">9</Property>
+            </Item>
+            <Item class="com.endeca.infront.navigation.model.DvalSpec">
+              <Property name="id">4294967156</Property>
+              <Property name="name">10</Property>
+            </Item>
+            <Item class="com.endeca.infront.navigation.model.DvalSpec">
+              <Property name="id">4294967155</Property>
+              <Property name="name">11</Property>
+            </Item>
+            <Item class="com.endeca.infront.navigation.model.DvalSpec">
+              <Property name="id">4294967154</Property>
+              <Property name="name">12</Property>
+            </Item>
+            <Item class="com.endeca.infront.navigation.model.DvalSpec">
+              <Property name="id">4294967211</Property>
+              <Property name="name">28</Property>
+            </Item>
+            <Item class="com.endeca.infront.navigation.model.DvalSpec">
+              <Property name="id">4294967241</Property>
+              <Property name="name">30</Property>
+            </Item>
+            <Item class="com.endeca.infront.navigation.model.DvalSpec">
+              <Property name="id">4294967237</Property>
+              <Property name="name">32</Property>
+            </Item>
+            <Item class="com.endeca.infront.navigation.model.DvalSpec">
+              <Property name="id">4294967236</Property>
+              <Property name="name">34</Property>
+            </Item>
+            <Item class="com.endeca.infront.navigation.model.DvalSpec">
+              <Property name="id">4294967235</Property>
+              <Property name="name">36</Property>
+            </Item>
+            <Item class="com.endeca.infront.navigation.model.DvalSpec">
+              <Property name="id">4294967212</Property>
+              <Property name="name">38</Property>
+            </Item>
+            <Item class="com.endeca.infront.navigation.model.DvalSpec">
+              <Property name="id">4294967182</Property>
+              <Property name="name">40</Property>
+            </Item>
+            <Item class="com.endeca.infront.navigation.model.DvalSpec">
+              <Property name="id">4294967284</Property>
+              <Property name="name">S</Property>
+            </Item>
+            <Item class="com.endeca.infront.navigation.model.DvalSpec">
+              <Property name="id">4294967274</Property>
+              <Property name="name">M</Property>
+            </Item>
+            <Item class="com.endeca.infront.navigation.model.DvalSpec">
+              <Property name="id">4294967273</Property>
+              <Property name="name">L</Property>
+            </Item>
+            <Item class="com.endeca.infront.navigation.model.DvalSpec">
+              <Property name="id">4294967272</Property>
+              <Property name="name">XL</Property>
+            </Item>
+            <Item class="com.endeca.infront.navigation.model.DvalSpec">
+              <Property name="id">4294967129</Property>
+              <Property name="name">XXL</Property>
+            </Item>
+            <Item class="com.endeca.infront.navigation.model.DvalSpec">
+              <Property name="id">4294967219</Property>
+              <Property name="name">One Size</Property>
+            </Item>
+          </List>
+        </Property>
+        <Property name="buryRefinements">
+          <aaa:List xmlns:aaa="http://endeca.com/schema/xavia/2010"/>
+        </Property>
+        <Property name="displayNamePropertyAlias">
+          <String>displayName</String>
+        </Property>
+      </ContentItem>
+      <ContentItem type="Navigation">
+        <TemplateId>RefinementMenu</TemplateId>
+        <Name>Brand</Name>
+        <Property name="dimensionName">
+          <String>product.brand</String>
+        </Property>
+        <Property name="dimensionId">
+          <String>10093</String>
+        </Property>
+        <Property name="sort">
+          <String>default</String>
+        </Property>
+        <Property name="showMoreLink">
+          <Boolean>false</Boolean>
+        </Property>
+        <Property name="moreLinkText">
+          <String>Show More Refinements...</String>
+        </Property>
+        <Property name="numRefinements">
+          <String>10</String>
+        </Property>
+        <Property name="maxNumRefinements">
+          <String>200</String>
+        </Property>
+        <Property name="boostRefinements">
+          <List name="boost" xmlns="http://endeca.com/schema/xavia/2010"/>
+        </Property>
+        <Property name="buryRefinements">
+          <aaa:List xmlns:aaa="http://endeca.com/schema/xavia/2010"/>
+        </Property>
+        <Property name="displayNamePropertyAlias">
+          <String>displayName</String>
+        </Property>
+      </ContentItem>
+      <ContentItem type="Navigation">
+        <TemplateId>RefinementMenu</TemplateId>
+        <Name>Color</Name>
+        <Property name="dimensionName">
+          <String>clothing-sku.color</String>
+        </Property>
+        <Property name="dimensionId">
+          <String>10001</String>
+        </Property>
+        <Property name="sort">
+          <String>default</String>
+        </Property>
+        <Property name="showMoreLink">
+          <Boolean>true</Boolean>
+        </Property>
+        <Property name="moreLinkText">
+          <String>Show More Refinements...</String>
+        </Property>
+        <Property name="numRefinements">
+          <String>10</String>
+        </Property>
+        <Property name="maxNumRefinements">
+          <String>200</String>
+        </Property>
+        <Property name="boostRefinements">
+          <List name="boost" xmlns="http://endeca.com/schema/xavia/2010"/>
+        </Property>
+        <Property name="buryRefinements">
+          <aaa:List xmlns:aaa="http://endeca.com/schema/xavia/2010"/>
+        </Property>
+        <Property name="displayNamePropertyAlias">
+          <String>displayName</String>
+        </Property>
+      </ContentItem>
+      <ContentItem type="Navigation">
+        <TemplateId>RefinementMenu</TemplateId>
+        <Name>Wood Finish</Name>
+        <Property name="dimensionName">
+          <String>furniture-sku.woodFinish</String>
+        </Property>
+        <Property name="dimensionId">
+          <String>10003</String>
+        </Property>
+        <Property name="sort">
+          <String>default</String>
+        </Property>
+        <Property name="showMoreLink">
+          <Boolean>true</Boolean>
+        </Property>
+        <Property name="moreLinkText">
+          <String>Show More Refinements...</String>
+        </Property>
+        <Property name="numRefinements">
+          <String>10</String>
+        </Property>
+        <Property name="maxNumRefinements">
+          <String>200</String>
+        </Property>
+        <Property name="boostRefinements">
+          <List name="boost" xmlns="http://endeca.com/schema/xavia/2010"/>
+        </Property>
+        <Property name="buryRefinements">
+          <aaa:List xmlns:aaa="http://endeca.com/schema/xavia/2010"/>
+        </Property>
+        <Property name="displayNamePropertyAlias">
+          <String>displayName</String>
+        </Property>
+      </ContentItem>
+      <ContentItem type="Navigation">
+        <TemplateId>RefinementMenu</TemplateId>
+        <Name>Feature</Name>
+        <Property name="dimensionName">
+          <String>product.features.displayName</String>
+        </Property>
+        <Property name="dimensionId">
+          <String>10007</String>
+        </Property>
+        <Property name="sort">
+          <String>default</String>
+        </Property>
+        <Property name="showMoreLink">
+          <Boolean>true</Boolean>
+        </Property>
+        <Property name="moreLinkText">
+          <String>Show More Refinements...</String>
+        </Property>
+        <Property name="numRefinements">
+          <String>10</String>
+        </Property>
+        <Property name="maxNumRefinements">
+          <String>200</String>
+        </Property>
+        <Property name="boostRefinements">
+          <List name="boost" xmlns="http://endeca.com/schema/xavia/2010"/>
+        </Property>
+        <Property name="buryRefinements">
+          <aaa:List xmlns:aaa="http://endeca.com/schema/xavia/2010"/>
+        </Property>
+        <Property name="displayNamePropertyAlias">
+          <String>displayName</String>
+        </Property>
+      </ContentItem>
+    </ContentItemList>
+  </Property>
+</ContentItem>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Storefront/deploy/ifcr/content/Shared/Guided Navigation/Default Guided Navigation/content.xml#2 $$Change: 768606 $-->

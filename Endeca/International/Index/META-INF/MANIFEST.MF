@@ -1,0 +1,6 @@
+ATG-Product: The Commerce Reference Store International Endeca Indexing
+Manifest-Version: 1.0
+ATG-Required: Store.Endeca.Index  Store.EStore.International Store.Endeca.International.Base
+ATG-Config-Path: config/config.jar
+ATG-Class-Path: lib/classes.jar
+

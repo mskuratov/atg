@@ -1,0 +1,17 @@
+/* Checkout
+-----------------------------------------*/
+/* Shopping Cart */
+#atg_store_itemTable td.atg_store_actionItems{
+  width:110px;
+}
+/* Billing */
+.atg_store_wrapOptions li{
+  width:100%;
+}
+.atg_store_addCardInfo ul.atg_store_addNewCreditCard li.option{
+  width:130px;
+}
+
+#atg_store_search {
+  position: relative;
+}

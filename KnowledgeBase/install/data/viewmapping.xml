@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE gsa-template SYSTEM "dynamosystemresource:/atg/dtds/gsa/gsa_1.0.dtd">
+<gsa-template>
+
+  <!--
+    =================================================================== 
+    View mappings for the store.knowledgebase module
+    ===================================================================
+  -->
+
+  <!--
+    Update the default site category 'Operations' itemViewMapping's
+    includedCategories to include RightNow.
+  -->
+
+  <update-item item-descriptor="attributeValue" id="SaAvDefCatIncCatsOps" skip-update="true">
+    <set-property name="value" add="true" value=",categoryLocalization,categoryEmail,categoryRightNow">
+    </set-property>
+  </update-item>
+
+</gsa-template>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/KnowledgeBase/install/data/viewmapping.xml#1 $$Change: 788278 $-->
+	

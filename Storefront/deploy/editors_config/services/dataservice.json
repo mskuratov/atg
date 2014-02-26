@@ -1,0 +1,14 @@
+{
+    "jcr:primaryType": "endeca:unstructured",
+    "host": "@@HOST@@",
+    "port": "@@AUTHORING_DGRAPH_PORT@@",
+    "recordSpecName": "common.id",
+    "aggregationKey": "product.repositoryId",
+    "recordFilter": "",
+    "wildcardSearchEnabled": false,
+    "recordNameField": "",
+    "fields": {
+        "product.repositoryId": "",
+        "product.displayName": "plain",
+    }
+}

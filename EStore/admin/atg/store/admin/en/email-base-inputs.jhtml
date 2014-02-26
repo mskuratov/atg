@@ -1,0 +1,78 @@
+<!-- Displays base fields that are the same for all email templates. -->
+
+<importbean bean="/atg/store/email/TemplateTesterFormHandler"/>
+<importbean bean="/atg/multisite/SiteManager"/>
+<importbean bean="/atg/dynamo/droplet/ForEach"/>
+<script type="text/javascript" src="siteLangs.js">
+</script>
+  <li class="templateTesterStore"><label>Store:</label>
+
+    <script type="text/javascript">
+      var sites = new Array();
+    </script>     
+
+    <select id="siteList" bean="TemplateTesterFormHandler.siteId"            
+            onChange="reloadLangs()" required="true">            
+      <droplet bean="ForEach">
+        <param name="array" value="bean:SiteManager.allSites"/>
+        <param name="elementName" value="site">                       
+        <oparam name="output">                   
+   
+          <script type="text/javascript">
+            var site = new Site('<valueof param="param:site.id"/>');
+            var country = '<valueof param="site.defaultCountry"/>';
+          </script>  
+   
+          <option value="param:site.id">           
+            <valueof param="site.description"/>                      
+          </option>
+          <droplet bean="ForEach">
+            <param name="array" value="param:site.languages"/>
+            <param name="elementName" value="language">
+            <oparam name="output">                                            
+            
+              <script type="text/javascript">
+                var language = '<valueof param="language"/>' + '_' + country;
+                site.languages.push(language);
+              </script>
+                                 
+            </oparam>
+          </droplet>
+          <script type="text/javascript">
+            sites.push(site);
+          </script>                               
+        </oparam>               
+      </droplet>           
+    </select>          
+</li>
+<li class="templateTesterLanguage">
+  <label>Language:</label>
+    <select id="langList" bean="TemplateTesterFormHandler.emailLocale" required="true"/>
+    <script type="text/javascript">
+      reloadLangs();
+      
+      var currentLocale = '<valueof bean="TemplateTesterFormHandler.emailLocale"/>';
+      if(currentLocale != null) {
+        var availableLanguages = document.getElementById('langList');
+        var l = availableLanguages.length;
+        for(i=0;i<l;++i) {
+          if(availableLanguages.options[i].value == currentLocale) {
+            availableLanguages.options[i].selected = true;
+          }
+        } 
+      } 
+    </script>   
+</li>
+<li>
+  <label>Recipient's E-mail:</label>
+  
+    <input id="temp" type="text" bean="TemplateTesterFormHandler.recipientEmail" required="true"/>
+  
+</li>
+<li>
+  <label>Recipient's Name:</label>
+  
+    <input type="text" bean="TemplateTesterFormHandler.recipientName" required="true"/>
+  
+</li>
+<java>/* @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/admin/atg/store/admin/en/email-base-inputs.jhtml#1 $$Change: 735822 $*/</java>

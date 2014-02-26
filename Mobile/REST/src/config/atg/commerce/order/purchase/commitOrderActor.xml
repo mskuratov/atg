@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<actor-template
+  xsi:noNamespaceSchemaLocation="http://www.atg.com/xsds/actorChain_1.0.xsd"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+  <actor-chain id="commitOrder">
+    <form id="commitOrderFormHandler">
+      <input name="confirmEmailAddress" value="${param.confirmEmailAddress}"/>
+      <input name="salesChannel" value="mobile"/>
+      <input name="commitOrderSuccessURL" value="/model/atg/commerce/order/purchase/OrderConfirmationActor/orderConfirmation"/>
+    </form>
+  </actor-chain>
+</actor-template>
+
+<!-- @version $Id: //hosting-blueprint/MobileCommerce/version/10.2/server/MobileCommerce/config/atg/commerce/order/purchase/commitOrderActor.xml#2 $$Change: 788992 $-->

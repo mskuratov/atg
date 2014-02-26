@@ -1,0 +1,23 @@
+<%--
+  This page fragment stores the cart item count in the "itemsQuantity" variable.
+
+  NOTE: This page must be included using "@include" JSP directive, so that
+        any parent page variables are automatically visible in the "cartItemCount.jspf".
+
+  This page fragment introduces the following page-scoped variables:
+    itemsQuantity
+      Cart items count
+
+  Page includes:
+    None
+
+  Required parameters:
+    None
+
+  Optional parameters:
+    None
+--%>
+<dsp:importbean bean="/atg/commerce/ShoppingCart" var="cart"/>
+
+<c:set var="itemsQuantity" value="${cart.current.totalCommerceItemCount}"/>
+<%-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Storefront/j2ee/store.war/mobile/cart/gadgets/cartItemCount.jspf#2 $$Change: 742374 $ --%>

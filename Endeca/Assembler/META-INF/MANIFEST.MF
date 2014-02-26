@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.6.5
+ATG-Class-Path: lib/classes.jar
+ATG-Config-Path: config/config.jar
+ATG-PreviewConfig-Path: configlayers/preview/
+ATG-EndecaPreviewConfig-Path: configlayers/endecapreview
+ATG-Required: DCS.Endeca.Assembler Store.EStore Store.Endeca.Base

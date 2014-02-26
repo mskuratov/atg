@@ -1,0 +1,229 @@
+/* Header Navigation
+---------------------*/
+#atg_store_userAccountNav ul li.atg_store_welcomeMessage{
+  max-width:275px;
+}
+#atg_store_userAccountNav ul li.atg_store_welcomeMessage .atg_store_welcome{
+  width:188px;
+}
+#atg_store_userAccountNav ul li.atg_store_welcomeMessage span.atg_store_loggedInUser .atg_store_loggedInUserName{
+  width:98px;
+}
+/* Category Navigation */
+#atg_store_catNavContainer ul#atg_store_catNav > li > a{
+  padding: 0 18px;
+  white-space:nowrap;
+}
+/* Search */
+#atg_store_search span.atg_store_smallButton input#atg_store_searchSubmit{
+  margin-left:9px;
+}
+/* Product Detail
+-----------------------------------------*/
+#atg_store_gwpContainer div.atg_store_pickerContainer div.atg_store_colorPicker label.atg_store_pickerLabel,
+#atg_store_gwpContainer div.atg_store_pickerContainer div.atg_store_sizePicker label.atg_store_pickerLabel,
+label.atg_store_pickerLabel{
+  width:65px;
+}
+
+/* Gift With Purchase Pop-Over */
+
+#atg_store_gwpContainer #atg_store_itemTable td.item a,
+#atg_store_gwpContainer #atg_store_itemTable td.item span.itemName{
+  width: auto;
+}
+
+#atg_store_gwpSelector div.atg_store_pickerContainer div.atg_store_sizePicker span.selector,
+#atg_store_gwpSelector div.atg_store_pickerContainer div.atg_store_colorPicker span.selector,
+#atg_store_gwpSelector div.atg_store_pickerContainer div.atg_store_woodFinishPicker span.selector{
+  max-width:140px;
+}
+
+#atg_store_gwpContainer div.atg_store_pickerContainer div.atg_store_colorPicker span.selector span.active,
+#atg_store_gwpContainer div.atg_store_pickerContainer div.atg_store_woodFinishPicker span.selector span.active{
+  width: 140px;
+}
+
+/* Checkout
+-----------------------------------------*/
+/* Checkout Progress */
+#atg_store_contentHeader #atg_store_checkoutProgressContainer h2{
+  width:auto;
+}
+.atg_store_checkoutProgress{
+  left:145px;
+}
+/* Shopping Cart */
+.atg_store_giftWrap{
+  line-height:22px;
+}
+/* Richcart */
+#atg_store_richCart .atg_store_richCartCartLink{
+  line-height:1em;
+  margin-top:13px;
+  margin-bottom:13px;
+}
+/* Billing - Add New Credit Card Form */
+#atg_store_checkoutOptionArea.atg_store_existingAddresses h3{
+  width:94%;
+  margin-bottom:0;
+  height:70px;
+}
+.dj_osx  ul.atg_store_addNewCreditCard li label.atg_store_cardNickName{
+margin-bottom: 10px;
+}
+#atg_store_selectAddress .atg_store_formActions{
+  margin-top:50px;
+}
+.atg_store_existingAddresses #atg_store_selectAddress .atg_store_formActions{
+  margin-top:0;
+}
+.atg_store_existingAddresses{
+    background:url(/crsdocroot/content/images/storefront/or_seperator_es.png) no-repeat top center;
+}
+.atg_store_existingAddresses #atg_store_selectAddress, 
+.atg_store_existingAddresses #atg_store_createNewShippingAddress, 
+.atg_store_existingAddresses #atg_store_enterNewBillingAddress{
+  height:610px;
+}
+.atg_store_existingAddresses .atg_store_saveSelectAddress, 
+.atg_store_existingAddresses .atg_store_saveNewBillingAddress{
+  top:560px;
+}
+.atg_store_pageBilling .atg_store_existingAddresses .atg_store_saveSelectAddress, 
+.atg_store_pageBilling .atg_store_existingAddresses .atg_store_saveNewBillingAddress{
+  top:500px;
+}
+#atg_store_paymentInfoAddNewCard .atg_store_existingAddresses .atg_store_saveSelectAddress, 
+#atg_store_paymentInfoAddNewCard .atg_store_existingAddresses .atg_store_saveNewBillingAddress{
+  top:515px;
+}
+
+/* Billing/Shipping - Select Existing Address */
+.atg_store_addCardInfo ul.atg_store_addNewCreditCard li.option{
+  margin-right:0;
+  margin-top:18px;
+}
+.atg_store_addCardInfo ul.atg_store_addNewCreditCard li.option label{
+  float:right;
+  text-align:left;
+  width:100px;
+  margin-bottom:0;
+}
+.atg_store_addCardInfo ul.atg_store_addNewCreditCard li.option input{
+  margin-top:10px;
+}
+ul.atg_store_addNewCreditCard li label.atg_store_cardNickName{
+  white-space:nowrap;
+}
+
+/* Confirmation/Order Details */
+#atg_store_shipmentInfoContainer dl dt{
+  width:100px;
+}
+#atg_store_shipmentInfoContainer dl dd{
+  margin-left:100px;
+  max-width:159px;
+}
+#atg_store_shipmentInfoContainer dl dd.atg_store_groupPaymentCardExp, 
+#atg_store_shipmentInfoContainer dl dd.atg_store_groupPaymentCardCSV{
+  margin-left:100px;
+}
+#atg_store_shipmentInfoContainer dl.atg_store_groupPayment, 
+#atg_store_multishipGroupInfoContainer dl.atg_store_groupPaymentShipMethod{
+  width:221px;
+}
+.atg_store_orderDetails .atg_store_groupOrderInfo dd.atg_store_orderDate{
+  margin-top:20px;
+}
+#atg_store_shipmentInfoContainer{
+  max-height:320px;
+}
+
+/* Order Not Placed */
+.atg_store_orderNotPlaced .atg_store_generalMessage ul {
+    padding-left: 25px;
+}
+
+/* Login Pages
+-----------------------------------------*/
+/* Login */
+.atg_store_loginMethod ul.atg_store_basicForm li{
+  width:265px;
+  margin-bottom:10px;
+}
+.atg_store_loginMethod ul.atg_store_basicForm li label{
+  width:90px;
+  line-height:12px;
+}
+.atg_store_loginMethod ul.atg_store_basicForm li a.info_link{
+  margin-left:90px;
+}
+/* Checkout Login */
+.atg_store_checkoutLogin ul.atg_store_basicForm li{
+  padding: 0 12px !important;
+}
+.atg_store_checkoutLogin ul.atg_store_basicForm li label{
+  width:80px;
+}
+.atg_store_checkoutLogin ul.atg_store_basicForm li a.info_link{
+  margin-left:80px;
+}
+#atg_store_checkoutlogin .atg_store_loginMethod ul.atg_store_basicForm li p{
+  margin: 0 20px;
+}
+#atg_store_checkoutlogin #atg_store_anonCustomerLogin ul.atg_store_basicForm{
+  height:62px;
+}
+
+/* Gift List
+-----------------------------------------*/
+#atg_store_giftListShop table td.quantity {
+width:250px !important;
+}
+
+/* Register
+-----------------------------------------*/
+.atg_store_registerConfirmPassword label,
+.atg_store_registerDateofBirth label{
+  line-height:1em;
+}
+
+/* Forgot Password */
+.atg_store_forgotPassword ul.atg_store_basicForm li label{
+  margin-bottom:5px;
+  margin-right:0;
+}
+.atg_store_forgotPassword ul.atg_store_basicForm{
+  margin-top:25px;
+  width:200px;
+}
+
+/* Product Summary
+-----------------------------------------------------------------*/
+.atg_store_productSummary{
+  width:322px;
+}
+
+/* Add Gift Note */
+.atg_store_enterGiftMessage ul.atg_store_basicForm label{
+  width:85px;
+}
+.atg_store_enterGiftMessage span.example{
+  margin-left:85px;
+}
+.atg_store_enterGiftMessage h3{
+  width:330px;
+}
+
+/* Returns
+-----------------------------------------*/
+/* Return Progress */
+.atg_store_returnItem #atg_store_contentHeader h2{
+  width:280px;
+  line-height: 1em;
+}
+
+.atg_store_myReturnItemSelection .returnAction .atg_store_basicButton input{
+  width:260px;
+}

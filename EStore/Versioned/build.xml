@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="estore.versioned" default="all" basedir=".">
+
+  <property name="global.dir" value="${basedir}/../.."/>
+  <import file="${global.dir}/buildtools/common.xml"/>
+  
+  <!-- 
+    Development mode extenstion of 'all' target in order to generate DDL SQL for the project
+    and compile Flex elements.
+  -->
+  <target name="all"
+          depends="clean,compile-flex,build,install"
+          description="Cleans, builds, checks and installs the project." />
+  
+  <target name="check-flex-uptodate">
+    <echo message="Check flex up to date FLEX_DIR ${FLEX_DIR}" />
+    <condition property="flex.uptodate">
+      <or>
+        <not>
+          <isset property="tools.devsetup.buildFlexElements"/>
+        </not>
+        <uptodate targetfile="${j2ee.dir}/${default.web.app.name}/StoreMerchandisingIcons.swf">
+          <srcfiles dir="${src.dir}/flex" includes="**/*"/>
+          <srcfiles dir="${dynamo.root.dir}/FlexUI/j2ee-apps/FlexUI.ear/FlexUI.war/WEB-INF/flex" includes="*"/>
+          <srcfiles dir="${dynamo.root.dir}/FlexUI/lib" includes="*.swc"/>
+          <srcfiles dir="${dynamo.root.dir}/BCC/lib" includes="*.swc"/>
+        </uptodate>
+      </or>
+    </condition>
+  </target>
+
+  <target name="compile-flex" depends="check-flex-uptodate" unless="flex.uptodate">
+    <taskdef resource="flexTasks.tasks" classpath="${FLEX_DIR}/ant/lib/flexTasks.jar"/>
+    <mxmlc file="${src.dir}/flex/StoreMerchandisingIcons.mxml"
+           context-root="FlexUI"
+           services="${dynamo.root.dir}/FlexUI/j2ee-apps/FlexUI.ear/FlexUI.war/WEB-INF/flex/services-config.xml"
+           locale="en_US"
+           debug="true"
+           fork="true"
+           maxmemory="512m"
+           allow-source-path-overlap="true"
+           output="${j2ee.dir}/${default.merch.web.app.name}/StoreMerchandisingIcons.swf">
+      <source-path path-element="${src.dir}/flex/locale/{locale}"/>
+      <library-path dir="${src.dir}/flex" append="true">
+        <include name="libs"/> <!-- TODO: Is this correct? -->
+      </library-path>
+      <external-library-path dir="${dynamo.root.dir}/FlexUI" append="true">
+        <include name="lib"/>
+      </external-library-path>
+      <external-library-path dir="${dynamo.root.dir}/BCC" append="true">
+        <include name="lib"/>
+      </external-library-path>
+    </mxmlc>
+  </target>
+
+</project>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/Versioned/build-base.xml#1 $$Change: 788278 $-->

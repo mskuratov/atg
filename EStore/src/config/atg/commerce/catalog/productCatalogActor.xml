@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<actor-template>
+
+  <!-- add related products products to product output -->
+  <actor-chain id="outputProduct">
+    <actor id="outputRelatedProducts" name="/atg/commerce/catalog/ProductCatalogActor"
+      chain-id="outputRelatedProducts" return-model-var="relatedProducts">
+      <input name="product" value="${product}" />
+      <output id="relatedProducts" name="product.relatedProducts" value="${relatedProducts.relatedProducts}" filter-id="short" />
+    </actor>
+  </actor-chain>
+
+  <!-- outputs related products with prices -->
+  <!-- parameters: product - a product repository item -->
+  <actor-chain id="outputRelatedProducts">
+    <droplet id="catalogItemFilter" name="/atg/store/droplet/CatalogItemFilterDroplet" var="CatalogItemFilter">
+      <input name="collection" value="${product.relatedProducts}" />
+      <oparam name="output">
+        <droplet id="itemSiteGroupFilter" name="/atg/store/droplet/ItemSiteGroupFilterDroplet"
+          var="itemSiteGroupFilter">
+          <input name="collection" value="${CatalogItemFilter.filteredCollection}" />
+          <oparam name="output">
+            <droplet id="forEach" name="/atg/dynamo/droplet/ForEach" var="ForEach">
+              <input name="array" value="${itemSiteGroupFilter.filteredCollection}" />
+              <oparam name="output">
+                <actor id="productSummary" name="/atg/commerce/catalog/ProductCatalogActor"
+                  chain-id="outputProductSummary" return-model-var="productSummary">
+                  <input name="product" value="${ForEach.element}" />
+                  <output id="relatedProducts" name="relatedProducts[${ForEach.index}]"
+                    value="${productSummary.product}" />
+                </actor>
+              </oparam>
+            </droplet>
+          </oparam>
+        </droplet>
+      </oparam>
+    </droplet>
+  </actor-chain>
+
+  <actor-chain id="getRecentlyViewedProducts">
+    <droplet id="recentlyViewedFilter" name="/atg/store/droplet/RecentlyViewedFilterDroplet"
+      var="recentProducts">
+      <input name="collection" value="${nucleus['/atg/userprofiling/Profile'].recentlyViewedProducts}" />
+      <input name="size" value="${(size != null) ? size : param.size}" />
+      <oparam name="output">
+        <droplet id="forEach" name="/atg/dynamo/droplet/ForEach" var="ForEach">
+          <input name="array" value="${recentProducts.filteredCollection}" />
+          <oparam name="output">
+            <actor id="productSummary" name="/atg/commerce/catalog/ProductCatalogActor"
+              chain-id="outputProductSummary" return-model-var="productSummary">
+              <input name="product" value="${ForEach.element.product}" />
+              <input name="siteId" value="${ForEach.element.siteId}"/>
+              <output id="recentlyViewedProducts" name="recentlyViewedProducts[${ForEach.index}]"
+                value="${productSummary.product}" />
+            </actor>
+          </oparam>
+        </droplet>
+      </oparam>
+    </droplet>
+  </actor-chain>
+
+</actor-template>
+<!-- @version $Id: //hosting-blueprint/MobileCommerce/dev/10.2/server/MobileCommerce/config/atg/store/mobile/rest/actors/profile.xml#1 
+  $$Change: 788278 $ -->

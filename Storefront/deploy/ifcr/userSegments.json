@@ -1,0 +1,4 @@
+{
+"sling:resourceType" : "endeca/userSegments",
+"jcr:primaryType": "endeca:unstructured"
+}

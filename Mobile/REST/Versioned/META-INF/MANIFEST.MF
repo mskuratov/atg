@@ -1,0 +1,2 @@
+Manifest-Version: 1.0
+ATG-Required: Store.Mobile.REST Store.EStore.Versioned

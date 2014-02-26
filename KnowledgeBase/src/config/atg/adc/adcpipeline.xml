@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE pipelinemanager
+          PUBLIC "-//Art Technology Group, Inc.//DTD Dynamo Pipeline Manager//EN"
+          'http://www.atg.com/dtds/pipelinemanager/pipelinemanager_1.0.dtd'>
+
+<pipelinemanager>
+
+  <!-- HEAD -->
+  <pipelinechain name="knowledgeBaseProcessADCHeadData" transaction="TX_SUPPORTS" headlink="knowledgeBaseImportLibrary">
+  
+    <pipelinelink name="knowledgeBaseImportLibrary" transaction="TX_SUPPORTS">
+      <processor jndi="/atg/adc/KnowledgeBaseImportLibraryProcessor"/>
+      <transition returnvalue="1" link="knowledgeBaseImportJavaScript"/>
+      <transition returnvalue="2" link="knowledgeBaseImportJavaScript"/>
+    </pipelinelink>
+    
+    <pipelinelink name="knowledgeBaseImportJavaScript" transaction="TX_SUPPORTS">
+      <processor jndi="/atg/adc/KnowledgeBaseImportJavaScriptProcessor"/>
+      <transition returnvalue="1" link="knowledgeBaseHead"/>
+      <transition returnvalue="2" link="knowledgeBaseHead"/>
+    </pipelinelink>
+    
+    <pipelinelink name="knowledgeBaseHead" transaction="TX_SUPPORTS">
+      <processor jndi="/atg/adc/SimulationProcessor"/>
+    </pipelinelink>
+    
+  </pipelinechain>
+
+  <!-- BODY -->
+  <pipelinechain name="knowledgeBaseProcessADCBodyData" transaction="TX_SUPPORTS" headlink="knowledgeBaseCheckForNoInsert">
+  
+    <pipelinelink name="knowledgeBaseCheckForNoInsert" transaction="TX_SUPPORTS">
+      <processor jndi="/atg/adc/CheckForNoInsertProcessor"/>
+      <transition returnvalue="1" link="knowledgeBaseFindPageUrl"/>
+    </pipelinelink>
+    
+    <pipelinelink name="knowledgeBaseFindPageUrl" transaction="TX_SUPPORTS">
+      <processor jndi="/atg/adc/KnowledgeBaseFindPageUrlProcessor"/>
+      <transition returnvalue="1" link="knowledgeBaseStartJavaScript"/>
+      <transition returnvalue="0" link="knowledgeBaseSimulation"/>
+    </pipelinelink>
+    
+    <pipelinelink name="knowledgeBaseStartJavaScript" transaction="TX_SUPPORTS">
+      <processor jndi="/atg/adc/StartJavaScriptProcessor"/>
+      <transition returnvalue="1" link="knowledgeBaseWidget"/>
+      <transition returnvalue="2" link="knowledgeBaseWidget"/>
+    </pipelinelink>
+    
+    <pipelinelink name="knowledgeBaseWidget" transaction="TX_SUPPORTS">
+      <processor jndi="/atg/adc/KnowledgeBaseProcessor"/>
+      <transition returnvalue="1" link="knowledgeBaseExtraTags"/>
+      <transition returnvalue="2" link="knowledgeBaseExtraTags"/>
+    </pipelinelink>
+    
+    <pipelinelink name="knowledgeBaseExtraTags" transaction="TX_SUPPORTS">
+      <processor jndi="/atg/adc/ExtraTagsProcessor"/>
+      <transition returnvalue="1" link="knowledgeBaseEndJavaScript"/>
+      <transition returnvalue="2" link="knowledgeBaseEndJavaScript"/>
+    </pipelinelink>
+       
+    <pipelinelink name="knowledgeBaseEndJavaScript" transaction="TX_SUPPORTS">
+      <processor jndi="/atg/adc/EndJavaScriptProcessor"/>
+      <transition returnvalue="1" link="knowledgeBaseSimulation"/>
+      <transition returnvalue="2" link="knowledgeBaseSimulation"/>
+    </pipelinelink>
+    
+    <pipelinelink name="knowledgeBaseSimulation" transaction="TX_SUPPORTS">
+      <processor jndi="/atg/adc/SimulationProcessor"/>
+    </pipelinelink>
+    
+  </pipelinechain>
+
+</pipelinemanager>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/KnowledgeBase/config/atg/adc/adcpipeline.xml#1 $$Change: 788278 $-->

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE gsa-template SYSTEM "dynamosystemresource:/atg/dtds/gsa/gsa_1.0.dtd">
+<gsa-template>
+  <update-item item-descriptor="store" id="BiltmoreFashionPark">
+    <set-property name="latitude"><![CDATA[33.509697]]></set-property>
+    <set-property name="longitude"><![CDATA[-112.030004]]></set-property>
+  </update-item>
+  <update-item item-descriptor="store" id="FashionIsland">
+    <set-property name="latitude"><![CDATA[33.616013]]></set-property>
+  <set-property name="longitude"><![CDATA[-117.874548]]></set-property>
+  </update-item>
+  <update-item item-descriptor="store" id="SouthCoastPlaza">
+    <set-property name="latitude"><![CDATA[33.690871]]></set-property>
+    <set-property name="longitude"><![CDATA[-117.886693]]></set-property>
+  </update-item>
+  <update-item item-descriptor="store" id="QueensCenter">
+    <set-property name="latitude"><![CDATA[40.734291]]></set-property>
+    <set-property name="longitude"><![CDATA[-73.871879]]></set-property>
+  </update-item>
+  <update-item item-descriptor="store" id="WestlakeCenter">
+    <set-property name="latitude"><![CDATA[40.676098]]></set-property>
+    <set-property name="longitude"><![CDATA[-73.871085]]></set-property>
+  </update-item>
+  <update-item item-descriptor="store" id="AventuraMall">
+    <set-property name="latitude"><![CDATA[25.956357]]></set-property>
+    <set-property name="longitude"><![CDATA[-80.14224]]></set-property>
+  </update-item>
+</gsa-template>
+<!-- @version $Id: //hosting-blueprint/MobileCommerce/version/10.2/server/MobileCommerce/data/locations.xml#2 $$Change: 796710 $-->

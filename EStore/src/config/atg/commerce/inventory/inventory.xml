@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gsa-template PUBLIC "-//Art Technology Group, Inc.//DTD General SQL Adapter//EN" "http://www.atg.com/dtds/gsa/gsa_1.0.dtd">
+<gsa-template>
+  <!--
+    Enable caches, cache-mode should not be 'disabled' for the PROPERTY HINTS RQL statement to work (we will use them
+    when loading inventory items with the InventoryManager Nucleus component).
+    Enabled cache with property hints and 'lazyLoadItems=true' property set on the inventory repository will allow us
+    to load inventory items with a single SQL query from the database.
+    We will also store loaded inventory items into a simple cache. These items will be cached for 5 minutes.
+  -->
+  <item-descriptor name="inventory" cache-mode="simple" item-cache-size="1000" query-cache-size="1000"
+      item-expire-timeout="300000" query-expire-timeout="300000">
+    <table name="dcs_inventory" type="primary">
+      <property name="version" cache-mode="inherit"/>
+      <property name="availabilityStatus" cache-mode="inherit"/>
+      <property name="availabilityDate" cache-mode="inherit"/>
+      <property name="stockLevel" cache-mode="inherit"/>
+      <property name="backorderLevel" cache-mode="inherit"/>
+      <property name="preorderLevel" cache-mode="inherit"/>
+      <property name="stockThreshold" cache-mode="inherit"/>
+      <property name="backorderThreshold" cache-mode="inherit"/>
+      <property name="preorderThreshold" cache-mode="inherit"/>
+    </table>
+  </item-descriptor>
+</gsa-template>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/config/atg/commerce/inventory/inventory.xml#1 $$Change: 735822 $-->

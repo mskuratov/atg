@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE database-initializer SYSTEM "http://www.atg.com/dtds/dbinit_1_0.dtd">
+<database-initializer>
+
+  <schema id="versionedSchema">
+
+    <sql>
+      <path>
+        <create>
+          sql/db_components/${database}/versioned_catalog_ddl.sql
+        </create>
+        <drop>
+          sql/uninstall/${database}/drop_versioned_catalog_ddl.sql
+        </drop>
+      </path>
+
+    </sql>
+
+    <sql>
+      <path>
+        <create>
+        sql/db_components/${database}/versioned_multisite_ddl.sql
+        </create>
+      <drop>
+        sql/uninstall/${database}/drop_versioned_multisite_ddl.sql
+      </drop>
+      </path>
+    </sql>
+
+    <sql>
+      <path>
+        <create>
+        sql/db_components/${database}/versioned_storetext_ddl.sql
+        </create>
+      <drop>
+        sql/uninstall/${database}/drop_versioned_storetext_ddl.sql
+      </drop>
+      </path>
+    </sql>
+    
+  </schema>
+  
+  <schema id="versionedSitesTemplates">
+    <data-import start-up-module="Store.EStore.Versioned">
+      <requires-addon-id id="storefront-full-setup"/>
+      <incompatible-addon-id id="international"/>
+      <incompatible-addon-id id="StoreNoSite"/>
+      <repository-path>/atg/multisite/SiteRepository</repository-path>
+      <import-file-path>/CommerceReferenceStore/Store/EStore/Versioned/install/data/sites-templates.xml</import-file-path>
+      <user>publishing</user>
+      <workspace>store_sites_templates</workspace>
+      <comment>initial_sites_templates_import</comment>
+    </data-import>
+    <data-import start-up-module="Store.EStore.Versioned">
+      <requires-addon-id id="storefront-basic-setup"/>
+      <incompatible-addon-id id="StoreNoSite"/>
+      <repository-path>/atg/multisite/SiteRepository</repository-path>
+      <import-file-path>/CommerceReferenceStore/Store/EStore/Versioned/install/data/basic-sites-templates.xml</import-file-path>
+      <user>publishing</user>
+      <workspace>store_sites_templates</workspace>
+      <comment>initial_sites_templates_import</comment>
+    </data-import>
+  </schema>
+  
+  <schema id="versionedSitesTemplatesInternational">
+    <data-import start-up-module="Store.EStore.Versioned,Store.EStore.International">
+      <requires-addon-id id="storefront-full-setup"/>
+      <requires-addon-id id="international"/>
+      <incompatible-addon-id id="StoreNoSite"/>
+      <repository-path>/atg/multisite/SiteRepository</repository-path>
+      <import-file-path>/CommerceReferenceStore/Store/EStore/Versioned/install/data/sites-templates-i18n.xml</import-file-path>
+      <user>publishing</user>
+      <workspace>store_intetnational_sites_templates</workspace>
+      <comment>initial_sites_templates_import</comment>
+    </data-import>
+  </schema>
+
+  <schema id="storeViewmapping">
+    <data-import start-up-module="Store.EStore.Versioned,DCS-UI">
+      <repository-path>/atg/web/viewmapping/ViewMappingRepository</repository-path>
+      <import-file-path>/CommerceReferenceStore/Store/EStore/Versioned/install/data/viewmapping.xml</import-file-path>
+      <user>publishing</user>
+      <workspace>store_viewmapping</workspace>
+      <comment>initial_store_viewmapping_import</comment>
+    </data-import>
+  </schema>
+
+  <schema id="siteTemplateViewmapping">
+    <data-import start-up-module="SiteAdmin.Versioned,Store.EStore.Versioned">
+      <repository-path>/atg/web/viewmapping/ViewMappingRepository</repository-path>
+      <import-file-path>/CommerceReferenceStore/Store/EStore/Versioned/install/data/site-template-viewmapping.xml</import-file-path>
+      <user>publishing</user>
+      <workspace>store_site_template_viewmapping</workspace>
+      <comment>initial_store_site_template_viewmapping_import</comment>
+    </data-import>
+  </schema>
+
+  <schema id="storeContentSecurity">
+    <data-import start-up-module="DPS.InternalUsers">
+      <repository-path>/atg/userprofiling/InternalProfileRepository</repository-path>
+      <import-file-path>/CommerceReferenceStore/Store/EStore/Versioned/install/data/internal-users-security.xml</import-file-path>
+    </data-import>
+  </schema>
+
+  <schema id="versionedmultiSiteRightNowImpSchema">
+      <data-import start-up-module="Store.EStore.Versioned,Store.KnowledgeBase">
+      <requires-addon-id id="rightNow-knowledgeBase"/>
+      <incompatible-addon-id id="international"/>
+      <repository-path>/atg/multisite/SiteRepository</repository-path>
+      <import-file-path>/CommerceReferenceStore/Store/KnowledgeBase/install/data/basic-urls.xml</import-file-path>
+      <user>publishing</user>
+      <workspace>rightnow_base_url_tags</workspace>
+      <comment>initial_data_import</comment>
+    </data-import>
+    
+    <data-import start-up-module="Store.EStore.Versioned, Store.KnowledgeBase.International">
+      <requires-addon-id id="rightNow-knowledgeBase"/>
+      <requires-addon-id id="international"/>
+      <repository-path>/atg/multisite/SiteRepository</repository-path>
+      <import-file-path>/CommerceReferenceStore/Store/KnowledgeBase/International/install/data/urls.xml</import-file-path>
+      <user>publishing</user>
+      <workspace>rightnow_urls_tags</workspace>
+      <comment>initial_data_import</comment>
+    </data-import>
+  </schema>
+
+
+  <server-instance-type id="management">
+
+    <datasource id="management">
+      <schema id="versionedSchema"/>
+      <schema id="versionedSitesTemplates" />
+      <schema id="versionedSitesTemplatesInternational" />
+      <schema id="versionedmultiSiteRightNowImpSchema"/>
+      <schema id="storeViewmapping" />
+      <schema id="siteTemplateViewmapping" />
+      <schema id="storeContentSecurity" />
+    </datasource>
+
+  </server-instance-type>
+
+
+</database-initializer>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/Versioned/cim/dbinit.xml#3 $$Change: 788432 $-->

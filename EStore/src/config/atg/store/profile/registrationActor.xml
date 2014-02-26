@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actor-template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:noNamespaceSchemaLocation="http://www.atg.com/xsds/actorChain_1.0.xsd"
+                default-chain-id="error">
+
+  <actor-chain id="createUser">
+    <form id="registrationFormHandler"
+          name="/atg/store/profile/RegistrationFormHandler"
+          handle="create">
+      <input name="year" value="${param.year}"/>
+      <input name="month" value="${param.month}"/>
+      <input name="date" value="${param.date}"/>
+      <input name="emailOptIn" value="${param.emailOptIn}"/>
+      <input name="previousOptInStatus" value="${param.previousOptInStatus}"/>
+      <input name="extractDefaultValuesFromProfile" value="${param.extractDefaultValuesFromProfile}"/>
+      <input name="createNewUser" value="${param.createNewUser}"/>
+      <input name="confirmPassword" value="${param.isConfirmPassword}"/>
+      <input name="sourceCode" value="${param.sourceCode}"/>
+      <input name="value.email" value="${param.email}"/>
+      <input name="value.firstName" value="${param.firstName}"/>
+      <input name="value.lastName" value="${param.lastName}"/>
+      <input name="value.homeAddress.phoneNumber" value="${param.phoneNumber}"/>
+      <input name="value.homeAddress.postalCode" value="${param.postalCode}"/>
+      <input name="value.gender" value="${param.gender}"/>
+      <input name="value.member" value="${param.member}"/>
+      <input name="value.autoLogin" value="${param.autoLogin}"/>
+      <input name="value.password" value="${param.password}"/>
+      <input name="value.CONFIRMPASSWORD" value="${param.checkPassword}"/>
+      <input name="value.referralSource" value="${param.referralSource}"/>
+      <input name="createSuccessURL" value="${param.createSuccessURL}" />
+      <input name="createErrorURL" value="/rest/model/atg/store/profile/RegistrationActor/error" />
+    </form>
+  </actor-chain>
+
+  <actor-chain id="updateUser">
+    <form id="registrationFormHandler"
+          name="/atg/store/profile/RegistrationFormHandler"
+          handle="update">
+      <input name="year" value="${param.year}"/>
+      <input name="month" value="${param.month}"/>
+      <input name="date" value="${param.date}"/>
+      <input name="emailOptIn" value="${param.emailOptIn}"/>
+      <input name="previousOptInStatus" value="${param.previousOptInStatus}"/>
+      <input name="extractDefaultValuesFromProfile" value="${param.extractDefaultValuesFromProfile}"/>
+      <input name="confirmPassword" value="${param.isConfirmPassword}"/>
+      <input name="sourceCode" value="${param.sourceCode}"/>
+      <input name="value.email" value="${param.email}"/>
+      <input name="value.firstName" value="${param.firstName}"/>
+      <input name="value.lastName" value="${param.lastName}"/>
+      <input name="value.homeAddress.phoneNumber" value="${param.phoneNumber}"/>
+      <input name="value.homeAddress.postalCode" value="${param.postalCode}"/>
+      <input name="value.gender" value="${param.gender}"/>
+      <input name="value.member" value="${param.member}"/>
+      <input name="value.autoLogin" value="${param.autoLogin}"/>
+      <input name="value.password" value="${param.password}"/>
+      <input name="value.confirmPassword" value="${param.confirmPassword}"/>
+      <input name="value.referralSource" value="${param.referralSource}"/>
+      <input name="updateSuccessURL" value="/rest/model/atg/store/profile/RegistrationActor/updateUser-success" />
+      <input name="updateErrorURL" value="/rest/model/atg/store/profile/RegistrationActor/error" />
+    </form>
+  </actor-chain>
+  <actor-chain id="updateUser-success">
+    <actor id="profileInfo" name="/atg/userprofiling/ProfileActor" chain-id="info" return-model-var="profile">
+	<!-- If the profile was successfully updated return the new profile, the ProfileActor/info object is already outputting profile so we want profile.profile -->
+      <output id="profile" name="profile" value="${profile.profile}"/>
+    </actor>
+  </actor-chain>
+  <!--
+    Error handling
+  -->
+  <actor-chain id="error">
+    <component id="registrationFormHandler"
+               name="/atg/store/profile/RegistrationFormHandler"
+               component-var="registrationFormHandler">
+      <output id="formError" name="formError"
+        value="${registrationFormHandler.formError}" />
+      <output id="formExceptions" name="formExceptions"
+        value="${registrationFormHandler.formExceptions}" />
+    </component>
+  </actor-chain>
+
+</actor-template>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/config/atg/store/profile/registrationActor.xml#3 $$Change: 791340 $-->

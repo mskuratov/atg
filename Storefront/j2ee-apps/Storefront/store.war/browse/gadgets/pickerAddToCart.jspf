@@ -1,0 +1,77 @@
+<%--
+  This gadget shows an action button for the product details page picker.
+  If no SKU selected yet, it displays an 'Add to Cart' button.
+  If some SKU is already selected, it displays one of the following button, depending on the SKU availability:
+    'Add to Cart'
+    'Preorder'
+    'Backorder'
+    'Email me when in stock'
+
+  This gadget is included directly into the outer page. No parameters.
+--%>
+
+<dsp:getvalueof var="selectedSku" vartype="atg.repository.RepositoryItem" param="selectedSku"/>
+<dsp:getvalueof var="availabilityType" vartype="java.lang.String" param="availabilityType"/>
+<dsp:input type="hidden" bean="CartModifierFormHandler.skuType" paramvalue="skuType"/>
+
+<c:choose>
+  <c:when test="${empty selectedSku}">
+    <%-- SKU is not selected yet, display the 'Add to Cart' button. --%>
+    <fmt:message var="addToCartText" key="common.button.addToCartText" scope="request"/>
+    <span class="atg_store_basicButton add_to_cart_link">
+      <dsp:input bean="CartModifierFormHandler.addItemToOrder" type="submit" iclass="atg_behavior_addItemToCart"
+                 id="atg_behavior_addItemToCart" value="${addToCartText}" />
+    </span>
+  </c:when>
+  <c:otherwise>
+    <c:choose>
+      <c:when test="${availabilityType == 'unavailable'}">
+        <%-- Selected SKU is unavailable, display the 'Email Me' button. --%>
+        
+        <%-- Build Notify Me popup URL --%>
+        <c:url var="notifyMePopupUrl" value="/browse/notifyMeRequestPopup.jsp">
+          <c:param name="skuId"><dsp:valueof param="selectedSku.repositoryId" /></c:param>
+          <c:param name="productId"><dsp:valueof param="product.repositoryId"/></c:param>
+        </c:url>
+        
+        <fmt:message key="common.button.emailMeInStockText" var="addButtonText"/>
+        <fmt:message key="common.button.emailMeInStockTitle" var="addButtonTitle"/>
+        <a href="${notifyMePopupUrl}" title="${addButtonTitle}" 
+           class="atg_store_basicButton atg_store_emailMe" target="popup">
+          <span>${addButtonText}</span>
+        </a>
+        <div class="atg_store_emailMeMessage">
+          <fmt:message key="common.whenAvailable"/>
+        </div> 
+      </c:when>
+      <c:when test="${availabilityType == 'preorderable'}">
+        <%-- SKU is preorderable, display 'Preorder' button. --%>
+        <fmt:message key="common.button.preorderText" var="addButtonText"/>
+        <fmt:message key="common.button.preorderTitle" var="addButtonTitle"/>
+        <span class="atg_store_basicButton add_to_cart_link_preorder">
+          <dsp:input bean="CartModifierFormHandler.addItemToOrder" type="submit"
+                     value="${addButtonText}" title="${addButtonTitle}" iclass="atg_behavior_addItemToCart" id="atg_behavior_addItemToCart"/>
+        </span>
+      </c:when>
+      <c:when test="${availabilityType == 'backorderable'}">
+        <%-- SKU is available for backorder, display 'Backorder' button. --%>
+        <fmt:message key="common.button.backorderText" var="addButtonText"/>
+        <fmt:message key="common.button.backorderTitle" var="addButtonTitle"/>
+        <span class="atg_store_basicButton add_to_cart_link_backorder">
+          <dsp:input bean="CartModifierFormHandler.addItemToOrder" type="submit"
+                     value="${addButtonText}" title="${addButtonTitle}" iclass="atg_behavior_addItemToCart" id="atg_behavior_addItemToCart"/>
+        </span>
+      </c:when>
+      <c:otherwise>
+        <%-- Otherwise SKU is available, display the 'Add to Cart' button. --%>
+        <fmt:message key="common.button.addToCartText" var="addButtonText"/>
+        <fmt:message key="common.button.addToCartTitle" var="addButtonTitle"/>
+        <span class="atg_store_basicButton add_to_cart_link">
+          <dsp:input bean="CartModifierFormHandler.addItemToOrder" type="submit"
+                     value="${addButtonText}" title="${addButtonTitle}" iclass="atg_behavior_addItemToCart" id="atg_behavior_addItemToCart"/>
+        </span>
+      </c:otherwise>
+    </c:choose>
+  </c:otherwise>
+</c:choose>
+<%-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Storefront/j2ee/store.war/browse/gadgets/pickerAddToCart.jspf#2 $$Change: 788278 $--%>

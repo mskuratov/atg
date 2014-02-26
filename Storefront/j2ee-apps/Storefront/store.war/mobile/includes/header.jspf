@@ -1,0 +1,68 @@
+<%--
+  Header fragment of the page.
+  This fragment is used to begin the page. It works in pair with "footer.jspf".
+  It's included by the "mobilePageContainer" custom tag.
+
+  Includes:
+    /mobile/navigation/gadgets/search.jsp - Search block
+    /mobile/cart/gadgets/cartItemCount.jspf - Stores the cart item count in the "itemsQuantity" page-scoped variable
+--%>
+<dsp:importbean bean="/atg/endeca/assembler/droplet/InvokeAssembler"/>
+
+<dsp:getvalueof var="siteIcon" bean="/atg/multisite/Site.siteIcon"/>
+<crs:getMessage var="storeName" key="common.storeName"/>
+
+<div id="header">
+  <%-- Home page "Logo" --%>
+  <div class="headerLogo" role="button" aria-label="${storeName}" onclick="document.location = '${siteContextPath}/';">
+    <img src="${siteIcon}" alt="${storeName}"/>
+  </div>
+
+  <%-- "Search" block --%>
+  <dsp:droplet name="InvokeAssembler">
+    <dsp:param name="contentCollection" value="/content/Shared/Global Search Configuration/Search Box"/>
+    <dsp:oparam name="output">
+      <dsp:getvalueof var="searchBox" vartype="com.endeca.infront.assembler.ContentItem" param="contentItem"/>
+    </dsp:oparam>
+  </dsp:droplet>
+  <c:if test="${not empty searchBox}">
+    <dsp:renderContentItem contentItem="${searchBox}"/>
+  </c:if>
+
+  <%-- "Browse" shortcut --%>
+  <div class="headerBrowse">
+    <a href="${siteContextPath}${navigationActionPath}?Dy=1&Nty=1&nav=true" role="button" aria-label="<fmt:message key='mobile.button.browse.title'/>">
+      <img src="/crsdocroot/content/mobile/images/icon-browse.png" alt="<fmt:message key='mobile.button.browse.title'/>"/>
+    </a>
+  </div>
+
+  <div class="dividerBar"></div>
+
+  <%-- "Shopping Cart" shortcut --%>
+  <div class="headerCart">
+    <%-- How many items are in the "Shopping Cart" ? --%>
+    <%@include file="/mobile/cart/gadgets/cartItemCount.jspf"%>
+    <fmt:message key="mobile.common.cart.shoppingCart" var="cartTitle"/>
+    <c:if test="${itemsQuantity > 0}">
+      <fmt:message key="mobile.common.textSeparator" var="textSeparator"/>
+      <fmt:message key="mobile.common.quantity" var="quantity"/>
+      <fmt:message key="mobile.common.labelSeparator" var="labelSeparator"/>
+      <c:set var="cartTitle" value="${cartTitle} ${textSeparator} ${quantity}${labelSeparator} ${itemsQuantity}"/>
+    </c:if>
+    <a href="${siteContextPath}/cart/cart.jsp" title="${cartTitle}" role="button" aria-label="${cartTitle}">
+      <img src="/crsdocroot/content/mobile/images/icon-cart.png" alt="${cartTitle}"/>
+      <span id="cartBadge" ${itemsQuantity == 0 ? 'style="display:none"' : ''}>
+        <c:out value="${itemsQuantity}"/>
+      </span>
+    </a>
+  </div>
+</div>
+
+<div id="messagePopup">
+  <div class="messageContainer" onclick="CRSMA.global.hidePopup()">
+    <div class="message">
+      <span id="messageText"></span>
+    </div>
+  </div>
+</div>
+<%-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Storefront/j2ee/store.war/mobile/includes/header.jspf#5 $$Change: 794114 $--%>

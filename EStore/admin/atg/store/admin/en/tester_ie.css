@@ -1,0 +1,57 @@
+#emailTemplateType{
+  width:275px;
+}
+
+.emailTemplateResult{
+  margin:0;
+  padding-top:5px;
+}
+
+#emailTemplateForm h3 {
+  opacity:.6;
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=60); /* this works in IE6, IE7, and IE8 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=60)"; /* this works in IE8 only */
+  position:relative;
+}
+ul.emailTemplateFields li input[type="text"]{
+  width:150px;
+  height:15px;
+}
+ul.emailTemplateFields li select{
+  width:165px;
+}
+ul.emailTemplateFields li.templateTesterOrderId input[type="text"]{
+  width:100px !important;
+}
+
+ul.emailTemplateFields li.templateTesterOrderId input[type="submit"]{
+  padding-top:4px;
+}
+
+ul.emailTemplateFields li.templateTesterOrderId input[type="submit"]{
+  filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#d4def1', endColorstr='#a1bcc5'); /* IE6 & IE7 */       
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#d4def1', endColorstr='#a1bcc5')"; /* IE8 */
+}
+
+ul.emailTemplateFields li.templateTesterOrderId input:hover[type="submit"]{
+  filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#e5ebf6', endColorstr='#c6d7dc'); /* IE6 & IE7 */       
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#e5ebf6', endColorstr='#c6d7dc')"; /* IE8 */
+  border:1px solid #a6c7c7 !important;
+}
+
+/* Form Submit Button */
+input.emailTemplateSubmit{
+  border:1px solid #a6c7c7 !important;
+  filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#d4def1', endColorstr='#a1bcc5'); /* IE6 & IE7 */       
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#d4def1', endColorstr='#a1bcc5')"; /* IE8 */
+}
+input.emailTemplateSubmit:hover{
+  border:1px solid #a6c7c7 !important;
+  filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#e5ebf6', endColorstr='#c6d7dc'); /* IE6 & IE7 */       
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#e5ebf6', endColorstr='#c6d7dc')"; /* IE8 */
+}
+#emailTemplateTesterContainer,
+div#emailTemplateFormContainer,
+ul.emailTemplateFields li{
+zoom:1;
+}

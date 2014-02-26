@@ -1,0 +1,11 @@
+<gsa-template xml-combine="append">
+  <item-descriptor name="categoryTranslation" cache-mode="distributed"/>
+  <item-descriptor name="productTranslation" cache-mode="distributed"/>
+  <item-descriptor name="skuTranslation" cache-mode="distributed"/>
+  <item-descriptor name="clothing-sku-translation" cache-mode="distributed"/>
+  <item-descriptor name="furniture-sku-translation" cache-mode="distributed"/>
+  <item-descriptor name="featureTranslation" cache-mode="distributed"/>
+  <item-descriptor name="asSeenInTranslation" cache-mode="distributed"/>
+  <item-descriptor name="promotionalContentTranslation" cache-mode="distributed"/>
+</gsa-template>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/International/Versioned/configlayers/preview/atg/commerce/catalog/custom/customCatalog.xml#1 $$Change: 735822 $-->

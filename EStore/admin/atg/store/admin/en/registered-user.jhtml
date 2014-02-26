@@ -1,0 +1,11 @@
+<!-- Displays form fields for Registered User email template. -->
+<importbean bean="/atg/store/email/TemplateTesterFormHandler"/>
+
+<input type="hidden" bean="TemplateTesterFormHandler.templateUrl" value="/crs/emailtemplates/registeredUser.jsp"/>
+<h3>Registered User</h3>
+<droplet src="error-message.jhtml"/>
+    
+<ul class="emailTemplateFields">
+  <droplet src="email-base-inputs.jhtml"/>
+</ul>
+<java>/* @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/admin/atg/store/admin/en/registered-user.jhtml#1 $$Change: 735822 $*/</java>

@@ -1,0 +1,20 @@
+<%--
+  This gadget renders auxiliary hidden form params for the picker form.
+
+  This gadget is directly included into the outer page. No parameters.
+--%>
+
+<dsp:input bean="CartModifierFormHandler.addItemToOrderErrorURL" type="hidden" value="${errorURL}" priority="10"/>
+<dsp:input bean="CartModifierFormHandler.addItemCount" value="1" type="hidden" priority="10"/>
+<dsp:input bean="CartModifierFormHandler.addItemToOrderSuccessURL" type="hidden" value="${pageContext.request.contextPath}/cart/cart.jsp" priority="10"/>
+<dsp:input bean="CartModifierFormHandler.sessionExpirationURL" type="hidden" value="${pageContext.request.contextPath}/global/sessionExpired.jsp" priority="10"/>
+<dsp:getvalueof var="colors" param="availableColors"/>
+<dsp:input bean="CartModifierFormHandler.colorRequired" type="hidden" value="${fn:length(colors) > 0}" priority="10"/>
+<dsp:getvalueof var="sizes" param="availableSizes"/>
+<dsp:input bean="CartModifierFormHandler.sizeRequired" type="hidden" value="${fn:length(sizes) > 0}" priority="10"/>
+<dsp:input bean="CartModifierFormHandler.items[0].catalogRefId" paramvalue="selectedSku.repositoryId" type="hidden" priority="10"/>
+<dsp:input bean="CartModifierFormHandler.items[0].productId" paramvalue="product.repositoryId" type="hidden" priority="10"/>
+<%-- URLs for the RichCart AJAX response. Renders cart contents as JSON --%>
+<dsp:input bean="CartModifierFormHandler.ajaxAddItemToOrderSuccessUrl" type="hidden" value="${pageContext.request.contextPath}/cart/json/cartContents.jsp" priority="10"/>
+<dsp:input bean="CartModifierFormHandler.ajaxAddItemToOrderErrorUrl" type="hidden" value="${pageContext.request.contextPath}/cart/json/errors.jsp" priority="10"/>
+<%-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Storefront/j2ee/store.war/browse/gadgets/pickerCartFormParams.jspf#2 $$Change: 788278 $--%>

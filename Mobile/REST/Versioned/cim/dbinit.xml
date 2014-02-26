@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE database-initializer SYSTEM "http://www.atg.com/dtds/dbinit_1_0.dtd">
+<database-initializer>
+  <schema id="versionedSchema">
+    <sql>
+      <path>
+        <create>
+          sql/db_components/${database}/versioned_catalog_ddl.sql
+        </create>
+        <drop>
+          sql/uninstall/${database}/drop_versioned_catalog_ddl.sql
+        </drop>
+      </path>
+    </sql>
+    <data-import start-up-module="Store.EStore.Versioned,Store.Mobile.REST.Versioned">
+      <requires-addon-id id="storefront-full-setup"/>
+      <incompatible-addon-id id="StoreNoSite"/>
+      <repository-path>/atg/commerce/catalog/ProductCatalog</repository-path>
+      <import-file-path>/CommerceReferenceStore/Store/Mobile/REST/data/promotionalContent-versioned.xml</import-file-path>
+      <user>publishing</user>
+      <workspace>mobile_promotional_content_update</workspace>
+      <comment>mobile_promotional_content_update</comment>
+    </data-import>
+    <data-import start-up-module="Store.EStore.Versioned,Store.Mobile.REST.Versioned">
+      <requires-addon-id id="storefront-full-setup"/>
+      <repository-path>/atg/commerce/locations/LocationRepository</repository-path>
+      <import-file-path>/CommerceReferenceStore/Store/Mobile/REST/data/locations.xml</import-file-path>
+      <user>publishing</user>
+      <workspace>mobile_locations_update</workspace>
+      <comment>mobile_locations_update</comment>
+    </data-import>
+    <data-import start-up-module="Store.EStore.Versioned,Store.Mobile.REST.Versioned">
+      <requires-addon-id id="storefront-full-setup"/>
+      <requires-addon-id id="international"/>
+      <repository-path>/atg/commerce/locations/LocationRepository</repository-path>
+      <import-file-path>/CommerceReferenceStore/Store/Mobile/REST/data/locations-i18n.xml</import-file-path>
+      <user>publishing</user>
+      <workspace>mobile_locations_i18n_update</workspace>
+      <comment>mobile_locations_i18n_update</comment>
+    </data-import>
+  </schema>
+  <server-instance-type id="management">
+    <datasource id="management">
+      <schema id="versionedSchema"/>
+    </datasource>
+  </server-instance-type>
+</database-initializer>
+<!-- @version $Id: //hosting-blueprint/MobileCommerce/version/10.2/server/MobileCommerce/Versioned/cim/dbinit.xml#3 $$Change: 788278 $-->

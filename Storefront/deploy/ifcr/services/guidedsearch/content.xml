@@ -1,0 +1,30 @@
+<ContentItem type="Page" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://endeca.com/schema/content/2008">
+  <TemplateId>GuidedSearchService</TemplateId>
+  <Name>Guided Search Service</Name>
+  <Property name="navigation">
+	<ContentItem type="GuidedNavigation">
+		<TemplateId>GuidedNavigation</TemplateId>
+	</ContentItem>
+  </Property>
+  <Property name="breadcrumbs">
+	<ContentItem type="Breadcrumbs">
+		<TemplateId>Breadcrumbs</TemplateId>
+	</ContentItem>
+  </Property>
+  <Property name="resultsList">
+	<ContentItem type="ResultsList">
+		<TemplateId>ResultsList</TemplateId>
+	</ContentItem>
+  </Property>
+  <Property name="dimensionSearchResults">
+	<ContentItem type="DimensionSearchResults">
+		<TemplateId>DimensionSearchResults</TemplateId>
+	</ContentItem>
+  </Property>
+  <Property name="zones">
+	<ContentItem type="ZoneSlot">
+      <TemplateId>ContentSlotList</TemplateId>
+    </ContentItem>
+  </Property>
+</ContentItem>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Storefront/deploy/ifcr/services/guidedsearch/content.xml#2 $$Change: 768606 $-->

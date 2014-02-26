@@ -1,0 +1,8 @@
+ATG-Product: The Commerce Store international store - Versioned extentions
+Manifest-Version: 1.0
+ATG-Required: Store.EStore.Versioned Store.EStore.International
+ATG-Client-Class-Path: lib/classes.jar
+ATG-Class-Path: lib/classes.jar
+ATG-Config-Path: config/config.jar
+ATG-PreviewConfig-Path: configlayers/preview/
+ATG-Client-Update-File: true

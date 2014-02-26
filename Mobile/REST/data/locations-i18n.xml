@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE gsa-template SYSTEM "dynamosystemresource:/atg/dtds/gsa/gsa_1.0.dtd">
+<gsa-template>
+  <update-item item-descriptor="store" id="ArtUndWeisepark">
+    <set-property name="latitude"><![CDATA[48.131096]]></set-property>
+    <set-property name="longitude"><![CDATA[11.56521]]></set-property>
+  </update-item>
+  <update-item item-descriptor="store" id="SudkustePiazza">
+    <set-property name="latitude"><![CDATA[50.116395]]></set-property>
+    <set-property name="longitude"><![CDATA[8.698808]]></set-property>
+  </update-item>
+  <update-item item-descriptor="store" id="Bekleidungsgeschaft">
+    <set-property name="latitude"><![CDATA[52.51972]]></set-property>
+    <set-property name="longitude"><![CDATA[13.399107]]></set-property>
+  </update-item>
+</gsa-template>
+<!-- @version $Id: //hosting-blueprint/MobileCommerce/version/10.2/server/MobileCommerce/data/locations-i18n.xml#2 $$Change: 796710 $-->

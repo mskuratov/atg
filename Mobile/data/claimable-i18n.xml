@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE gsa-template SYSTEM "dynamosystemresource:/atg/dtds/gsa/gsa_1.0.dtd">
+
+<gsa-template>
+  <import-items>
+    <add-item item-descriptor="DeployablePromotionClaimable" id="MOBILEFREESHIPPING">
+      <set-property name="displayName"><![CDATA[MOBILEFREESHIPPING]]></set-property>
+      <set-property name="lastModified"><![CDATA[4/2/2010 10:10:13]]></set-property>
+      <set-property name="promotions"><![CDATA[promo30004]]></set-property>
+      <set-property name="type"><![CDATA[DeployablePromotionClaimable]]></set-property>
+      <set-property name="redeemableOnPromotionSites"><![CDATA[true]]></set-property>
+    </add-item>
+  </import-items>
+</gsa-template>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Mobile/data/claimable-i18n.xml#2 $$Change: 768606 $-->

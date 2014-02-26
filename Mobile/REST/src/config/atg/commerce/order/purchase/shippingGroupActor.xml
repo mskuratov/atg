@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<actor-template>
+  <actor-chain id="shipToExistingAddress">
+    <form id="shippingGroupFormHandler">
+      <input name="shipToExistingAddressSuccessURL" 
+             value="/model/atg/commerce/pricing/AvailableShippingMethodsActor/getAvailablePricedShippingMethods" />
+    </form>
+  </actor-chain>
+  
+  <actor-chain id="shipToNewAddress">
+    <form id="shippingGroupFormHandler">
+      <input name="shipToNewAddressSuccessURL" 
+             value="/model/atg/commerce/pricing/AvailableShippingMethodsActor/getAvailablePricedShippingMethods" />
+    </form>
+  </actor-chain>
+  
+  <actor-chain id="editShippingAddress">
+    <form id="shippingGroupFormHandler" name="/atg/commerce/order/purchase/ShippingGroupFormHandler"
+      var="shippingGroupFormHandler" handle="editShippingAddress">
+    	<input name="editAddress.newNickname" value="${param.newNickname}"/>
+      <input name="editAddress.phoneNumber" value="${param.phoneNumber}"/>
+      <input name="editAddress.nickname" value="${param.nickname}"/>
+      <input name="editAddress.postalCode" value="${param.postalCode}"/>
+      <input name="editAddress.state" value="${param.state}"/>
+      <input name="editAddress.country" value="${param.country}"/>
+      <input name="editAddress.address1" value="${param.address1}"/>
+      <input name="editAddress.address2" value="${param.address2}"/>
+      <input name="editAddress.lastName" value="${param.lastName}"/>
+      <input name="editAddress.city" value="${param.city}"/>
+      <input name="editAddress.firstName" value="${param.firstName}"/>
+      <input name="editShippingAddressNickName" value="${param.editShippingAddressNickName}"/>
+      <input name="shippingAddressNewNickName" value="${param.shippingAddressNewNickName}"/>
+      <input name="editShippingAddressErrorURL" value="/model/atg/commerce/order/purchase/ShippingGroupActor/error"/>
+    </form>
+  </actor-chain>
+</actor-template>
+<!-- @version $Id: //hosting-blueprint/MobileCommerce/version/10.2/server/MobileCommerce/config/atg/commerce/order/purchase/shippingGroupActor.xml#1 $$Change: 788278 $-->

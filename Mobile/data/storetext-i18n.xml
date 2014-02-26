@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gsa-template SYSTEM "dynamosystemresource:/atg/dtds/gsa/gsa_1.0.dtd">
+<gsa-template>
+  <import-items>
+    <!--
+    Store repository text resource definitions.
+    Repository item ids ending with '5' refer to 'mobileHomeSite' text resources
+                                    '6' refer to 'mobileStoreSiteUS' text resources
+                                    '7' refer to 'mobileStoreSiteDE' text resources
+                                    '8' refer to generic mobile text resources
+-->
+    
+    <add-item id="txt10055" item-descriptor="storeShortText">
+      <set-property name="key"><![CDATA[mobileHomeSite.common.storeName]]></set-property>
+      <set-property name="textDefault"><![CDATA[ATG Home]]></set-property>
+      <set-property name="translations"><![CDATA[de=detxt10055,es=es_xlatetxt10055]]></set-property>
+    </add-item>
+    <add-item id="detxt10055" item-descriptor="storeShortTextTranslation">
+      <set-property name="text"><![CDATA[ATG Home]]></set-property>
+    </add-item>
+    
+
+    <add-item id="es_xlatetxt10055" item-descriptor="storeShortTextTranslation">
+      <set-property name="text"><![CDATA[ATG Home]]></set-property>
+    </add-item>
+    
+    <add-item id="txt10278" item-descriptor="storeShortText">
+      <set-property name="key"><![CDATA[company_shipping.text]]></set-property>
+      <set-property name="textDefault"><![CDATA[<h3>Ground Shipping</h3><p>UPS will deliver items that are available for immediate shipment<br/>in 3-5 business days at the rates described below. Please note<br/>that delivery of merchandise that requires special handling<br/>will take approximately two additional weeks.<br/></p><p>For Orders up to $14.99 US the Shipping Rate is $4.75 US.<br/>For Orders from $15 - $49.99 US the Shipping Rate is $5.95 US.<br/>For Orders $50.00 US and up the Shipping Rate is $6.50 US.</p><p><h3>Two Day Shipping</h3></p><p>UPS will deliver items that are available for immediate shipment<br/>in two business days at a flat rate of $9.50 US.</p><p><h3>Next Day Shipping</h3></p><p>UPS will deliver items that are available for immediate shipment<br/>overnight at a flat rate of $18.95 US.</p>]]></set-property>
+      <set-property name="translations"><![CDATA[de=detxt10278,es=es_xlatetxt10278]]></set-property>
+    </add-item>
+    <add-item id="detxt10278" item-descriptor="storeShortTextTranslation">
+      <set-property name="text"><![CDATA[<h3>Standardversand</h3><p>UPS liefert Artikel, die sofort versandfertig sind,<br/>in 3-5 Werktagen zu den untenstehenden Preisen. Beachten<br/>Sie, dass Lieferungen von Artikeln, die eine spezielle Bearbeitung erfordern,<br/>ungefähr zwei weitere Wochen benötigen.</p><p>Für Bestellungen bis zu  14.99 € beträgt der Versand 4,75 €.<br/>Für Bestellungen von 15 € - 49,99 € beträgt der Versand 5,95 €.<br/>Für Bestellungen ab 50,00 € beträgt der Versand 6,50 €.</p><p>Versand in zwei Tagen</h3></p><p>UPS liefert Artikel, die sofort versandfertig sind,<br/>in zwei Werktagen zu einem Festpreis von 9,50 €.</p><p><h3>Versand in einem Tag</h3></p><p>UPS liefert Artikel, die sofort versandfertig sind,<br/>über Nacht zu einem Festpreis von 18,95 €.</p>]]></set-property>
+    </add-item>
+    <add-item id="es_xlatetxt10278" item-descriptor="storeShortTextTranslation">
+      <set-property name="text"><![CDATA[<p>Envío por transporte terrestre</p><p>UPS entregará los artículos disponibles para su envío inmediato<br/>en un plazo de 3 a 5 días laborales, con las tarifas que se indican a continuación. Tenga en cuenta<br/>que la entrega de mercancía que requiera manipulación especial<br/>tardará aproximadamente dos semanas más.</p><p>Para órdenes por un importe máximo de $14,99, la tarifa de envío es de $4,75.<br/>Para órdenes por un importe entre 15 y $49,99, la tarifa de envío es de $5,95.<br/>Para órdenes por un importe mínimo de $50, la tarifa de envío es de $6,50.</p><p>Envío en 2 días</p><p>UPS entregará los artículos disponibles para su envío inmediato<br/>en un plazo de dos días laborables por una tarifa única de $9,50.</p><p>Envío al día siguiente</p><p>UPS entregará los artículos disponibles para su envío inmediato<br/>al día siguiente, por una tarifa única de $18,95.</p>]]></set-property>
+    </add-item>
+
+    <add-item id="txt11008" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[mobile.company_shippingAndReturns.pageTitle]]></set-property>
+      <set-property name="textDefault"><![CDATA[Shipping & Returns]]></set-property>
+      <set-property name="translations"><![CDATA[es=es_txt11008,de=de_txt11008]]></set-property>
+    </add-item>
+    <add-item id="es_txt11008" item-descriptor="storeShortTextTranslation">
+      <set-property name="text"><![CDATA[Envíos y devoluciones]]></set-property>
+    </add-item>
+    <add-item id="de_txt11008" item-descriptor="storeShortTextTranslation">
+      <set-property name="text"><![CDATA[Versand und Rücksendungen]]></set-property>
+    </add-item>
+    <add-item id="txt11018" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[mobile.company_shipping.title]]></set-property>
+      <set-property name="textDefault"><![CDATA[Shipping & Handling]]></set-property>
+      <set-property name="translations"><![CDATA[es=es_txt11018,de=de_txt11018]]></set-property>
+    </add-item>
+    <add-item id="es_txt11018" item-descriptor="storeShortTextTranslation">
+      <set-property name="text"><![CDATA[Envío y manipulación]]></set-property>
+    </add-item>
+    <add-item id="de_txt11018" item-descriptor="storeShortTextTranslation">
+      <set-property name="text"><![CDATA[Versand & Bearbeitung]]></set-property>
+    </add-item>
+    <add-item id="txt11028" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[mobile.company_return.title]]></set-property>
+      <set-property name="textDefault"><![CDATA[Return Policy]]></set-property>
+      <set-property name="translations"><![CDATA[es=es_txt11028,de=de_txt11028]]></set-property>
+    </add-item>
+    <add-item id="es_txt11028" item-descriptor="storeShortTextTranslation">
+      <set-property name="text"><![CDATA[Política de devoluciones]]></set-property>
+    </add-item>
+    <add-item id="de_txt11028" item-descriptor="storeShortTextTranslation">
+      <set-property name="text"><![CDATA[Rückgabebedingungen]]></set-property>
+    </add-item>
+    <add-item id="txt11038" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_aboutUs.ourHistory]]></set-property>
+      <set-property name="textDefault"><![CDATA[Our History & Values]]></set-property>
+      <set-property name="translations"><![CDATA[es=es_txt11038,de=de_txt11038]]></set-property>
+    </add-item>
+    <add-item id="es_txt11038" item-descriptor="storeShortTextTranslation">
+      <set-property name="text"><![CDATA[Nuestra historia y nuestros valores]]></set-property>
+    </add-item>
+    <add-item id="de_txt11038" item-descriptor="storeShortTextTranslation">
+      <set-property name="text"><![CDATA[Unsere Geschichte & Werte]]></set-property>
+    </add-item>
+    <add-item id="txt11048" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[mobile.company_privacyAndTerms.pageTitle]]></set-property>
+      <set-property name="textDefault"><![CDATA[Privacy & Terms]]></set-property>
+      <set-property name="translations"><![CDATA[es=es_txt11048,de=de_txt11048]]></set-property>
+    </add-item>
+    <add-item id="es_txt11048" item-descriptor="storeShortTextTranslation">
+      <set-property name="text"><![CDATA[Privacidad y condiciones]]></set-property>
+    </add-item>
+    <add-item id="de_txt11048" item-descriptor="storeShortTextTranslation">
+      <set-property name="text"><![CDATA[Datenschutz und Allgemeine Geschäftsbedingungen]]></set-property>
+    </add-item>
+    <add-item id="txt11058" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_privacy.title]]></set-property>
+      <set-property name="textDefault"><![CDATA[Privacy Policy]]></set-property>
+      <set-property name="translations"><![CDATA[es=es_txt11058,de=de_txt11058]]></set-property>
+    </add-item>
+    <add-item id="es_txt11058" item-descriptor="storeShortTextTranslation">
+      <set-property name="text"><![CDATA[Política de privacidad]]></set-property>
+    </add-item>
+    <add-item id="de_txt11058" item-descriptor="storeShortTextTranslation">
+      <set-property name="text"><![CDATA[Datenschutzrichtlinie]]></set-property>
+    </add-item>
+    <add-item id="txt11068" item-descriptor="storeShortText" no-checkin="false">
+      <set-property name="key" add="false" remove="false"><![CDATA[company_terms.title]]></set-property>
+      <set-property name="textDefault"><![CDATA[Terms & Conditions]]></set-property>
+      <set-property name="translations"><![CDATA[es=es_txt11068,de=de_txt11068]]></set-property>
+    </add-item>
+    <add-item id="es_txt11068" item-descriptor="storeShortTextTranslation">
+      <set-property name="text"><![CDATA[Condiciones]]></set-property>
+    </add-item>
+    <add-item id="de_txt11068" item-descriptor="storeShortTextTranslation">
+      <set-property name="text"><![CDATA[Allgemeine Geschäftsbedingungen]]></set-property>
+    </add-item>
+
+  </import-items>
+</gsa-template>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Mobile/data/storetext-i18n.xml#3 $$Change: 788278 $-->

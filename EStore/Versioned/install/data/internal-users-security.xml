@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE gsa-template SYSTEM "dynamosystemresource:/atg/dtds/gsa/gsa_1.0.dtd">
+<gsa-template>
+
+<update-item item-descriptor="role" id="merchandiserRole">
+  <set-property name="accessRights" add="true"><![CDATA[storecontentfull]]></set-property>
+</update-item>
+
+</gsa-template>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/Versioned/install/data/internal-users-security.xml#2 $$Change: 791340 $-->

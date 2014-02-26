@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE database-initializer SYSTEM "http://www.atg.com/dtds/dbinit_1_0.dtd">
+<database-initializer>
+  <schema id="catalogSchemaNonInternational">
+    <sql>
+      <path>
+        <create>
+          sql/db_components/${database}/catalog_ddl.sql
+        </create>
+        <drop>
+          sql/uninstall/${database}/drop_catalog_ddl.sql
+        </drop>
+      </path>
+    </sql>
+  </schema>
+  <schema id="promotionalContent">
+    <data-import>
+      <requires-addon-id id="storefront-full-setup"/>
+      <repository-path>/atg/commerce/catalog/ProductCatalog</repository-path>
+      <import-file-path>/CommerceReferenceStore/Store/Mobile/REST/data/promotionalContent.xml</import-file-path>
+    </data-import>
+  </schema>
+  <schema id="locationSchema">
+    <data-import>
+      <requires-addon-id id="storefront-full-setup"/>
+      <repository-path>/atg/commerce/locations/LocationRepository</repository-path>
+      <import-file-path>/CommerceReferenceStore/Store/Mobile/REST/data/locations.xml</import-file-path>
+    </data-import>
+    <data-import>
+      <requires-addon-id id="storefront-full-setup"/>
+      <requires-addon-id id="international"/>
+      <repository-path>/atg/commerce/locations/LocationRepository</repository-path>
+      <import-file-path>/CommerceReferenceStore/Store/Mobile/REST/data/locations-i18n.xml</import-file-path>
+    </data-import>
+  </schema>
+  <server-instance-type id="production">
+    <datasource id="switchingA">
+      <schema id="catalogSchemaNonInternational"/>
+      <schema id="promotionalContent"/>
+	  <schema id="locationSchema"/>
+    </datasource>
+    <datasource id="switchingB">
+      <schema id="catalogSchemaNonInternational"/>
+      <schema id="promotionalContent"/>
+	  <schema id="locationSchema"/>
+    </datasource>
+    <datasource id="nonswitchingCore">
+      <schema id="catalogSchemaNonInternational"/>
+      <schema id="promotionalContent"/>
+	  <schema id="locationSchema"/>
+    </datasource>
+  </server-instance-type>
+  <server-instance-type id="staging">
+    <datasource id="stagingnonswitchingCore">
+      <schema id="catalogSchemaNonInternational"/>
+      <schema id="promotionalContentNonInternational"/>
+	  <schema id="locationSchema"/>
+    </datasource>
+    <datasource id="stagingswitchingA">
+      <schema id="catalogSchemaNonInternational"/>
+      <schema id="promotionalContentNonInternational"/>
+	  <schema id="locationSchema"/>
+    </datasource>
+    <datasource id="stagingswitchingB">
+      <schema id="catalogSchemaNonInternational"/>
+      <schema id="promotionalContentNonInternational"/>
+	  <schema id="locationSchema"/>
+    </datasource>
+  </server-instance-type>
+</database-initializer>
+<!-- @version $Id: //hosting-blueprint/MobileCommerce/version/10.2/server/MobileCommerce/cim/dbinit.xml#3 $$Change: 788278 $-->

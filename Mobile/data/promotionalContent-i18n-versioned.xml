@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gsa-template SYSTEM "dynamosystemresource:/atg/dtds/gsa/gsa_1.0.dtd">
+<gsa-template>
+  <import-items>
+    <!-- StoreUS promotions -->
+    <add-item id="mobileSave10off100Couple" item-descriptor="promotionalContent" no-checkin="false">
+      <set-property name="associatedSite" add="false" remove="false"><![CDATA[mobileStoreSiteUS]]></set-property>
+      <set-property name="creationDate" add="false" remove="false"><![CDATA[6/20/2011 11:12:33]]></set-property>
+      <set-property name="descriptionDefault" add="false" remove="false"><![CDATA[/crsdocroot/content/mobile/images/homepage/web/couple_art.jpg]]></set-property>
+      <set-property name="displayNameDefault" add="false" remove="false"><![CDATA[Save $10 on orders of $100 or more]]></set-property>
+      <set-property name="image" add="false" remove="false"><![CDATA[/crsdocroot/content/mobile/images/homepage/web/{site}/couple_text_{language}.png]]></set-property>
+      <set-property name="parentFolder" add="false" remove="false"><![CDATA[promoContentImageFolder]]></set-property>
+      <set-property name="path" add="false" remove="false"><![CDATA[/Images]]></set-property>
+      <set-property name="template" add="false" remove="false"><![CDATA[xmLinkedPromo]]></set-property>
+      <set-property name="translations" add="false" remove="false"><![CDATA[de=de_xlatese-mobileSave10off100Couple,es=es_xlatese-mobileSave10off100Couple]]></set-property>
+    </add-item>
+    <add-item id="mobileSave10off100Rack" item-descriptor="promotionalContent" no-checkin="false">
+      <set-property name="associatedSite" add="false" remove="false"><![CDATA[mobileStoreSiteUS]]></set-property>
+      <set-property name="creationDate" add="false" remove="false"><![CDATA[6/20/2011 11:38:29]]></set-property>
+      <set-property name="descriptionDefault" add="false" remove="false"><![CDATA[/crsdocroot/content/mobile/images/homepage/web/men_rack_art.jpg]]></set-property>
+      <set-property name="displayNameDefault" add="false" remove="false"><![CDATA[Save $10 on orders of $100 or more]]></set-property>
+      <set-property name="image" add="false" remove="false"><![CDATA[/crsdocroot/content/mobile/images/homepage/web/{site}/men_rack_text_{language}.png]]></set-property>
+      <set-property name="parentFolder" add="false" remove="false"><![CDATA[promoContentImageFolder]]></set-property>
+      <set-property name="path" add="false" remove="false"><![CDATA[/Images]]></set-property>
+      <set-property name="template" add="false" remove="false"><![CDATA[xmLinkedPromo]]></set-property>
+      <set-property name="translations" add="false" remove="false"><![CDATA[de=de_xlatese-mobileSave10off100Rack,es=es_xlatese-mobileSave10off100Rack]]></set-property>
+    </add-item>
+    <add-item id="mobileMensRecs" item-descriptor="promotionalContent" no-checkin="false">
+      <set-property name="associatedSite" add="false" remove="false"><![CDATA[mobileStoreSiteUS]]></set-property>
+      <set-property name="creationDate" add="false" remove="false"><![CDATA[6/20/2011 11:42:14]]></set-property>
+      <set-property name="descriptionDefault" add="false" remove="false"><![CDATA[/crsdocroot/content/mobile/images/homepage/web/men_shirt_art.jpg]]></set-property>
+      <set-property name="displayNameDefault" add="false" remove="false"><![CDATA[Recommendations For You!]]></set-property>
+      <set-property name="image" add="false" remove="false"><![CDATA[/crsdocroot/content/mobile/images/homepage/web/{site}/men_shirt_text_{language}.png]]></set-property>
+      <set-property name="parentFolder" add="false" remove="false"><![CDATA[promoContentImageFolder]]></set-property>
+      <set-property name="path" add="false" remove="false"><![CDATA[/Images]]></set-property>
+      <set-property name="template" add="false" remove="false"><![CDATA[xmLinkedPromo]]></set-property>
+      <set-property name="translations" add="false" remove="false"><![CDATA[de=de_xlatese-mobileRecs,es=es_xlatese-mobileRecs]]></set-property>
+    </add-item>
+    <add-item id="mobile25PercentOffWomens" item-descriptor="promotionalContent" no-checkin="false">
+      <set-property name="associatedSite" add="false" remove="false"><![CDATA[mobileStoreSiteUS]]></set-property>
+      <set-property name="creationDate" add="false" remove="false"><![CDATA[6/20/2011 11:55:03]]></set-property>
+      <set-property name="descriptionDefault" add="false" remove="false"><![CDATA[/crsdocroot/content/mobile/images/homepage/web/woman_bag_art.jpg]]></set-property>
+      <set-property name="displayNameDefault" add="false" remove="false"><![CDATA[Get 25% off women's apparel]]></set-property>
+      <set-property name="image" add="false" remove="false"><![CDATA[/crsdocroot/content/mobile/images/homepage/web/{site}/woman_bag_text_{language}.png]]></set-property>
+      <set-property name="parentFolder" add="false" remove="false"><![CDATA[promoContentImageFolder]]></set-property>
+      <set-property name="path" add="false" remove="false"><![CDATA[/Images]]></set-property>
+      <set-property name="template" add="false" remove="false"><![CDATA[xmLinkedPromo]]></set-property>
+      <set-property name="translations" add="false" remove="false"><![CDATA[de=de_xlatese-mobile25PercentOffWomens,es=es_xlatese-mobile25PercentOffWomens]]></set-property>
+    </add-item>
+    <add-item id="mobileWomensRecs" item-descriptor="promotionalContent" no-checkin="false">
+      <set-property name="associatedSite" add="false" remove="false"><![CDATA[mobileStoreSiteUS]]></set-property>
+      <set-property name="creationDate" add="false" remove="false"><![CDATA[6/20/2011 12:01:34]]></set-property>
+      <set-property name="descriptionDefault" add="false" remove="false"><![CDATA[/crsdocroot/content/mobile/images/homepage/web/woman_open_art.jpg]]></set-property>
+      <set-property name="displayNameDefault" add="false" remove="false"><![CDATA[Recommendations For You!]]></set-property>
+      <set-property name="image" add="false" remove="false"><![CDATA[/crsdocroot/content/mobile/images/homepage/web/{site}/woman_open_text_{language}.png]]></set-property>
+      <set-property name="parentFolder" add="false" remove="false"><![CDATA[promoContentImageFolder]]></set-property>
+      <set-property name="path" add="false" remove="false"><![CDATA[/Images]]></set-property>
+      <set-property name="template" add="false" remove="false"><![CDATA[xmLinkedPromo]]></set-property>
+      <set-property name="translations" add="false" remove="false"><![CDATA[de=de_xlatese-mobileRecs,es=es_xlatese-mobileRecs]]></set-property>
+    </add-item>
+    <add-item id="mobile10PercentOffFreeShipping" item-descriptor="promotionalContent" no-checkin="false">
+      <set-property name="associatedSite" add="false" remove="false"><![CDATA[mobileStoreSiteUS]]></set-property>
+      <set-property name="creationDate" add="false" remove="false"><![CDATA[6/20/2011 12:09:09]]></set-property>
+      <set-property name="descriptionDefault" add="false" remove="false"><![CDATA[/crsdocroot/content/mobile/images/homepage/web/woman_shipping_art.jpg]]></set-property>
+      <set-property name="displayNameDefault" add="false" remove="false"><![CDATA[Get 10% off your order plus Free Shipping.  Use Code TENSHIP]]></set-property>
+      <set-property name="image" add="false" remove="false"><![CDATA[/crsdocroot/content/mobile/images/homepage/web/{site}/woman_shipping_text_{language}.png]]></set-property>
+      <set-property name="parentFolder" add="false" remove="false"><![CDATA[promoContentImageFolder]]></set-property>
+      <set-property name="path" add="false" remove="false"><![CDATA[/Images]]></set-property>
+      <set-property name="template" add="false" remove="false"><![CDATA[xmLinkedPromo]]></set-property>
+      <set-property name="translations" add="false" remove="false"><![CDATA[de=de_xlatese-mobile10PercentOffFree,es=es_xlatese-mobile10PercentOffFree]]></set-property>
+    </add-item>
+    <add-item id="mobile15PercentOffHomeAccents" item-descriptor="promotionalContent" no-checkin="false">
+      <set-property name="associatedSite" add="false" remove="false"><![CDATA[mobileHomeSite]]></set-property>
+      <set-property name="creationDate" add="false" remove="false"><![CDATA[6/20/2011 13:36:25]]></set-property>
+      <set-property name="descriptionDefault" add="false" remove="false"><![CDATA[/crsdocroot/content/mobile/images/homepage/web/woman_sitting_art.jpg]]></set-property>
+      <set-property name="displayNameDefault" add="false" remove="false"><![CDATA[Get 15% Off Home Accents]]></set-property>
+      <set-property name="image" add="false" remove="false"><![CDATA[/crsdocroot/content/mobile/images/homepage/web/{site}/woman_sitting_text_{language}.png]]></set-property>
+      <set-property name="parentFolder" add="false" remove="false"><![CDATA[promoContentImageFolder]]></set-property>
+      <set-property name="path" add="false" remove="false"><![CDATA[/Images]]></set-property>
+      <set-property name="template" add="false" remove="false"><![CDATA[xmLinkedPromo]]></set-property>
+      <set-property name="translations" add="false" remove="false"><![CDATA[de=de_xlatese-mobile15PercentOffHome,es=es_xlatese-mobile15PercentOffHome]]></set-property>
+    </add-item>
+    
+    <!-- Homesite promotions -->
+    <add-item id="mobileSave10off100Couch" item-descriptor="promotionalContent" no-checkin="false">
+      <set-property name="associatedSite" add="false" remove="false"><![CDATA[mobileHomeSite]]></set-property>
+      <set-property name="creationDate" add="false" remove="false"><![CDATA[5/17/2012 10:00:00]]></set-property>
+      <set-property name="descriptionDefault" add="false" remove="false"><![CDATA[/crsdocroot/content/mobile/images/homepage/web/couch_art.jpg]]></set-property>
+      <set-property name="displayNameDefault" add="false" remove="false"><![CDATA[Save $10 on orders of $100 or more]]></set-property>
+      <set-property name="image" add="false" remove="false"><![CDATA[/crsdocroot/content/mobile/images/homepage/web/{site}/couch_text_{language}.png]]></set-property>
+      <set-property name="parentFolder" add="false" remove="false"><![CDATA[promoContentImageFolder]]></set-property>
+      <set-property name="path" add="false" remove="false"><![CDATA[/Images]]></set-property>
+      <set-property name="template" add="false" remove="false"><![CDATA[xmLinkedPromo]]></set-property>
+      <set-property name="translations" add="false" remove="false"><![CDATA[es=es_xlatese-mobileSave10off100Couple]]></set-property>
+    </add-item>
+    <add-item id="mobileWomensRecsMug" item-descriptor="promotionalContent" no-checkin="false">
+      <set-property name="associatedSite" add="false" remove="false"><![CDATA[mobileHomeSite]]></set-property>
+      <set-property name="creationDate" add="false" remove="false"><![CDATA[5/17/2012 10:00:00]]></set-property>
+      <set-property name="descriptionDefault" add="false" remove="false"><![CDATA[/crsdocroot/content/mobile/images/homepage/web/woman_mug_art.jpg]]></set-property>
+      <set-property name="displayNameDefault" add="false" remove="false"><![CDATA[Ideas, ideas, ideas]]></set-property>
+      <set-property name="image" add="false" remove="false"><![CDATA[/crsdocroot/content/mobile/images/homepage/web/{site}/woman_mug_text_{language}.png]]></set-property>
+      <set-property name="parentFolder" add="false" remove="false"><![CDATA[promoContentImageFolder]]></set-property>
+      <set-property name="path" add="false" remove="false"><![CDATA[/Images]]></set-property>
+      <set-property name="template" add="false" remove="false"><![CDATA[xmLinkedPromo]]></set-property>
+      <set-property name="translations" add="false" remove="false"><![CDATA[es=es_xlatese-mobileIdeas]]></set-property>
+    </add-item>
+    <add-item id="mobile15PercentOffHomeAccentsCandles" item-descriptor="promotionalContent" no-checkin="false">
+      <set-property name="associatedSite" add="false" remove="false"><![CDATA[mobileHomeSite]]></set-property>
+      <set-property name="creationDate" add="false" remove="false"><![CDATA[5/17/2012 10:00:00]]></set-property>
+      <set-property name="descriptionDefault" add="false" remove="false"><![CDATA[/crsdocroot/content/mobile/images/homepage/web/candles_art.jpg]]></set-property>
+      <set-property name="displayNameDefault" add="false" remove="false"><![CDATA[Get 15% Off Home Accents]]></set-property>
+      <set-property name="image" add="false" remove="false"><![CDATA[/crsdocroot/content/mobile/images/homepage/web/{site}/candles_text_{language}.png]]></set-property>
+      <set-property name="parentFolder" add="false" remove="false"><![CDATA[promoContentImageFolder]]></set-property>
+      <set-property name="path" add="false" remove="false"><![CDATA[/Images]]></set-property>
+      <set-property name="template" add="false" remove="false"><![CDATA[xmLinkedPromo]]></set-property>
+      <set-property name="translations" add="false" remove="false"><![CDATA[es=es_xlatese-mobile15PercentOffHome]]></set-property>
+    </add-item>
+    <add-item id="mobile10PercentOffFreeShippingHome" item-descriptor="promotionalContent" no-checkin="false">
+      <set-property name="associatedSite" add="false" remove="false"><![CDATA[mobileHomeSite]]></set-property>
+      <set-property name="creationDate" add="false" remove="false"><![CDATA[5/17/2012 10:00:00]]></set-property>
+      <set-property name="descriptionDefault" add="false" remove="false"><![CDATA[/crsdocroot/content/mobile/images/homepage/web/woman_shipping_art.jpg]]></set-property>
+      <set-property name="displayNameDefault" add="false" remove="false"><![CDATA[Get 10% off your order plus Free Shipping.  Use Code TENSHIP]]></set-property>
+      <set-property name="image" add="false" remove="false"><![CDATA[/crsdocroot/content/mobile/images/homepage/web/{site}/woman_shipping_blue_text_{language}.png]]></set-property>
+      <set-property name="parentFolder" add="false" remove="false"><![CDATA[promoContentImageFolder]]></set-property>
+      <set-property name="path" add="false" remove="false"><![CDATA[/Images]]></set-property>
+      <set-property name="template" add="false" remove="false"><![CDATA[xmLinkedPromo]]></set-property>
+      <set-property name="translations" add="false" remove="false"><![CDATA[es=es_xlatese-mobile10PercentOffFree]]></set-property>
+    </add-item>
+    <add-item id="mobileHubbardChair" item-descriptor="promotionalContent" no-checkin="false">
+      <set-property name="associatedSite" add="false" remove="false"><![CDATA[mobileHomeSite]]></set-property>
+      <set-property name="creationDate" add="false" remove="false"><![CDATA[5/17/2012 10:00:00]]></set-property>
+      <set-property name="descriptionDefault" add="false" remove="false"><![CDATA[/crsdocroot/content/mobile/images/homepage/web/hubbard_chair_art.jpg]]></set-property>
+      <set-property name="displayNameDefault" add="false" remove="false"><![CDATA[Hubbard Chair, Save10% on 2, Save 15% on 4, SAve 20% on 6]]></set-property>
+      <set-property name="image" add="false" remove="false"><![CDATA[/crsdocroot/content/mobile/images/homepage/web/{site}/hubbard_chair_text_{language}.png]]></set-property>
+      <set-property name="parentFolder" add="false" remove="false"><![CDATA[promoContentImageFolder]]></set-property>
+      <set-property name="path" add="false" remove="false"><![CDATA[/Images]]></set-property>
+      <set-property name="template" add="false" remove="false"><![CDATA[xmLinkedPromo]]></set-property>
+      <set-property name="translations" add="false" remove="false"><![CDATA[es=es_xlatese-mobileHubbardChair]]></set-property>
+    </add-item>
+    <add-item id="mobileSave10off100Sink" item-descriptor="promotionalContent" no-checkin="false">
+      <set-property name="associatedSite" add="false" remove="false"><![CDATA[mobileHomeSite]]></set-property>
+      <set-property name="creationDate" add="false" remove="false"><![CDATA[5/17/2012 10:00:00]]></set-property>
+      <set-property name="descriptionDefault" add="false" remove="false"><![CDATA[/crsdocroot/content/mobile/images/homepage/web/sink_art.jpg]]></set-property>
+      <set-property name="displayNameDefault" add="false" remove="false"><![CDATA[Save $10 on orders of $100 or more]]></set-property>
+      <set-property name="image" add="false" remove="false"><![CDATA[/crsdocroot/content/mobile/images/homepage/web/{site}/sink_text_{language}.png]]></set-property>
+      <set-property name="parentFolder" add="false" remove="false"><![CDATA[promoContentImageFolder]]></set-property>
+      <set-property name="path" add="false" remove="false"><![CDATA[/Images]]></set-property>
+      <set-property name="template" add="false" remove="false"><![CDATA[xmLinkedPromo]]></set-property>
+      <set-property name="translations" add="false" remove="false"><![CDATA[es=es_xlatese-mobileRecs]]></set-property>
+    </add-item>
+    <add-item id="mobileMensRecsFeet" item-descriptor="promotionalContent" no-checkin="false">
+      <set-property name="associatedSite" add="false" remove="false"><![CDATA[mobileHomeSite]]></set-property>
+      <set-property name="creationDate" add="false" remove="false"><![CDATA[5/17/2012 10:00:00]]></set-property>
+      <set-property name="descriptionDefault" add="false" remove="false"><![CDATA[/crsdocroot/content/mobile/images/homepage/web/men_feet_art.jpg]]></set-property>
+      <set-property name="displayNameDefault" add="false" remove="false"><![CDATA[Recommendations For You!]]></set-property>
+      <set-property name="image" add="false" remove="false"><![CDATA[/crsdocroot/content/mobile/images/homepage/web/{site}/men_feet_text_{language}.png]]></set-property>
+      <set-property name="parentFolder" add="false" remove="false"><![CDATA[promoContentImageFolder]]></set-property>
+      <set-property name="path" add="false" remove="false"><![CDATA[/Images]]></set-property>
+      <set-property name="template" add="false" remove="false"><![CDATA[xmLinkedPromo]]></set-property>
+      <set-property name="translations" add="false" remove="false"><![CDATA[es=es_xlatese-mobileIdeas]]></set-property>
+    </add-item>
+    
+    <!-- Translations -->
+    <add-item id="de_xlatese-mobileSave10off100Couple" item-descriptor="promotionalContentTranslation" no-checkin="false">
+      <set-property name="description" add="false" remove="false"><![CDATA[/crsdocroot/content/mobile/images/homepage/web/couple_art.jpg]]></set-property>
+      <set-property name="linkText" add="false" remove="false"><![CDATA[__NULL__]]></set-property>
+      <set-property name="storeDisplayName" add="false" remove="false"><![CDATA[__NULL__]]></set-property>
+      <set-property name="displayName" add="false" remove="false"><![CDATA[Sparen Sie 10 € bei Bestellungen ab 100 €]]></set-property>
+    </add-item>
+    <add-item id="es_xlatese-mobileSave10off100Couple" item-descriptor="promotionalContentTranslation" no-checkin="false">
+      <set-property name="description" add="false" remove="false"><![CDATA[/crsdocroot/content/mobile/images/homepage/web/couple_art.jpg]]></set-property>
+      <set-property name="linkText" add="false" remove="false"><![CDATA[__NULL__]]></set-property>
+      <set-property name="displayName" add="false" remove="false"><![CDATA[Ahorre $10 en órdenes por un valor de $100 o superior]]></set-property>
+      <set-property name="storeDisplayName" add="false" remove="false"><![CDATA[__NULL__]]></set-property>
+    </add-item>
+    <add-item id="de_xlatese-mobileSave10off100Rack" item-descriptor="promotionalContentTranslation" no-checkin="false">
+      <set-property name="description" add="false" remove="false"><![CDATA[/crsdocroot/content/mobile/images/homepage/web/men_rack_art.jpg]]></set-property>
+      <set-property name="linkText" add="false" remove="false"><![CDATA[__NULL__]]></set-property>
+      <set-property name="storeDisplayName" add="false" remove="false"><![CDATA[__NULL__]]></set-property>
+      <set-property name="displayName" add="false" remove="false"><![CDATA[Sparen Sie 10 € bei Bestellungen ab 100 €]]></set-property>
+    </add-item>
+    <add-item id="es_xlatese-mobileSave10off100Rack" item-descriptor="promotionalContentTranslation" no-checkin="false">
+      <set-property name="description" add="false" remove="false"><![CDATA[/crsdocroot/content/mobile/images/homepage/web/men_rack_art.jpg]]></set-property>
+      <set-property name="linkText" add="false" remove="false"><![CDATA[__NULL__]]></set-property>
+      <set-property name="displayName" add="false" remove="false"><![CDATA[Ahorre $10 en órdenes por un valor de $100 o superior]]></set-property>
+      <set-property name="storeDisplayName" add="false" remove="false"><![CDATA[__NULL__]]></set-property>
+    </add-item>
+    <add-item id="es_xlatese-mobileRecs" item-descriptor="promotionalContentTranslation" no-checkin="false">
+      <set-property name="description" add="false" remove="false"><![CDATA[/crsdocroot/content/mobile/images/homepage/web/men_shirt_art.jpg]]></set-property>
+      <set-property name="linkText" add="false" remove="false"><![CDATA[__NULL__]]></set-property>
+      <set-property name="displayName" add="false" remove="false"><![CDATA[¡Recommendaciones para usted!]]></set-property>
+      <set-property name="storeDisplayName" add="false" remove="false"><![CDATA[__NULL__]]></set-property>
+    </add-item>
+    <add-item id="de_xlatese-mobileRecs" item-descriptor="promotionalContentTranslation" no-checkin="false">
+      <set-property name="description" add="false" remove="false"><![CDATA[/crsdocroot/content/mobile/images/homepage/web/men_shirt_art.jpg]]></set-property>
+      <set-property name="linkText" add="false" remove="false"><![CDATA[__NULL__]]></set-property>
+      <set-property name="storeDisplayName" add="false" remove="false"><![CDATA[__NULL__]]></set-property>
+      <set-property name="displayName" add="false" remove="false"><![CDATA[Empfehlungen für Sie!]]></set-property>
+    </add-item>
+    <add-item id="de_xlatese-mobile25PercentOffWomens" item-descriptor="promotionalContentTranslation" no-checkin="false">
+      <set-property name="description" add="false" remove="false"><![CDATA[/crsdocroot/content/mobile/images/homepage/web/woman_bag_art.jpg]]></set-property>
+      <set-property name="linkText" add="false" remove="false"><![CDATA[__NULL__]]></set-property>
+      <set-property name="storeDisplayName" add="false" remove="false"><![CDATA[__NULL__]]></set-property>
+      <set-property name="displayName" add="false" remove="false"><![CDATA[25% Rabatt auf Damenbekleidung]]></set-property>
+    </add-item>
+    <add-item id="es_xlatese-mobile25PercentOffWomens" item-descriptor="promotionalContentTranslation" no-checkin="false">
+      <set-property name="description" add="false" remove="false"><![CDATA[/crsdocroot/content/mobile/images/homepage/web/woman_bag_art.jpg]]></set-property>
+      <set-property name="linkText" add="false" remove="false"><![CDATA[__NULL__]]></set-property>
+      <set-property name="displayName" add="false" remove="false"><![CDATA[Consiga el 25% de descuento en moda para la mujer]]></set-property>
+      <set-property name="storeDisplayName" add="false" remove="false"><![CDATA[__NULL__]]></set-property>
+    </add-item>
+    <add-item id="es_xlatese-mobile10PercentOffFree" item-descriptor="promotionalContentTranslation" no-checkin="false">
+      <set-property name="description" add="false" remove="false"><![CDATA[/crsdocroot/content/mobile/images/homepage/web/woman_shipping_art.jpg]]></set-property>
+      <set-property name="linkText" add="false" remove="false"><![CDATA[__NULL__]]></set-property>
+      <set-property name="displayName" add="false" remove="false"><![CDATA[Consiga un 10% de descuento en la orden + envío GRATUITO con el código TENSHIP]]></set-property>
+      <set-property name="storeDisplayName" add="false" remove="false"><![CDATA[__NULL__]]></set-property>
+    </add-item>
+    <add-item id="de_xlatese-mobile10PercentOffFree" item-descriptor="promotionalContentTranslation" no-checkin="false">
+      <set-property name="description" add="false" remove="false"><![CDATA[/crsdocroot/content/mobile/images/homepage/web/woman_shipping_art.jpg]]></set-property>
+      <set-property name="linkText" add="false" remove="false"><![CDATA[__NULL__]]></set-property>
+      <set-property name="storeDisplayName" add="false" remove="false"><![CDATA[__NULL__]]></set-property>
+      <set-property name="displayName" add="false" remove="false"><![CDATA[10% Rabatt auf Ihre Bestellung und kostenloser Versand. Verwenden Sie den Code TENSHIP]]></set-property>
+    </add-item>
+    <add-item id="de_xlatese-mobile15PercentOffHome" item-descriptor="promotionalContentTranslation" no-checkin="false">
+      <set-property name="description" add="false" remove="false"><![CDATA[/crsdocroot/content/mobile/images/homepage/web/woman_sitting_art.jpg]]></set-property>
+      <set-property name="linkText" add="false" remove="false"><![CDATA[__NULL__]]></set-property>
+      <set-property name="storeDisplayName" add="false" remove="false"><![CDATA[__NULL__]]></set-property>
+      <set-property name="displayName" add="false" remove="false"><![CDATA[15% Rabatt auf Wohnakzente]]></set-property>
+    </add-item>
+    <add-item id="es_xlatese-mobile15PercentOffHome" item-descriptor="promotionalContentTranslation" no-checkin="false">
+      <set-property name="description" add="false" remove="false"><![CDATA[/crsdocroot/content/mobile/images/homepage/web/woman_sitting_art.jpg]]></set-property>
+      <set-property name="linkText" add="false" remove="false"><![CDATA[__NULL__]]></set-property>
+      <set-property name="displayName" add="false" remove="false"><![CDATA[Consiga el 15% de descuento en adornos para el hogar]]></set-property>
+      <set-property name="storeDisplayName" add="false" remove="false"><![CDATA[__NULL__]]></set-property>
+    </add-item>
+    <add-item id="es_xlatese-mobileIdeas" item-descriptor="promotionalContentTranslation" no-checkin="false">
+      <set-property name="description" add="false" remove="false"><![CDATA[/crsdocroot/content/mobile/images/homepage/web/woman_mug_art.jpg]]></set-property>
+      <set-property name="linkText" add="false" remove="false"><![CDATA[__NULL__]]></set-property>
+      <set-property name="displayName" add="false" remove="false"><![CDATA[Ideas, ideas, ideas]]></set-property>
+      <set-property name="storeDisplayName" add="false" remove="false"><![CDATA[__NULL__]]></set-property>
+    </add-item>
+    <add-item id="es_xlatese-mobileHubbardChair" item-descriptor="promotionalContentTranslation" no-checkin="false">
+      <set-property name="description" add="false" remove="false"><![CDATA[/crsdocroot/content/mobile/images/homepage/web/hubbard_chair_art.jpg]]></set-property>
+      <set-property name="linkText" add="false" remove="false"><![CDATA[__NULL__]]></set-property>
+      <set-property name="displayName" add="false" remove="false"><![CDATA[Hubbard Chair, Save10% on 2, Save 15% on 4, Save 20% on 6]]></set-property>
+      <set-property name="storeDisplayName" add="false" remove="false"><![CDATA[__NULL__]]></set-property>
+    </add-item>
+  </import-items>
+</gsa-template>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Mobile/data/promotionalContent-i18n.xml#3 $$Change: 788278 $-->

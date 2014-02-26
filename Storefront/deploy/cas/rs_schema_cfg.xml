@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<recordStoreConfiguration xmlns="http://recordstore.itl.endeca.com/">
+    <changePropertyNames/>
+    <idPropertyName>attribute.name</idPropertyName>
+    <jdbmSettings/>
+</recordStoreConfiguration>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Storefront/deploy/cas/rs_schema_cfg.xml#2 $$Change: 768606 $-->

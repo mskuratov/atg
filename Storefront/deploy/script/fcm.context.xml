@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright 2011, 2012, Oracle and/or its affiliates. All rights reserved.
+Oracle and Java are registered trademarks of Oracle and/or its 
+affiliates. Other names may be trademarks of their respective owners.
+UNIX is a registered trademark of The Open Group.
+
+This software and related documentation are provided under a license 
+agreement containing restrictions on use and disclosure and are 
+protected by intellectual property laws. Except as expressly permitted 
+in your license agreement or allowed by law, you may not use, copy, 
+reproduce, translate, broadcast, modify, license, transmit, distribute, 
+exhibit, perform, publish, or display any part, in any form, or by any 
+means. Reverse engineering, disassembly, or decompilation of this 
+software, unless required by law for interoperability, is prohibited.
+The information contained herein is subject to change without notice 
+and is not warranted to be error-free. If you find any errors, please 
+report them to us in writing.
+U.S. GOVERNMENT END USERS: Oracle programs, including any operating 
+system, integrated software, any programs installed on the hardware, 
+and/or documentation, delivered to U.S. Government end users are 
+"commercial computer software" pursuant to the applicable Federal 
+Acquisition Regulation and agency-specific supplemental regulations. 
+As such, use, duplication, disclosure, modification, and adaptation 
+of the programs, including any operating system, integrated software, 
+any programs installed on the hardware, and/or documentation, shall be 
+subject to license terms and license restrictions applicable to the 
+programs. No other rights are granted to the U.S. Government.
+This software or hardware is developed for general use in a variety 
+of information management applications. It is not developed or 
+intended for use in any inherently dangerous applications, including 
+applications that may create a risk of personal injury. If you use 
+this software or hardware in dangerous applications, then you shall 
+be responsible to take all appropriate fail-safe, backup, redundancy, 
+and other measures to ensure its safe use. Oracle Corporation and its 
+affiliates disclaim any liability for any damages caused by use of this 
+software or hardware in dangerous applications.
+This software or hardware and documentation may provide access to or 
+information on content, products, and services from third parties. 
+Oracle Corporation and its affiliates are not responsible for and 
+expressly disclaim all warranties of any kind with respect to 
+third-party content, products, and services. Oracle Corporation and 
+its affiliates will not be responsible for any loss, costs, or damages 
+incurred due to your access to or use of third-party content, products, 
+or services.
+-->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:lang="http://www.springframework.org/schema/lang"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:util="http://www.springframework.org/schema/util"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                        http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang.xsd
+                        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd">
+												
+  <!-- load external properties, see ./config/script/fcm.properties -->
+  <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    <property name="locations">
+		<list>
+			<value>classpath:environment.properties</value>
+		</list>      
+    </property>
+  </bean>
+  
+  <!-- load record store adapters -->
+  <import resource="fcm-record-stores.context.xml"/>
+
+  <bean id="configurationAdapter" class="com.endeca.itl.fcm.integration.cadk.ConfigurationAdapter">
+    <property name="forgeConfigurationManager" ref="forgeConfigurationManager" />
+    <property name="configurationGenerators">
+      <list>		
+        <ref bean="attributeGenerator"/>
+		<ref bean="taxonomyGenerator"/>
+		<ref bean="precedenceRulesGenerator"/>		
+      </list>
+    </property>
+	<property name="staticConfigurationGenerators">
+		<list>
+			<ref bean="stemmingGenerator"/>
+		</list>
+	</property>
+  </bean>
+  
+  <bean id="forgeConfigurationManager" class="com.endeca.itl.fcm.ForgeConfigurationManager" init-method="init">    
+    <property name="projectPath" value="./data/processing"/>
+    <property name="projectName" value="@@PROJECT_NAME@@"/>
+    <property name="conflictStateFilePath" value="./data/state/fcm.conflicts.xml" />
+    <property name="dvalIdStateFilePath" value="./data/state/fcm.dvals.xml.gz" />
+    <property name="nextDValId" value="10000" /> <!-- if specified, nextDValId must be the last setter called -->
+  </bean>
+
+  <!-- Stores externally-managed dimension configurations for passing between AttributeGenerator and TaxonomyGenerator -->
+  <util:map id="dimensionConfigurationCache" />
+
+  <bean id="attributeGenerator" class="com.endeca.itl.fcm.integration.cadk.ifdi.AttributeGenerator">
+    <property name="attributeNameField" value="attribute.name" />
+    <property name="sourceNamesField" value="attribute.source_name" />
+    <property name="displayNameField" value="attribute.display_name" />
+    <property name="searchInterfaceField" value="attribute.search_interface" />
+    <property name="typeField" value="attribute.type" />
+    <property name="dataTypeField" value="attribute.property.data_type" />
+    <property name="isSearchableField" value="attribute.search.searchable" />
+    <property name="isWildcardSearchableField" value="attribute.search.wildcard" />
+    <property name="isSortableField" value="attribute.offline_sort" />
+    <property name="isFilterableField" value="attribute.record_filterable" />
+    <property name="isShowOnListPageField" value="attribute.show_with_list" />
+    <property name="isShowOnDetailPageField" value="attribute.show_with_record" />
+    <property name="enableForRollupField" value="attribute.rollup_key" />
+
+    <property name="refineSortOrderField" value="attribute.dimension.refinements_sort_order" />
+    <property name="isAutogenField" value="attribute.dimension.autogen" />
+    <property name="isDimSearchHierarchyField" value="attribute.dimension.hierarchy_dim_search" />
+    <property name="isRecSearchHierarchyField" value="attribute.dimension.hierarchy_record_search" />
+    <property name="refineShowRecordCountsField" value="attribute.dimension.compute_refinement_counts" />
+    <property name="multiSelectTypeField" value="attribute.dimension.multiselect_type" />
+    <property name="isRefineDynRankField" value="attribute.dimension.dyn_ranking_enabled" />
+    <property name="refineDynRankCountField" value="attribute.dimension.dyn_ranking_refinement_count" />
+    <property name="isRefineDynRankMoreField" value="attribute.dimension.dyn_ranking_more" />
+    <property name="refineDynRankSortTypeField" value="attribute.dimension.dyn_ranking_sort" />
+    <property name="isHiddenField" value="attribute.dimension.hidden" />
+    <property name="groupNameField" value="" />
+    
+    <property name="defaultSearchInterfaces" value="All" /> <!-- comma sep list -->
+    <property name="dimensionConfigurationCache" ref="dimensionConfigurationCache" />
+    <property name="dimensionTemplate" ref="dimensionTemplate" />
+    <property name="propertyTemplate" ref="propertyTemplate" />
+  </bean>
+  
+  <bean id="taxonomyGenerator" class="com.endeca.itl.fcm.integration.cadk.ifdi.TaxonomyGenerator">
+	<property name="specField" value="dimval.spec" />
+	<property name="parentSpecField" value="dimval.parent_spec" />
+	<property name="dimensionSpecField" value="dimval.dimension_spec" />
+	<property name="displayNameField" value="dimval.display_name" />	
+	<property name="rangeLowerBoundField" value="dimval.range.lower_bound" />
+	<property name="rangeUpperBoundField" value="dimval.range.upper_bound" />	
+	<property name="rangeLowerBoundInclusiveField" value="dimval.range.lower_bound_inclusive" />
+	<property name="rangeUpperBoundInclusiveField" value="dimval.range.upper_bound_inclusive" />
+	<property name="rangeComparisonTypeField" value="dimval.range.comparison_type" />
+	<property name="displayOrderField" value="dimval.display_order" />
+	<property name="matchTypeField" value="dimval.match_type" />
+		
+	<property name="displayNameDvalProperty" value="display_name" />	
+	<property name="dimensionConfigurationCache" ref="dimensionConfigurationCache" />
+	<property name="rootDimensionValuePropertyHandler" ref="dvalPropertyHandler" />
+	<property name="childDimensionValuePropertyHandler" ref="dvalPropertyHandler" />
+	<property name="childDimensionValueSynonymHandler" ref="dvalSynonymHandler" />
+	<property name="rootDimensionValueSynonymHandler" ref="dvalSynonymHandler" />
+  </bean>
+  
+  <!-- 
+	Adds dval properties to each dimension value, in this standard configuration adding any incoming attribute in the dimension values
+	feed that starts with 'dimval.prop.', e.g. an attribute called 'dimval.prop.unit_of_measure' = 'kg' will produce a dval property
+	with the key 'unit_of_measure' and the value 'kg'.
+  -->
+  <bean id="dvalPropertyHandler" class="com.endeca.itl.fcm.integration.cadk.ifdi.StandardIfdiDvalPropertiesHandler">
+	<property name="propertyPrefix" value="dimval.prop."/>
+  </bean>
+  <!-- Adds synonyms for a dimension value as they exist in the data feed with the given attribute names -->
+  <bean id="dvalSynonymHandler" class="com.endeca.itl.fcm.integration.cadk.ifdi.StandardIfdiSynonymHandler">
+	<property name="classifySynonymField" value="dimval.classify_synonym"/>
+	<property name="searchSynonymField" value="dimval.search_synonym"/>
+  </bean>
+  
+  
+  <bean id="precedenceRulesGenerator" class="com.endeca.itl.fcm.integration.cadk.ifdi.PrecedenceRulesGenerator">  
+	<property name="precedenceRuleSpecField" value="precedence.qualified_spec" />
+	<property name="sourceDimensionField" value="precedence.source_dimension_name" />
+	<property name="sourceDvalSpecField" value="precedence.source_dimval_spec" />
+	<property name="targetDimensionField" value="precedence.target_dimension_name" />
+	<property name="precedenceRuleTypeField" value="precedence.type" />
+  </bean>
+  
+  <bean id="stemmingGenerator" class="com.endeca.itl.fcm.integration.cadk.ifdi.StemmingGenerator">  
+	<!-- 
+		Language IDs should be RFC3066 codes.  
+		
+		Language IDs with stemming dictionary support (and whether or not a stemming dictionary for that
+		language is shipped with Endeca by default) are:
+			ar (Arabic) -> No
+			cs (Czech) -> No
+			da (Danish) -> No
+			de (German) -> Yes
+			el (Greek) -> No
+			en (US English) -> Yes
+			en-GB (GB English) -> No
+			es (Spanish) -> Yes
+			fr (French) -> Yes
+			it (Italian) -> Yes
+			hu (Hungarian) -> No
+			ja (Japanese) -> No
+			ko (Korean) -> No
+			nl (Dutch) -> Yes
+			pl (Polish) -> No
+			pt (Portuguese) -> Yes
+			ru (Russian) -> No
+			zh-CN (China Chinese) -> No
+			zh-TW (Taiwan Chinese) -> No
+	-->
+	<property name="languageId" value="${LANGUAGE_ID}" />	
+  </bean>  
+
+  <!-- this encodes the property default values from the schema feed xls spreadsheet -->
+  <bean id="propertyTemplate" class="com.endeca.itl.fcm.beans.PropertyConfiguration">
+    <property name="language" value="${LANGUAGE_ID}" />
+    <property name="isSearchable" value="false" />
+    <property name="isWildcardSearchable" value="false" />
+    <property name="isSortable" value="false" />
+    <property name="isFilterable" value="false" />
+    <property name="showOnListPage" value="true" />
+    <property name="showOnDetailPage" value="true" />
+    <property name="enableForRollup" value="false" />
+  </bean>
+
+  <bean id="dimensionTemplate" class="com.endeca.itl.fcm.beans.DimensionConfiguration">
+    <property name="language" value="${LANGUAGE_ID}" />
+    <property name="isSearchable" value="false" />
+    <property name="isWildcardSearchable" value="false" />
+    <property name="isSortable" value="false" />
+    <property name="showOnListPage" value="true" />
+    <property name="showOnDetailPage" value="true" />
+    <property name="enableForRollup" value="false" />
+
+    <property name="refineSortType" value="ALPHA" />
+    <property name="dimSearchHierarchy" value="false" />
+    <property name="recSearchHierarchy" value="false" />
+    <property name="refineShowRecordCounts" value="true" />
+    <property name="multiSelect" value="NONE" />
+    <property name="refineDynRank" value="false" />
+    <property name="refineDynRankCount" value="10" />
+    <property name="refineDynRankMore" value="false" />
+    <property name="refineDynRankSortType" value="DEFAULT" />
+    <property name="isHidden" value="false" />
+    <property name="matchMode" value="NORMAL" />
+  </bean>
+
+
+  <util:list id="dimensionComparator" list-class="com.endeca.itl.fcm.AttributeComparator">
+    <util:constant static-field="com.endeca.itl.fcm.AttributeComparator.SORT_BY_DVAL_RANK"/>
+    <util:constant static-field="com.endeca.itl.fcm.AttributeComparator.SORT_BY_NAME"/>
+  </util:list>
+
+  <util:map id="searchInterfaceComparators">
+    <entry key="All" value-ref="allSearchInterfaceComparator" />
+  </util:map>
+
+  <util:list id="allSearchInterfaceComparator" list-class="com.endeca.itl.fcm.AttributeComparator">
+    <util:constant static-field="com.endeca.itl.fcm.AttributeComparator.SORT_BY_OWNER"/>
+    <!--
+    To sort a search interface according to its members' ranks, create a new AttributeComparator
+    dynamically by referencing the Forge Configuration Manager instance and the name of the 
+    search interface containing the ranks.
+      -->
+    <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+      <property name="targetClass" value="com.endeca.itl.fcm.AttributeComparator"/>
+      <property name="targetMethod" value="getSearchInterfaceRankComparator"/>
+      <property name="arguments">
+        <list>
+          <ref bean="forgeConfigurationManager"/>
+          <value>All</value>
+        </list>
+      </property>
+    </bean>
+    <util:constant static-field="com.endeca.itl.fcm.AttributeComparator.SORT_BY_NAME"/>
+  </util:list>
+</beans>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Storefront/deploy/script/fcm.context.xml#2 $$Change: 768606 $-->

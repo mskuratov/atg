@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE gsa-template SYSTEM "dynamosystemresource:/atg/dtds/gsa/gsa_1.0.dtd">
+<gsa-template>
+  <import-items>
+    <!-- German store mobile site -->
+    <add-item item-descriptor="siteConfiguration" id="mobileStoreSiteDE">
+      <set-property name="description"><![CDATA[ATG Mobile Store Germany site]]></set-property>
+      <set-property name="modificationTime"><![CDATA[9/8/2009 13:39:51]]></set-property>
+      <set-property name="name"><![CDATA[ATG Mobile Store Germany]]></set-property>
+      <set-property name="sitePriority"><![CDATA[4]]></set-property>
+      <set-property name="enabled"><![CDATA[true]]></set-property>
+      <set-property name="siteTypes"><![CDATA[commerce]]></set-property>
+      <set-property name="siteIcon"><![CDATA[/crsdocroot/content/mobile/images/homepage/web/mobileStoreSiteDE/logo.png]]></set-property>
+
+      <set-property name="defaultCatalog"><![CDATA[masterCatalog]]></set-property>
+      <set-property name="defaultListPriceList"><![CDATA[plist3080002]]></set-property>
+      <set-property name="defaultSalePriceList"><![CDATA[plist3080003]]></set-property>
+      
+      <!-- CRS specific properties -->
+      <set-property name="resourceBundle"><![CDATA[atg.projects.store.web.WebAppResources]]></set-property>
+      <set-property name="newProductThresholdDays"><![CDATA[15]]></set-property>
+      <set-property name="defaultPageSize"><![CDATA[12]]></set-property>
+      
+      <set-property name="cssFile"><![CDATA[/css/site/store]]></set-property>
+
+      <set-property name="largeSiteIcon"><![CDATA[/crsdocroot/content/images/atgstore/logo.png]]></set-property>
+
+      <set-property name="defaultCountry"><![CDATA[DE]]></set-property>
+      <set-property name="billableCountries"><![CDATA[US,CA,MX,DE]]></set-property>
+      <set-property name="shippableCountries"><![CDATA[US,CA,MX,DE]]></set-property>
+
+      <set-property name="emailAFriendEnabled"><![CDATA[true]]></set-property>
+      
+      <set-property name="backInStockFromAddress"><![CDATA[ATG Store Service <ATGStoreService@example.de>]]></set-property>
+      <set-property name="newPasswordFromAddress"><![CDATA[ATG Store Service <ATGStoreService@example.de>]]></set-property>
+      <set-property name="orderConfirmationFromAddress"><![CDATA[ATG Store Service <ATGStoreService@example.de>]]></set-property>
+      <set-property name="orderShippedFromAddress"><![CDATA[ATG Store Service <ATGStoreService@example.de>]]></set-property>
+      <set-property name="promotionEmailAddress"><![CDATA[ATG Store Service <ATGStoreService@example.de>]]></set-property>
+      <set-property name="changePasswordFromAddress"><![CDATA[ATG Store Service <ATGStoreService@example.de>]]></set-property>
+      <set-property name="registeredUserFromAddress"><![CDATA[ATG Store Service <ATGStoreService@example.de>]]></set-property>
+
+      <set-property name="defaultLanguage"><![CDATA[de]]></set-property>
+      <set-property name="languages"><![CDATA[en,de]]></set-property>
+      <set-property name="favicon"><![CDATA[/crsdocroot/content/favicon.ico]]></set-property>
+      <set-property name="contextRoot"><![CDATA[/crs]]></set-property>
+      <set-property name="productionURL"><![CDATA[/crs/mobile/storede]]></set-property>
+      <set-property name="priceSliderMinimumValue"><![CDATA[0]]></set-property>
+      <set-property name="priceSliderMaximumValue"><![CDATA[1400]]></set-property>
+      <set-property name="channel"><![CDATA[mobile]]></set-property>
+    </add-item>
+	
+    <!-- Add Spanish as a language to other mobile sites -->
+    <add-item item-descriptor="siteConfiguration" id="mobileStoreSiteUS">
+      <set-property name="defaultLanguage"><![CDATA[en]]></set-property>
+      <set-property name="name"><![CDATA[ATG Mobile Store]]></set-property>
+      <set-property name="languages"><![CDATA[en,es]]></set-property>
+    </add-item>
+	
+	<add-item item-descriptor="siteConfiguration" id="mobileHomeSite">
+      <set-property name="defaultLanguage"><![CDATA[en]]></set-property>
+      <set-property name="languages"><![CDATA[en,es]]></set-property>
+      <set-property name="name"><![CDATA[ATG Mobile Home]]></set-property>
+    </add-item>
+	
+    <!-- Create non-mobile site groups -->
+	<add-item item-descriptor="siteGroup" id="nonMobileSitesDE">
+      <set-property name="displayName"><![CDATA[Non-mobile Sites (DE)]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteDE]]></set-property>
+      <set-property name="shareableTypes"><![CDATA[crs.NonMobileSite]]></set-property>
+    </add-item>
+	
+	<!-- Create cart sharing group for German sites -->
+	<add-item item-descriptor="siteGroup" id="siteGroupDE">
+      <set-property name="displayName"><![CDATA[Site group DE]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteDE,mobileStoreSiteDE]]></set-property>
+      <set-property name="shareableTypes"><![CDATA[atg.ShoppingCart]]></set-property>
+    </add-item>
+
+    <add-item item-descriptor="siteGroup" id="sitesDE">
+      <set-property name="displayName"><![CDATA[Sites (DE)]]></set-property>
+      <set-property name="sites"><![CDATA[storeSiteDE,mobileStoreSiteDE]]></set-property>
+      <set-property name="shareableTypes"><![CDATA[crs.MobileSitePairs]]></set-property>
+    </add-item>
+  </import-items>
+</gsa-template>
+<!-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Mobile/data/sites-i18n.xml#2 $$Change: 768606 $-->

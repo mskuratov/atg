@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<bean-filtering>
+  <repository name="/atg/userprofiling/ProfileAdapterRepository">
+    <item-descriptor name="user">
+      <filter id="summary">
+        <property name="email"/>
+        <property name="postalCode" target="homeAddress.postalCode" hidden="false"/>
+      </filter>
+      <filter id="short" include-filter="summary">
+        <property name="gender"/>
+        <property name="dateOfBirth"/>
+        <property name="receivePromoEmail"/>
+        <property name="phoneNumber" target="homeAddress.phoneNumber"/>
+      </filter>
+    </item-descriptor>
+    <item-descriptor name="credit-card">
+      <filter id="short">
+        <property name="creditCardType"/>
+        <property name="creditCardNumber" property-customizer="/atg/commerce/payment/filter/bean/CreditCardNumberPropertyCustomizer"/>
+      </filter>
+    </item-descriptor>
+    <item-descriptor name="contactInfo">
+      <filter id="summary">
+        <property name="address2"/>
+        <property name="phoneNumber"/>
+      </filter>
+    </item-descriptor>
+  </repository>
+  <repository name="/atg/commerce/catalog/ProductCatalog">
+    <item-descriptor name="product">
+      <filter id="summary">
+        <property name="repositoryId" target="id"/>
+      </filter>
+      <filter id="short">
+        <property name="repositoryId"/>
+        <property name="displayName"/>
+        <property name="thumbnailImageUrl" target="thumbnailImage.url"/>
+        <property name="mediumImageUrl" target="mediumImage.url"/>
+        <property name="itemDescriptorName" target="itemDescriptor.itemDescriptorName"/>
+      </filter>
+    </item-descriptor>
+    <item-descriptor name="promotionalContent" default-filter="summary">
+      <filter id="summary">
+        <property name="derivedDeviceImage"/>
+        <property name="deviceDescription"/>
+        <property name="id"/>
+        <property name="repositoryId" target="id"/>
+        <property name="image" hidden="true"/>
+        <property name="description" hidden="true"/>
+      </filter>
+    </item-descriptor>
+  </repository>
+  <repository name="/atg/commerce/gifts/Giftlists">
+    <item-descriptor name="gift-list">
+      <filter id="summary">
+        <property name="firstName" target="owner.firstName"/>
+        <property name="lastName" target="owner.lastName"/>
+      </filter>
+    </item-descriptor>
+  </repository>
+  <bean name="atg.projects.store.order.StoreOrderImpl" default-filter="summary">
+    <filter id="summary">
+      <property name="containsGiftWrap"/>
+      <property name="shippingGroupCount"/>
+    </filter>
+    <filter id="orderSummary" include-filter="summary">
+      <property name="shippingAddress" target="shippingGroups[0].shippingAddress"/>
+      <property name="shippingMethod" target="shippingGroups[0].shippingMethod"/>
+      <property name="paymentGroups"/>
+      <property name="storeCredit" target="storeCreditsAppliedTotal"/>
+    </filter>
+    <filter id="short">
+      <property name="orderId" target="id"/>
+      <property name="totalItems" target="totalCommerceItemCount"/>
+      <property name="submittedDate"/>
+      <property name="status" target="stateAsString"/>
+    </filter>
+    <filter id="orderDetails" include-filter="orderSummary">
+      <property name="status" target="stateAsString"/>
+      <property name="submittedDate"/>
+    </filter>
+  </bean>
+  <bean name="atg.commerce.order.CommerceItem">
+    <filter id="summary">
+      <property name="auxiliaryData"/>
+    </filter>
+  </bean>
+  <bean name="atg.projects.store.pricing.StoreItemPriceInfo">
+    <filter id="summary">
+      <property name="listPrice"/>
+    </filter>
+  </bean>
+  <bean name="atg.commerce.pricing.ItemPriceInfo" default-filter="summary">
+    <filter id="summary">
+      <property name="adjustments" property-customizer="/atg/dynamo/service/filter/bean/RemoveNullsFromListPropertyCustomizer">
+        <attribute name="propertyName" value="pricingModel"/>
+      </property>
+    </filter>
+  </bean>
+  <bean name="atg.commerce.pricing.OrderPriceInfo" default-filter="summary">
+    <filter id="summary">
+      <property name="adjustments" property-customizer="/atg/dynamo/service/filter/bean/RemoveNullsFromListPropertyCustomizer">
+        <attribute name="propertyName" value="pricingModel"/>
+      </property>
+    </filter>    
+  </bean>
+</bean-filtering>
+<!-- @version $Id: //hosting-blueprint/MobileCommerce/version/10.2/server/MobileCommerce/config/atg/dynamo/service/filter/bean/beanFilteringConfiguration.xml#3 $$Change: 796710 $-->

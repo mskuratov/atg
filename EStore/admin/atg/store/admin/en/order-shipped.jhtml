@@ -1,0 +1,66 @@
+<!-- Displays form fields for Order Shipped email templates. -->
+<importbean bean="/atg/store/email/TemplateTesterFormHandler"/>
+<importbean bean="/atg/commerce/order/OrderLookup"/>
+<importbean bean="/atg/dynamo/droplet/ForEach"/>
+<importbean bean="/atg/dynamo/droplet/Switch">
+
+<input type="hidden" bean="TemplateTesterFormHandler.templateUrl" value="/crs/emailtemplates/orderShipped.jsp"/>
+<input type="hidden" bean="TemplateTesterFormHandler.applyOrderSuccessURL" value="email.jhtml?template=shipped&initForm=true">
+<input type="hidden" bean="TemplateTesterFormHandler.applyOrderErrorURL" value="email.jhtml?template=shipped&initForm=true"/>
+
+<!-- Initialize form with values previously stored into the session. -->
+<droplet bean="Switch">
+  <param name="value" value="param:initForm">            
+  <oparam name="true">
+    <setvalue bean="TemplateTesterFormHandler.initializeForm" value="true"/>   
+  </oparam>
+</droplet> 
+
+<h3>Order Shipped</h3>
+<droplet src="error-message.jhtml"/>            
+<ul class="emailTemplateFields">
+  <droplet src="email-base-inputs.jhtml"/>
+  
+  <!-- Display Order Shipped template specific form fields. -->
+  <li class="templateTesterOrderId">
+    <label>Order Id:</label>
+      <input type="text" bean="TemplateTesterFormHandler.orderId" required="true"/>
+      <input type="submit" bean="TemplateTesterFormHandler.applyOrder" value="Apply"/>
+  </li> 
+  <li class="templateTesterShippingGroup">
+    <label>Shipping Group Id:</label>
+      <java>/** Turn off the security setting to enable order lookup not only for the current user's orders. */</java>
+      <setvalue bean="OrderLookup.enableSecurity" value="false"/>
+      
+      <getvalue var="orderId" bean="TemplateTesterFormHandler.orderId"/>
+      <droplet bean="Switch">
+        <param name="value" value="bean:TemplateTesterFormHandler.orderId">            
+        <oparam name="unset">
+          <input type="text" bean="TemplateTesterFormHandler.shippingGroupId" required="true"/>   
+        </oparam>
+        <oparam name="">
+          <input type="text" bean="TemplateTesterFormHandler.shippingGroupId" required="true"/>   
+        </oparam>
+        <oparam name="default">
+          <droplet name="OrderLookup">
+            <param name="orderId" value="bean:TemplateTesterFormHandler.orderId"/>
+            <oparam name="error">
+              <input type="text" bean="TemplateTesterFormHandler.shippingGroupId" required="true"/>   
+            </oparam>
+            <oparam name="output">
+              <select bean="TemplateTesterFormHandler.shippingGroupId">
+                <droplet name="ForEach">
+                  <param name="array" value="param:result.shippingGroups"/>
+                  <param name="elementName" value="shippingGroup"/>
+                  <oparam name="output">
+                    <option value="param:shippingGroup.id"><valueof param="shippingGroup.id"/> - <valueof param="shippingGroup.shippingAddress.address1"/></option>
+                  </oparam>
+                </droplet>
+              </select>
+            </oparam>
+          </droplet>
+        </oparam>
+      </droplet>
+  </li>
+</ul>
+<java>/* @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/EStore/admin/atg/store/admin/en/order-shipped.jhtml#1 $$Change: 735822 $*/</java>
