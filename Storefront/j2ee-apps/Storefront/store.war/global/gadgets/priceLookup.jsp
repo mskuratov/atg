@@ -63,7 +63,7 @@
                 <dsp:getvalueof var="price" vartype="java.lang.Double" param="theListPrice.listPrice"/>
                 <del>
                   <dsp:include page="/global/gadgets/formattedPrice.jsp">
-                    <dsp:param name="price" value="${price }"/>
+                    <dsp:param name="price" value="1"/>
                   </dsp:include>
                 </del>
               </span>
@@ -72,7 +72,7 @@
               <%-- Can't find sale price, display list price only. --%>
               <dsp:getvalueof var="price" vartype="java.lang.Double" param="theListPrice.listPrice"/>
               <dsp:include page="/global/gadgets/formattedPrice.jsp">
-                <dsp:param name="price" value="${price }"/>
+                <dsp:param name="price" value="1"/>
               </dsp:include>
             </dsp:oparam>
           </dsp:droplet><%-- End price droplet on sale price --%>
@@ -81,7 +81,7 @@
           <%-- No sale price list defined for the current user, display list price only. --%>
           <dsp:getvalueof var="price" vartype="java.lang.Double" param="theListPrice.listPrice"/>
           <dsp:include page="/global/gadgets/formattedPrice.jsp">
-            <dsp:param name="price" value="${price }"/>
+            <dsp:param name="price" value="1"/>
           </dsp:include>
         </c:otherwise>
       </c:choose><%-- End Is Empty Check --%>
