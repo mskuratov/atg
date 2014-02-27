@@ -16,7 +16,7 @@ public class CustomDroplet extends DynamoServlet {
     public void service(DynamoHttpServletRequest pRequest, DynamoHttpServletResponse pResponse)
             throws ServletException, IOException {
 
-        pRequest.setParameter("text", "Some text");
+        pRequest.setParameter("text", "Some custom text");
         pRequest.serviceLocalParameter(OUTPUT, pRequest, pResponse);
     }
 }

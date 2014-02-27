@@ -15,6 +15,7 @@
 <dsp:page>
   <dsp:importbean bean="/atg/commerce/pricing/priceLists/PriceDroplet"/>
   <dsp:importbean bean="/atg/userprofiling/Profile"/>
+  <dsp:importbean bean="/com/commerce/CustomDroplet"/>
 
   <%--
     At first, look up for the list price for the product/SKU specified.
@@ -87,5 +88,13 @@
       </c:choose><%-- End Is Empty Check --%>
     </dsp:oparam>
   </dsp:droplet><%-- End Price Droplet --%>
+    <dsp:droplet name="CustomDroplet">
+        <dsp:oparam name="output">
+            <dsp:getvalueof var="text" vartype="java.lang.String" param="text"/>
+            <h1>
+                <c:out value="${text}"/>
+            </h1>
+        </dsp:oparam>
+    </dsp:droplet>
 </dsp:page>
 <%-- @version $Id: //hosting-blueprint/B2CBlueprint/version/10.2/Storefront/j2ee/store.war/global/gadgets/priceLookup.jsp#1 $$Change: 735822 $--%>
