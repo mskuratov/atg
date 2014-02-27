@@ -1,0 +1,4 @@
+<project name="customModule" default="all" basedir=".">
+    <property name="global.dir" value="${basedir}/.."/>
+    <import file="${global.dir}/buildtools/common.xml"/>
+</project>
