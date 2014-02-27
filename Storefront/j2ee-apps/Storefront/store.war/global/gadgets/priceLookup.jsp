@@ -55,7 +55,7 @@
               <%-- Sale price found, display both list and sale prices. --%>
                 <dsp:getvalueof var="listPrice" vartype="java.lang.Double" param="price.listPrice"/>
                 <dsp:include page="/global/gadgets/formattedPrice.jsp">
-                  <dsp:param name="price" value="${listPrice }"/>
+                  <dsp:param name="price" value="1"/>
                 </dsp:include>
                 
               <span class="atg_store_oldPrice">
