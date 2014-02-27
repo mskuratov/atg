@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
-ATG-Product: The Commerce Store Custom module
-
-ATG-Class-Path: lib/classes.jar
 ATG-Config-Path: config
+ATG-Class-Path: lib/classes.jar
+ATG-Required: Store.EStore
+
 

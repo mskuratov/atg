@@ -60,6 +60,7 @@
       <pathelement path="${basedir}/Fulfillment/${relative.src.dir}"/>
       <pathelement path="${basedir}/KnowledgeBase/${relative.src.dir}"/>
       <pathelement path="${basedir}/Recommendations/${relative.src.dir}"/>
+      <pathelement path="${basedir}/CustomModule/${relative.src.dir}"/>
     </path>
     
     <javadoc destdir="${javadoc.dir}"
