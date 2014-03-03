@@ -1,6 +1,5 @@
 Manifest-Version: 1.0
 ATG-Config-Path: src/config
-ATG-Class-Path: lib/classes.jar
 ATG-Required: Store.EStore
 
 
