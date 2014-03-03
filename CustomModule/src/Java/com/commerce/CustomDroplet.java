@@ -13,10 +13,20 @@ public class CustomDroplet extends DynamoServlet {
 
     static final ParameterName OUTPUT = ParameterName.getParameterName("output");
 
+    private String text = "Default text";
+
     public void service(DynamoHttpServletRequest pRequest, DynamoHttpServletResponse pResponse)
             throws ServletException, IOException {
 
-        pRequest.setParameter("text", "!!!!!!!NEW TEXT!!!!!!!");
+        pRequest.setParameter("text", text);
         pRequest.serviceLocalParameter(OUTPUT, pRequest, pResponse);
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
     }
 }
